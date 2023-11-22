@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "woqod-website": {
+    "fom-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/woqod-website/browser",
+            "outputPath": "dist/fom-website/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -177,10 +177,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "woqod-website:build:production"
+              "browserTarget": "fom-website:build:production"
             },
             "development": {
-              "browserTarget": "woqod-website:build:development"
+              "browserTarget": "fom-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -188,7 +188,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "woqod-website:build"
+            "browserTarget": "fom-website:build"
           }
         },
         "test": {
@@ -214,7 +214,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/woqod-website/server",
+            "outputPath": "dist/fom-website/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -274,12 +274,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "woqod-website:build:development",
-              "serverTarget": "woqod-website:server:development"
+              "browserTarget": "fom-website:build:development",
+              "serverTarget": "fom-website:server:development"
             },
             "production": {
-              "browserTarget": "woqod-website:build:production",
-              "serverTarget": "woqod-website:server:production"
+              "browserTarget": "fom-website:build:production",
+              "serverTarget": "fom-website:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -293,12 +293,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "woqod-website:build:production",
-              "serverTarget": "woqod-website:server:production"
+              "browserTarget": "fom-website:build:production",
+              "serverTarget": "fom-website:server:production"
             },
             "development": {
-              "browserTarget": "woqod-website:build:development",
-              "serverTarget": "woqod-website:server:development"
+              "browserTarget": "fom-website:build:development",
+              "serverTarget": "fom-website:server:development"
             }
           },
           "defaultConfiguration": "production"

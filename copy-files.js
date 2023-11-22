@@ -1,11 +1,11 @@
 const ncp = require('ncp').ncp;
 const fs = require('fs');
 
-const sourceFolderServer = 'dist/woqod-website/server/';
+const sourceFolderServer = 'dist/fom-website/server/';
 const destinationFolderServer = 'dist/package/';
 
-const sourceFolderBrowser = 'dist/woqod-website/browser/';
-const destinationFolderBrowser = 'dist/package/dist/woqod-website/browser/';
+const sourceFolderBrowser = 'dist/fom-website/browser/';
+const destinationFolderBrowser = 'dist/package/dist/fom-website/browser/';
 
 // Check if the destination folder exists, create it if not
 if (!fs.existsSync(destinationFolderServer)) {

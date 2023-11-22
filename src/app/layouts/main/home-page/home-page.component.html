@@ -1,15 +1,1 @@
-<div [class.h-screen]="isSliderLoadingEnabled" class="overflow-hidden">
-    <app-hero-section *ngIf="slidesStore && slidesStore.length > 0" [slidesStore]="slidesStore" [currency]="currency"
-        [content]="content" [date]="date" [materials]="materials" [lang]="lang"></app-hero-section>
-    <app-hero-section-price-bottom id="mobile-price" class="block lg:hidden" [currency]="currency" [content]="content"
-        [date]="date" [materials]="materials" [lang]="lang"></app-hero-section-price-bottom>
-</div>
-<app-e-services *ngIf="slidesStore2 && slidesStore2.length > 0" [slidesStore]="slidesStore2" [table]="table"
-    [lang]="lang" [whistleBlowingFileId]="whistleBlowingFileId" [servicesIcons]="servicesIcons"></app-e-services>
-<app-promotions-section *ngIf="promotionList && promotionList.data && promotionList.data.length > 0"
-    [promotionList]="promotionList"></app-promotions-section>
-<app-news *ngIf="newsList && newsList.length > 0 && (newsList[0].length > 0 || newsList[1].length > 0)"
-    [newsList]="newsList" [lang]="lang"></app-news>
-<app-social-widgets [socilaMediaAccounts]="socilaMediaAccounts"></app-social-widgets>
-<app-petrol-stations></app-petrol-stations>
-<app-woqood-app [lang]="lang" [app]="woqoodApp"></app-woqood-app>
+test one
