@@ -1,0 +1,48 @@
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [link]="'about-us/leadership/detailed/' + id"></app-breadcrumb-section-second-style>
+<section *ngIf="teamMembers.length > 0 && data?.hasLeader == true" class="bg-[#ececec]">
+  <div class="max-w-desktop mx-auto px-4 lg:px-11 py-4">
+    <div class="flex flex-col lg:flex-row gap-5 w-full">
+      <div class="w-full lg:w-1/4">
+        <img class="w-full h-[300px] rounded-[5px]" [defaultImage]="'loadingImage'| imageSource"
+          [errorImage]="'errorImage'| imageSource" [lazyLoad]="teamMembers[0]?.img | imageSource" alt="" />
+      </div>
+      <div class="w-full flex flex-col">
+        <p class="font-Poppins-Bold text-lg">
+          {{ teamMembers[0]?.title[lang] }}
+        </p>
+        <p class="font-Poppins-Bold text-[14px] text-[#006120] pb-3" [innerHTML]="teamMembers[0]?.desc[lang]">
+        </p>
+
+        <p *ngIf="!showFullDescription" class="font-Poppins-Light pb-5" [innerHTML]=" (teamMembers[0]?.description[lang] || '')?.slice(0, 652) ">
+        </p>
+        
+        <app-btn-one *ngIf="!showFullDescription && teamMembers[0]?.description[lang].length > 652" textClass="font-Poppins-Light text-lg" (click)="toggleDescription()"
+          text="SHARED.READ_MORE" svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one>
+
+        <p *ngIf="showFullDescription" class="font-Poppins-Light pb-5">
+          {{ teamMembers[0]?.description[lang] }}
+        </p>
+
+        <app-btn-one *ngIf="showFullDescription && teamMembers[0]?.description[lang].length > 100" textClass="font-Poppins-Light text-lg" (click)="toggleDescription()"
+          text="SHARED.LESS" svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one>
+      </div>
+    </div>
+  </div>
+</section>
+<app-team-members-section *ngIf=" data?.hasLeader == true" [data]="remainingTeamMembers" [lang]="lang"></app-team-members-section>
+<app-team-members-section class="pt-10" *ngIf=" data?.hasLeader == false" [data]="teamMembers" [lang]="lang"></app-team-members-section>
+<section *ngIf="leaderships.length > 0" class="bg-[#f5f5f5]">
+  <div class="max-w-desktop w-full px-4 lg:px-10 mx-auto pb-[120px] flex flex-col gap-4">
+    <!-- <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-[22px] leading-[30px] text-[#011C35] capitalize"> -->
+      <!-- {{'ABOUT_US.OUR_LEADERSHIP' | translate}}</p> -->
+    <!-- </p> -->
+
+    <div>
+      <ul class="w-full flex flex-row flex-wrap gap-y-5 gap-x-4">
+        <li *ngFor="let card of leaderships" class="w-full lg:w-[calc(50%-16px)]">
+          <app-card-w-category [data]="card"></app-card-w-category>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

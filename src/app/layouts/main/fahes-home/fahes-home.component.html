@@ -1,0 +1,10 @@
+<div [class.h-screen]="isSliderLoadingEnabled">
+    <app-fahes-hero-section *ngIf="slidesStore && slidesStore.length > 0" [slidesStore]="slidesStore"
+        [bottomSection]="bottomSection" [lang]="lang" (tabChangeEmitter)="tabChange($event)"></app-fahes-hero-section>
+</div>
+<app-fahes-e-services [slidesStore]="slidesStore2" [lang]="lang"></app-fahes-e-services>
+<app-fahes-about-us-home [data]="aboutUs.heading" [cards]="aboutUs.cards" [lang]="lang"></app-fahes-about-us-home>
+<app-fahes-news *ngIf="newsList && newsList.length > 0 && (newsList[0].length > 0 || newsList[1].length > 0)"
+    [newsList]="newsList" [lang]="lang" [mainData]="newsMainData"></app-fahes-news>
+<app-fahes-in-numbers [mainData]="fahesInNumbersMainData" [lang]="lang" [items]="items"></app-fahes-in-numbers>
+<app-inspection-center *ngIf="isBrowser"></app-inspection-center>

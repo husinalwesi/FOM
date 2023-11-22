@@ -1,0 +1,19 @@
+<div class="bg-[#F5F5F5]">
+    <p class="max-w-desktop px-4 lg:px-10 mx-auto py-[27px] font-Cairo-Bold text-[22px] leading-[26px] text-[#263238]">
+        {{title[lang]}}</p>
+    <ul class="max-w-desktop w-full px-4 lg:px-10 mx-auto pb-[50px] flex flex-col lg:flex-row gap-[13px] flex-wrap">
+        <li *ngFor="let item of data" class="w-full lg:w-[calc(25%-10px)] relative rounded-[5px] 
+        
+        after:absolute after:left-0 after:top-0 after:w-full after:h-full after:bg-black after:bg-opacity-50 after:rounded-[5px] 
+        " [style.backgroundImage]="'url(' + (item.img | imageSource) + ')'" #card
+            [ngStyle]="{height: heightMain + 'px'}" style="    background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;">
+            <p class="absolute left-0 right-0 bottom-[97px] text-center text-white font-Cairo-Regular z-[1] line-clamp-1"
+                [innerHTML]="item.subTitle[lang]"></p>
+            <app-btn-one class="absolute bottom-[17px] left-0 right-0 text-center z-[1]" [link]="item.link"
+                text="SHARED.READ_MORE" seoDesc="Text about the button" svg="assets/svgs/arrow.svg"
+                svgClass="rotate-[270deg]" textClass="font-Cairo-Regular text-base"></app-btn-one>
+        </li>
+    </ul>
+</div>

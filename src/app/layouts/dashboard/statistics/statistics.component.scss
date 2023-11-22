@@ -1,0 +1,67 @@
+table{
+    & tbody > tr{
+        @apply ltr:text-left rtl:text-right relative before:absolute before:top-0 before:left-0 before:right-0 before:mx-auto before:w-full before:h-[1px] before:bg-[black];
+        &:nth-child(odd){
+            @apply lg:bg-[white] ;
+        }
+        &:nth-child(even){
+            @apply bg-white w-full;
+        }
+
+        & td{
+            @apply  py-[13px] text-[#011C35] flex-1 ;            
+            &.normal{
+                @apply font-Poppins-Light text-sm leading-[18px] w-[180px] lg:w-auto
+            }
+            &.tender-id{
+              
+            }
+        }
+    }
+    & thead{
+        & tr {
+            @apply ltr:text-left rtl:text-right relative before:absolute before:top-0 before:left-0 before:right-0 before:mx-auto before:w-full before:h-[1px] before:bg-[black];
+        }
+        & th{
+            @apply  py-[15px] whitespace-nowrap flex-1  lg:w-auto text-xs leading-[18px] font-Poppins-Medium;
+        }
+    }
+}
+// .milestones {
+//     &.owl-carousel{
+//         & .owl-custom-nav .disabled{
+//             @apply opacity-20 pointer-events-none ;
+//         }
+//         & .owl-dots{
+//             @apply flex justify-between mt-[98.5px];
+//             & .owl-dot{
+//                 @apply flex-1 relative after:content-normal after:absolute after:h-1 after:w-full after:left-0 after:bottom-0 after:bg-[#C7D5EE];
+//                 & span{
+//                     @apply flex justify-center items-end pb-[14.5px] h-[50px] text-[#707070] font-Poppins-Bold text-[10px] lg:text-sm after:z-10 after:content-normal after:absolute after:bottom-[-7px] after:left-0 after:right-0 after:mx-auto after:w-[18px] after:h-[18px] after:rounded-full after:bg-white after:border-2 after:border-solid after:border-[#E8E2DA] transition-all after:transition-all;
+//                 }
+//                 &.active{
+//                     & span{
+//                         @apply after:border-[6px] pb-[21.5px] text-[24px] text-[#221E20] after:border-[#B30838] after:w-6 after:h-6 after:bottom-[-9px];
+//                     }                
+//                 }
+    
+//                 &:first-child{
+//                     @apply after:w-1/2 after:ltr:left-[unset] after:ltr:right-0 after:rtl:right-[unset] after:rtl:left-0;
+//                 }
+//                 &:last-child{
+//                     @apply after:w-1/2 after:ltr:left-0 after:ltr:right-[unset] after:rtl:right-0 after:rtl:left-[unset] ;                
+//                 }            
+//             }
+//         }
+//         &.owl-stage .owl-item{
+//             @apply transition-opacity duration-500;
+//             &.active {
+//                 @apply w-auto mx-0;
+//             }
+//             &.second-active{
+//                 @apply opacity-20;
+//             }
+        
+//     }
+//   }
+// }

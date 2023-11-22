@@ -1,0 +1,19 @@
+<form *ngIf="data" #paymentForm id="qpForm" action="https://pgtest3.qcb.gov.qa/QPayOnePC/PaymentPayServlet"
+    method="post">
+    <input type="hidden" id="Action" name="Action" [value]="data.action || ''" />
+    <input type="hidden" id="Amount" name="Amount" [value]="data.amount || ''" />
+    <input type="hidden" id="BankID" name="BankID" [value]="data.bankID || ''" />
+    <input type="hidden" id="CurrencyCode" name="CurrencyCode" [value]="data.currencyCode || ''" />
+    <input type="hidden" id="ExtraFields_f14" name="ExtraFields_f14" [value]="data.extraFields_f14 || ''" />
+    <input type="hidden" id="Lang" name="Lang" [value]="data.lang || ''" />
+    <input type="hidden" id="MerchantID" name="MerchantID" [value]="data.merchantID || ''" />
+    <input type="hidden" id="MerchantModuleSessionID" name="MerchantModuleSessionID"
+        [value]="data.merchantModuleSessionID || ''" />
+    <input type="hidden" id="PUN" name="PUN" [value]="data.pun || ''" />
+    <input type="hidden" id="PaymentDescription" name="PaymentDescription" [value]="data.paymentDescription || ''" />
+    <input type="hidden" id="Quantity" name="Quantity" [value]="data.quantity || ''" />
+    <input type="hidden" id="SecureHash" name="SecureHash" [value]="data.secureHash || ''" />
+    <input type="hidden" id="TransactionRequestDate" name="TransactionRequestDate"
+        [value]="data.transactionRequestDate || ''" />
+    <button id="qpFormSubmit" type="submit" value="Redirect">Redirect</button>
+</form>

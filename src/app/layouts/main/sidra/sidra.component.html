@@ -1,0 +1,8 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data" [link]="'sidra'"></app-breadcrumb-section-second-style>
+<app-our-story textAlign="text-center" [title]="areaOne?.title[lang]"
+    [text]="areaOne?.description[lang]"></app-our-story>
+<app-text-image-half [data]="service" [lang]="lang"></app-text-image-half>
+<app-latest-promotions *ngIf="promotions.length > 0" [promotions]="promotions" [mainData]="promotionMainData"
+    [lang]="lang"></app-latest-promotions>
+<app-talabat-snoonu [data]="delivery" [lang]="lang"></app-talabat-snoonu>

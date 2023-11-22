@@ -1,0 +1,22 @@
+<div class="flex flex-col lg:flex-row gap-5">
+    <div class="w-full lg:w-[calc(55%-20px)] flex flex-col gap-5">
+        <p class="ltr:text-left rtl:text-right leading-[25px] text-[#011C35]" [class]="textClass"
+            [innerHTML]="data?.description[lang]">
+        </p>
+        <ul class="flex flex-col gap-[14px]" *ngIf="isListEnabled">
+            <li>
+                <a [href]="data?.link | routeLocalization" download
+                    class="ltr:text-left rtl:text-right font-Cairo-Regular text-sm leading-[25px] text-[#011C35] flex gap-3">
+                    <app-svg src="assets/svgs/long-arrow.svg" customClass="rtl:rotate-180" label="title_goas_here"
+                        [stretch]="false" width="20" height="20" fill="#919191"></app-svg>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus turpis risus,
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="w-full lg:w-[calc(45%-20px)]">
+        <img [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+            [lazyLoad]="data?.image | imageSource" alt="" title="" width="592" height="306"
+            class="w-full h-[306px] rounded-[5px]" />
+    </div>
+</div>

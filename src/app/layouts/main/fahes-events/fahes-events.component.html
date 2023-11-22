@@ -1,0 +1,31 @@
+<section class="bg-[#F5F5F5] relative h-full">
+  <div class="max-w-desktop mx-auto px-4 pb-[60px]">
+    <div class="bg-white rounded-b-[5px] shadow-[0px_3px_6px_#0000001A] px-4 lg:px-11 pt-[96px] pb-[55px]">
+      <p class="ltr:text-left rtl:text-right text-lg leading-[30px] font-Poppins-Bold text-[#221E20] pb-[30px] ">{{
+        "FAHES_MEDIA_CENTER.OUR_LASTEST_EVENTS" | translate }}</p>
+      <div class="flex flex-col lg:flex-row gap-[24px] pb-3">
+        <app-date-picker-forth-style [data]="{placeholder: 'PLACEHOLDER.DATE_FROM', value: dateFrom}"  [max]="dateTo"
+          (dateChange)="changeDateFrom($event)"></app-date-picker-forth-style>
+        <app-date-picker-forth-style [data]="{placeholder: 'PLACEHOLDER.DATE_TO', value: dateTo}" [min]="dateFrom"
+          (dateChange)="changeDateTo($event)"></app-date-picker-forth-style>
+      </div>
+      <!-- <button type="button" class="flex flex-row justify-end gap-2 pb-[34px] w-full">
+        <p class="ltr:text-left rtl:text-right font-Cairo-Regular font-bold text-sm leading-[26px] text-[#E7131A]">
+          {{ "FAHES_MEDIA_CENTER.VIEW" | translate }}
+        </p>
+        <app-svg src="assets/svgs/long-arrow.svg" customClass="mt-[-3px] ltr:rotate-[0deg] rtl:rotate-[180deg]"
+          label="title_goas_here" [stretch]="false" width="16" fill="#E7131A"></app-svg>
+      </button> -->
+      <div class="flex flex-col lg:flex-row gap-[72px] flex-wrap">
+        <app-component-loader *ngIf="isLoadingEnabled"></app-component-loader>
+        <ng-container *ngIf="!isLoadingEnabled">
+          <app-fahes-event-card class="w-full lg:w-[calc((100%/3)-48px)]" *ngFor="let event of events.data"
+            [data]="event" [lang]="lang"></app-fahes-event-card>
+          <app-no-data *ngIf="events.data.length === 0"></app-no-data>
+        </ng-container>
+        <app-pagination *ngIf="!isLoadingEnabled && events.data.length > 0" [data]="events.pagination"
+          (changePage)="changePage($event)"></app-pagination>
+      </div>
+    </div>
+  </div>
+</section>

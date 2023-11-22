@@ -1,0 +1,14 @@
+<app-header *ngIf="!isMobile" [pageType]="pageType"></app-header>
+<div id="router-outlet">
+    <router-outlet></router-outlet>
+</div>
+<app-footer *ngIf="!isMobile" [pageType]="pageType"></app-footer>
+<app-widget *ngIf="!isMobile" [pageType]="pageType"></app-widget>
+
+<!-- <div *ngIf="!isMobile && isMagicCursorEnabled" class="absolute w-[30px] h-[30px] pointer-events-none z-[1000000] top-0">
+    <div id="ball"
+        class="border border-solid border-white fixed block left-0 top-0 w-[25px] h-[25px] rounded-full pointer-events-none transform translate-x-1/2 translate-y-1/2 opacity-0">
+    </div>
+</div> -->
+<app-full-loader></app-full-loader>
+<app-chat-bot *ngIf="!isMobile"></app-chat-bot>

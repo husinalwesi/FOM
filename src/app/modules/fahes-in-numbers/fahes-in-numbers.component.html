@@ -1,0 +1,39 @@
+<section class="bg-[#F5F5F5]">
+    <div class="max-w-desktop w-full mx-auto px-4 lg:px-10 pt-[76px] pb-[82px]">
+        <p class="text-[#011C35] text-[35px] leading-[46px] font-Cairo-Bold">{{mainData?.title[lang]}}</p>
+        <div class="mt-3 mb-11 flex flex-col lg:flex-row gap-8">
+            <div class="flex flex-col">
+                <p class="text-[#00428B] text-[25px] font-Cairo-Bold text-center min-w-[150px] leading-6"
+                    [innerHTML]="mainData?.experience[lang]"></p>
+            </div>
+            <div>
+                <p class="bg-white h-full rounded-[5px] flex items-center justify-center py-3 px-6 text-[#011C35] font-Cairo-Regular text-sm"
+                    [innerHTML]="mainData?.description[lang]">
+                </p>
+            </div>
+        </div>
+        <div>
+            <ul class="flex flex-col lg:flex-row gap-[14px]">
+                <li class="w-full lg:w-[(100%/4)-14px]" *ngFor="let item of items; let i = index">
+                    <div class="w-full flex flex-col gap-2  rounded-[5px]" style="box-shadow: 0px 15px 50px #1A264A0F;"
+                        [style.backgroundColor]="item.topBgColor">
+                        <div class="text-center pt-8 flex flex-col justify-center items-center gap-2">
+                            <img [src]="item.svg | imageSource" alt="" title="" class="w-[47px] h-[47px]" width="47"
+                                height="47" />
+                            <p class="text-center px-4 font-Cairo-Bold text-[50px] " [style.color]="item.topColor"
+                                [innerHTML]="item.statistic[lang]"></p>
+                        </div>
+                        <div class="flex flex-col gap-2  rounded-[5px] pt-4 pb-6 px-4"
+                            [style.backgroundColor]="item.bottomBgColor" [style.color]="item.textColor">
+                            <p class="font-Cairo-Bold text-base text-center max-w-[118px] mx-auto"
+                                [innerHTML]="item.title[lang]">
+                                <!-- Occupation -->
+                            </p>
+                            <p class="font-Cairo-Regular text-sm text-center" [innerHTML]="item.description[lang]"></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

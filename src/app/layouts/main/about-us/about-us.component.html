@@ -1,0 +1,36 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [link]="'about-us'" [metaData]="data"></app-breadcrumb-section-second-style>
+<app-our-story [title]="data?.areaOneTitle[lang]" [text]="data?.areaOneDescription[lang]" [linkBtn]="data?.link"
+    buttonText="SHARED.READ_MORE"></app-our-story>
+<section class="bg-white">
+    <div class="max-w-desktop w-full px-4 lg:px-10 mx-auto py-10 flex flex-col gap-4">
+        <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-[22px] leading-[30px] text-[#011C35] capitalize"
+            [innerHTML]="data?.areaTwoTitle[lang]"></p>
+        <div>
+            <ul class="w-full flex flex-row flex-wrap gap-y-5">
+                <li *ngFor="let card of leaderships" class="w-full lg:w-1/3 lg:px-1.5">
+                    <app-card-w-category [data]="card"></app-card-w-category>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<app-our-story [title]="data?.areaThreeTitle[lang]" [text]="data?.areaThreeDescription[lang]"
+    [linkBtn]="data?.linkArea3" buttonText="SHARED.READ_MORE"></app-our-story>
+<section class="bg-white">
+    <div class="max-w-desktop w-full px-4 lg:px-10 mx-auto py-10 flex flex-col gap-4">
+        <div>
+            <ul class="w-full flex flex-row flex-wrap gap-y-5">
+                <li *ngFor="let card of contentpages" class="w-full lg:w-1/3 lg:px-1.5">
+                    <app-card-w-category [data]="card"></app-card-w-category>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<app-our-story size="lg" [title]="data?.areaFiveTitle[lang]" [text]="data?.areaFiveDescription[lang]"
+    [linkBtn]="data?.linkArea5" buttonText="SHARED.READ_MORE"></app-our-story>
+<app-our-mission [lang]="lang" [data]="data" [secondBulletsList]="secondBulletsList"></app-our-mission>
+<section class="bg-[#F5F5F5]">
+    <app-our-values title="ABOUT_US.OUR_VALUES" [lang]="lang" [detailes]="bullets" [title]="data?.area7Title[lang]"></app-our-values>
+</section>

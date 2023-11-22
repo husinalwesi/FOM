@@ -1,0 +1,7 @@
+<div *ngIf="data?.content" class="border border-solid border-[#92D1A8] mb-[104px]">
+  <div  id="content" class="px-10" [innerHTML]="data?.content[lang]">
+  </div>
+  <div *ngIf="data?.checkBox" class="bg-[#DFF7E7] px-5 flex flex-row gap-[6px] py-2">
+    <app-checkbox  [data]="data?.checkBox" (onChange)="change($event)"></app-checkbox>
+  </div>
+</div>

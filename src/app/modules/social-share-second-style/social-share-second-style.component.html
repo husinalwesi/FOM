@@ -1,0 +1,32 @@
+<div class="flex flex-row gap-x-3 items-center">
+    <p *ngIf="shareThis" class="text-xs text-[#00802B] ltr:text-left rtl:text-right leading-[30px] w-max">
+        {{shareThis | translate}}:
+    </p>
+<div class="flex items-center gap-[5px] justify-end">
+    <a [href]="link | facebook:{data:metaData}" aria-label="facebook-link" target="_blank"
+        class="bg-[#1877F2] flex items-center justify-center rounded-[2px] w-[30px] h-[30px]">
+        <app-svg src="assets/svgs/facebook.svg" label="title_goas_here" [stretch]="false" width="14" height="30"
+            fill="white"></app-svg>
+    </a>
+    <a [href]="link | twitter:{data:metaData}" aria-label="twitter-link" target="_blank"
+        class="bg-black flex items-center justify-center rounded-[2px] w-[30px] h-[30px]">
+        <app-svg src="assets/svgs/x.svg" label="title_goas_here" [stretch]="false" width="30" height="30"
+            fill="white"></app-svg>
+    </a>
+    <a [href]="link | mailTo:{data:metaData}" aria-label="mailto-link" target="_blank"
+        class="bg-[#977c4399] flex items-center justify-center rounded-[2px] w-[30px] h-[30px]">
+        <app-svg src="assets/svgs/gmail-2.svg" label="title_goas_here" [stretch]="false" width="16" height="30"
+            fill="white"></app-svg>
+    </a>
+    <a [href]="link | pinterest:{data:metaData}" aria-label="pinterest-link" target="_blank"
+        class="bg-[#BD081C] flex items-center justify-center rounded-[2px] w-[30px] h-[30px]">
+        <app-svg src="assets/svgs/pinterest.svg" label="title_goas_here" [stretch]="false" width="16" height="30"
+            fill="white"></app-svg>
+    </a>
+    <a [href]="link | linkedin:{data:metaData}" aria-label="linkedin-link" target="_blank"
+        class="bg-[#0077B5] flex items-center justify-center rounded-[2px] w-[30px] h-[30px]">
+        <app-svg src="assets/svgs/linkedin.svg" label="title_goas_here" [stretch]="false" width="16" height="30"
+            fill="white"></app-svg>
+    </a>
+</div>
+</div>

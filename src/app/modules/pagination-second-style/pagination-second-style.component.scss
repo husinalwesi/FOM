@@ -1,0 +1,6 @@
+.pagination-item{
+    @apply w-[30px] h-[30px] flex justify-center items-center text-xs bg-[#F4F4F4] text-[#2D2F39] rounded-full hover:bg-[var(--primary-color)] hover:text-white;
+    &.active{
+        @apply bg-[var(--primary-color)] text-white;
+    }
+}

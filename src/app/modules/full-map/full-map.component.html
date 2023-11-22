@@ -1,0 +1,24 @@
+<section class="flex flex-col">
+    <div class="w-full h-full flex xl:hidden" id="mob-filter">
+        <app-full-map-filter class="w-full" [stationDDL]="stationDDL" [servicesDDL]="servicesDDL" [lang]="lang"
+            [stationName]="stationName" [locationsTop]="locationsTop" [workingHours]="workingHours" [allDay]="allDay"
+            [limitedHours]="workingHoursEle" [isSubmitted]="isSubmitted" [searchResult]="searchResult"
+            (stationChangeEmitter)="stationChange($event)" (workingHoursEmitter)="workingHoursEmitter($event)"
+            (servicesChangeEmitter)="servicesChange($event)" (topLocationsEmitter)="topLocationsEmitHandler($event)"
+            (allDayEmitter)="changeAllDay($event)" (limitedHoursChangeEmitter)="changeLimitedHours($event)"
+            (submitEmitter)="submitHandler($event)" (cancelEmitter)="cancel()" (resetEmitter)="resetHandler($event)"
+            [filter]="filter" (selectStationEmitter)="selectStation($event)"></app-full-map-filter>
+    </div>
+    <!-- *ngIf="!isLoading" -->
+    <div class="w-full h-[calc(100vh-112.5px)] lg:h-[calc(100vh-112.5px)]">
+        <app-full-map-view [stationDDL]="stationDDL" [servicesDDL]="servicesDDL" [allDay]="allDay" [mapData]="allDataFiltered"
+            [stationName]="stationName" [locationsTop]="locationsTop" [workingHours]="workingHours" [lang]="lang"
+            [limitedHours]="workingHoursEle" [isSubmitted]="isSubmitted" [searchResult]="searchResult"
+            (stationChangeEmitter)="stationChange($event)" (servicesChangeEmitter)="servicesChange($event)"
+            (allDayEmitter)="changeAllDay($event)" (limitedHoursChangeEmitter)="changeLimitedHours($event)"
+            (submitEmitter)="submitHandler($event)" (cancelEmitter)="cancel()" (resetEmitter)="resetHandler($event)"
+            [filter]="filter" (topLocationsEmitter)="topLocationsEmitHandler($event)"
+            (workingHoursEmitter)="workingHoursEmitter($event)" (selectStationEmitter)="selectStation($event)"
+            [selectedStation]="selectedStation"></app-full-map-view>
+    </div>
+</section>

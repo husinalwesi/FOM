@@ -1,0 +1,21 @@
+<ul class="breadcrumb">
+    <li>
+        <a [routerLink]="'/' | routeLocalization">
+            <app-svg src="assets/svgs/home.svg" class="mx-auto mt-[-7px]" customClass="" label="title_goas_here"
+                [stretch]="false" width="18" height="18" fill="#009933"></app-svg>
+            <span class="ltr:ml-4 rtl:mr-4 text-[13px] leading-[24px] font-Cairo-Regular text-black">{{'SHARED.HOME' |
+                translate}}
+            </span>
+        </a>
+    </li>
+    <li *ngFor="let item of data; let i = index"
+        [ngClass]="{'text-[#3F5AA6]': i === data.length - 1, 'text-black': i !== data.length - 1, 'pointer-events-none': i === data.length - 1}">
+        <a *ngIf="item.path !== '#'" [routerLink]="item.path | routeLocalization"
+            class="text-[13px] leading-[24px] font-Cairo-Regular">{{item.title |
+            translate}}</a>
+
+        <span *ngIf="item.path === '#'"
+            class="text-[13px] leading-[24px] font-Cairo-Regular pointer-events-none">{{item.title |
+            translate}}</span>
+    </li>
+</ul>

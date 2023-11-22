@@ -1,0 +1,30 @@
+.box{
+    @apply bg-[#CBCBCB5E] transition-all;
+    app-svg{
+        ::ng-deep svg{
+            @apply transition-all;
+        }
+    }
+    &:hover{
+        @apply bg-[#00852C] ; 
+        .title{
+            @apply text-[white];
+        }
+        app-svg{
+            ::ng-deep svg{
+                fill: white !important;
+            }
+        }
+    }
+    &.active{
+        @apply bg-[#00852C] ; 
+        .title{
+            @apply text-[white];
+        }
+        app-svg{
+            ::ng-deep svg{
+                fill: white !important;
+            }
+        }
+    }
+}

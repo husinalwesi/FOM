@@ -1,0 +1,13 @@
+// ::ng-deep [dir="ltr"] app-inspection-center google-map app-inspection-center-filter{
+//     @apply right-0 mr-[12vw];
+//     margin-left: unset !important;
+//     left: unset !important;
+// }
+
+app-detailed-body ::ng-deep div{
+    @apply pb-5 pt-[60px]
+}
+
+app-card-two ::ng-deep div p:nth-child(2){
+    @apply line-clamp-2
+}

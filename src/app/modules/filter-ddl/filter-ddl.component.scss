@@ -1,0 +1,21 @@
+.active button{
+    @apply bg-[#00904A] text-white;
+}
+.animate-close{
+    @apply animate-[fadeOutDown_0.3s_ease_both];
+}
+
+
+
+
+// .active button{
+//     @apply bg-slate-200;
+// }
+// ul > li{
+//     &:first-child button{
+//         @apply rounded-t;
+//     }
+//     &:last-child button{
+//         @apply rounded-b;        
+//     }    
+// }

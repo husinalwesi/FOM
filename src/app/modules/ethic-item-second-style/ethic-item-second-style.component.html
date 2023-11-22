@@ -1,0 +1,7 @@
+<div class="w-full py-9 px-[26px] bg-[#FFFFFF] rounded-[10px]">
+    <img [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+        [lazyLoad]="data.icon | imageSource" alt="" width="29" height="37" class="mx-auto">
+    <p class="text-center text-lg font-Poppins-Medium leading-6 capitalize text-[#003399] pb-4"
+        [innerHTML]="data.title[lang]"></p>
+    <p class="text-center text-sm font-Poppins-Light leading-6 text-[#7C7C7C]" [innerHTML]="data.description[lang]"></p>
+</div>

@@ -1,0 +1,14 @@
+::ng-deep .menu-item{
+    &:hover svg{
+        stroke: #111827 !important;
+    }
+    &.active{
+        background-color: #00852C !important;
+        & span{
+            color: white !important;
+        }    
+        & svg{
+            stroke: white !important;
+        }
+    }
+}

@@ -1,0 +1,255 @@
+<ul class="flex flex-wrap gap-0.5">
+    <li *ngFor="let car of cars; let i=index" [class.active-tab]="i === 0">
+        <button type="button"
+            class="flex min-w-[160px] items-center justify-between rounded-t-[5px] bg-[#ECECEE] min-h-[50px] h-full px-4 py-[7px]">
+            <div class="flex flex-col">
+                <span class="font-Poppins-Light text-sm capitalize text-[#6B6B6B]" [innerHTML]="car.name"></span>
+                <span class="font-Poppins-Light text-xs leading-[18px] text-[#6B6B6B] capitalize"
+                    [innerHTML]="car.phone"></span>
+            </div>
+            <div>
+                <app-svg src="assets/svgs/arrow-curve.svg" customClass="" label="title_goas_here" [stretch]="false"
+                    width="20" height="20" [fill]="i === 0 ? '#B30838' : '#6B6B6B'"></app-svg>
+            </div>
+        </button>
+    </li>
+    <li class="add-car">
+        <button type="button"
+            class="flex min-w-[160px] items-center justify-between rounded-t-[5px] bg-[#ECECEE] min-h-[50px] h-full px-4 py-[7px]">
+            <div class="flex flex-col">
+                <span class="font-Poppins-Light text-sm capitalize text-[#B30838]">Add Car</span>
+            </div>
+            <div>
+                <app-svg src="assets/svgs/arrow-curve.svg" customClass="" label="title_goas_here" [stretch]="false"
+                    width="20" height="20" fill="#B30838"></app-svg>
+            </div>
+        </button>
+    </li>
+</ul>
+<div
+    class="bg-white relative pb-11 rounded-b-[5px] ltr:rounded-tr-[5px] rtl:rounded-tl-[5px] shadow-[0px_4px_6px_#0000001A]">
+    <div class="flex justify-end mb-px">
+        <button type="button"
+            class="flex py-[13px] px-[23px] items-center gap-3 bg-[#ECECEE] ltr:rounded-tr-[5px] ltr:rounded-br-[5px] rtl:rounded-tl-[5px] rtl:rounded-bl-[5px]">
+            <span class="font-Poppins-Light text-sm text-[#B30838] capitalize">{{ "SERVICE_INSPESTION.REMOVE" |
+                translate }}</span>
+            <app-svg src="assets/svgs/arrow-curve.svg" customClass="" label="title_goas_here" [stretch]="false"
+                width="20" height="20" fill="#B30838"></app-svg>
+        </button>
+    </div>
+    <p class="font-Poppins-Medium text-base leading-6 capitalize text-[#003399] pb-[52px] px-4">
+        {{ "SERVICE_INSPESTION.APPOINTMENT" | translate }}: 987654321
+    </p>
+    <div class="flex px-4 flex-col lg:flex-row gap-7 pb-[78px]">
+        <div class="w-full lg:w-[calc(50%-28px)] ">
+            <div class="flex-1 relative lg:max-w-[510px]">
+                <label
+                    class="ltr:text-left rtl:text-right absolute ltr:left-4 rtl:right-4 top-[-14px] px-1 bg-white font-Cairo-Regular text-sm leading-8 text-[#717171] capitalize"
+                    for="">{{ "INSPECTION_FILTER.SEARCH_LOCATIONS" | translate }}</label>
+                <input
+                    class="w-full border border-solid border-[#E0E0E0] rounded-md h-[61px] px-[50px] text-[#2B2B2B] font-Poppins-Light text-sm"
+                    type="text" placeholder="Bin Hammour" />
+                <div
+                    class="absolute ltr:left-0 rtl:right-0 bottom-0 h-[61px] w-[50px] flex justify-center items-center">
+                    <app-svg src="assets/svgs/gps.svg" customClass="mt-[-3px]" label="title_goas_here" [stretch]="false"
+                        width="18" fill="#003399"></app-svg>
+                </div>
+                <div
+                    class="absolute ltr:right-0 rtl:left-0 bottom-0 h-[61px] w-[50px] flex justify-center items-center">
+                    <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                        width="28" stroke="#000000"></app-svg>
+                </div>
+            </div>
+            <app-time-picker class="lg:max-w-[510px]" [data]="time1" (onChange)="time1 = $event"></app-time-picker>
+            <div class="flex flex-col lg:flex-row gap-3 lg:items-center pt-32">
+                <app-date-picker-second-style class="w-full flex-1" [data]="{ placeholder: '', label: 'Date' }" [icon]="{
+              src: 'assets/svgs/dateinput.svg',
+              fill: '',
+              stroke: ''
+            }"></app-date-picker-second-style>
+                <app-checkbox [data]="checkBox2" (onChange)="checkBox2.value = $event"></app-checkbox>
+            </div>
+            <div class="flex-1 relative mt-[50px] lg:max-w-[510px]">
+                <label
+                    class="ltr:text-left rtl:text-right absolute ltr:left-4 rtl:right-4 top-[-14px] px-1 bg-white font-Cairo-Regular text-sm leading-8 text-[#717171] capitalize"
+                    for="">{{ "SERVICE_INSPESTION.NAME" | translate }}
+                    <sup class="font-Cairo-Regular text-[15px] text-[#E73C3E] ltr:-left-px rtl:-right-px top-0">*</sup>
+                </label>
+                <input
+                    class="w-full border border-solid border-[#E0E0E0] rounded-md h-[61px] px-5 text-[#2B2B2B] font-Poppins-Light text-sm"
+                    type="text" placeholder="Mohammed imran" />
+            </div>
+            <div class="mt-[26px]">
+                <button type="button" (click)="assignAJobModal = true"
+                    class="bg-white w-full lg:w-auto py-0.5 px-[39px] border border-solid border-[#B30838] rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">
+                    {{ "SERVICE_INSPESTION.ASSIGN" | translate }}
+                </button>
+            </div>
+        </div>
+        <div class="w-full lg:w-[calc(50%-28px)] bg-gray-300"></div>
+    </div>
+    <div class="flex px-4 justify-between items-center gap-1">
+        <p class="font-Poppins-Light text-lg leading-6 text-[#011C35]">
+            {{ "SERVICE_INSPESTION.FEE" | translate }}
+        </p>
+        <p class="font-Poppins-Medium text-[30px] leading-[46px] uppercase text-[#B30838]">
+            {{'CURRENCIES.QR' | translate}} 50
+        </p>
+    </div>
+    <div class="px-4">
+        <hr class="border-[#CCCCCC] pb-10 mt-[18px]" />
+    </div>
+    <div class="flex flex-col lg:flex-row px-4 justify-between gap-1 lg:items-center">
+        <div class="flex flex-col gap-1.5">
+            <p class="font-Poppins-Light text-lg leading-6 text-[#011C35]">
+                {{ "SERVICE_INSPESTION.BOOKING_SUMMARY" | translate }}
+            </p>
+            <p class="font-Poppins-Medium text-sm text-[#757575]">
+                {{ "SERVICE_INSPESTION.NO_OF" | translate }} 3
+            </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-8 gap-y-2 mt-2 lg:mt-0">
+            <button type="button"
+                class="border px-11 py-0.5 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">
+                {{ "DASHBOARD.BACK" | translate }}
+            </button>
+            <button type="button" (click)="isSaveModalEnabled = true"
+                class="border px-11 py-0.5 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">
+                {{ "DASHBOARD.SAVE_S" | translate }}
+            </button>
+            <button type="button"
+                class="font-Cairo-Regular py-0.5 px-[46px] text-base leading-[33px] text-white capitalize bg-[#B30838] rounded-[5px]">
+                {{ "DASHBOARD.NEXT" | translate }}
+            </button>
+        </div>
+    </div>
+</div>
+<app-modal [template]="modalTemplatePlaceholder1" [isModalEnabled]="isSaveModalEnabled"
+    (closeModalByKeyboard)="isSaveModalEnabled = false" modalClasses="top-0 bottom-0 w-[90%] max-w-[688px]">
+    <ng-template #modalTemplatePlaceholder1>
+        <div class="bg-white rounded-[5px] pb-12 pt-7">
+            <div class="modal-header flex justify-end pb-[14px] px-8">
+                <button type="button">
+                    <app-svg (click)="isSaveModalEnabled = false" src="assets/svgs/close.svg" customClass=""
+                        label="title_goes_here" [stretch]="false" width="16" height="16" fill="#000"></app-svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="flex flex-col gap-8 px-4 lg:px-20">
+                    <li class="flex gap-6">
+                        <app-svg src="assets/svgs/correct-circle.svg" customClass="" label="title_goes_here"
+                            [stretch]="false" width="20" height="20" fill="#00904A"></app-svg>
+                        <p class="font-Poppins-Light text-base leading-6 text-black">
+                            1. All valuable items must be removed from the vehicle by the
+                            customer before handling over the vehicle for inspection.
+                        </p>
+                    </li>
+                    <li class="flex gap-6">
+                        <app-svg src="assets/svgs/correct-circle.svg" customClass="" label="title_goes_here"
+                            [stretch]="false" width="20" height="20" fill="#00904A"></app-svg>
+                        <p class="font-Poppins-Light text-base leading-6 text-black">
+                            2. Company will not be responsible for Any loss of valuable items
+                            inside the vehicle Any damage occurred during the inspection
+                            process to the vehicle/components unless or otherwise it has been
+                            caused by accident or improper handling by company personnel
+                        </p>
+                    </li>
+                    <li class="flex gap-6">
+                        <app-svg src="assets/svgs/correct-circle.svg" customClass="" label="title_goes_here"
+                            [stretch]="false" width="20" height="20" fill="#00904A"></app-svg>
+                        <p class="font-Poppins-Light text-base leading-6 text-black">
+                            3. For any clarification customer should bring the customer
+                            receipt.
+                        </p>
+                    </li>
+                    <li class="flex gap-6">
+                        <app-svg src="assets/svgs/correct-circle.svg" customClass="" label="title_goes_here"
+                            [stretch]="false" width="20" height="20" fill="#00904A"></app-svg>
+                        <p class="font-Poppins-Light text-base leading-6 text-black">
+                            4. It is strictly prohibited to park vehicle inside FAHES premises
+                            after working hours.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer flex flex-col lg:flex-row items-center justify-center gap-x-5 gap-y-2 pt-10 px-4">
+                <button type="button" (click)="isSaveModalEnabled = false"
+                    class="border w-full lg:w-auto px-11 py-0.5 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">
+                    {{ "SERVICE_INSPESTION.CANCEL" | translate }}
+                </button>
+                <button type="button" (click)="isSaveModalEnabled = false"
+                    class="font-Cairo-Regular w-full lg:w-auto py-0.5 px-[46px] text-base leading-[33px] text-white capitalize bg-[#B30838] rounded-[5px]">
+                    {{ "SERVICE_INSPESTION.CONFIRM" | translate }}
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>
+<app-modal [template]="modalTemplatePlaceholder2" [isModalEnabled]="assignAJobModal"
+    (closeModalByKeyboard)="assignAJobModal = false" modalClasses="top-0 bottom-0 w-[90%] max-w-[1071px]">
+    <ng-template #modalTemplatePlaceholder2>
+        <div class="bg-white rounded-[5px] pb-12 pt-7">
+            <div class="modal-header flex justify-end pb-[14px] px-8">
+                <button type="button">
+                    <app-svg (click)="assignAJobModal = false" src="assets/svgs/close.svg" customClass=""
+                        label="title_goes_here" [stretch]="false" width="16" height="16" fill="#000"></app-svg>
+                </button>
+            </div>
+            <div class="modal-body px-4 lg:px-10">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-1 pb-8">
+                    <p class="font-Poppins-Medium text-lg leading-[50px] text-black">
+                        {{ "SERVICE_INSPESTION.ASSIGN" | translate }}
+                    </p>
+                    <app-checkbox [data]="checkBox2" (onChange)="checkBox2.value = $event"></app-checkbox>
+                </div>
+                <div>
+                    <ul class="flex flex-wrap gap-3">
+                        <li *ngFor="let details of detailsPerson ;" class="w-full lg:w-[calc(25%-12px)]">
+                            <div
+                                class="border-2 border-solid border-[#b30838] bg-[#F5F5F5] rounded-[10px] pt-[22px] pb-4 px-4">
+                                <div class="flex gap-3">
+                                    <img width="28" height="28" class="w-7 h-7 rounded-full" [src]="details.img"
+                                        alt="Card Image" />
+                                    <div class="flex-1 pt-1">
+                                        <p class="font-Poppins-Medium text-xs leading-[18px] text-[#B30838]"
+                                            [innerHTML]="details.name"></p>
+                                        <p class="pt-2 pb-[3px] flex flex-row gap-2">
+
+                                            <span class="font-Poppins-Medium text-[10px] leading-4 text-black">{{
+                                                "SHOP.EMAIL" | translate }}</span>
+                                            <span class="font-Poppins-Light text-[10px] leading-4 text-black"
+                                                [innerHTML]="details.email"></span>
+
+                                        </p>
+
+                                        <p class="-mt-2 flex flex-row gap-2">
+                                            <span class="font-Poppins-Medium text-[10px] leading-4 text-black">{{
+                                                "E_TAG.PHONE" | translate }}</span>
+                                            <span class="font-Poppins-Light text-[10px] leading-4 text-black"
+                                                [innerHTML]="details.phone">
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <button type="button" (click)="assignAJobModal = false"
+                                    class="border w-full mt-4 px-11 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-sm leading-[33px] text-[#B30838] capitalize">
+                                    {{ "SERVICE_INSPESTION.SELECT" | translate }}
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer flex flex-col lg:flex-row items-center justify-center gap-x-5 gap-y-2 pt-10 px-4">
+                <button type="button" (click)="assignAJobModal = false"
+                    class="border w-full lg:w-auto px-11 py-0.5 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">
+                    {{ "SERVICE_INSPESTION.CANCEL" | translate }}
+                </button>
+                <button type="button" (click)="assignAJobModal = false"
+                    class="font-Cairo-Regular w-full lg:w-auto py-0.5 px-[46px] text-base leading-[33px] text-white capitalize bg-[#B30838] rounded-[5px]">
+                    {{ "SERVICE_INSPESTION.CONFIRM" | translate }}
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

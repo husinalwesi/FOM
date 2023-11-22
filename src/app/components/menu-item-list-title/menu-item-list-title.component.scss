@@ -1,0 +1,9 @@
+.sub-menu-item-title {
+    @apply ltr:text-left rtl:text-right text-black font-Poppins-Medium text-sm leading-[26px]  ;
+}
+.sub-sub-menu-item {
+    @apply ltr:text-left rtl:text-right ltr:ml-[-26px] rtl:mr-[-26px]  hover:ltr:ml-0 hover:rtl:mr-0 flex items-center gap-2 text-[#7C7C7C] font-Poppins-Light text-xs leading-[24px] opacity-100 hover:text-[#009933] transition-all;
+    & span {
+        @apply mt-[3px] text-lg  ;
+    }
+}

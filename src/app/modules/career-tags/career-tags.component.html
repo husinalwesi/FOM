@@ -1,0 +1,7 @@
+<div class="bg-white px-[24px] mb-2 pt-[18px] pb-[29] border border-solid border-[#EBEEF7]"
+    *ngIf="tags[lang].length > 0">
+    <p class="font-Poppins-Light text-[14px] leading-[20px] text-[#192A59] pb-[14px]">
+        {{'CAREER_FILTER.FILTER_BY_TAGS' | translate}}
+    </p>
+    <app-tags [tags]="tags" [lang]="lang" (onTagsSelectionChange)="tagsSelectionChange($event)"></app-tags>
+</div>

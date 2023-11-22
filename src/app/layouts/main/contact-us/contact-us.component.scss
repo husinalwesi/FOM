@@ -1,0 +1,17 @@
+// ::ng-deep #bread-crumb app-breadcrumb-section-first-style > section {
+//   @apply bg-white;
+// }
+.details-summary-container ::ng-deep .details-summary svg {
+  @apply transition-all;
+}
+.details-summary-container.active {
+  &::ng-deep .details-summary svg {
+    @apply rotate-90;
+  }
+  & .details-summary-content {
+    @apply block;
+  }
+}
+app-our-values ::ng-deep > div{
+  @apply pb-16
+}

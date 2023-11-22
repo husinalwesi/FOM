@@ -1,0 +1,19 @@
+app-filter-faq ::ng-deep div {
+    & div:nth-child(2) {
+        @apply hidden
+    }
+}
+app-faq-search-section ::ng-deep form > div  {
+    & .faqs {
+        @apply hidden;
+    }
+    & .faqs-search {
+        @apply border border-solid ltr:border-l-[1px] rtl:border-r-[1px]
+    }
+}
+app-our-values ::ng-deep div ul li div{
+    @apply pt-5 pb-0
+}
+.active{
+    @apply bg-blue-200;
+}

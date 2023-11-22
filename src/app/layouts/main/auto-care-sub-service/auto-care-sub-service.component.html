@@ -1,0 +1,10 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [link]="'/auto-care-service/detailed/'+ id "
+    [metaData]="data"></app-breadcrumb-section-second-style>
+
+<app-our-story textAlign="text-center" [title]="story.title[lang]" [text]="story.desc[lang]"></app-our-story>
+
+<app-text-half [lang]="lang" [data]="txtData"></app-text-half>
+<!-- <app-prices-section *ngIf="showPriceSection" [lang]="lang" [data]="prices"></app-prices-section> -->
+<app-offers-and-promotions *ngIf="promotions.length > 0" [data]="promotions"></app-offers-and-promotions>
+<div class="h-[61px] bg-white"></div>

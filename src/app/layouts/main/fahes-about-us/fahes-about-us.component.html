@@ -1,0 +1,26 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb"
+    [link]="'fahes/about-us'"></app-breadcrumb-section-second-style>
+<ng-container *ngIf="areaOne">
+    <app-detailed-about-us [area]="areaOne" [lang]="lang"></app-detailed-about-us>
+</ng-container>
+<ng-container *ngIf="areaTwo">
+    <app-detailed-about-us [area]="areaTwo" [lang]="lang" [backgroundImage]="backgroundImagePath"
+        [reverseOrder]="true"></app-detailed-about-us>
+</ng-container>
+<section [style.backgroundImage]="'url(' + backgroundImageUrl + ')'" class="bg-no-repeat bg-center bg-cover">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 pt-[89px] pb-[70px]">
+        <p class="mb-1.5 text-[#00428B] font-Poppins-Medium text-lg leading-[30px] capitalize text-center"
+            [innerHTML]="data?.areaThreeTitle[lang]">
+        </p>
+        <p class="mb-14 text-[#011C35] font-Poppins-Light text-[15px] leading-6 text-center"
+            [innerHTML]="data?.areaThreeDescription[lang]">
+        </p>
+        <div class="flex flex-col lg:flex-row  gap-4 flex-wrap">
+            <div *ngFor="let item of bullets " class="w-full lg:w-[calc(20%-16px)]">
+                <app-ethic-item [item]="item" [lang]="lang"></app-ethic-item>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<div class="flex items-center justify-end gap-[11px] pt-5 mb-[20px] lg:pt-0">
+  <a [href]="link | linkedin:{data:metaData}" target="_blank" aria-label="linkedin-link">
+    <app-svg src="assets/svgs/linkedin.svg" customClass="mx-auto pb-13 " label="title_goas_here" [stretch]="false"
+      width="12" height="12" fill="black"></app-svg>
+  </a>
+  <a [href]="link | mailTo:{data:metaData}" target="_blank">
+    <app-svg src="assets/svgs/gmail-2.svg" customClass="mx-auto pb-13 " label="title_goas_here" [stretch]="false"
+      width="12" height="12" fill="black"></app-svg>
+  </a>
+  <a [href]="link | twitter:{data:metaData}" target="_blank">
+    <app-svg src="assets/svgs/twitter-x-logo.svg" customClass="mx-auto pb-13 " label="title_goas_here" [stretch]="false"
+      width="12" height="12" fill="black"></app-svg>
+  </a>
+  <a [href]="link | facebook:{data:metaData}" target="_blank">
+    <app-svg src="assets/svgs/facebook.svg" customClass="mx-auto pb-13 " label="title_goas_here" [stretch]="false"
+      width="12" height="12" fill="black"></app-svg>
+  </a>
+</div>

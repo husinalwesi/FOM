@@ -1,0 +1,68 @@
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [shareThis]="shareThis" [link]="'search-results'"></app-breadcrumb-section-second-style>
+<section class="bg-[#F5F5F5] pt-[38px] pb-[34px]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-11 flex flex-col lg:flex-row gap-[41px]">
+        <div class="w-full lg:w-full lg:max-w-[408px]">
+            <div class="flex flex-col gap-[30px] pb-[45px]">
+                <p class="font-Cairo-Regular text-[27px] leading-[50px] text-[#011C35] ltr:tracking-[-0.27px]">
+                    {{ "SEARCH.SEARCH_RESULT" | translate }} <span class="font-Cairo-Bold">'{{searchTerm}}'</span>
+                </p>
+                <app-filter-faq [lang]="lang" [CategoryDDL]="CategoryDDL" class="w-full"
+                    (onTagsSelectionChange)="tagsSelectionChange($event)"
+                    (changeCategory)="CategoryDDL.selected = $event;getSearchItem()"></app-filter-faq>
+            </div>
+            <app-social-account-widget class="block h-[648px] w-full lg:max-w-[408px]"></app-social-account-widget>
+        </div>
+        <div class="w-full lg:w-3/4 pt-[35px]">
+            <app-loader-two *ngIf="isLoadingEnabled"></app-loader-two>
+
+            
+            <ng-container *ngIf="!isLoadingEnabled">
+              <ul *ngIf="searchResult && searchResult.data && searchResult.data.length > 0"
+                  class="max-w-desktop w-full mx-auto pt-[15px] flex flex-col lg:flex-row flex-wrap gap-[30px]">
+                <li *ngFor="let item of searchResult.data" class="w-full">
+                  <app-search-result-item [data]="item" [lang]="lang"></app-search-result-item>
+                </li>
+              </ul>
+              <app-no-data *ngIf="!searchResult || searchResult.data.length === 0"></app-no-data>
+            </ng-container>
+          </div>
+    </div>
+    <app-pagination *ngIf="!isLoadingEnabled && searchResult.data.length > 0" [data]="searchResult.pagination"
+        (changePage)="changePage($event)"></app-pagination>
+</section>
+<!-- <section class="bg-[#F5F5F5] pt-[108px] pb-14 ">
+    <div class="max-w-desktop mx-auto px-4 lg:px-11 flex flex-col gap-[30px] ">
+        <p class="font-Cairo-Regular text-[27px] leading-[50px] text-[#011C35] ltr:tracking-[-0.27px]">
+            {{'SEARCH.SEARCH_RESULT' | translate}}
+        </p>
+        <app-filter-faq [lang]="lang" [CategoryDDL]="CategoryDDL" class=""
+            (onTagsSelectionChange)="tagsSelectionChange($event)"></app-filter-faq>
+    </div>
+</section>
+
+<section class="bg-[#F5F5F5] pb-[34px]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-11 flex flex-col lg:flex-row gap-[41px] pb-[45px]">
+        <app-social-account-widget class="block h-[648px] w-full lg:max-w-[408px]"></app-social-account-widget>
+        <div class="w-full lg:w-3/4">
+
+
+            <app-component-loader *ngIf="isLoadingEnabled" class="block mt-32"></app-component-loader>
+            <ng-container *ngIf="!isLoadingEnabled">
+
+                <ul *ngIf="searchResult.data.length > 0"
+                    class="max-w-desktop w-full mx-auto pt-[15px] flex flex-col lg:flex-row flex-wrap gap-[30px]">
+                    <li *ngFor="let item of searchResult.data">
+                        <app-search-result-item [data]="item" [lang]="lang"></app-search-result-item>
+                    </li>
+                </ul>
+                <app-no-data *ngIf="searchResult.data.length === 0"></app-no-data>
+            </ng-container>
+
+
+        </div>
+    </div>
+
+    <app-pagination *ngIf="!isLoadingEnabled && searchResult.data.length > 0" [data]="searchResult.pagination"
+        (changePage)="changePage($event)"></app-pagination>
+
+</section> -->

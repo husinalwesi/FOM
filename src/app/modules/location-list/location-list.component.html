@@ -1,0 +1,86 @@
+<div class="relative">
+    <div class="flex-1 relative mt-10">
+        <label
+            class="ltr:text-left rtl:text-right absolute ltr:left-4 rtl:right-4 top-[-14px] px-1 bg-white font-Cairo-Regular text-sm leading-8 text-[#717171] capitalize"
+            for="">{{'SHOP.LOCATION' | translate}}
+            <sup class="font-Cairo-Regular text-[15px] text-[#E73C3E] ltr:-left-px rtl:-right-px top-0">*</sup>
+        </label>
+        <button (click)="isSubmitted = !isSubmitted"
+            class="w-full border ltr:text-left  rtl:text-right border-solid border-[#E0E0E0] rounded-md h-[61px] ltr:pl-5 ltr:pr-[50px] rtl:pr-5 gap-2 rtl:pl-[50px] text-[#2B2B2B] font-Poppins-Light text-sm"
+            type="button">
+            <div class="absolute left-0 bottom-0 h-full w-[50px] flex justify-center items-center">
+                <app-svg src="assets/svgs/gps.svg" customClass="" label="title_goas_here" [stretch]="false" width="18"
+                  fill="#003399"></app-svg>
+                  </div>
+
+        </button>
+        <div class="absolute ltr:right-0 rtl:left-0 bottom-0 h-[61px] w-[50px] flex justify-center items-center">
+            <app-svg src="assets/svgs/search-short.svg" customClass="" label="title_goas_here" [stretch]="false"
+                width="28" fill="#00904A"></app-svg>
+        </div>
+    </div>
+    
+    <div *ngIf="isSubmitted" class="w-full rounded-[5px] shadow-custom-1 flex-col gap-0.5" [class.hidden]="!isSubmitted"
+            [class.flex]="isSubmitted">
+            <div class="px-6 h-[60px] flex justify-between items-center bg-white rounded-t-[5px] shadow-custom-8">
+                <span class="text-black font-Poppins-Light text-base">Matar Al Qadeem</span>
+
+                <button type="button" (click)="isSubmitted = false;">
+                    <app-svg src="assets/svgs/close.svg" customClass="" label="title_goas_here" [stretch]="false"
+                        width="16" height="16" fill="#00904A"></app-svg>
+                </button>
+            </div>
+            <div class="w-full bg-white rounded-b-[5px] shadow-custom-8">
+                <div class="pt-5 px-6">
+                    <select name="" id="" class="font-Poppins-Light text-sm text-[#727272]">
+                        <option value="">Sort by</option>
+                    </select>
+                </div>
+                <ul class="flex flex-col gap-5 pt-3 overflow-auto h-full max-h-[calc(50vh)] pb-[22px]">
+                    <li *ngFor="let _ of [].constructor(10); let i = index"
+                        class="relative px-6 after:absolute after:w-full after:h-px after:bg-[#ECECEE] after:-bottom-2.5 after:left-0 after:last:hidden">
+                        <div class="flex gap-7 justify-between">
+                            <div class="flex flex-col">
+                                <p
+                                    class="ltr:text-left rtl:text-right font-Poppins-Bold text-[15px] leading-[26px] text-[#2B2B2B]">
+                                    Old Airport WOQOD Station</p>
+                                <p
+                                    class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[29px] text-[#676767]">
+                                    Matar Al Qadeem, Downtown, Doha</p>
+                                <ul class="flex gap-[38px]">
+                                    <li>
+                                        <span class="flex gap-2 items-center">
+                                            <app-svg src="assets/svgs/time.svg" class="-mt-1" customClass=""
+                                                label="title_goas_here" [stretch]="false" width="12" height="12"
+                                                fill="#003399"></app-svg>
+                                            <span
+                                                class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[29px] text-[#003399]">Open
+                                                24 hours</span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex gap-2 items-center">
+                                            <app-svg src="assets/svgs/phone-ring.svg" class="-mt-1" customClass=""
+                                                label="title_goas_here" [stretch]="false" width="12" height="12"
+                                                fill="#003399"></app-svg>
+                                            <span
+                                                class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[29px] text-[#003399]">0777
+                                                1234</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="flex gap-2 items-center">
+                                    <span
+                                        class="font-Cairo-Regular text-sm leading-[30px] capitalize text-[#00904A]">Direction</span>
+                                    <app-svg src="assets/svgs/direction.svg" customClass="" label="title_goas_here"
+                                        [stretch]="false" width="32" height="32" fill="#00904A"></app-svg>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>

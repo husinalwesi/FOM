@@ -1,0 +1,22 @@
+<div class="relative" appClickOutSide (appOutsideClick)="isDdlEnabled ? toggleDDL() : ''" [class.disabled]="isDisabled">
+    <button type="button" (click)="toggleDDL()" class="flex justify-between gap-1 ltr:pl-4 ltr:pr-3 rtl:pl-3 rtl:pr-4 py-3 items-center
+        
+        w-full px-5 bg-[#FCFCFC] border border-solid border-[#CCCCCC] h-[50px] rounded font-Poppins-Light text-sm text-[#2B2B2B]
+        ">
+        <span class="font-Poppins-Light text-xs text-[#757575]">{{data?.selected?.key ? data?.selected?.title[lang] :
+            (data?.placeholder | translate )}}</span>
+        <app-svg src="assets/svgs/arrow-down.svg"
+            [customClass]="isDdlEnabled && !fireCloseAnimation ? 'transition-all rotate-[180deg]' : 'transition-all'"
+            label="title_goas_here" [stretch]="false" width="12" height="12" stroke="#BCBCBC"></app-svg>
+    </button>
+    <div *ngIf="isDdlEnabled"
+        class="absolute animate-[fadeInUp_0.3s_ease_both] left-0 top-[48px] rounded-[5px] z-10 overflow-auto w-full max-h-[200px] bg-white shadow-[0px_1px_13px_#0000001A]"
+        [class.animate-close]="fireCloseAnimation">
+        <ul class="flex flex-col">
+            <li *ngFor="let option of data?.list" [class.active]="option.key === data?.selected?.key">
+                <button type="button" (click)="selectOption(option)"
+                    class="w-full ltr:text-left rtl:text-right break-words font-Poppins-Light text-sm leading-[26px] text-[#2B2B2B] py-3 px-5 transition-all hover:bg-slate-100">{{option.title[lang]}}</button>
+            </li>
+        </ul>
+    </div>
+</div>

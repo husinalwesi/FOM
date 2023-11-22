@@ -1,0 +1,5 @@
+<div class="dialog" #dialog [class.exist-animation]="existAnimationEnabled" [class.open]="isEnabled">
+    <div [class]="modalClasses">
+        <ng-container [ngTemplateOutlet]="template"></ng-container>
+    </div>
+</div>

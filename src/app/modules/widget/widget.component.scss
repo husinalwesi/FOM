@@ -1,0 +1,126 @@
+.widget-item {
+    &.animation-start {
+        &.widget-item-normal {
+            & .content-2 {
+                @apply w-[113px];
+
+                & a,
+                & button {
+                    @apply opacity-100 delay-[150ms];
+                }
+            }
+        }
+
+        &.widget-item-star {
+            & .content-2 {
+                @apply w-[303px];
+            }
+        }
+
+        & .content-1 {
+            @apply w-[23px] transition-all ease-in-out duration-[10ms] delay-[150ms];
+        }
+
+        & .content-2 {
+            @apply transition-all ease-in-out duration-[140ms] delay-[160ms];
+
+            & * {
+                @apply opacity-100 transition-all ease-in-out duration-[150ms];
+            }
+        }
+
+        & .icon-container {
+            @apply rotate-[150deg] transition-all ease-in-out duration-[150ms] delay-0;
+
+            & ::ng-deep svg {
+                @apply transition-all duration-150;
+            }
+        }
+
+        & .chat-container ::ng-deep svg {
+            fill: #ecd9ae !important;
+        }
+
+        & .notification-container ::ng-deep svg {
+            fill: #3e64ff !important;
+        }
+    }
+
+    &.animation-end {
+        &.widget-item-normal {
+            & .content-2 {
+                & a,
+                & button {
+                    @apply opacity-0 delay-0;
+                }
+            }
+        }
+
+        & .content-1 {
+            @apply transition-all ease-in-out duration-[10ms] delay-[140ms];
+        }
+
+        & .content-2 {
+            @apply transition-all ease-in-out duration-[140ms] delay-0;
+
+            & * {
+                @apply opacity-0 transition-all ease-in-out duration-[150ms];
+            }
+        }
+
+        & .icon-container {
+            @apply transition-all ease-in-out duration-[150ms] delay-[150ms];
+
+            & ::ng-deep svg {
+                @apply transition-all duration-300 delay-300;
+            }
+        }
+    }
+}
+
+.fahes .widget-item-star.animation-start {
+    & .star-container ::ng-deep svg {
+        fill: #ae3154 !important;
+    }
+
+    & .content-1 {
+        @apply bg-[#ae3154];
+    }
+
+    & .star-item {
+        @apply bg-[#ae3154] hover:bg-[var(--primary-color)];
+    }
+
+    & .star-item.link-active {
+        @apply bg-[var(--primary-color)];
+    }
+}
+
+.woqod .widget-item-star.animation-start {
+    & .star-container ::ng-deep svg {
+        fill: #44b086 !important;
+    }
+
+    & .content-1 {
+        @apply bg-[#44B086];
+    }
+
+    & .star-item {
+        @apply bg-[#44B086] hover:bg-[var(--primary-color)];
+    }
+
+    & .star-item.link-active {
+        @apply bg-[var(--primary-color)];
+    }
+}
+
+.star-widget-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.star-widget-inner {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}

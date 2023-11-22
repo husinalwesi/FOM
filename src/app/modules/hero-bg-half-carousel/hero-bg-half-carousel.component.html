@@ -1,0 +1,51 @@
+<!-- h-[272px] lg:h-[544px] -->
+<section class="relative overflow-hidden" [class.fullView]="fullView" [ngStyle]="{ height: height + 'px'}">
+    <owl-carousel-o #owlCarousel [options]="customOptions" (change)="onChange($event)">
+        <ng-container *ngFor="let slide of data.slice(0,8); let i = index">
+            <ng-template carouselSlide [id]="'hero-img-' + (i + 1)">
+
+                <div *ngIf="slide.image || slide.mobileImage" class="bg-no-repeat bg-cover bg-center"
+                    [ngStyle]="{'background-image': getImage(slide)}">
+                    <ng-container *ngTemplateOutlet="slideContent; context: { slide: slide }"></ng-container>
+                </div>
+
+                <div *ngIf="slide.video" class="bg-no-repeat bg-cover bg-center">
+                    <video [muted]="true" [loop]="true" [ngStyle]="{height: height + 'px'}">
+                        <source [src]="slide.video | imageSource" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <ng-container *ngTemplateOutlet="slideContent; context: { slide: slide }"></ng-container>
+                </div>
+
+
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</section>
+
+
+<ng-template #slideContent let-slide="slide">
+    <!-- mix-blend-soft-light -->
+    <div class="bg-black opacity-50"></div>
+    <div class="max-w-desktop absolute top-0 w-full px-10 mx-auto left-0 right-0">
+        <div class="carousel-content w-full flex flex-col gap-8 justify-end pb-24 lg:pb-[90px]">
+            <p *ngIf="!slide.link"
+                class="carousel-slide-title font-Cairo-Regular ltr:text-left rtl:text-right text-[28px] text-white uppercase"
+                [innerHTML]="slide.title[lang]"></p>
+            <a *ngIf="slide.link && isExternalMethod(slide?.link)" [href]="slide.link | routeLocalization" target="_blank"
+                class="carousel-slide-title font-Cairo-Regular ltr:text-left rtl:text-right text-[28px] text-white uppercase"
+                [innerHTML]="slide.title[lang]"></a>
+            <a *ngIf="slide.link && !isExternalMethod(slide?.link)" [routerLink]="slide.link | routeLocalization"
+                class="carousel-slide-title font-Cairo-Regular ltr:text-left rtl:text-right text-[28px] text-white uppercase"
+                [innerHTML]="slide.title[lang]"></a>
+            <p class="carousel-slide-desc ltr:text-left rtl:text-right font-Poppins-Light text-base text-white line-clamp-1"
+                [innerHTML]="slide.description[lang]"></p>
+
+
+            <app-btn-one *ngIf="slide?.link && slide?.btnText?.[lang]" [link]="slide.link" [text]="slide.btnText[lang]"
+                seoDesc="Text about the button" textClass="font-Cairo-Regular"
+                svg="assets/svgs/search.svg"></app-btn-one>
+
+        </div>
+    </div>
+</ng-template>

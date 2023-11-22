@@ -1,0 +1,7 @@
+<section class="bg-[#F5F5F5]">
+  <app-filter-w-tabs-multimedia [tabs]="filterrData" [lang]="lang"
+    (filterSubmit)="filterSubmit($event)"></app-filter-w-tabs-multimedia>
+  <app-videos *ngIf="selectedTab === 'videos'" [keyword]="keyword" [mediaType]="mediaType"></app-videos>
+  <app-galleries *ngIf="selectedTab === 'galleries'" [keyword]="keyword" [mediaType]="mediaType"></app-galleries>
+  <app-images *ngIf="selectedTab === 'images'" [keyword]="keyword" [mediaType]="mediaType"></app-images>
+</section>

@@ -1,0 +1,9 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+<!-- <app-breadcrumb-section-first-style [breadCrumb]="breadCrumb" [metaData]="data"></app-breadcrumb-section-first-style> -->
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data"></app-breadcrumb-section-second-style>
+<section class="bg-[#F5F5F5]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 pb-8 flex flex-col lg:flex-row flex-wrap gap-x-5 gap-y-11">
+        <app-item-files *ngFor="let item of items" [items]="item" [lang]="lang"
+            class="w-full lg:w-[calc(25%-15px)] h-full"></app-item-files>
+    </div>
+</section>

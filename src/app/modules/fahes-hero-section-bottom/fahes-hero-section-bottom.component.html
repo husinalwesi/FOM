@@ -1,0 +1,15 @@
+<div
+    class="hero-bottom-prices-section-container absolute bottom-0 w-full h-auto xl:h-[76px] z-10 flex border-t border-solid border-grey">
+    <div class="absolute bg-black opacity-30 w-full h-full"></div>
+    <div class="mx-auto relative w-full max-w-desktop px-0 lg:px-10">
+        <div class="relative flex flex-col xl:flex-row justify-between w-full h-full text-white z-20 gap-2 xl:gap-4">
+            <ul class="flex justify-center items-center w-full flex-col xl:flex-row">
+                <li *ngFor="let item of bottomSection;let i = index" class="w-full xl:w-1/5">
+                    <button type="button" (click)="clickOnTab(i)"
+                        class="bottom-item w-full text-center font-Cairo-Regular text-base capitalize relative block tracking-[-0.5px] text-white font-Futura-Bk-BT-Medium whitespace-nowrap py-2 xl:py-[22px]"
+                        [class.active]="item.selected">{{item.title[lang]}}</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

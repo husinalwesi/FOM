@@ -1,0 +1,7 @@
+<div class="flex items-center flex-col lg:flex-row gap-[18px]" [class.error]="isSubmit && !isVerified">
+    <re-captcha [(ngModel)]="captcha" name="captcha" required [siteKey]="siteKey"
+        (resolved)="resolved($event)"></re-captcha>
+    <p class="text-sm leading-[50px] font-Poppins-Light text-[#000]">
+        {{'SUPPLIER.PLEASE_TICK_THE_BOX_BEFORE_SUBMITTING' | translate}} <span class="text-[#FF0000]">*</span> 
+    </p>
+</div>

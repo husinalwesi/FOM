@@ -1,0 +1,41 @@
+- Handle catch error on main page api to redirect to 404
+order the pages in breadcrumb
+
+friendly url for career
+
+
+enhance the maps - home page map done enhancment
+
+
+api enhancment specialy in home page.
+
+color shadow in the menu
+
+
+npm run build:prod:ssr:iis
+npm run serve:ssr:hussein
+
+
+
+npm run build:ssr && npm run serve:ssr
+
+
+
+what apis is being captured in the browser,
+is it work in both side? try to refresh and try to route
+
+
+disable not needed this.translate.onLangChange.subscribe(data => {
+
+
+    
+    remove any unused code
+    may we try to make a unified api to get all apis in home page in a single one
+    
+
+should search more about this, and to have a replacment, for example in script load you can follow the one that exist in chat so the script is loaded before the client side
+    if (typeof window !== 'undefined') {
+
+
+
+fahes as a single site.

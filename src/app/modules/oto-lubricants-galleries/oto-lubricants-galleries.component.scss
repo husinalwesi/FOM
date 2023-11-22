@@ -1,0 +1,14 @@
+.lubricants {
+    @apply relative z-0;
+    img {
+        @apply absolute z-[-1];
+    }
+
+    img:first-of-type {
+        @apply top-0 -left-1/2;
+    }
+
+    img:last-of-type {
+        @apply bottom-0 -right-1/2;
+    }
+}

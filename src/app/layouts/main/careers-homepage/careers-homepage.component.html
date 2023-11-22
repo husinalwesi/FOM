@@ -1,0 +1,73 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [link]="'careers'" [breadCrumb]="breadCrumb" [metaData]="data"></app-breadcrumb-section-second-style>
+<app-our-story *ngIf="items && items.length && items.length > 0" [title]="items[0].title[lang]"
+  [text]="items[0].desc[lang]" [linkBtn]="items[0].link" buttonText="SHARED.READ_MORE"></app-our-story>
+<div class="bg-[#F5F5F5]" *ngIf="items && items.length && items.length > 1">
+  <ul class="max-w-desktop w-full px-4 lg:px-10 mx-auto py-[32px] flex flex-col lg:flex-row gap-8 flex-wrap">
+    <li *ngFor="let item of items.slice(1); let i = index"
+      class="bg-[#CBCBCB5E] rounded-[5px] w-full lg:w-[calc(25%-24px)] text-center pt-[33px] pb-[20px] lg:px-[30px] relative">
+      <app-our-values-btn [data]="item" [lang]="lang"></app-our-values-btn>
+    </li>
+  </ul>
+</div>
+<app-our-story [text]="contentBox?.title[lang]"> </app-our-story>
+<div class="bg-[#F5F5F5]">
+  <ul class="max-w-desktop w-full px-4 lg:px-10 mx-auto py-[32px] flex flex-col lg:flex-row gap-8 flex-wrap">
+    <li *ngFor="let item of area2Articles"
+      class="bg-[#CBCBCB5E] rounded-[5px] w-full lg:w-[calc(25%-24px)] text-center pt-[33px] pb-[20px] px-[30px]">
+      <app-our-values-btn [data]="item" [lang]="lang"></app-our-values-btn>
+    </li>
+  </ul>
+</div>
+<div class="bg-[#ECECEE]">
+  <ul *ngIf="jobs.length > 0 && lang ==='en'"
+    class="max-w-desktop w-full px-4 lg:px-10 mx-auto pt-[25px]  flex flex-col lg:flex-row gap-[30px]">
+    <li *ngFor="let job of jobs" class="bg-[#FFFFFF] lg:w-1/2 rounded-[5px]">
+      <app-career-item [data]="job" [lang]="lang"></app-career-item>
+    </li>
+  </ul>
+  <!-- <app-our-jobs [lang]="lang" [jobs]="jobs"></app-our-jobs> -->
+  <!-- <app-career-item [data]="jobs" [lang]="lang"></app-career-item> -->
+  <div class="max-w-desktop w-full px-4 lg:px-10 mx-auto py-[31px]">
+    
+    <app-btn-one (onClick)="ViewAllJobs()" text="SHARED.All_Jobs" seoDesc="Text about the button"
+      svg="assets/svgs/arrow.svg" textClass="font-Cairo-Regular text-base" svgClass="rotate-[270deg]"></app-btn-one>
+  </div>
+</div>
+<app-btn-w-image [title]="area3Title" [data]="area3Articles" [lang]="lang"></app-btn-w-image>
+<div class="bg-[#FFFFFF]">
+  <p
+    class="max-w-desktop px-4 lg:px-10 mx-auto pt-[37px] pb-[27px] font-Cairo-Bold text-[22px] leading-[26px] text-[#263238]">
+    {{'SHARED.Faq' | translate}}
+  </p>
+  <div class="max-w-desktop w-full px-4 lg:px-10 mx-auto py-[32px] flex flex-row flex-wrap md:gap-9 lg:gap-11 gap-y-3">
+    <!-- <div *ngFor="let faq of faqs;let i = index" class="w-full lg:w-[calc(50%-44px)]">
+      <app-faq [data]="faq" [lang]="lang" [index]="i"></app-faq>
+    </div> -->
+    <div class="flex flex-col lg:flex-row gap-y-6 gap-x-11 w-full">
+      <!-- List for Odd Elements -->
+      <div class="w-full lg:w-[calc(50%-24px)]">
+        <ul class="flex flex-col lg:flex-row gap-6 flex-wrap">
+          <ng-container *ngFor="let faq of faqs; let i = index">
+            <li *ngIf="i % 2 === 0" class="w-full">
+              <app-faq [data]="faq" [lang]="lang" [index]="i"></app-faq>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+      <!-- List for Even Elements -->
+      <div class="w-full lg:w-[calc(50%-24px)]">
+        <ul class="flex flex-col lg:flex-row gap-6 flex-wrap">
+          <ng-container *ngFor="let faq of faqs; let i = index">
+            <li *ngIf="i % 2 !== 0" class="w-full">
+              <app-faq [data]="faq" [lang]="lang" [index]="i"></app-faq>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <app-btn-one link="/faqs" textClass="font-Cairo-Regular text-base" text="SHARED.view_Faq" seoDesc="Text about the button" svg="assets/svgs/arrow.svg"
+      svgClass="rotate-[270deg]"></app-btn-one>
+  </div>
+</div>

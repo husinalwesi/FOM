@@ -1,0 +1,12 @@
+.active {
+    @apply after:border-[#008042];
+    & button span {
+        @apply text-[#008042];
+    }
+}
+@media screen and (max-width: 1023.98px) {
+    .vertical-rl-mixed {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}

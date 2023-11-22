@@ -1,0 +1,13 @@
+<section class="bg-[#F5F5F5]">
+  <div class="max-w-desktop mx-auto px-4 lg:px-11 py-[100px] flex flex-col lg:flex-row items-center gap-[46px]">
+    <div class="w-full lg:w-1/2">
+      <p class="ltr:text-left rtl:text-right font-Cairo-Regular text-[15px] leading-[24px] text-[#011C35]"
+        [innerHTML]="data?.box[lang]">
+      </p>
+    </div>
+    <div class="w-full lg:w-1/2 flex lg:justify-end">
+      <img class="h-[310px] w-full lg:max-w-[530px]" [defaultImage]="'loadingImage'| imageSource"
+        [errorImage]="'errorImage'| imageSource" [lazyLoad]="data?.img | imageSource" alt="" width="530" height="310" />
+    </div>
+  </div>
+</section>

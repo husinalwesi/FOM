@@ -1,0 +1,154 @@
+<nav class="fixed top-0 z-50 w-full bg-white shadow-[0px_0px_2px_#0000000D]">
+    <div
+        class="ltr:max-mobile-dashboard:px-4 rtl:max-mobile-dashboard:px-4 py-[18px] ltr:pr-[26px] ltr:pl-[308px] rtl:pr-[308px] rtl:pl-[26px]">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start">
+                <button (click)="openSideMenu()" data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar"
+                    aria-controls="logo-sidebar" type="button"
+                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                    <span class="sr-only">Open sidebar</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" fill-rule="evenodd"
+                            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                        </path>
+                    </svg>
+                </button>
+                <a [routerLink]="'/' | routeLocalization"
+                    class="ltr:ml-2 ltr:md:mr-24 rtl:mr-2 rtl:md:ml-24 hidden max-mobile-dashboard:flex">
+                    <app-svg src="assets/svgs/logo-dashboard.svg" customClass="mt-[-3px]" label="title_goas_here"
+                        [stretch]="false" height="36" width="141"></app-svg>
+                </a>
+                <app-breadcrumb class="flex max-mobile-dashboard:hidden"></app-breadcrumb>
+            </div>
+            <div class="flex items-center gap-[7px] lg:gap-[17px]">
+                <div class="flex items-center relative">
+                    <button (click)="isWalletDDL = !isWalletDDL"
+                        class="bg-[#003399]  rounded-[5px] text-center font-Poppins-Bold text-sm leading-[26px] px-[14px] pt-[2px] pb-[5px] capitalize text-white">
+                        {{ 'DASHBOARD.TOPUP' | translate}}
+                    </button>
+                    <div *ngIf="isWalletDDL"
+                        class=" bg-[#003399] absolute animate-[fadeInUp_0.3s_ease_both] ltr:right-0 rtl:left-0 top-[40px] w-max rounded-xl flex flex-col gap-[30px] pb-[18px] pt-2 ltr:pl-4 ltr:pr-4 rtl:pl-4 rtl:pr-4">
+                        <div class="flex justify-between items-center gap-4">
+                            <span class="font-Poppins-Light text-xs leading-5 text-white">My Wallet</span>
+                            <div class="relative flex items-center gap-px">
+                                <span
+                                    class="bg-white border border-solid border-[#00852C] rounded-[5px] text-center font-Cairo-Regular text-[11px] leading-[unset] px-1.5 pt-[1.5px] pb-[0.5px] capitalize text-[#00852C]">Topup</span>
+                                <button type="button" (click)="isWalletDDLEnabled = !isWalletDDLEnabled"
+                                    class="w-6 h-6 flex items-center justify-center">
+                                    <app-svg src="assets/svgs/dots.svg" fill="#FFFFFF" customClass="mt-[-3px]"
+                                        label="title_goas_here" width="14"></app-svg>
+                                </button>
+                                <div *ngIf="isWalletDDLEnabled"
+                                    class="bg-white rounded-[5px] absolute ltr:right-0 rtl:left-0 top-[26px] w-max shadow-[0px_2px_10px_#0000001A]">
+                                    <ul class="flex flex-col">
+                                        <li *ngFor="let item of walletDDL; let i = index"
+                                            class="border-b border-solid border-[#0000000D] last:border-0">
+                                            <button class="px-3 py-[9px] text-black font-Poppins-Light text-xs"
+                                                type="button">{{item}}</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="font-Poppins-Bold text-[24px] leading-5 text-white">{{userWalletAmmount |
+                                number:'1.2-2'}}</span>
+
+                            <span class="font-Poppins-Light text-base leading-5 text-white">{{'CURRENCIES.QR' |
+                                translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button (click)="toggleDDL()"
+                        class="relative w-[30px] h-[30px] bg-white border border-solid border-[#F5F5F5] rounded-full flex items-center justify-center">
+                        <app-svg src="assets/svgs/notification.svg" customClass="mt-[-5px]" label="title_goas_here"
+                            [stretch]="false" width="14" stroke="#000000"></app-svg>
+                        <div
+                            class="absolute right-[-5px] top-[-5px] font-Poppins-Medium text-[10px] leading-4 text-white w-[14px] h-[14px] bg-[#E73C3E] rounded-full flex items-center justify-center">
+                            3
+                        </div>
+                    </button>
+                    <div *ngIf="isDdlEnabled"
+                        class="absolute animate-[fadeInUp_0.3s_ease_both] ltr:right-0 rtl:left-0 top-[80px] rounded-[5px] z-10 overflow-auto w-[282px] max-h-[200px] bg-white shadow-[0px_1px_13px_#0000001A]"
+                        [class.animate-close]="fireCloseAnimation">
+                        <ul class="flex flex-col">
+                            <li *ngFor="let _ of [].constructor(16); let i = index" [class.active]="i == 2"
+                                class="px-[15px] py-3 relative after:absolute after:border-b after:bottom-0 after:left-0 after:right-0  after:w-[90%] after:mx-auto">
+                                <p class="font-Poppins-Light text-xs leading-[18px]">Notification {{i+1}}</p>
+                                <p class="font-Poppins-Light text-[11px] leading-[20px] text-[#7C7C7C]">Lorem Ipsum is
+                                    simply dummy text of the printing and typesetting industry</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div>
+                        <button type="button" (click)="isUserMenuEnabled = !isUserMenuEnabled"
+                            class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
+                            aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                            <span class="sr-only">Open user menu</span>
+                            <img class="w-10 h-10 rounded-full border border-solid border-[#009933]"
+                                [src]="userDetails?.imageID | imageSource" alt="user photo">
+                        </button>
+                    </div>
+
+
+
+                    <div *ngIf="isUserMenuEnabled"
+                        class="absolute top-[68px] ltr:right-2.5 rtl:left-2.5 w-[338px] h-auto bg-white z-[100] rounded-lg shadow-custom-6">
+                        <div class="mt-11 mb-5 mx-auto relative">
+                            <img class="w-[82px] mx-auto h-[82px] bg-[#ECECEE] border-2 border-solid border-[#009933] rounded-full"
+                                [lazyLoad]="userDetails?.imageID | imageSource"
+                                [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+                                alt="User Image" />
+                            <div
+                                class="absolute rounded-full flex justify-center items-center left-0 mx-auto right-[-55px] -bottom-2.5 bg-[#CCCCCC] w-[30px] h-[30px] border-2 border-solid border-white custom-7">
+                                <app-svg src="assets/svgs/arrow.svg" label="title_goas_here" [stretch]="false"
+                                    width="24" height="24" stroke="#ffffff"></app-svg>
+                            </div>
+                        </div>
+                        <div class="px-[22px]">
+                            <p class="text-center -mt-2.5 font-Poppins-Medium text-lg leading-[50px] text-black">
+                                {{userDetails?.firstName}} {{userDetails?.lastName}}
+                            </p>
+                            <hr class="border-t-[#E0E0E0] mt-3 mb-[22px]" />
+                            <ul class="flex flex-col gap-3">
+                                <li *ngFor="let item of userMenu" class="flex justify-between gap-2 cursor-pointer"
+                                    [routerLink]="item.link | routeLocalization">
+                                    <div class="flex gap-3 items-center">
+                                        <app-svg [src]="item.svg" customClass="" label="title_goas_here"
+                                            [stretch]="false" width="24" height="24" fill="#000000"></app-svg>
+                                        <span
+                                            class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-5 text-[#221E20]">{{
+                                            item.title }}</span>
+                                    </div>
+                                    <app-svg src="assets/svgs/arrow.svg"
+                                        customClass="ltr:rotate-[270deg] rtl:rotate-[90deg]" label="title_goas_here"
+                                        [stretch]="false" width="24" height="24" stroke="#000000"></app-svg>
+                                </li>
+                            </ul>
+                            <hr class="border-t-[#E0E0E0] mt-[54px] mb-3" />
+                            <ul class="flex flex-col gap-3 mb-3">
+                                <li class="flex justify-between gap-2 cursor-pointer" (click)="logout()">
+                                    <div class="flex gap-3 items-center">
+                                        <app-svg src="assets/svgs/whistle-blowing.svg" customClass=""
+                                            label="title_goas_here" [stretch]="false" width="24" height="24"
+                                            fill="#000000"></app-svg>
+                                        <span
+                                            class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-5 text-[#221E20]">Logout</span>
+                                    </div>
+                                    <app-svg src="assets/svgs/arrow.svg"
+                                        customClass="ltr:rotate-[270deg] rtl:rotate-[90deg]" label="title_goas_here"
+                                        [stretch]="false" width="24" height="24" stroke="#000000"></app-svg>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,26 @@
+<div class="relative lg:h-[49px]" [class.error]="isErrorEnabled" appClickOutSide
+    (appOutsideClick)="isDdlEnabled ? toggleDDL() : ''">
+    <button type="button" (click)="toggleDDL()"
+        class="w-full lg:w-auto flex gap-[10px] items-center  h-full py-3 lg:py-0 px-[47px] bg-[#E3E3E3] rounded-tl-[4px] rounded-tr-[4px] ltr:lg:rounded-tr-none ltr:lg:rounded-bl-[4px] rtl:lg:rounded-tr-[4px] rtl:lg:rounded-tl-none rtl:lg:rounded-br-[4px] justify-center border-l lg:ltr:border-r-0 border-r border-t lg:border-y border-solid border-[#707070]">
+        <app-svg src="assets/svgs/doc-serach.svg" customClass="" label="title_goas_here" [stretch]="false" width="24" height="30"
+        strok="#000" ></app-svg>
+        <span class="font-Poppins-Light text-xs text-[#000]">{{data?.selected?.key ? data?.selected?.title[lang] :
+            (data?.placeholder | translate )}}</span>
+        <app-svg src="assets/svgs/arrow.svg"
+            [customClass]="isDdlEnabled && !fireCloseAnimation ? 'transition-all rotate-[180deg]' : 'transition-all'"
+            label="title_goas_here" [stretch]="false" width="25" height="25" stroke="#000"></app-svg>
+    </button>
+    <div *ngIf="isDdlEnabled"
+        class="absolute animate-[fadeInUp_0.3s_ease_both] left-0 top-[48px] rounded-[5px] z-20 overflow-auto w-full max-h-[200px] bg-white shadow-[0px_1px_13px_#0000001A]"
+        [class.animate-close]="fireCloseAnimation">
+        <ul class="flex flex-col">
+            <li *ngFor="let option of data?.list" [class.active]="option.key === data?.selected?.key">
+                <button type="button" (click)="selectOption(option)"
+                    class="w-full ltr:text-left rtl:text-right break-words font-Poppins-Light text-sm leading-[26px] text-[#2B2B2B] py-3 px-5 transition-all hover:bg-slate-100">{{option.title[lang]}}</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<span *ngIf="isErrorEnabled && isErrorTextEnabled"
+    class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+    |translate}}</span>

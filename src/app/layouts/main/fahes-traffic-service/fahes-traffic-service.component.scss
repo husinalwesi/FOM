@@ -1,0 +1,28 @@
+table{
+    & tbody > tr{
+        @apply min-h-[95px];
+        &:nth-child(odd){
+            @apply bg-[#ECECEC];
+        }
+        &:nth-child(even){
+            @apply bg-white;
+        }
+        & td{
+            @apply px-6 py-[25px] text-[#011C35];            
+            &.normal{
+                @apply font-Cairo-Regular text-sm;
+            }
+            &.tender-id{
+                @apply font-Cairo-Bold text-base underline;
+            }
+        }
+    }
+    & thead{
+        & th{
+            @apply px-6 py-[15px] whitespace-nowrap;
+        }
+    }
+}
+app-ethic-item ::ng-deep img {
+    @apply w-[29px] h-[37px] mb-[22px]
+ }

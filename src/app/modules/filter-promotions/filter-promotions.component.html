@@ -1,0 +1,42 @@
+<div class="relative lg:sticky top-0 w-full bg-[#ECECEC] h-auto pt-8" [style.top.px]="top">
+    <p class="py-[17px] px-12 ltr:text-left rtl:text-right font-Cairo-Bold text-xl text-[#22232B] bg-white">
+        {{'PROMOTION_FILTER.FILTER_PROMOTIONS' | translate}}</p>
+    <form #form="ngForm" novalidate (ngSubmit)="onSubmit(form)">
+        <div class="pt-11 pb-[52px] px-12 flex flex-col gap-[37px]">
+            <div class="flex flex-col gap-[30px]">
+                <div class="flex flex-col gap-2">
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-lg text-[#22232B]">
+                        {{'PROMOTION_FILTER.LOCATION' | translate}}</p>
+                    <app-ddl [data]="locationDDL" (onOptionChange)="locationChange($event)"></app-ddl>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-lg text-[#22232B]">
+                        {{'PROMOTION_FILTER.DATE_RANGE' | translate}}</p>
+                    <div class="w-full flex flex-col lg:flex-row gap-x-11 gap-y-2">
+                        <app-date-picker [data]="{placeholder: 'PLACEHOLDER.DATE_FROM', value: dateFrom}" [max]="dateTo"
+                            pickerType='both' (dateChange)="dateFrom = $event"
+                            class="w-full lg:w-1/2"></app-date-picker>
+                        <app-date-picker pickerType='both' [data]="{placeholder: 'PLACEHOLDER.DATE_TO', value: dateTo}"
+                            [min]="dateFrom" (dateChange)="dateTo = $event" class="w-full lg:w-1/2"></app-date-picker>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-lg text-[#22232B]">
+                        {{'PROMOTION_FILTER.PROMOTION_CATEGORY' | translate}}
+                    </p>
+                    <app-ddl [data]="promotionCategoryDDL" (onOptionChange)="promotionCategoryChange($event)"></app-ddl>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-lg text-[#22232B]">
+                        {{'PROMOTION_FILTER.PROMOTION_STATUS' | translate}}</p>
+                    <app-ddl [data]="promotionStatusDDL" (onOptionChange)="promotionStatusChange($event)"></app-ddl>
+                </div>
+            </div>
+            <div>
+                <app-btn-one text="PROMOTION_FILTER.APPLY_FILTER" seoDesc="Text about the button"
+                    svg="assets/svgs/search.svg" textClass="font-Poppins-Light text-lg"
+                    (onClick)="onSubmit(form)"></app-btn-one>
+            </div>
+        </div>
+    </form>
+</div>

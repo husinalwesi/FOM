@@ -1,0 +1,32 @@
+<section class="w-full lg:h-[456px] bg-[#003399] overflow-hidden">
+
+    <div class="max-w-desktop px-0 lg:px-10 mx-auto flex flex-row flex-wrap h-full items-center">
+        <div class="w-full lg:w-3/5 flex flex-row lubricants">
+            <!-- backgroud shape images  -->
+            <img src="/assets/images/lubricants/left.webp" alt="svg shape" />
+            <img src="/assets/images/lubricants/left.webp" alt="svg shape" />
+
+            <!-- description left box -->
+            <div class="pl-[30px] pr-[10px] pt-5 pb-[30px] w-3/4 m-auto z-[1]">
+                <p *ngIf="data.title"
+                    class="mb-5 ltr:text-left rtl:text-right text-xl text-[25px] capitalize font-Cairo-Bold text-[#fff] line-clamp-2"
+                    [innerHTML]="data.title[lang]">
+                </p>
+                <p *ngIf="data.desc"
+                    class="mb-[22px] ltr:text-left rtl:text-right font-Cairo-Regular text-white text-[20px] line-clamp-4"
+                    [innerHTML]="data.desc[lang]">
+                </p>
+                <app-btn-one *ngIf="data?.link?.[lang]" textClass="font-Cairo-Regular text-base"
+                    [link]="data?.link?.[lang]" [isExternal]="false" [text]="data.btnText[lang]"
+                    seoDesc="oto lubricants galleries" svg="assets/svgs/search.svg"></app-btn-one>
+            </div>
+        </div>
+        <!-- right image  -->
+        <div class="w-full lg:w-2/5 z-[1] p-4 lg:p-0">
+            <img [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+                [lazyLoad]="data.img | imageSource" alt="sidra image" class="h-full w-full rounded-2xl mb-4 lg:mb-0"
+                #card [ngStyle]="{height: heightMain + 'px'}" />
+        </div>
+    </div>
+
+</section>

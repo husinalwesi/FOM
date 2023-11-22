@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512"
+    xml:space="preserve" stroke="#000000">
+    <g>
+        <path d="M286 26v93h93" style="stroke-width:30;stroke-miterlimit:10;" fill="none" stroke-width="30" stroke-miterlimit="10"></path>
+        <path d="M390 272V119L286 15H27v482h344.5M72 119h120M72 437h120M100 314h186M145 313v-98M205 313V172M265 313v-98" style="stroke-width:30;stroke-miterlimit:10;" fill="none" stroke-width="30" stroke-miterlimit="10"></path>
+        <circle cx="371.5" cy="383.5" r="113.5" style="stroke-width:30;stroke-miterlimit:10;" fill="none" stroke-width="30" stroke-miterlimit="10"></circle>
+        <path d="M405.764 397.037c0-18.923-34.264-61.338-34.264-61.338s-34.264 42.415-34.264 61.338 15.34 34.264 34.264 34.264 34.264-15.34 34.264-34.264zM72 377h185" style="stroke-width:30;stroke-miterlimit:10;" fill="none" stroke-width="30" stroke-miterlimit="10"></path>
+    </g>
+</svg>

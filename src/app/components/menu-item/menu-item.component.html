@@ -1,0 +1,78 @@
+<div class="relative" [class.hovering]="isHoverEnabled" (mouseenter)="mouseenter($event)"
+    (mouseleave)="mouseleave($event)" (click)="menuItemClick($event)" [ngClass]="pageType">
+    <button routerLinkActive="active" type="button" (click)="clickMenuItem($event,data)"
+        class="menu-item relative inline-flex py-6 -mt-6 text-white tracking-[-0.5px] font-Cairo-Regular text-sm w-full lg:w-auto transition-all"
+        [class.has-sub-menu]="data?.subMenu.length > 0" [class.sticky-enabled]="isStickyEnabled">
+        <span class="relative inner-item w-full lg:w-auto">
+            <span class="flex justify-between">
+                <div class="relative">
+                    <span *ngIf="!data.link">{{data.title}}</span>
+                    <ng-container *ngIf="data.link">
+
+                        <ng-container *ngIf="isExternalMethod(data.link)">
+                            <a *ngIf="data.linkTarget === '_blank'" target="_blank" (click)="closeMenu()"
+                                [href]="data.link | routeLocalization">{{data.title}}<span
+                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                    more about this button</span></a>
+
+                            <a *ngIf="data.linkTarget !== '_blank'" (click)="closeMenu()"
+                                [href]="data.link | routeLocalization">{{data.title}}<span
+                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                    more about this button</span></a>
+                        </ng-container>
+
+
+                        <ng-container *ngIf="!isExternalMethod(data.link)">
+                            <a *ngIf="data.linkTarget === '_blank'" target="_blank" (click)="closeMenu()"
+                                [href]="data.link | routeLocalization">{{data.title}}<span
+                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                    more about this button</span></a>
+
+                            <a *ngIf="data.linkTarget !== '_blank'" (click)="closeMenu()"
+                                [routerLink]="data.link | routeLocalization">{{data.title}}<span
+                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                    more about this button</span></a>
+                        </ng-container>
+
+
+
+                    </ng-container>
+
+                    <!-- <span *ngIf="data.isNew"
+                        class="new-item absolute ltr:right-0 rtl:left-0 px-1 h-[11px] flex rounded-[3px] items-center justify-center -top-2.5 tracking-[-0.29px] font-Poppins-Light text-[0.5rem] animate-[bounce_1s_ease_infinite]">{{'SHARED.NEW'
+                        | translate}}</span> -->
+                </div>
+                <span *ngIf="data?.subMenu.length > 0" class="transition-all">
+                    <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                        width="18" height="18" stroke="white"></app-svg>
+                </span>
+            </span>
+        </span>
+    </button>
+
+    <div *ngIf="data?.subMenu.length > 0" [attr.id]="id" [style.left.px]="leftPosition"
+        class="sub-menu relative lg:absolute top-0 lg:top-[48px] bg-white rounded-[5px] flex-col lg:flex-row hidden w-[calc(100%+38px)] lg:min-w-[300px] lg:w-auto shadow-custom-5 mb-8 lg:mb-0"
+        (click)="$event.stopPropagation();">
+
+
+        <!-- *ngIf='data.title === "About Us"' -->
+        <ng-container *ngFor="let subMenuInner of data?.subMenu">
+
+
+            <div class="menu-with-title w-full lg:w-max flex flex-col gap-4 px-4 ltr:lg:pl-8 rtl:lg:pr-8 py-4 lg:pt-[50px] lg:pb-8"
+                *ngIf="subMenuInner?.menuWithTitle">
+                <app-menu-item-list-title *ngFor="let menu of subMenuInner?.menuWithTitle" [title]="menu.title"
+                    [link]="menu.link" [linkTarget]="menu.linkTarget" [menu]="menu.list"
+                    (closeMobileMenu)="closeMenu()"></app-menu-item-list-title>
+            </div>
+            <div class="bg-[#EDFFF6] w-[calc(100%-1rem)] lg:w-[258px] flex rounded-[6px] mx-auto lg:mx-5 mt-5 mb-8"
+                *ngIf="subMenuInner?.menuDescription"
+                [class.white-bg]="subMenuInner?.menuDescription?.img && subMenuInner?.menuDescription?.btn?.link && subMenuInner?.menuDescription?.btn?.text && !subMenuInner?.menuDescription?.title && !subMenuInner?.menuDescription?.desc">
+                <app-menu-item-our-story class="w-full"
+                    [data]="subMenuInner?.menuDescription"></app-menu-item-our-story>
+            </div>
+
+        </ng-container>
+
+    </div>
+</div>

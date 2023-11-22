@@ -1,0 +1,65 @@
+<section class="pt-20 pb-24">
+    <div class="max-w-desktop-less mx-auto w-full px-4 lg:px-0">
+        <div class="flex justify-between items-center mb-7">
+            <p
+                class="ltr:text-left rtl:text-right font-Poppins-Light text-[27px] leading-10 tracking-normal text-[#011D37]">
+                {{'NEWS.WOQOD_NEWS' | translate}}
+            </p>
+            <a class="ltr:text-right rtl:text-left font-Poppins-Light text-lg tracking-normal text-[#011C35]"
+                [routerLink]="'/media-center/news-and-announcements' | routeLocalization"> {{'NEWS.VIEW_ALL_NEWS' |
+                translate}}</a>
+        </div>
+        <div class="flex flex-row flex-wrap gap-7 w-full mx-auto justify-between">
+
+
+            <div class="w-full lg:w-[calc(50%-14px)]" *ngFor="let newsListContainer of newsList;let newsIndex = index">
+                <ul
+                    class="relative flex flex-col h-full gap-[50px] after:content-normal after:bg-[#011C35] after:w-px after:h-[calc(100%+2rem)] after:absolute ltr:after:left-[65px] rtl:after:right-[65px] after:-top-4">
+
+                    <li *ngFor="let newsItem of newsListContainer;let i = index"
+                        class="flex flex-row gap-14 lg:gap-10 relative
+                    after:content-normal after:bg-[#3E64FF] after:w-2 after:h-2 after:absolute ltr:after:left-[61.5px] rtl:after:right-[61.5px] after:z-10 after:-top-2.5 after:bottom-0 after:m-auto after:rounded-full"
+                        [class.timeline-bult-2]="checkVisited(newsItem.date)">
+
+                        <div class="flex flex-col self-center w-12 text-center">
+                            <span
+                                class="text-center font-Poppins-Bold text-[35px] leading-[29px] tracking-normal text-[#011C35]">{{newsItem.date
+                                | date:'dd'}}</span>
+                            <span
+                                class="text-[#011C35] text-center font-Poppins-Light text-xs tracking-normal -mt-0.5">{{
+                                ('MONTHS.' + ((newsItem.date | date:'MMM')?.toUpperCase())) | translate }}</span>
+                        </div>
+                        <div class="flex flex-col gap-2.5">
+                            <a *ngIf="isExternalMethod(newsItem?.link)"  [href]="newsItem.link | routeLocalization" target="_blank"
+                                class="ltr:text-left rtl:text-right ltr:font-Poppins-Medium text-[16px] lg:text-[21px] leading-[31px] tracking-normal text-[#011C35] line-clamp-2"
+                                [innerHTML]="newsItem.title[lang]" (click)="visitedLinkAdd(newsItem.date + ',')"></a>
+                            <a *ngIf="!isExternalMethod(newsItem?.link)"  [routerLink]="newsItem.link | routeLocalization"
+                                class="ltr:text-left rtl:text-right ltr:font-Poppins-Medium text-[16px] lg:text-[21px] leading-[31px] tracking-normal text-[#011C35] line-clamp-2"
+                                [innerHTML]="newsItem.title[lang]" (click)="visitedLinkAdd(newsItem.date + ',')"></a>
+
+                            <p class="ltr:text-left line-clamp-1 rtl:text-right font-Poppins-Light text-[15px] leading-[23px] tracking-normal text-[#011C35] "
+                                [innerHTML]="newsItem.description[lang]"></p>
+                            <a *ngIf="isExternalMethod(newsItem?.link)" class="ltr:text-left rtl:text-right ltr:font-Poppins-Light text-[15px] leading-[23px] tracking-normal uppercase text-[#846424]"
+                                [href]="newsItem.link | routeLocalization" target="_blank"
+                                (click)="visitedLinkAdd(newsItem.date + ',')">
+                                <span class="uppercase">{{'SHARED.READ_MORE' | translate}}</span>
+                                <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden"
+                                    [innerHTML]="newsItem.title"></span>
+                            </a>
+                            <a *ngIf="!isExternalMethod(newsItem?.link)" class="ltr:text-left rtl:text-right ltr:font-Poppins-Light text-[15px] leading-[23px] tracking-normal uppercase text-[#846424]"
+                                [routerLink]="newsItem.link | routeLocalization"
+                                (click)="visitedLinkAdd(newsItem.date + ',')">
+                                <span class="uppercase">{{'SHARED.READ_MORE' | translate}}</span>
+                                <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden"
+                                    [innerHTML]="newsItem.title"></span>
+                            </a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</section>

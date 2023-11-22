@@ -1,0 +1,9 @@
+app-career-item ::ng-deep > div{
+    @apply h-full;
+    & div:nth-child(2) p:nth-child(2) {
+        @apply  lg:mb-[55px]
+    }
+}
+app-our-story ::ng-deep section > div{
+    @apply py-4 lg:py-10
+}

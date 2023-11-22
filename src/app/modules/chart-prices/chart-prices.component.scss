@@ -1,0 +1,28 @@
+apx-chart::ng-deep {
+    .apexcharts-toolbar {
+        display: none !important;
+    }
+
+    .apexcharts-xaxistooltip-bottom.apexcharts-active {
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        background-color: #009933;
+        border-radius: 30px;
+        color: white;
+
+        &>div {
+            font-family: 'Poppins-Light';
+            font-size: 14px;
+        }
+    }
+
+    .apexcharts-legend-text {
+        padding-left: 15px;
+        margin-left: unset;
+        padding-right: 15px;
+    }
+}

@@ -1,0 +1,7 @@
+<section class="bg-white">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 flex flex-col lg:flex-row pt-[30px] pb-14 gap-[60px]">
+        <div *ngFor="let item of data" class="w-full lg:w-[calc(100%-60px)]">
+            <app-delivery-item [data]="item" [lang]="lang"></app-delivery-item>
+        </div>
+    </div>
+</section>

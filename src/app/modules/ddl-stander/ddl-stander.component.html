@@ -1,0 +1,34 @@
+<div class="w-full relative h-[60px]" [class.error]="isErrorEnabled" [class.disabled]="isDisabled" appClickOutSide
+  (appOutsideClick)="isDdlEnabled ? toggleDDL() : ''">
+  <button type="button" (click)="toggleDDL()"
+    class="shadow h-full cursor-pointer appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500 ltr:pr-8 rtl:pl-8 bg-white">
+    <span
+      class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1">{{data?.placeholder
+      | translate}} <span *ngIf="isRequired">*</span></span>
+
+    <p class="font-Cairo-Regular ltr:text-left rtl:text-right text-sm text-[#22232B]">{{data?.selected?.key ?
+      (data?.selected?.title[lang] | translate) :
+      ('SHARED.CHOOSE_ONE' | translate)}}</p>
+
+    <div
+      class="pointer-events-none absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center ltr:pr-3 rtl:pl-3 text-[#717171] cursor-pointer">
+      <app-svg src="assets/svgs/arrow.svg"
+        [customClass]="isDdlEnabled && !fireCloseAnimation ? 'transition-all rotate-[180deg]' : 'transition-all'"
+        label="title_goas_here" [stretch]="false" width="20" height="20" stroke="#131313"></app-svg>
+    </div>
+  </button>
+  <div *ngIf="isDdlEnabled"
+    class="dropdown-ddl absolute animate-[fadeInUp_0.3s_ease_both] ltr:left-0 rtl:right-0 top-[62px] rounded-[5px] overflow-auto w-full max-h-[200px] bg-white shadow-[0px_1px_13px_#0000001A] z-20"
+    [class.animate-close]="fireCloseAnimation">
+    <ul class="flex flex-col">
+      <li *ngFor="let option of data?.list" [class.active]="option.key === data?.selected?.key">
+        <button type="button" (click)="selectOption(option)"
+          class="w-full ltr:text-left rtl:text-right break-words font-Poppins-Light text-sm leading-[26px] text-[#2B2B2B] py-3 px-5 transition-all hover:bg-slate-100">{{option.title[lang]
+          | translate}}</button>
+      </li>
+    </ul>
+  </div>
+</div>
+<span *ngIf="isErrorEnabled"
+  class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+  |translate}}</span>

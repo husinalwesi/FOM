@@ -1,0 +1,246 @@
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-4">
+  {{ "TENDER_DETAILS.TENDER_INFORMATION" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "TENDER_DETAILS.S_NUMBER" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-4" [innerHTML]="data?.sNumber"></p>
+<p class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "TENDER_DETAILS.TENDER_NUMBER" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-4" [innerHTML]="data?.tenderNumber"></p>
+
+<p class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "TENDER_DETAILS.TEBDER_CATEGORY" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-4" [innerHTML]="data?.category[lang]"></p>
+<p class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "TINDER.BID_CLOSING_DATE" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-4" [innerHTML]="data?.date | date:'dd-MM-YYYY'">
+</p>
+<p class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "TINDER.LAST_COLLECTION_DATE" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-4"
+  [innerHTML]="data?.lastdate | date:'dd-MM-YYYY'"></p>
+<p class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "TENDER_DETAILS.FEE" | translate }}
+</p>
+<p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-3 ">{{'CURRENCIES.QR' | translate}} <span
+    class="ltr:pl-1 rtl:pr-1">{{data?.fee}}</span> </p>
+<p *ngIf="docs?.length > 0" class="text-[#011C35] font-Cairo-Regular text-[18px] leading-[37px] pb-1">
+  {{ "BREADCRUMB.Document" | translate }}
+</p>
+<ul *ngIf="docs?.length > 0" class="list-disc ltr:pl-5 rtl:pr-5 mb-5">
+  <li *ngFor="let item of docs">
+    <a *ngIf="item" [href]="item.file | file" target="_blank" download>
+      <p class="text-[#011C35] font-Cairo-Bold text-[22px] leading-[37px] pb-3 " style="word-wrap: break-word;"> {{item?.title}} </p>
+  </a>  
+  </li>
+</ul>
+
+
+<!-- <app-btn-one id="career-btn" textClass="font-Cairo-Regular text-base" text="CAREER_LISTING.REQUEST"
+  seoDesc="Text about the button" svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"
+  (onClick)="isModalEnabled1 = true"></app-btn-one> -->
+
+<!-- <app-modal [template]="modalTemplatePlaceholder1" [isModalEnabled]="isModalEnabled1"
+  (closeModalByKeyboard)="isModalEnabled1 = false" modalClasses="top-0 bottom-0 w-[90%] max-w-[1024px]">
+  <ng-template #modalTemplatePlaceholder1>
+    <div class="bg-white pt-[24px] pb-[41px] px-[19px] rounded-[5px]">
+      <div class="modal-header flex justify-end pb-[23px]">
+        <button type="button">
+          <app-svg (click)="isModalEnabled1 = false" src="assets/svgs/close.svg" customClass="" label="title_goes_here"
+            [stretch]="false" width="16" height="16" fill="#000"></app-svg>
+        </button>
+      </div>
+      <div class="modal-body lg:px-[24px]">
+        <p class="ltr:text-left rtl:text-right font-Poppins-Medium text-xl leading-[50px] pb-[21px]">
+          {{ "CAREER_LISTING.REQUEST" | translate }}
+        </p>
+        <div
+          class="lg:mx-[0px] bg-[#EDFFF6] border border-solid border-[#94EFC3] mb-[45px] rounded-[5px] flex flex-col lg:flex-row justify-between px-4 lg:px-4 py-[30px]">
+          <div class="w-full lg:w-auto">
+            <p class="text-[#7C7C7C] text-xs leading-[20px] font-Poppins-Light pb-[6px]">
+              {{ "TENDER_DETAILS.S_NUMBER" | translate }}
+            </p>
+            <p class="text-[#011C35] text-sm leading-[20px] font-Poppins-Medium pb-[6px]" [innerHTML]="data?.sNumber">
+            </p>
+          </div>
+          <div class="w-full lg:w-auto">
+            <p class="text-[#7C7C7C] text-xs leading-[20px] font-Poppins-Light pb-[6px]">
+              {{ "TENDER_DETAILS.TENDER_NUMBER" | translate }}
+            </p>
+            <p class="text-[#011C35] text-sm leading-[20px] font-Poppins-Medium pb-[6px]"
+              [innerHTML]="data?.tenderNumber"></p>
+          </div>
+          <div class="w-full lg:w-auto">
+            <p class="text-[#7C7C7C] text-xs leading-[20px] font-Poppins-Light pb-[6px]">
+              {{ "TENDER_DETAILS.TEBDER_CATEGORY" | translate }}
+            </p>
+            <p class="text-[#011C35] text-sm leading-[20px] font-Poppins-Medium pb-[6px]"
+              [innerHTML]="data?.category[lang]"></p>
+          </div>
+          <div class="w-full lg:w-auto">
+            <p class="text-[#7C7C7C] text-xs leading-[20px] font-Poppins-Light pb-[6px]">
+              {{ "TENDER_DETAILS.FEE" | translate }}
+            </p>
+            <p class="text-[#011C35] text-sm leading-[20px] font-Poppins-Medium pb-[6px]" [innerHTML]="data?.fee"></p>
+          </div>
+        </div>
+        <form #form="ngForm" novalidate>
+          <div class="flex flex-col lg:flex-row flex-wrap gap-4">
+            <div class="w-full lg:w-[calc(50%-8px)]">
+              <div class="relative mb-4" [class.isFormEnabled]="isFormEnabled">
+                <div class="relative">
+                  <input
+                    class="appearance-none border border-[#E0E0E0] rounded w-full py-[19px] ltr:pl-[19px] ltr:pr-[90px] rtl:pl-[90px] rtl:pr-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"  
+                    id="crNumber" type="text" name="crNumber" [class.disabled]="isFormEnabled" [(ngModel)]="formData.crNumber"  
+                    required onlyNumbers [class.error]="isSubmitted && !form?.controls?.crNumber?.valid"    
+                    [placeholder]="'PLACEHOLDER.CR_NUMBER' | translate" />      
+                  <label  
+                    class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"      
+                    for="crNumber">{{'SHOP.CR_NUMBER' | translate}} *</label>
+                  <button *ngIf="!isFormEnabled" type="button" (click)="getCheckValidate(form)"
+                    class="absolute px-4 text-[#008545] h-full text-sm top-0 leading-[21px] font-Poppins-Light block ltr:right-0 rtl:left-0">
+                    {{'SHOP.VALIDATE' | translate}}
+                  </button>
+                </div>
+                <span *ngIf="isSubmitted && !form?.controls?.crNumber?.valid"
+                  class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                  "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+              </div>
+            </div>
+            <div class="w-full lg:w-[calc(50%-8px)] mt-[-20px]">
+              <div class="flex flex-row gap-4 items-center">
+                <p class="font-Poppins-Medium text-sm leading-[20px] w-[186px] text-[#011C35]" [class.isFormEnabled]="!isFormEnabled">
+                  {{'TENDER_MODAL.CR_CERTIFICATE' | translate }}
+                </p>
+                <app-attachment-third-style [isFormEnabled]="!isFormEnabled" [data]="CRNumberFile" [isImage]="false"
+                  [accept]="['image/jpg', 'image/jpeg', 'image/png']"
+                  [isErrorEnabled]="isSubmitted && !CRNumberFile.file"
+                  (selectFileEmiter)="crCretificateEmitHandler($event)">
+                </app-attachment-third-style>
+              </div>
+            </div>
+            <div class="w-full lg:w-[calc(50%-8px)]">
+              <div class="relative mb-4" >
+                <input
+                [class.disabled]="!isFormEnabled"
+                  class="appearance-none border border-[#E0E0E0] rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+                  id="name"
+                  name="name"
+                  [(ngModel)]="formData.name"
+                  required
+                  onlyText
+                  minlength="3"
+                  maxlength="256"
+                  [class.error]="isSubmitted && !form?.controls?.name?.valid"
+                  type="text"
+                  placeholder="{{'PLACEHOLDER.FULL_NAME' | translate }}"
+                />
+                <label 
+                  class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+                  for="name">{{ "E_TAG.NAME" | translate }} *</label>
+                <span *ngIf="isSubmitted && !form?.controls?.name?.valid"
+                  class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                  "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+              </div>
+            </div>
+            <div class="w-full lg:w-[calc(50%-8px)]">
+              <div class="relative mb-4">
+                <input
+                  class="appearance-none border border-[#E0E0E0] rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+                  id="email" name="email" [(ngModel)]="formData.email" required [class.disabled]="!isFormEnabled"
+                  [class.error]="isSubmitted && !form?.controls?.email?.valid" type="text" placeholder="{{'PLACEHOLDER.EMAIL' | translate }}" />
+                <label
+                  class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+                  for="email">{{ "E_TAG.EMAIL" | translate }} *</label>
+                <span *ngIf="isSubmitted && !form?.controls?.email?.valid"
+                  class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                  "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+              </div>
+            </div>
+          </div>
+          <p class="font-Poppins-Medium text-xl leading-[50px] pt-[30px] pb-[35px]">
+            {{'TENDER_MODAL.ADDRESS' | translate }}
+          </p>
+          <div class="flex flex-col lg:flex-row flex-wrap gap-4 pb-[48px]">
+            <div class="w-full lg:w-[calc(50%-8px)] relative">
+              <label for="zoneNumber"
+                class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+                {{ "E_TAG.ZONE_NUMBER" | translate }}
+                <sup class="font-Cairo-Regular text-[15px] text-[#E73C3E] ltr:-left-px rtl:-right-px top-0">
+                  *</sup>
+              </label>
+              <input  type="text" id="zoneNumber" name="zoneNumber"
+                [(ngModel)]="formData.zoneNumber" required [class.error]="
+                  isSubmitted && !form?.controls?.zoneNumber?.valid
+                " onlyNumbers  [class.disabled]="!isFormEnabled"
+                class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+                placeholder="{{'PLACEHOLDER.ZONE' | translate }}" />
+              <span *ngIf="isSubmitted && !form?.controls?.zoneNumber?.valid"
+                class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+            </div>
+            <div class="w-full lg:w-[calc(50%-8px)] relative">
+              <label for="streetNumber"
+                class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+                {{ "E_TAG.STREET_NUMBER" | translate }}
+                <sup class="font-Cairo-Regular text-[15px] text-[#E73C3E] ltr:-left-px rtl:-right-px top-0">
+                  *</sup>
+              </label>
+              <input type="text"  id="streetNumber" name="streetNumber"
+                [(ngModel)]="formData.streetNumber" required [class.error]="
+                  isSubmitted && !form?.controls?.streetNumber?.valid
+                " onlyNumbers  [class.disabled]="!isFormEnabled"
+                class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+                placeholder="{{'PLACEHOLDER.ZONE' | translate }}" />
+              <span *ngIf="isSubmitted && !form?.controls?.streetNumber?.valid"
+                class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+            </div>
+            <div class="w-full lg:w-[calc(50%-8px)] relative" >
+              <label for="building"
+                class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+                {{ "E_TAG.BUILDING" | translate }}
+                <sup class="font-Cairo-Regular text-[15px] text-[#E73C3E] ltr:-left-px rtl:-right-px top-0">
+                  *</sup>
+              </label>
+              <input type="text"  id="building" name="building" [class.disabled]="!isFormEnabled"
+                [(ngModel)]="formData.building" required [class.error]="isSubmitted && !form?.controls?.building?.valid"
+                
+                class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+                placeholder="{{'PLACEHOLDER.BUILDING' | translate }}" />
+              <span *ngIf="isSubmitted && !form?.controls?.building?.valid"
+                class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+            </div>
+            <div class="w-full lg:w-[calc(50%-8px)] relative " >
+              <label for="unit"
+                class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+                {{ "E_TAG.UNIT" | translate }}
+                <sup class="font-Cairo-Regular text-[15px] text-[#E73C3E] ltr:-left-px rtl:-right-px top-0">
+                  *</sup>
+              </label>
+              <input type="text"  id="unit" name="unit" [(ngModel)]="formData.unit" required
+                [class.error]="isSubmitted && !form?.controls?.unit?.valid"  [class.disabled]="!isFormEnabled"
+                class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+                placeholder="{{'PLACEHOLDER.UNIT' | translate }}" />
+              <span *ngIf="isSubmitted && !form?.controls?.unit?.valid"
+                class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+                "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+            </div>
+          </div>
+          <div class="flex w-full justify-end gap-1">
+            <button (click)="onSubmit(form)" [class.disabled]="!isFormEnabled"
+              class="w-full lg:w-[calc(100%)] lg:max-w-[320px] text-center font-Cairo-Regular text-[16px] leading-[38px] bg-[#00904A] text-[white] rounded-[5px]">
+              submit form with out mark as paid
+            </button>
+            <button (click)="onSubmit(form, true)" [class.disabled]="!isFormEnabled"
+              class="w-full lg:w-[calc(100%)] lg:max-w-[220px] text-center font-Cairo-Regular text-[16px] leading-[38px] bg-[#00904A] text-[white] rounded-[5px]">
+              {{ "SHARED.Proceed" | translate }}
+            </button>
+          </div>
+        </form> -->

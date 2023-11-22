@@ -1,0 +1,15 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [link]="'auto-care-service'"
+  [metaData]="data"></app-breadcrumb-section-second-style>
+<app-our-story textAlign="text-center" [title]="data?.areaOne?.title[lang]"
+  [text]="data?.areaOne?.description[lang]"></app-our-story>
+<section class="bg-[#F5F5F5]">
+  <div class="max-w-desktop mx-auto px-4 lg:px-10 flex flex-col lg:flex-row py-[40px] gap-[14px]">
+    <div *ngFor="let card of cards" class="w-full lg:w-1/4">
+      <app-card-two class="h-full block" [data]="card" [lang]="lang"></app-card-two>
+    </div>
+  </div>
+</section>
+<app-offers-promotion *ngIf="promotionsSubset.length > 0" [lang]="lang"
+  [promotions]="promotionsSubset"></app-offers-promotion>
+<app-become-supplier *ngIf="becomeSupplier.length > 0" [data]="becomeSupplier" [lang]="lang"></app-become-supplier>

@@ -1,0 +1,178 @@
+<div class="bg-white py-[42px]" style="box-shadow: 0px 3px 6px #00000029">
+  <app-add-new-car></app-add-new-car>
+  <div class="w-full bg-white px-[2px] flex flex-col lg:flex-row gap-2 justify-between pb-[47px]">
+    <div class="flex flex-col lg:flex-row gap-2 lg:gap-[2px]">
+      <div
+        class="bg-white flex lg:w-[160px] justify-between items-center w-full border border-solid border-[#CCCCCC] py-[7px] px-4 rounded-t-[5px]">
+        <app-checkbox-car class="w-full" [data]="checkBox1" (onChange)="checkBox1.value = $event"></app-checkbox-car>
+      </div>
+      <div
+        class="bg-white flex lg:w-[160px] justify-between items-center w-full border border-solid border-[#CCCCCC] py-[7px] px-4 rounded-t-[5px]">
+        <app-checkbox-car class="w-full" [data]="checkBox3" (onChange)="checkBox3.value = $event"></app-checkbox-car>
+      </div>
+      <div
+        class="bg-white flex lg:w-[160px] justify-between items-center w-full border border-solid border-[#CCCCCC] py-[7px] px-4 rounded-t-[5px]">
+        <app-checkbox-car class="w-full" [data]="checkBox4" (onChange)="checkBox4.value = $event"></app-checkbox-car>
+      </div>
+    </div>
+    <div class="flex items-center justify-between gap-[19px] px-[49px]">
+      <p class="font-Poppins-Medium leading-[50px] text-[#7C7C7C] w-[145px] mr-4">
+        {{'E_TAG.NUMBER_OF_TAGS' | translate}}
+      </p>
+      <app-counter class="w-full lg:w-[156px]" [count]="counter" (onChange)="countChange($event)"></app-counter>
+    </div>
+  </div>
+  <div class="flex flex-col px-10 pb-[60px]">
+    <div class="accordion">
+      <div class="accordion-item mb-[10px]" style="box-shadow: 0px 3px 6px #00000029" *ngFor="let tag of tags">
+        <button (click)="tag.active = !tag.active"
+          class="accordion-title flex justify-between rounded-[5px] w-full ltr:text-left rtl:text-right text-base leading-[30px] font-Poppins-Bold text-[#221E20] bg-white py-[24px] px-[30px]">
+          {{tag.title}} {{'E_TAG.DETAILS' | translate}}
+          <app-svg class="" src="assets/svgs/arrow.svg" [customClass]="tag.active ? 'rotate-180' : ''"
+            label="title_goas_here" [stretch]="false" width="19"></app-svg>
+        </button>
+        <div [ngClass]="{ hidden: !tag.active, block: tag.active }"
+          class="accordion-content font-Poppins-Light text-sm leading-[24px] text-[#221E20] bg-white pb-[42px] px-[30px]">
+          <div class="flex flex-col gap-x-[42px] gap-y-4 pt-12">
+            <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4 mb-6">
+              <div class="w-full lg:w-1/2 lg:max-w-[465px] relative">
+                <!-- <app-ddl-stander></app-ddl-stander> -->
+                <app-ddl-stander [data]="tag.fuelType" (onOptionChange)="tag.fuelType.selected = $event"
+                  [isErrorEnabled]="isSubmitted && !tag.fuelType.selected"></app-ddl-stander>
+              </div>
+              <div class="w-full lg:w-1/2 lg:max-w-[465px] relative">
+                <!-- <app-ddl-stander></app-ddl-stander> -->
+                <app-ddl-stander [data]="tag.fuelLimit" (onOptionChange)="tag.fuelLimit.selected = $event"
+                  [isErrorEnabled]="isSubmitted && !tag.fuelLimit.selected"></app-ddl-stander>
+              </div>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+              <div class="w-full lg:w-1/2 lg:max-w-[465px] relative">
+                <label for="Email"
+                  class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+                  {{'E_TAG.TRANSACTION' | translate}}
+                </label>
+                <input type="text" id="Email"
+                  class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+                  placeholder="133452" />
+                <app-ddl-style-second class="absolute ltr:right-[4%] rtl:left-[4%] top-[29%]"
+                  [data]="tag.transactionLimit.ddl" (onOptionChange)="tag.transactionLimit.ddl.selected = $event"
+                  [mainClasses]="ddlHeight"></app-ddl-style-second>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col lg:flex-row gap-5 lg:gap-[129px] justify-between px-[35px] pb-[34px]">
+    <div class="w-full lg:w-1/2 lg:max-w-[452px] flex flex-col gap-[39px]">
+      <div class="w-full flex flex-row justify-between items-center">
+        <p class="font-Poppins-Medium text-lg leading-[50px] uppercase">
+          {{'E_TAG.QID_CR' | translate}}
+        </p>
+        <app-attachment-second-style [data]="qidCr"
+          [accept]="['video/mp4','video/quicktime','image/jpg', 'image/jpeg', 'image/png']"
+          (selectFileEmiter)="qidCrChangeEmitHandler($event)">
+        </app-attachment-second-style>
+      </div>
+      <div class="w-full flex flex-row justify-between items-center">
+        <p class="font-Poppins-Medium text-lg leading-[50px] uppercase">
+          {{'E_TAG.ESTIMARA' | translate}}
+        </p>
+        <app-attachment-second-style [data]="estimara"
+          [accept]="['video/mp4','video/quicktime','image/jpg', 'image/jpeg', 'image/png']"
+          (selectFileEmiter)="estimaraChangeEmitHandler($event)">
+        </app-attachment-second-style>
+      </div>
+    </div>
+    <div
+      class="w-full lg:w-1/2 lg:max-w-[636px] px-[30px] py-[24px] bg-[#E6FFF3] rounded-[5px] border border-solid border-[#EDFFF6] relative lg:h-[289px]">
+      <p class="font-Poppins-Medium text-lg leading-[27px] pb-1">
+        {{'E_TAG.INSTALLATION_COST' | translate}}
+      </p>
+      <p class="font-Poppins-Light text-sm leading-[21px] pb-[15px]">
+        {{'E_TAG.TAG_ID' | translate}}: 93029394
+      </p>
+      <div class="flex flex-row justify-between pb-3">
+        <p class="font-Poppins-Medium text-sm leading-[21px]">{{'E_TAG.TAG_FEE' | translate}}</p>
+        <p class="font-Poppins-Medium text-sm leading-[21px]">{{'CURRENCIES.QR' | translate}} 25</p>
+      </div>
+      <p class="font-Poppins-Medium text-sm leading-[21px] pb-[13px]">
+        {{'E_TAG.NUMBER_OF_TAGS' | translate}} (3)
+      </p>
+      <div class="flex flex-row justify-between pb-[65px]">
+        <p class="font-Poppins-Medium text-sm leading-[21px]">
+          {{'E_TAG.COST_OF_INSTALLATION' | translate}}
+        </p>
+        <p class="font-Poppins-Medium text-sm leading-[21px]">{{'CURRENCIES.QR' | translate}} 95</p>
+      </div>
+      <div class="w-[calc(100%-60px)] h-[1px] bg-[#CCCCCC] absolute bottom-[70px] left-0 right-0 px-[30px] mx-auto">
+      </div>
+      <div class="flex flex-row justify-between pb-3">
+        <p class="font-Poppins-Medium text-lg leading-[21px]">{{'E_TAG.TOTAL' | translate}}</p>
+        <p class="font-Poppins-Medium text-sm leading-[21px]">{{'CURRENCIES.QR' | translate}} 125</p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full px-[35px] pb-[34px]">
+    <p class="w-full text-xl leading-[50px] font-Poppins-Medium pb-[25px]">
+      {{'E_TAG.BOOK_DETAILS' | translate}}
+    </p>
+    <div class="flex flex-col lg:flex-row justify-between w-full pb-[34px]">
+      <div class="w-full lg:w-1/2 lg:max-w-[514px] flex flex-col gap-9">
+        <div class="w-full flex flex-col gap-y-3">
+          <app-location-list></app-location-list>
+          <app-checkbox [data]="checkBox2" (onChange)="checkBox2.value = $event"></app-checkbox>
+        </div>
+        <div class="w-full flex flex-col gap-y-3">
+          <app-date-picker-second-style class="w-full " [data]="{value: date, placeholder: '', label: ' Date'}"
+            [icon]="{src: 'assets/svgs/date-2.svg',fill:'', stroke: ''}"
+            (dateChange)="date = $event"></app-date-picker-second-style>
+
+          <app-checkbox [data]="checkBox2" (onChange)="checkBox2.value = $event"></app-checkbox>
+        </div>
+        <div class="w-full flex flex-col gap-y-3">
+          <app-time-picker [data]="time1" (onChange)="time1 = $event"></app-time-picker>
+        </div>
+        <div class="w-full lg:w-1/2 lg:max-w-[514px]">
+          <div class="w-full h-full bg-[#f2f4f3]"></div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full ">
+      <div class="bg-[#F5F5F5] px-7 relative">
+        <div class="w-full flex justify-between pt-[30px] pb-[14px]">
+          <p class="font-Poppins-Light text-lg leading-[25px]">
+            {{'E_TAG.NUMBER_OF_VEHICLES' | translate}}
+          </p>
+          <p class="font-Poppins-Bold text-xl leading-[25px]">3</p>
+        </div>
+        <div class="w-full flex justify-between pb-[43px]">
+          <p class="font-Poppins-Light text-lg leading-[25px]">
+            {{'E_TAG.NUMBER_OF_TAGS' | translate}}
+          </p>
+          <p class="font-Poppins-Bold text-xl leading-[25px]">3</p>
+        </div>
+        <div class="w-[calc(100%-60px)] h-[1px] bg-[#CCCCCC] absolute bottom-[64px] left-0 right-0 px-[30px] mx-auto">
+        </div>
+        <p class="font-Poppins-Light text-[#009933] pb-[22px]">
+          {{'E_TAG.TOTAL_PRICE' | translate}}
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col lg:flex-row justify-between gap-2 px-[35px] pt-[35px]">
+      <button type="button" class="flex gap-[14px]" (click)="back()">
+        <app-svg src="assets/svgs/arrow.svg" customClass="ltr:rotate-90 rtl:-rotate-90" label="title_goas_here"
+          [stretch]="false" width="20" height="20" stroke="#000000"></app-svg>
+        <span class="font-Cairo-Regular text-base leading-8 text-black">{{'RETAIL.BACK' | translate}}</span>
+      </button>
+      <div class="flex flex-col lg:flex-row gap-3">
+        <button type="button" (click)="submit()"
+          class="rounded-[5px] py-[2.5px] px-8 font-Cairo-Regular text-base leading-8 bg-[#00852C] text-white capitalize">
+          {{'RETAIL.NEXT' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>

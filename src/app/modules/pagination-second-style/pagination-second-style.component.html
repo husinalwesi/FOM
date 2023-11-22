@@ -1,0 +1,32 @@
+
+
+<nav *ngIf="totalPages > 1"
+    class="flex items-center justify-center font-Cairo-Regular gap-[14px] text-[19px] leading-[26px]">
+  
+    <button type="button" *ngIf="data.pageIndex > 1" (click)="prevPage()"
+      class="flex justify-center rtl:rotate-180 items-center text-[var(--primary-color)] rounded-[4px] w-10 h-10">
+      <app-svg src="assets/svgs/arrow.svg" customClass="rotate-90" label="title_goas_here" [stretch]="false" width="35"
+        stroke="var(--primary-color)"></app-svg>
+    </button>
+
+  
+  
+    <ng-container *ngFor="let paginationItem of paginationItems">
+  
+      <button *ngIf="paginationItem !== 'dots'" type="button" class="pagination-item"
+        [class.active]="paginationItem === data.pageIndex"
+        (click)="selectPage(paginationItem)">{{paginationItem}}</button>
+  
+  
+      <span *ngIf="paginationItem === 'dots'"
+        class="font-Cairo-Regular text-lg text-[#3F5AA6] w-10 h-10 text-center">...</span>
+  
+    </ng-container>
+  
+    <button type="button" *ngIf="data.pageIndex !== totalPages" (click)="nextPage()"
+      class="flex justify-center rtl:rotate-180 items-center text-[var(--primary-color)] rounded-[4px] w-10 h-10">
+      <app-svg src="assets/svgs/arrow.svg" customClass="rotate-[270deg]" [stretch]="false" width="35"
+        stroke="var(--primary-color)"></app-svg>
+    </button>
+  
+  </nav>

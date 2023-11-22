@@ -1,0 +1,20 @@
+.language-switcher{
+    & button{
+        @apply flex w-[27px] h-6 items-center justify-center rounded-full text-white font-Cairo-Bold text-xs mt-[3px] mr-0 mb-[3px] ml-[3px];
+        &.active{
+            @apply bg-[#65778B];
+        }
+    }
+    & > button:first-child{
+        @apply ltr:order-1 rtl:order-2;
+        &.active{
+            @apply py-1 px-1.5;
+        }
+    }
+    & > button:last-child{
+        @apply pt-1 pr-1.5 pb-1 pl-0 ltr:order-2 rtl:order-1;
+        &.active{
+            @apply pr-0 mr-[3px] w-[25px];
+        }
+    }        
+}

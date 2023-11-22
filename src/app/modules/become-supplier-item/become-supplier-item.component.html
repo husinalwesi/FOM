@@ -1,0 +1,23 @@
+<div
+  class="w-full pt-[38px] pb-[30px] px-6 relative bg-white rounded-md after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:top-0 ltr:after:bg-[linear-gradient(90deg,rgba(255,255,255,1)50%,rgba(255,255,255,0)100%)] rtl:after:bg-[linear-gradient(90deg,rgba(255,255,255,0)0%,rgba(255,255,255,1)50%)] after:z-2 after:w-full after:h-full after:rounded-md before:content-normal before:absolute ltr:before:right-0 rtl:before:left-0 before:top-0 before:z-1 before:w-1/2 before:h-full ltr:before:rounded-r-md rtl:before:rounded-l-md bg-no-repeat bg-cover ltr:bg-right rtl:bg-left"
+  style="background-size: 50% 100%;" [style.backgroundImage]="'url(' + (data?.image | imageSource) + ')'">
+  <div class="max-w-[330px] relative z-10">
+    <img class="w-[41px] h-[41px]" [src]="data?.icon | imageSource" alt="" />
+
+    <p *ngIf="data?.title"
+      class="ltr:text-left rtl:text-right font-Poppins-Medium text-lg leading-[26px] text-black mt-6"
+      [innerHTML]="data?.title[lang]"></p>
+
+    <p *ngIf="data?.desc"
+      class="ltr:text-left rtl:text-right font-Cairo-Regular text-xs leading-5 text-[#00904A] my-4 line-clamp-2"
+      [innerHTML]="data?.desc[lang]">
+    </p>
+
+    <app-btn-one *ngIf="data?.btn?.text && !data?.btn?.link" [text]="data?.btn?.text[lang]"
+      seoDesc="Text about the button" svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"
+      textClass="font-Cairo-Regular text-base line-clamp-1" (onClick)="onClickFire()"></app-btn-one>
+    <app-btn-one [routerLink]="data?.btn?.link[lang] | routeLocalization" *ngIf="data?.btn?.link"
+      [text]="data?.btn?.text[lang]" seoDesc="Text about the button" svg="assets/svgs/arrow.svg"
+      svgClass="rotate-[270deg]" textClass="font-Cairo-Regular text-base line-clamp-1"></app-btn-one>
+  </div>
+</div>

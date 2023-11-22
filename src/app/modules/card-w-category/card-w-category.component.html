@@ -1,0 +1,82 @@
+<div #card class="h-full flex flex-col shadow-md w-full rounded-[5px] group/card-w-category"
+  [style.backgroundColor]="bgColor">
+  <div class="relative rounded-[5px]">
+    <div class="w-full rounded-[5px] relative overflow-hidden" [ngStyle]="{height: height + 'px'}">
+      <img class="w-full h-full rounded-[5px] group-hover/card-w-category:scale-110 transition-all duration-300"
+        [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+        [lazyLoad]="(data?.image || defaultImage) | imageSource" alt="Card Image" />
+      <div class="w-full h-full rounded-[5px]
+        
+        absolute left-0 top-0 bg-black bg-opacity-60 group-hover/card-w-category:bg-opacity-50 transition-all duration-300
+        "></div>
+    </div>
+    <ng-container>
+      <div *ngIf="data.dates.leftDate"
+        class="absolute bottom-0 left-0 w-1/2 px-[18px] pb-[14px] text-white text-xs leading-[25px] font-Cairo-Regular text-left z-[1]">
+        {{data.dates.leftDate.text | translate}}
+        {{data.dates.leftDate.date | date:'dd-MM-YYYY'}}
+        <!-- {{ ('MONTHS.' + ((data.dates.leftDate.date | date:'MMM') || '').toUpperCase()) | translate }}
+        {{data.dates.leftDate.date | date:'dd'}},
+        {{data.dates.leftDate.date | date:'YYYY'}} -->
+      </div>
+      <div *ngIf="data.dates.rightDate"
+        class="absolute bottom-0 right-0 w-1/2 px-[18px] pb-[14px] text-white text-xs leading-[25px] font-Cairo-Regular text-right z-[1]">
+        {{data.dates.rightDate.text | translate}}
+        {{data.dates.rightDate.date | date:'dd-MM-YYYY'}}
+        <!-- {{ ('MONTHS.' + ((data.dates.rightDate.date | date:'MMM') || '').toUpperCase()) | translate }}
+        {{data.dates.rightDate.date | date:'dd'}},
+        {{data.dates.rightDate.date | date:'YYYY'}} -->
+      </div>
+    </ng-container>
+    <!-- <ng-container *ngIf="!data.image">
+      <div *ngIf="data.dates.leftDate"
+        class=" text-[#011C35] text-xs leading-[25px] font-Cairo-Regular whitespace-nowrap">
+        {{data.dates.leftDate.text | translate}}
+        {{ ('MONTHS.' + ((data.dates.leftDate.date | date:'MMM') || '').toUpperCase()) | translate }}
+        {{data.dates.leftDate.date | date:'dd'}},
+        {{data.dates.leftDate.date | date:'YYYY'}}
+      </div>
+      <div *ngIf="data.dates.rightDate"
+        class="text-[#011C35] text-xs leading-[25px] font-Cairo-Regular text-right whitespace-nowrap">
+        {{data.dates.rightDate.text | translate}}
+        {{ ('MONTHS.' + ((data.dates.rightDate.date | date:'MMM') || '').toUpperCase()) | translate }}
+        {{data.dates.rightDate.date | date:'dd'}},
+        {{data.dates.rightDate.date | date:'YYYY'}}
+      </div>
+    </ng-container> -->
+  </div>
+  <div class="pt-[26px] pb-[23px] px-7 flex flex-col justify-between flex-1">
+    <div>
+      <div class="flex justify-between">
+        <p class="text-[18px] leading-[30px] font-Cairo-Regular mb-2 line-clamp-2" [style.color]="titleColor"
+          [innerHTML]="data.title[lang]">
+        </p>
+        <p *ngIf="data?.category"
+          class="text-[18px] leading-[30px] -mr-2 font-Cairo-Regular text-[#006120] uppercase mb-2"
+          [innerHTML]="data.category[lang]">
+        </p>
+      </div>
+      <p class="text-sm leading-[25px] font-Cairo-Regular text-[#011C35] line-clamp-3"
+        [innerHTML]="data.description[lang]">
+      </p>
+    </div>
+    <div>
+      <a *ngIf="data?.location && isExternalMethod(data.location)" [href]="data.location" target="_blank" class="mt-[19px] flex gap-3">
+        <app-svg src="assets/svgs/location.svg" customClass="" label="title_goas_here" [stretch]="false" width="19"
+          height="19" fill="#006120"></app-svg>
+        <p class="text-left font-Cairo-Regular text-lg leading-[30px] text-[#006120] line-clamp-1">
+          {{'PROMOTION_FILTER.LOCATION' | translate}}</p>
+      </a>
+      <a *ngIf="data?.location && !isExternalMethod(data.location)" [routerLink]="data.location"  class="mt-[19px] flex gap-3">
+        <app-svg src="assets/svgs/location.svg" customClass="" label="title_goas_here" [stretch]="false" width="19"
+          height="19" fill="#006120"></app-svg>
+        <p class="text-left font-Cairo-Regular text-lg leading-[30px] text-[#006120] line-clamp-1">
+          {{'PROMOTION_FILTER.LOCATION' | translate}}</p>
+      </a>
+      <div class="mt-[18px]">
+        <app-btn-one [link]="data.link" text="SHARED.READ_MORE" [seoDesc]="data.title[lang]" svg="assets/svgs/arrow.svg"
+          svgClass="rotate-[270deg]"></app-btn-one>
+      </div>
+    </div>
+  </div>
+</div>

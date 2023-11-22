@@ -1,0 +1,10 @@
+.fullView {
+    @apply h-[85vh] min-h-[544px] max-h-[740px];
+}
+video {
+    @apply fixed left-0 min-w-full z-[-1] top-[90px] lg:top-[112.5px];
+    object-fit: fill;
+    .fullView {
+        @apply min-h-full;
+    }
+}

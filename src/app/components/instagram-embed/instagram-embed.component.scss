@@ -1,0 +1,20 @@
+::ng-deep app-instagram-embed {
+    & iframe {
+        margin: 0 !important;
+        width: 100% !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+
+    #eapps-instagram-feed-1,
+    #eapps-instagram-feed-2 {
+        width: 100% !important;
+    }
+
+    a[title=""] {
+        display: none !important;
+    }
+    .eapps-instagram-feed-header-container{
+        @apply hidden;
+    }
+}

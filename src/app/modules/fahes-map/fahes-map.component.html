@@ -1,0 +1,80 @@
+<!-- && isDataReady -->
+<google-map *ngIf="setting.isEnabled" class="relative block h-full" [options]="setting.mapOptions" width="100%" height="100%"
+    (mapInitialized)="mapReady($event)">
+
+    <map-marker #mapMarker="mapMarker" *ngFor="let markerPosition of setting.markerPositions"
+        [position]="markerPosition.position" [options]="setting.markerOptions" [icon]="markerPosition.icon"
+        (mapClick)="openInfoWindow(mapMarker,markerPosition.data)"></map-marker>
+    <map-info-window>
+        <div *ngIf="selectedStationByMap" class="pt-[34px] pb-4 bg-white shadow-custom-3">
+            <div class="px-7 mb-4">
+                <img *ngIf="selectedStationByMap.imageID" class="w-full sm:w-[318px] h-[166px] rounded-[5px] mx-auto"
+                    width="318" height="166" [defaultImage]="'loadingImage'| imageSource"
+                    [errorImage]="'errorImage'| imageSource" [lazyLoad]="selectedStationByMap.imageID | imageSource"
+                    alt="" title="" />
+            </div>
+            <p
+                class="drop-shadow-map-shadow px-7 mb-1.5 text-center font-Poppins-Light text-base leading-[26px] tracking-[-0.44px] text-black">
+                {{lang === 'en' ? selectedStationByMap.nameEN : selectedStationByMap.nameAR}}</p>
+
+            <p
+                class="drop-shadow-map-shadow px-7 mb-4 text-center font-Poppins-Light text-sm leading-[26px] tracking-[-0.39px] text-black capitalize">
+                {{lang === 'en' ? selectedStationByMap.descriptionEN : selectedStationByMap.descriptionAR}}</p>
+
+            <div class="px-7 mb-2.5">
+                <ul class="w-full">
+                    <owl-carousel-o #owlCarousel [options]="customOptions" class="w-full">
+                        <ng-container *ngFor="let service of selectedStationByMap.availableServices;let i =index">
+                            <ng-template carouselSlide [id]="i.toString()">
+                                <li class="py-4 flex flex-col gap-1">
+
+
+                                    <div
+                                        class="mx-auto flex justify-center items-center w-[50px] h-[50px] bg-[#003399] border border-solid border-[#000000] rounded-[5px]">
+                                        <img [defaultImage]="'loadingImage'| imageSource"
+                                            [errorImage]="'errorImage'| imageSource"
+                                            [lazyLoad]="service.iconURL | imageSource" alt="" width="50" height="50"
+                                            class="w-[50px] h-[50px] px-2 py-3 rounded-[5px]" />
+                                    </div>
+
+
+                                    <p
+                                        class="drop-shadow-map-shadow text-center font-Poppins-Light text-[12px] text-black line-clamp-2 mt-1">
+                                        {{lang === 'en' ? service.titleEN : service.titleAR}}</p>
+
+                                    <p *ngIf="service?.fromHour || service?.toHour"
+                                        class="drop-shadow-map-shadow text-center font-Poppins-Light text-[11px] text-black line-clamp-2">
+                                        {{service.fromHour}} - {{service.toHour}}</p>
+                                </li>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </ul>
+            </div>
+            <div class="bg-[var(--primary-color)] min-h-[34px] flex items-center px-4">
+                <p
+                    class="drop-shadow-map-shadow ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[26px] tracking-[-0.44px] text-white">
+                    {{'INSPECTION_FILTER.WORKING_HOURS' | translate}} :
+                    {{lang === 'en' ? selectedStationByMap?.workingHoursTypeData?.nameEn :
+                    selectedStationByMap?.workingHoursTypeData?.nameAr}}
+                    <!-- {{selectedStationByMap.is24_7 ?
+                    ('INSPECTION_FILTER.FULL_DAY_FULL_WEEK' | translate) : selectedStationByMap.workingHours}} -->
+                </p>
+            </div>
+        </div>
+    </map-info-window>
+
+
+    <app-inspection-center-filter [stationDDL]="stationDDL" [servicesDDL]="servicesDDL" [allDay]="allDay" [lang]="lang"
+        [workingHours]="workingHours" [limitedHours]="limitedHours" [isSubmitted]="isSubmitted" [filter]="filter"
+        [searchResult]="searchResult" (stationChangeEmitter)="stationChange($event)"
+        (workingHoursEmitter)="workingHoursChange($event)" (servicesChangeEmitter)="servicesChange($event)"
+        (allDayEmitter)="changeAllDay($event)" (limitedHoursChangeEmitter)="changeLimitedHours($event)"
+        (submitEmitter)="onSubmit($event)" (resetEmitter)="resetAll($event)" (cancelEmitter)="cancel()"
+        (selectStationEmitter)="selectStation($event)"
+        class="hidden xl:flex ml-[12vw] min-h-[calc(100vh-112.5px)] absolute left-0 top-0 bottom-0"></app-inspection-center-filter>
+
+</google-map>
+<!-- https://github.com/angular/components/blob/main/src/google-maps/README.md -->
+<!-- https://www.npmjs.com/package/@angular/google-maps -->
+<!-- https://timdeschryver.dev/blog/google-maps-as-an-angular-component#putting-it-all-together -->

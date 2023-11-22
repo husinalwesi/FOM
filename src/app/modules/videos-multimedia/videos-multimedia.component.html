@@ -1,0 +1,65 @@
+<div class="mt-[55px] pb-8">
+    <div class="max-w-desktop mx-auto px-4 lg:px-11 pb-[30px]">
+        <div *ngIf="videos.data.length > 0" class="flex flex-wrap gap-6">
+            <div *ngFor="let innerVideos of videos.data; let outerIndex = index"
+                class="w-full lg:w-[calc(50%-12px)] flex flex-wrap gap-6">
+                <app-video-item *ngFor="let videoItem of innerVideos; let innerIndex = index" [video]="videoItem"
+                    [lang]="lang" class="videoItem w-full"
+                    [ngClass]="{'lg:w-[calc(50%-12px)]': (outerIndex % 2 == 1 && (innerIndex === 1 || innerIndex === 2)) || (outerIndex % 2 == 0 && (innerIndex === 0 || innerIndex === 1)) }"
+                    (onClick)="openModal(videoItem)"></app-video-item>
+
+                <!-- [imgHeight]="height + 'px'" -->
+                <!-- [imgHeight]="(outerIndex % 2 == 1 && innerIndex === 0) || (outerIndex % 2 == 0 && innerIndex === 2) ? 'lg:h-[363px]' : 'lg:h-[175px]'" -->
+
+            </div>
+            <div class="flex items-center justify-center mx-auto ">
+                <!-- <app-btn-one *ngIf="!isInfiniteScrollEnabled && isThereMoreData" textClass="font-Cairo-Regular text-lg "
+                    (onClick)="loadMore()" text="FAHES_MEDIA_CENTER.LOAD_MORE" seoDesc="SHARED.VIEW_ALL"
+                    svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one> -->
+            </div>
+
+        </div>
+        <app-no-data *ngIf=" videos.data.length === 0"></app-no-data>
+    </div>
+    <div *ngIf="isLoadingEnabled && videos.data.length > 0" class="h-[171px] bg-white flex items-center justify-center ">
+        <app-component-loader></app-component-loader>
+    </div>
+    <app-pagination *ngIf="!isLoadingEnabled && videos.data.length > 0" [data]="videos.pagination" class="mt-4"
+        (changePage)="changePage($event)"></app-pagination>
+</div>
+
+
+
+<app-modal [template]="modalTemplatePlaceholder" [isModalEnabled]="isModalEnabled" (closeModalByKeyboard)="closeModal()"
+    modalClasses="w-fit max-w-[1261px]">
+    <ng-template #modalTemplatePlaceholder>
+        <div *ngIf="selectedVideo" class="bg-[#C4C4C4] relative rounded-[20px]">
+            <div class="absolute z-10 ltr:left-[38px] rtl:right-[38px] top-[36px] flex gap-2">
+                <span class="text-[#009933] text-xs leading-[30px] pt-5 lg:pt-0">{{'SHARE_BREADCRUMB.SHARE_THIS' |
+                    translate}}:</span><app-socail-media-icons-news [metaData]="{}"
+                    link="media-center/multimedia/videos"></app-socail-media-icons-news>
+            </div>
+            <button
+                class="absolute ltr:right-0 rtl:left-0 top-0 bg-white z-10 p-[14px] rounded-[20px] h-[49px] w-[49px] flex justify-center items-center"
+                (click)="closeModal()">
+                <span class="font-Futura-Bk-BT-Medium text-[#011C35] text-[20px] leading-8">X</span>
+            </button>
+            <div class="pt-[56.25%] h-0 relative">
+                <div class="w-full h-full absolute left-0 top-0">
+                    <div class="w-full h-full relative group" [innerHTML]="selectedVideo.video">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="text-center border-b-[6px] border-[#011C35]">
+                </div>
+                <div class="px-10 font-Cairo-Bold text-[#011C35] lg:text-[28px] lg:leading-[30px] pt-[18px] pb-4"
+                    [innerHTML]="selectedVideo.title[lang]">
+                </div>
+                <div class="pb-6 px-10">
+                    <div class="inline-block" [innerHTML]="selectedVideo.desc[lang]"></div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

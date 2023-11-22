@@ -1,0 +1,9 @@
+<div class="hero-container" [class.loading]="isLoadingEnabled" [class.fullView]="fullView">
+    <ng-container *ngIf="data.length > 0">
+        <app-hero-bg-half *ngIf="data.length == 1; else carousel" [data]="data[0]" [fullView]="fullView"
+            [height]="height"></app-hero-bg-half>
+        <ng-template #carousel>
+            <app-hero-bg-half-carousel [fullView]="fullView" [data]="data" [height]="height"></app-hero-bg-half-carousel>
+        </ng-template>
+    </ng-container>
+</div>

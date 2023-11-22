@@ -1,0 +1,50 @@
+https://collabnix.com/how-to-install-and-configure-nvm-on-mac-os/
+
+WOQOD nvm use v12.21.0
+DXB nvm use 16.20.0
+
+
+nvm install v12.21.0
+
+nvm alias default 16.20.0
+
+
+----------------------------
+Steps to open the lighthouse:
+ng s 
+npm run lighthouse
+----------------------------
+Steps to run the bundle analyzer:
+npm run build:stats  (this will only generate the json file)
+npm run analyze (this will view it in html)
+---
+npm run build-and-analyze (this will generate the json and view the html directly in one comand)
+----------------------------
+you need to include a redirect rule that ensures all routes are redirected to your Angular application's "index.html" file. This allows your Angular routing to handle the routes internally.
+_redirects
+
+
+
+
+
+
+sitemap
+
+
+
+app initializer will impact the performance in the mobile a little.
+
+
+to make a directive that route internally with taking care of the language.
+
+mouse motion from template.
+
+
+https://xd.adobe.com/view/fb86295b-8fdf-422d-5aeb-f49724900349-8db7/
+https://xd.adobe.com/view/8ff2a45f-dec5-4884-7ee1-a4d946faee5c-f9c3/
+oDX@2023
+
+
+
+run ssr
+npm run dev:ssr

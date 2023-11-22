@@ -1,0 +1,20 @@
+details ::ng-deep app-svg{
+    @apply bg-[#595959];
+    &#minus-icon{
+        @apply hidden;
+    }
+    &#plus-icon{
+        
+    }
+}
+details[open] ::ng-deep{
+    & app-svg{
+        @apply bg-[#009933];
+        &#minus-icon{
+            @apply flex;
+        }
+        &#plus-icon{
+            @apply hidden;            
+        }
+    }
+}

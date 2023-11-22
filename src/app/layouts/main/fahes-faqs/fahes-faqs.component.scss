@@ -1,0 +1,5 @@
+app-filter-faq ::ng-deep div {
+    & div:nth-child(2) {
+        @apply hidden
+    }
+}

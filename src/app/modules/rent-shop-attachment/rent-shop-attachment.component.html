@@ -1,0 +1,86 @@
+<div class="bg-white px-[30px] pt-[64px] pb-[50px]" style="box-shadow: 0px 4px 6px #00000029">
+  <div class="flex flex-col lg:flex-row gap-x-[152px] gap-y-[30px] pb-[30px] flex-wrap">
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="commercialRegisteration" [isErrorEnabled]="isSubmitted && !commercialRegisteration.file"
+        [accept]="commercialRegisteration.accept" [maximumFileUpload]="2"
+        (selectFileEmiter)="commercialRegisteration.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="copyOfComputer" [isErrorEnabled]="isSubmitted && !copyOfComputer.file"
+        [accept]="copyOfComputer.accept" [maximumFileUpload]="2" (selectFileEmiter)="copyOfComputer.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="bankAccounntDetails" [isErrorEnabled]="isSubmitted && !bankAccounntDetails.file"
+        [accept]="bankAccounntDetails.accept" [maximumFileUpload]="2"
+        (selectFileEmiter)="bankAccounntDetails.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="letterFromBank" [isErrorEnabled]="isSubmitted && !letterFromBank.file"
+        [accept]="letterFromBank.accept" [maximumFileUpload]="2" (selectFileEmiter)="letterFromBank.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="copyOfOwnersID" [isErrorEnabled]="isSubmitted && !copyOfOwnersID.file"
+        [accept]="copyOfOwnersID.accept" [maximumFileUpload]="2" (selectFileEmiter)="copyOfOwnersID.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="companyProfile" [isErrorEnabled]="isSubmitted && !companyProfile.file"
+        [accept]="companyProfile.accept" [maximumFileUpload]="2" (selectFileEmiter)="companyProfile.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)]">
+      <app-attachment [data]="brandingProfile" [isErrorEnabled]="isSubmitted && !brandingProfile.file"
+        [accept]="brandingProfile.accept" [maximumFileUpload]="2" (selectFileEmiter)="brandingProfile.file = $event">
+      </app-attachment>
+    </div>
+
+    <div class="w-full lg:w-[calc(50%-76px)] flex flex-col lg:flex-row gap-4 lg:gap-[82px] lg:items-center">
+      <p class="text-sm leading-[29px] font-Cairo-Regular text-[#717171]">
+        {{'SHOP.FRANCHISE_COMPANY' | translate}}
+      </p>
+      <div class="flex flex-row gap-[82px]">
+        <app-radio-button name="franchiseCompany" value="no" title="no" [selected]="franchiseCompany"
+          (onChange)="franchiseCompany = $event"></app-radio-button>
+        <app-radio-button name="franchiseCompany" value="yes" title="yes" [selected]="franchiseCompany"
+          (onChange)="franchiseCompany = $event"></app-radio-button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-y-[30px] pb-[60px]">
+    <p class="leading-[30px] font-Cairo-Regular">
+      {{'SHOP.I_ACCEPT_AND_AGREE_TO_THE_FOLLOWING_TERMS_AND_CONDITIONS' | translate}}
+    </p>
+    <app-checkbox [data]="checkBox1" [isErrorEnabled]="isSubmitted && !checkBox1.value"
+      (onChange)="checkBox1.value = $event"></app-checkbox>
+    <app-checkbox [data]="checkBox2" [isErrorEnabled]="isSubmitted && !checkBox2.value"
+      (onChange)="checkBox2.value = $event"></app-checkbox>
+    <app-checkbox [data]="checkBox3" [isErrorEnabled]="isSubmitted && !checkBox3.value"
+      (onChange)="checkBox3.value = $event"></app-checkbox>
+
+    <app-recaptch [isSubmit]="isSubmitted" [isVerified]="isVerified" (onSuccess)="isVerified = true"></app-recaptch>
+
+  </div>
+  <div class="w-full flex justify-between">
+    <button (click)="back()" type="button"
+      class="w-full flex flex-row items-center lg:px-[20px] lg:max-w-[114px] text-center font-Cairo-Regular text-[19px] leading-[38px]">
+      <app-svg src="assets/svgs/arrow.svg" customClass="ltr:rotate-90 rtl:rotate-[270deg]" label="title_goas_here"
+        [stretch]="false" width="25" height="25" stroke="#000000"></app-svg>
+      {{'SHOP.BACK' | translate}}
+    </button>
+    <button (click)="submit()" type="button"
+      class="w-full lg:max-w-[148px] text-center font-Cairo-Regular text-[16px] leading-[38px] text-[white] bg-[#008545] rounded-[5px] border border-[#008545] lg:mx-[20px]">
+      {{'RETAIL.NEXT' | translate}}
+    </button>
+  </div>
+</div>

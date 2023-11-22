@@ -1,0 +1,18 @@
+<section class="bg-[#F5F5F5]">
+  <div class="max-w-desktop mx-auto px-4 lg:px-11 py-[27px]">
+    <p class="font-Cairo-Bold text-xl py-[50px]">{{'SHARED.Faq' | translate }}</p>
+    <div class="accordion">
+      <details class="mb-[10px] shadow-custom-4 accordion-details" [id]="'index-'+ i" (click)="openSummary($event,i)"
+        *ngFor="let item of data;let i = index">
+        <summary class="list-none flex justify-between rounded-[5px] w-full bg-white py-[24px] px-[30px]">
+          <div class="text-base leading-[30px] font-Poppins-Bold text-[#221E20]" [innerHTML]="item.title[lang]"></div>
+          <app-svg class="" src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+            width="19"></app-svg>
+        </summary>
+        <p class="font-Poppins-Light text-sm leading-[24px] text-[#221E20] bg-white pb-[42px] px-[30px]"
+          [innerHTML]="item.desc[lang]">
+        </p>
+      </details>
+    </div>
+  </div>
+</section>

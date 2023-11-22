@@ -1,0 +1,59 @@
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit(form)">
+  <div class="max-w-desktop mx-auto px-4 lg:px-12 pb-[62px]">
+    <div
+      class="rtl:text-right ltr:text-left font-Cairo-Bold text-[25px] leading-[47px] text-[#011C35] mb-[17px] pt-[40px]">
+      {{'MULTIMEDIA.SEARCH_BY_NAME_DESCRIPTION' | translate}}
+    </div>
+    <div class="flex flex-col lg:flex-row w-full justify-between gap-14 items-center">
+      <input type="text" name="keyword" [(ngModel)]="keyword"
+        class="font-Cairo-Regular text-[14px] leading-[28px] text-[#011C35] w-full lg:w-[676px] border border-[#B9B9B9] rounded-[7px] px-[15px] py-[3px] focus:outline-none"
+        [placeholder]="'SHARED.KEYWORD' | translate" />
+      <div class=" relative">
+        <select [(ngModel)]="mediaTypes.value" name="mediaType"
+          class="font-Cairo-Regular text-[14px] leading-[28px] text-[#011C35] w-full lg:w-[320px] border border-[#B9B9B9] rounded-[7px] px-[15px] py-[3px] appearance-none focus:outline-none">
+          <option *ngFor="let mediaType of mediaTypes.data" [value]="mediaType.key">{{mediaType.title | translate}}
+          </option>
+        </select>
+        <div class="absolute inset-y-0 rtl:left-0 ltr:right-0 flex items-center rtl:pl-3 ltr:pr-3 pointer-events-none">
+          <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false" width="25"
+            height="25" stroke="#BCBCBC"></app-svg>
+        </div>
+      </div>
+
+      <button type="submit"
+        class="min-w-[170px] py-1.5 overflow-hidden h-10 inline-flex px-10 items-center justify-center font-Futura-Bk-BT-Medium text-lg rounded-[5px] text-center tracking-normal text-white capitalize relative rtl:hover:pr-[58px] rtl:hover:pl-[22px] hover:pl-[58px] hover:pr-[22px] group transition-all bg-gradient-to-l from-[#00904A] to-[#00904A] hover:bg-gradient-to-l hover:from-[#174E91] hover:to-[#3E64FF]">
+        <span
+          class="absolute -translate-x-10 group-hover:translate-x-0 flex items-center justify-center left-0 rtl:right-0 top-0 w-10 h-10 bg-[#3E64FF] rtl:rotate-180 rounded-[5px] opacity-0 group-hover:opacity-100 transition-all">
+          <app-svg src="assets/svgs/arrow.svg" customClass="rotate-[270deg]" label="title_goas_here" [stretch]="false"
+            width="20" stroke="#ffffff"></app-svg>
+        </span>
+        <span>
+          {{'SHARED.SEARCH' | translate}}
+          <span class="absolute left-[-9999px] w-px h-px overflow-hidden">{{'SHARED.SEARCH' | translate}}</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</form>
+<div class="max-w-desktop mx-auto px-4 lg:px-12 flex flex-col lg:flex-row gap-y-3 pb-[22px]">
+
+  <div class="w-full lg:w-1/3" *ngFor="let tab of tabs">
+    <a class="flex w-full flex-row gap-3 relative ltr:text-left rtl:text-right"
+      [routerLink]="tab.link | routeLocalization" [routerLinkActive]="'active'">
+      <div class="icon-container p-[23px] bg-[#003399] rounded-[5px] flex items-center">
+        <img class="w-[30px] h-[34px]" [src]="tab.svg | imageSource" alt="" height="30" width="34">
+      </div>
+      <hr
+        class="border-l-0 border-r-0 border-t-0 border-b-[3px] border-solid border-[#7D9AF2] absolute right-0 -bottom-[30px] w-full hidden lg:block" />
+      <div>
+        <p class="font-Cairo-Bold text-[#011C35] text-[22px] leading-[34px] lg:h-[42px]"
+          [innerHTML]="tab.title | translate">
+        </p>
+        <p class="font-Cairo-Regular text-[#011C35] leading-[19px] lg:max-w-[318px] text-sm"
+          [innerHTML]="tab.desc[lang]">
+        </p>
+      </div>
+    </a>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="pb-10">
+    <ul class="flex relative justify-center">
+        <li *ngFor="let item of steps;let i = index" class="min-h-[124px] lg:min-h-[auto] relative after:border-b-2 after:border-solid after:border-[#CCCCCC] after:absolute after:left-0 after:top-[13px] lg:after:top-[unset] lg:after:bottom-[43px] after:h-[2px]
+        after:w-full first:after:w-1/2 ltr:first:after:right-0 rtl:first:after:left-0 ltr:first:after:left-[unset] last:after:w-1/2 rtl:last:after:right-0 flex place-content-center
+        " [class.active]="getSelectedTabIndex() >= i" [ngClass]="'w-1/' + steps.length"
+            [ngStyle]="{'width':(100/5) + '%'}">
+            <button type="button" class="flex flex-col gap-1.5 items-center mx-auto relative z-10 pointer-events-none">
+                <app-svg src="assets/svgs/correct-circle.svg" customClass="" label="title_goas_here" [stretch]="false"
+                    width="30" height="30" [fill]="getSelectedTabIndex() >= i ? '#00904A' : '#CCCCCC'"></app-svg>
+                <span
+                    class="font-Cairo-Regular text-[13px] leading-6 text-black whitespace-nowrap vertical-rl-mixed">{{item.text
+                    | translate}}</span>
+            </button>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,26 @@
+<section class="bg-[#092A49] pt-[80px] pb-[97px]">
+    <div class="max-w-desktop mx-auto w-full px-4 lg:px-10 gap-5 flex flex-col">
+
+        <div class="w-full flex justify-between gap-4 items-center">
+            <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-[25px] leading-[47px] text-white uppercase">
+                {{'PROMOTIONS.OFFERS_AND_PROMOTIONS' | translate}}</p>
+
+        </div>
+        <div class="">
+            <ul class="flex flex-wrap gap-4">
+                <li class="w-full lg:w-[calc(25%-16px)]" *ngFor="let item of data.slice(0,4)">
+                    <a *ngIf="isExternalMethod(item?.link)" [href]="item?.link | routeLocalization" target="_blank">
+                        <img class="w-full h-auto lg:h-[400px] rounded-[5px] cursor-pointer" width="320" height="400"
+                            [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+                            [lazyLoad]="item?.img | imageSource" alt="Card Image" />
+                    </a>
+                    <a *ngIf="!isExternalMethod(item?.link)" [routerLink]="item?.link | routeLocalization">
+                        <img class="w-full h-auto lg:h-[400px] rounded-[5px] cursor-pointer" width="320" height="400"
+                            [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+                            [lazyLoad]="item?.img | imageSource" alt="Card Image" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

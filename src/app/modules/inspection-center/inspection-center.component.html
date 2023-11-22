@@ -1,0 +1,22 @@
+<section class="flex flex-col">
+    <div class="w-full h-full flex xl:hidden" id="mob-filter">
+        <app-inspection-center-filter class="w-full" [stationDDL]="stationDDL" [servicesDDL]="servicesDDL"
+            [workingHours]="workingHoursEle" [allDay]="allDay" [limitedHours]="limitedHours" [isSubmitted]="isSubmitted"
+            [searchResult]="searchResult" (stationChangeEmitter)="stationChange($event)" [lang]="lang"
+            (workingHoursEmitter)="workingHoursEmitter($event)" (servicesChangeEmitter)="servicesChange($event)"
+            (allDayEmitter)="changeAllDay($event)" (limitedHoursChangeEmitter)="changeLimitedHours($event)"
+            (submitEmitter)="submitHandler($event)" (cancelEmitter)="cancel()" (resetEmitter)="resetHandler($event)"
+            [filter]="filter" (selectStationEmitter)="selectStation($event)"></app-inspection-center-filter>
+    </div>
+    <!-- *ngIf="!isLoading" -->
+    <div class="w-full h-[calc(100vh-112.5px)] lg:h-[calc(100vh-112.5px)]">
+        <app-fahes-map [stationDDL]="stationDDL" [servicesDDL]="servicesDDL" [allDay]="allDay" [lang]="lang"
+            [mapData]="allDataFiltered" [workingHours]="workingHoursEle" [limitedHours]="limitedHours"
+            [isSubmitted]="isSubmitted" [searchResult]="searchResult" (stationChangeEmitter)="stationChange($event)"
+            (servicesChangeEmitter)="servicesChange($event)" (allDayEmitter)="changeAllDay($event)"
+            (limitedHoursChangeEmitter)="changeLimitedHours($event)" (submitEmitter)="submitHandler($event)"
+            (cancelEmitter)="cancel()" (resetEmitter)="resetHandler($event)" [filter]="filter"
+            (workingHoursEmitter)="workingHoursEmitter($event)" (selectStationEmitter)="selectStation($event)"
+            [selectedStation]="selectedStation"></app-fahes-map>
+    </div>
+</section>

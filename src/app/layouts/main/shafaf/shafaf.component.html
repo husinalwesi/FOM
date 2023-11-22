@@ -1,0 +1,109 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data" [link]="'shafaf'"></app-breadcrumb-section-second-style>
+
+<app-our-story *ngIf="areaOne?.areaOneTitle && areaOne?.areaOneDescription[lang]" [title]="areaOne?.areaOneTitle[lang]"
+    [text]="areaOne?.areaOneDescription[lang]" [linkBtn]="areaOne?.link" buttonText=""
+    [textAlign]="'text-center'"></app-our-story>
+
+
+<app-text-image-half [data]="services" [lang]="lang"></app-text-image-half>
+
+<!-- Rates section  -->
+<section>
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 pt-[38px] pb-[38px]">
+        <p class="text-[30px] ps-2 pb-4 font-Cairo-Bold capitalize" [innerHTML]="'SHAFAF.RATES' | translate"></p>
+        <ul class="w-full flex flex-row flex-wrap gap-y-5">
+            <li *ngFor="let rate of rates" class="w-full lg:w-1/3 px-3">
+                <app-card-accessories [data]="rate" [lang]="lang"></app-card-accessories>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- lpg accessories section  -->
+<section>
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 pt-[38px] pb-[38px]">
+        <p class="text-[30px] ps-2 pb-4 font-Cairo-Bold capitalize" [innerHTML]="'SHAFAF.LPG_ACCESSORIES' | translate">
+        </p>
+        <ul class="w-full flex flex-row flex-wrap gap-y-5">
+            <li *ngFor="let accessory of accessories" class="w-full lg:w-1/3 px-3">
+                <app-card-accessories [data]="accessory" [lang]="lang"></app-card-accessories>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 pt-[38px] pb-[42px]">
+        <ul class="w-full flex flex-row flex-wrap gap-y-5">
+            <li *ngFor="let relatedContent of relatedContents" class="w-full lg:w-1/4 px-3">
+                <app-card-w-category [data]="relatedContent" [lang]="lang" [bgColor]="'white'"
+                    [titleColor]="'#009933'"></app-card-w-category>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- <section class="bg-white">
+    <p *ngIf="services1?.Heading"
+        class="max-w-desktop mx-auto px-4 lg:px-10 pt-[40px] pb-[21px] w-full font-Cairo-Bold text-[30px] leading-[56px] text-[#221E20]"
+        [innerHTML]="services1?.Heading[lang]"></p>
+    <div
+        class="max-w-desktop mx-auto px-4 lg:px-10 flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-y-0  pb-14">
+
+        <div class="w-full lg:max-w-[624px] self-center">
+            <p *ngIf="services1?.title"
+                class="mb-2 ltr:text-left rtl:text-right font-Cairo-Bold text-[26px] leading-[56px] text-[#221E20] capitalize"
+                [innerHTML]="services1?.title[lang]">
+            </p>
+            <p *ngIf="services1?.desc"
+                class="mb-7 max-w-[627px] ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-6 text-[#011C35]"
+                [innerHTML]="services1?.desc[lang]">
+            </p>
+            <app-btn-one *ngIf="services1?.btn?.link" textClass="font-Poppins-Light text-lg"
+                [link]="services1?.btn.link" [text]="services1?.btn.text" seoDesc="Text about the button"
+                svg="assets/svgs/search.svg">
+            </app-btn-one>
+        </div>
+        <div class="w-full bg-[#ccc] lg:max-w-[537px] pb-4 lg:pb-0">
+            <img *ngIf="services1?.imgType == 'image'" [defaultImage]="'loadingImage'| imageSource"
+                [errorImage]="'errorImage'| imageSource" [lazyLoad]="services1?.img | imageSource" alt="" title=""
+                width="544" height="307" class="h-[307px] w-full" />
+            <video *ngIf="services1?.imgType == 'video'" [muted]="true" controls width="544" height="307">
+                <source [src]="services1?.img | imageSource">
+                {{'ERRORS.YOUR_BROWSER_DOES_NOT_SUPPORT_HTML5_VIDEO' | translate}}
+            </video>
+        </div>
+    </div>
+    <div
+        class="max-w-desktop mx-auto px-4 lg:px-10 flex flex-col lg:flex-row justify-between gap-y-5 lg:gap-y-0  pb-14">
+        <div class="w-full bg-[#ccc] lg:max-w-[537px] pb-4 lg:pb-0">
+            <img *ngIf="services1?.img1Type == 'image'" [defaultImage]="'loadingImage'| imageSource"
+                [errorImage]="'errorImage'| imageSource" [lazyLoad]="services1?.img1 | imageSource" alt="" title=""
+                width="544" height="307" class="h-[307px] w-full" />
+            <video *ngIf="services1?.img1Type == 'video'" [muted]="true" controls width="544" height="307">
+                <source [src]="services1?.img1 | imageSource">
+                {{'ERRORS.YOUR_BROWSER_DOES_NOT_SUPPORT_HTML5_VIDEO' | translate}}
+            </video>
+        </div>
+        <div class="w-full lg:max-w-[624px] self-center">
+            <p *ngIf="services1?.title1"
+                class="mb-2 ltr:text-left rtl:text-right font-Cairo-Bold text-[26px] leading-[56px] text-[#221E20] capitalize"
+                [innerHTML]="services1?.title1[lang]">
+            </p>
+            <p *ngIf="services1?.desc1"
+                class="mb-7 max-w-[627px] ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-6 text-[#011C35]"
+                [innerHTML]="services1?.desc1[lang]">
+            </p>
+            <app-btn-one *ngIf="services1?.btn1?.link" textClass="font-Poppins-Light text-lg"
+                [link]="services1?.btn1.link" [text]="services1?.btn1.text" seoDesc="Text about the button"
+                svg="assets/svgs/search.svg">
+            </app-btn-one>
+        </div>
+
+    </div>
+</section> -->
+
+
+<!-- <app-text-image-half *ngFor="let service of services1; let i = index" [data]="service" [lang]="lang"
+    [rtl]="i % 2 !== 0"></app-text-image-half> -->

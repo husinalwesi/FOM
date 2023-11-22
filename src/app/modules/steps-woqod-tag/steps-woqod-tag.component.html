@@ -1,0 +1,17 @@
+<ul class="flex flex-col gap-[38px]">
+  <li *ngFor="let step of data; let i = index"
+    class="flex flex-row gap-[34px] relative after:h-[calc(100%-11px)] after:w-px after:absolute ltr:after:left-[25px] rtl:after:right-[25px] after:bottom-[-39px] ltr:after:border-l rtl:after:border-r after:border-dashed after:border-[#003399] after:last:hidden">
+    <div class="border border-dashed border-[#003399] w-[50px] h-[50px] rounded-full flex justify-center items-center">
+      <app-svg src="assets/svgs/world.svg" customClass="" label="title_goas_here" [stretch]="false" width="19"
+        height="21" fill="#00904A"></app-svg>
+    </div>
+    <div class="flex-1">
+      <p class="ltr:text-left rtl:text-right text-[15px] leading-6 font-Poppins-Medium text-[#008545]">
+        {{'WOQODE_TAG.STEP' | translate}} {{i + 1}}. <span [innerHTML]="step.title[lang]"></span>
+      </p>
+      <p class="ltr:text-left rtl:text-right text-[14px] leading-6 font-Cairo-Regular text-[#011C35]"
+        [innerHTML]="step.desc[lang]">
+      </p>
+    </div>
+  </li>
+</ul>

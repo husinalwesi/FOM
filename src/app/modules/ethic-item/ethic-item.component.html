@@ -1,0 +1,7 @@
+<div class="w-full pt-9 pb-5 px-7 bg-[#f5f5f5] rounded-[5px] h-full">
+    <img class="mx-auto" [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+        [lazyLoad]="item.svg | imageSource" alt="" width="29" height="37">
+    <p class="text-center text-lg font-Poppins-Medium leading-6 capitalize text-black pb-3"
+        [innerHTML]="item.title[lang]"></p>
+    <p class="text-center text-sm font-Cairo-Regular leading-6 text-black" [innerHTML]="item.desc[lang]"></p>
+</div>

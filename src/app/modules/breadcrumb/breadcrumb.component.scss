@@ -1,0 +1,19 @@
+ul.breadcrumb li {
+  display: inline;
+}
+ul.breadcrumb li + li:before {
+  content: " ";
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg fill='none' stroke='%233F5AA6' xmlns='http://www.w3.org/2000/svg' id='arrow' x='0' y='0' version='1.1' viewBox='0 0 29 29' xml:space='preserve'><path stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2' d='m20.5 11.5-6 6-6-6'></path></svg>");
+  width: 17px;
+  display: inline-block;
+  height: 17px;
+  padding: 0 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  @apply ltr:rotate-[-90deg] rtl:rotate-[90deg];
+}
+ul {
+  text-indent: -34px;
+  @apply ltr:ml-[34px] rtl:mr-[34px];
+}

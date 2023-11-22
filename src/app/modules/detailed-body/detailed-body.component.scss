@@ -1,0 +1,113 @@
+#detailed-body ::ng-deep {
+  font-family: Cairo-Regular, sans-serif;
+  font-size: 18px;
+  & p {
+    // text-sm leading-6
+    @apply ltr:text-left rtl:text-right pb-3;
+  }
+  & strong,
+  & b {
+    // text-base leading-7
+    @apply ltr:text-left rtl:text-right font-Cairo-Bold;
+  }
+  & a {
+    @apply text-[#009933] cursor-pointer;
+  }
+  & iframe {
+    @apply max-w-full;
+  }
+  .responsive-table {
+    @apply relative overflow-x-auto w-full;
+    table {
+      width: 100%;
+      position: relative;
+      margin: 30px auto;
+      overflow-x: auto;
+      & tbody {
+        & > tr:first-child {
+          min-height: 95px;
+          font-size: 14px; /* or any size you want for text-sm */
+          line-height: 1.6; /* or any value you want for leading-6 */
+          color: white !important;
+          background-color: #011c35 !important;
+          & td {
+            color: white !important;
+            & strong {
+              color: white !important;
+            }
+          }
+        }
+        & tr {
+          &:nth-child(odd) {
+            background-color: #ececec;
+          }
+          &:nth-child(even) {
+            background-color: #ffffff;
+          }
+          & td {
+            @apply px-6 py-4 text-[#011C35];
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    @apply text-[36px];
+  }
+  h2 {
+    @apply text-[30px];
+  }
+  h3 {
+    @apply text-[24px];
+  }
+  h4 {
+    @apply text-[20px];
+  }
+  h5 {
+    @apply text-[18px];
+  }
+  h6 {
+    @apply text-[16px];
+  }
+  em {
+    font-style: italic;
+  }
+  code {
+    font-family: "Courier New", monospace;
+  }
+  hr {
+    @apply my-3;
+  }
+  sub {
+    vertical-align: sub;
+  }
+  sup {
+    vertical-align: super;
+  }
+  pre {
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+  blockquote {
+    margin: 0 0 20px;
+    padding: 10px 20px;
+    border-left: 2px solid #333;
+    background-color: #f0f0f0;
+  }
+  ol {
+    list-style: auto;
+    margin: auto 19px;
+    padding: 0;
+    & li {
+      padding: 10px 0px;
+    }
+  }
+  ul {
+    list-style: disc;
+    margin: auto 19px;
+    padding: 0;
+    & li {
+      padding: 10px 0px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<div class="flex flex-col px-5 pt-[18px] w-full">
+    <div *ngIf="data?.img && data?.img !== EmptyImage" class="w-full mb-[14px]">
+        <img class="w-full h-[94px] rounded-[6px] bg-gray-600" width="217"
+            [class.imgBig]="data?.img && data?.btn?.link && data?.btn?.text && !data?.title && !data?.desc"
+            [height]="data?.img && data?.btn?.link && data?.btn?.text && !data?.title && !data?.desc ? 130 : 94"
+            [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+            [lazyLoad]="data.img | imageSource" alt="Card Image" />
+    </div>
+    <p *ngIf="data?.title"
+        class="ltr:text-left rtl:text-right font-Cairo-Bold text-[17px] leading-[30px] text-[#011C35] capitalize">
+        {{data.title}}</p>
+    <p *ngIf="data?.desc"
+        class="ltr:text-left rtl:text-right font-Poppins-Light text-xs leading-[18px] text-[#011C35] pt-[9px]">
+        {{data.desc}} </p>
+
+
+
+
+    <ng-container *ngIf="data?.btn?.link && data?.btn?.text">
+
+        <ng-container *ngIf="isExternalMethod(data.btn.link)">
+            <a *ngIf="data.linkTarget === '_blank'" target="_blank" [href]="data.btn.link | routeLocalization"
+                class="h-[33px] bg-[#009933] rounded-md font-Poppins-Light text-xs leading-5 text-white w-full mt-[22px] mb-[22px] flex items-center justify-center gap-2"
+                [class.lessMargin]="data?.img && data?.btn?.link && data?.btn?.text && !data?.title && !data?.desc">
+                <span [innerHTML]="data.btn.text"></span>
+                <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about
+                    this button</span>
+            </a>
+
+            <a *ngIf="data.linkTarget !== '_blank'" [href]="data.btn.link | routeLocalization"
+                class="h-[33px] bg-[#009933] rounded-md font-Poppins-Light text-xs leading-5 text-white w-full mt-[22px] mb-[22px] flex items-center justify-center gap-2"
+                [class.lessMargin]="data?.img && data?.btn?.link && data?.btn?.text && !data?.title && !data?.desc">
+                <span [innerHTML]="data.btn.text"></span>
+                <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about
+                    this button</span>
+            </a>
+        </ng-container>
+
+
+        <ng-container *ngIf="!isExternalMethod(data.btn.link)">
+            <a *ngIf="data.linkTarget === '_blank'" target="_blank" [href]="data.btn.link | routeLocalization"
+                class="h-[33px] bg-[#009933] rounded-md font-Poppins-Light text-xs leading-5 text-white w-full mt-[22px] mb-[22px] flex items-center justify-center gap-2"
+                [class.lessMargin]="data?.img && data?.btn?.link && data?.btn?.text && !data?.title && !data?.desc">
+                <span [innerHTML]="data.btn.text"></span>
+                <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about
+                    this button</span>
+            </a>
+
+            <a *ngIf="data.linkTarget !== '_blank'" [routerLink]="data.btn.link | routeLocalization"
+                class="h-[33px] bg-[#009933] rounded-md font-Poppins-Light text-xs leading-5 text-white w-full mt-[22px] mb-[22px] flex items-center justify-center gap-2"
+                [class.lessMargin]="data?.img && data?.btn?.link && data?.btn?.text && !data?.title && !data?.desc">
+                <span [innerHTML]="data.btn.text"></span>
+                <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about
+                    this button</span>
+            </a>
+        </ng-container>
+
+
+    </ng-container>
+
+</div>

@@ -1,0 +1,15 @@
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data"
+    [link]="'fahes/media-center/news-details/' + id"></app-breadcrumb-section-second-style>
+<div class="bg-[#F5F5F5]">
+    <div class="max-w-desktop px-4 lg:px-11 mx-auto">
+        <p class="font-Cairo-Bold text-[30px] leading-[56px] text-[#221E20] py-[22px]" *ngIf="data?.title[lang]"
+            [innerHTML]="data?.title[lang]">
+        </p>
+        <img *ngIf="data?.img" class="w-full h-[400px] lg:h-[480px] pb-[30px]"
+            [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+            [lazyLoad]="data?.img | imageSource" alt="" />
+        <app-detailed-body [data]="data?.body[lang]"></app-detailed-body>
+    </div>
+</div>
+<app-related-carousel-details *ngIf="relatedNews.data.length > 0 && !isRelatedLoadingEnabled"
+    [relatedNews]="relatedNews"></app-related-carousel-details>

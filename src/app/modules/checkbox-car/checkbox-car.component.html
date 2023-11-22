@@ -1,0 +1,8 @@
+<label class="checkbox-container">
+    <span class="title" *ngIf="data.title">
+        <span>{{data.title | translate}}</span>
+        <span class="text-xs leading-[18px] font-Poppins-Light">123456</span>
+    </span>
+    <input type="checkbox" [name]="data.name" [(ngModel)]="data.value" (change)="change()" />
+    <span class="checkmark"></span>
+</label>

@@ -1,0 +1,295 @@
+<footer class="flex flex-col bg-[#ECECEE]">
+    <div
+        class="max-w-desktop-less flex flex-col lg:flex-row gap-16 xl:gap-32 pt-16 lg:pt-[4rem]  mx-auto w-full px-4 xl:px-0">
+        <div class="w-full text-center lg:ltr:text-left lg:w-[140px]">
+            <a class="flex justify-center" aria-label="woqod logo link to home page"
+                [routerLink]="'/' | routeLocalization">
+                <app-svg class="inline-block"
+                    [ngClass]="pageType === 'woqod' ? 'w-[119px] h-[167px]' : 'w-[95px] h-[157px]'"
+                    [src]="pageType === 'woqod' ? 'assets/svgs/footer-logo.svg' : 'assets/svgs/fahes-footer-logo.svg'"
+                    customClass="" label="title_goas_here" [stretch]="false"
+                    [width]="pageType === 'woqod' ? '119' : '95'"
+                    [height]="pageType === 'woqod' ? '167' : '157'"></app-svg>
+            </a>
+            <p class="mt-4  mb-5 text-center tracking-[-0.32px] text-[#011C35] font-Poppins-Light text-sm ">
+                {{ 'FOOTER.COPY_RIGHT_WITHOUT_YEAR' | translate: { pageType: pageType === 'woqod' ? 'WOQOD': 'FAHES' }
+                }}
+            </p>
+            <ul class="flex flex-row gap-2.5 justify-center">
+                <li *ngFor="let socialLink of socialLinks" class="flex justify-center items-center">
+                    <a [href]="socialLink.href | routeLocalization" target="_blank" aria-label="woqod social link"
+                        class="flex justify-center items-center w-6 h-6 bg-[#011C35] rounded-full">
+                        <app-svg class="mt-[-3px]" [src]="socialLink.icon" customClass="" label="title_goas_here"
+                            [stretch]="false" width="12" fill="#ECECEE"></app-svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="w-full flex flex-col flex-wrap gap-12 lg:gap-[42px] flex-1" *ngIf="pageType && lang">
+            <div *ngFor="let topMenuContainer of topMenu?.[pageType]?.[lang]"
+                class="flex flex-col lg:flex-row flex-wrap justify-center lg:justify-between lg:max-h-[270px]  gap-12 main-menu">
+                <div class="flex flex-col gap-6 relative before:absolute before:content-normal before:w-full lg:before:w-px before:h-px lg:before:h-[calc(100%-48px)] before:-top-6 lg:before:top-12 before:bg-black before:opacity-10 ltr:before:left-0 ltr:lg:before:-left-8 rtl:before:right-0 rtl:lg:before:-right-8 lg:first:before:hidden
+                
+                
+                w-full lg:w-[calc(33.333333%-32px)]
+                " *ngFor="let topMenuContainerItem of topMenuContainer">
+
+                    <ng-container *ngIf="isExternalMethod(topMenuContainerItem.link)">
+
+                        <a *ngIf="topMenuContainerItem.target === '_blank'" 
+                            target="_blank" [href]="topMenuContainerItem.link | routeLocalization"
+                            class="ltr:text-left rtl:text-right tracking-[-0.57px] text-[#011C35] font-Poppins-Medium text-base">
+                            <span [innerHTML]="topMenuContainerItem.title"></span>
+                            <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                more about
+                                this button</span>
+                        </a>
+
+
+                        <a *ngIf="topMenuContainerItem.target !== '_blank'" 
+                            [href]="topMenuContainerItem.link | routeLocalization"
+                            class="ltr:text-left rtl:text-right tracking-[-0.57px] text-[#011C35] font-Poppins-Medium text-base">
+                            <span [innerHTML]="topMenuContainerItem.title"></span>
+                            <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                more about
+                                this button</span>
+                        </a>
+
+                    </ng-container>
+
+
+                    <ng-container *ngIf="!isExternalMethod(topMenuContainerItem.link)">
+
+                        <a *ngIf="topMenuContainerItem.target === '_blank'" 
+                            target="_blank" [href]="topMenuContainerItem.link | routeLocalization"
+                            class="ltr:text-left rtl:text-right tracking-[-0.57px] text-[#011C35] font-Poppins-Medium text-base">
+                            <span [innerHTML]="topMenuContainerItem.title"></span>
+                            <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                more about
+                                this button</span>
+                        </a>
+
+
+                        <a *ngIf="topMenuContainerItem.target !== '_blank'" 
+                            [routerLink]="topMenuContainerItem.link | routeLocalization"
+                            class="ltr:text-left rtl:text-right tracking-[-0.57px] text-[#011C35] font-Poppins-Medium text-base">
+                            <span [innerHTML]="topMenuContainerItem.title"></span>
+                            <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                more about
+                                this button</span>
+                        </a>
+
+                    </ng-container>
+
+
+                    <div class="flex flex-col lg:flex-row gap-2.5 lg:gap-6">
+                        <div class="w-full lg:w-1/2 flex flex-row gap-[52px] flex-1"
+                            *ngFor="let innerList of topMenuContainerItem.list; let i = index">
+                            <ul *ngFor="let subList of innerList; let i = index " class="flex flex-col gap-2.5 w-full">
+                                <li *ngFor="let innerListItem of subList?.slice(0,6)" class="">
+
+
+                                    <ng-container *ngIf="isExternalMethod(topMenuContainerItem.link)">
+
+                                        <a *ngIf="innerListItem.target === '_blank'" target="_blank"
+                                            
+                                            [href]="innerListItem.link | routeLocalization">
+                                            <span [innerHTML]="innerListItem.title"
+                                                class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                            <span
+                                                class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                more about
+                                                this button</span>
+                                        </a>
+
+
+                                        <a *ngIf="innerListItem.target !== '_blank'" 
+                                            [href]="innerListItem.link | routeLocalization">
+                                            <span [innerHTML]="innerListItem.title"
+                                                class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                            <span
+                                                class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                more about
+                                                this button</span>
+                                        </a>
+
+                                    </ng-container>
+
+
+                                    <ng-container *ngIf="!isExternalMethod(topMenuContainerItem.link)">
+
+                                        <a *ngIf="innerListItem.target === '_blank'" target="_blank"
+                                            
+                                            [href]="innerListItem.link | routeLocalization">
+                                            <span [innerHTML]="innerListItem.title"
+                                                class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                            <span
+                                                class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                more about
+                                                this button</span>
+                                        </a>
+
+
+                                        <a *ngIf="innerListItem.target !== '_blank'" 
+                                            [routerLink]="innerListItem.link | routeLocalization">
+                                            <span [innerHTML]="innerListItem.title"
+                                                class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                            <span
+                                                class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                more about
+                                                this button</span>
+                                        </a>
+
+                                    </ng-container>
+
+
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+                        <!-- {{topMenuContainerItem?.list | json}} -->
+                        <!-- {{topMenuContainerItem?.list?.[0]?.[0]?.length}} -->
+                        <ng-container *ngIf="topMenuContainerItem?.list?.[0]?.[0]?.length > 6">
+                            <div class="w-full lg:w-1/2 flex flex-row gap-[52px]"
+                                *ngFor="let innerList of topMenuContainerItem.list; let i = index">
+                                <ul *ngFor="let subList of innerList; let i = index "
+                                    class="flex flex-col gap-2.5 w-auto"
+                                    [class]="{'lg:w-[150px]': i === 0 && innerList.length >= 1 }">
+                                    <li *ngFor="let innerListItem of subList?.slice(6)" class="">
+
+
+                                        <ng-container *ngIf="isExternalMethod(topMenuContainerItem.link)">
+
+                                            <a *ngIf="innerListItem.target === '_blank'" target="_blank"
+                                                
+                                                [href]="innerListItem.link | routeLocalization">
+                                                <span [innerHTML]="innerListItem.title"
+                                                    class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                                <span
+                                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                    more about
+                                                    this button</span>
+                                            </a>
+
+
+                                            <a *ngIf="innerListItem.target !== '_blank'"
+                                                
+                                                [href]="innerListItem.link | routeLocalization">
+                                                <span [innerHTML]="innerListItem.title"
+                                                    class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                                <span
+                                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                    more about
+                                                    this button</span>
+                                            </a>
+
+                                        </ng-container>
+
+
+                                        <ng-container *ngIf="!isExternalMethod(topMenuContainerItem.link)">
+
+                                            <a *ngIf="innerListItem.target === '_blank'" target="_blank"
+                                                
+                                                [href]="innerListItem.link | routeLocalization">
+                                                <span [innerHTML]="innerListItem.title"
+                                                    class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                                <span
+                                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                    more about
+                                                    this button</span>
+                                            </a>
+
+
+                                            <a *ngIf="innerListItem.target !== '_blank'"
+                                                
+                                                [routerLink]="innerListItem.link | routeLocalization">
+                                                <span [innerHTML]="innerListItem.title"
+                                                    class="ltr:text-left rtl:text-right tracking-[-0.39px] text-[#011C35] font-Poppins-Light text-sm leading-[26px]"></span>
+                                                <span
+                                                    class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                                                    more about
+                                                    this button</span>
+                                            </a>
+
+                                        </ng-container>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-[28px] lg:pt-[75px] pb-8 max-w-desktop-less mx-auto w-full px-4 lg:px-0 relative">
+        <hr class="border-t-0 border-l-0 border-r-0 border-b-2 border-[#011C35] opacity-30">
+        <button type="button" class="scroll-top-button" [ngClass]="pageType" (click)="scrollTop($event)"
+            id="sroll_to_top" aria-label="scroll page to top">
+            <app-svg src="assets/svgs/arrow.svg" customClass="rotate-180" label="scroll page to top" [stretch]="false"
+                width="35" height="35" stroke="#ffffff"></app-svg>
+        </button>
+    </div>
+    <div class="max-w-desktop-less flex flex-col lg:flex-row gap-12 lg:gap-32 mx-auto w-full px-4 lg:px-0 pb-6">
+        <p
+            class="ltr:text-left rtl:text-right tracking-[-0.32px] text-[#011C35] font-Poppins-Light text-sm order-2 lg:order-1">
+            {{ 'FOOTER.COPY_RIGHT_WITH_YEAR' | translate: { cYear: cYear, pageType: pageType === 'woqod' ? 'WOQOD':
+            'FAHES' } }}
+        </p>
+        <ul class="flex flex-col lg:flex-row flex-wrap gap-2.5 lg:gap-[26px] flex-1 justify-center order-1 lg:order-2"
+            *ngIf="pageType && lang">
+            <li *ngFor="let bottomMenuItem of bottomMenu?.[pageType]?.[lang]">
+
+
+                <ng-container *ngIf="isExternalMethod(bottomMenuItem.link)">
+
+                    <a *ngIf="bottomMenuItem.target === '_blank'" target="_blank"
+                        [href]="bottomMenuItem.link | routeLocalization">
+                        <span [innerHTML]="bottomMenuItem.title"
+                            class="ltr:text-left rtl:text-right tracking-[-0.5px] text-[#011C35] font-Poppins-Light text-sm"></span>
+                        <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                            more about
+                            this button</span>
+                    </a>
+
+
+                    <a *ngIf="bottomMenuItem.target !== '_blank'" [href]="bottomMenuItem.link | routeLocalization">
+                        <span [innerHTML]="bottomMenuItem.title[lang]"
+                            class="ltr:text-left rtl:text-right tracking-[-0.5px] text-[#011C35] font-Poppins-Light text-sm"></span>
+                        <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                            more about
+                            this button</span>
+                    </a>
+
+                </ng-container>
+
+
+                <ng-container *ngIf="!isExternalMethod(bottomMenuItem.link)">
+
+                    <a *ngIf="bottomMenuItem.target === '_blank'" target="_blank"
+                        [href]="bottomMenuItem.link | routeLocalization">
+                        <span [innerHTML]="bottomMenuItem.title[lang]"
+                            class="ltr:text-left rtl:text-right tracking-[-0.5px] text-[#011C35] font-Poppins-Light text-sm"></span>
+                        <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                            more about
+                            this button</span>
+                    </a>
+
+
+                    <a *ngIf="bottomMenuItem.target !== '_blank'"
+                        [routerLink]="bottomMenuItem.link | routeLocalization">
+                        <span [innerHTML]="bottomMenuItem.title[lang]"
+                            class="ltr:text-left rtl:text-right tracking-[-0.5px] text-[#011C35] font-Poppins-Light text-sm"></span>
+                        <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read
+                            more about
+                            this button</span>
+                    </a>
+
+                </ng-container>
+
+            </li>
+        </ul>
+    </div>
+</footer>

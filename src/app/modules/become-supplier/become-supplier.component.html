@@ -1,0 +1,33 @@
+<section class="bg-[#003399] py-[97px] z-[1] overflow-hidden">
+  <div class=" max-w-desktop mx-auto px-4 lg:px-24 mb-[64px] mt-[40px] flex flex-col lg:flex-row gap-4 relative z-0">
+    <!-- backgroud shape images  -->
+    <img src="/assets/images/lubricants/left.webp" class="absolute top-0 -left-1/2 z-[-1]" alt="svg shape" />
+    <img src="/assets/images/lubricants/left.webp" class="absolute top-[50%] -right-1/2 z-[-1]" alt="svg shape" />
+    <div class="w-full lg:w-[calc(50%-10px)]" *ngFor="let item of data">
+      <app-become-supplier-item [lang]="lang" [data]="item" (onClick)="onClickFire(item)"></app-become-supplier-item>
+    </div>
+  </div>
+</section>
+
+<app-modal [template]="modalTemplatePlaceholder1" [isModalEnabled]="isTenderalertModalEnabled"
+  (closeModalByKeyboard)="isTenderalertModalEnabled = false"
+  modalClasses="top-0 bottom-0 w-[90%] max-w-[1024px] ::ng-deep z-[1]">
+  <ng-template #modalTemplatePlaceholder1>
+    <app-request-tender-alerts-modal (closeModal)="isTenderalertModalEnabled = false"></app-request-tender-alerts-modal>
+  </ng-template>
+</app-modal>
+
+<app-modal-div [template]="modalTemplatePlaceholder2" [isModalEnabled]="isBecomeASupplierModalEnabled"
+  (closeModalByKeyboard)="isBecomeASupplierModalEnabled = false" modalClasses="top-0 bottom-0 w-[90%] max-w-[1024px]">
+  <ng-template #modalTemplatePlaceholder2>
+    <app-become-a-supplier-modal (closeModal)="isBecomeASupplierModalEnabled = false"></app-become-a-supplier-modal>
+  </ng-template>
+</app-modal-div>
+
+<app-modal [template]="modalTemplatePlaceholder3" [isModalEnabled]="isSubscriptionModalEnabled"
+  (closeModalByKeyboard)="isSubscriptionModalEnabled = false" modalClasses="top-0 bottom-0 w-[90%] max-w-[1024px]">
+  <ng-template #modalTemplatePlaceholder3>
+    <app-subscription-modal *ngIf="data && data[0]?.modalData" [data]="data[0]?.modalData[lang]"
+      (closeModal)="isSubscriptionModalEnabled = false"></app-subscription-modal>
+  </ng-template>
+</app-modal>

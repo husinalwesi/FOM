@@ -1,0 +1,21 @@
+<div class="bg-[#ECECEE] rounded-[5px]">
+    <div
+        class="w-full border border-solid border-[#CCCCCC] bg-white rounded-[5px] mt-8 py-[26px] px-5 flex flex-col lg:flex-row gap-2 justify-between">
+        <div>
+            <ul class="flex flex-wrap gap-2">
+                <li>
+                    <div class="bg-[#ECECEE] rounded-[40px] py-[13px] px-6 flex gap-8 items-center">
+                        <span class="font-Poppins-Light text-sm text-[#6B6B6B]">{{'SERVICE_INSPESTION.SORT' | translate}}<strong
+                                class="text-black">Istimara Expired</strong></span>
+                        <button>
+                            <app-svg src="assets/svgs/circle-close.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="18" height="18" fill="#000000"></app-svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <app-add-new-car [selectedCarCount]="getSelectedCars()" [isNewCarEnabled]="isNewCarEnabled"
+      (toggleNewCarEmiter)="toggleNewCar()"></app-add-new-car>
+    </div>
+</div>

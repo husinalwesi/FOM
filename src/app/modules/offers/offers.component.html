@@ -1,0 +1,15 @@
+<section class="h-[297px] relative overflow-hidden px-0 lg:px-10">
+    <owl-carousel-o #owlCarousel [options]="customOptions">
+        <ng-container *ngFor="let slide of promotions; let i = index">
+            <ng-template carouselSlide [id]="'offer-img-' + (i + 1)">
+
+                <div class="bg-no-repeat bg-cover bg-center cursor-pointer"
+                    [routerLink]="slide.link | routeLocalization" style="border-radius: 10px; height: 255px !important;
+                "
+                    [style.background-image]="'url(' + (slide.image | imageSource) + ')'">
+                </div>
+
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</section>

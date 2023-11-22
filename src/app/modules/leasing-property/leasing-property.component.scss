@@ -1,0 +1,19 @@
+app-ddl-stander::ng-deep {
+    & button {
+        @apply shadow-none;
+    }
+}
+
+#order-by-ddl::ng-deep {
+    &>div {
+        @apply h-auto;
+
+        &>button {
+            @apply bg-[#ECECEE] shadow-none;
+        }
+    }
+}
+
+.sort-by app-ddl-stander::ng-deep .dropdown-ddl {
+    @apply w-[250px] lg:w-auto;
+}

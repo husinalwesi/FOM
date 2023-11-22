@@ -1,0 +1,64 @@
+<div class="flex gap-4 mt-4">
+    <div class="flex-1 relative">
+        <label class="ltr:text-left rtl:text-right font-Cairo-Regular text-sm leading-8 text-black capitalize mb-1"
+            for="">{{'INSPECTION_FILTER.SEARCH_LOCATIONS' | translate}}</label>
+        <input autocomplete="off"
+            class="w-full border border-solid border-black rounded-md h-[50px] px-[50px] text-[#2B2B2B] font-Poppins-Light text-sm"
+            type="text" name="location" [(ngModel)]="search" placeholder="{{'PLACEHOLDER.ENTER_LOCATION' | translate}}" (keyup)="onTyping($event)" />
+        <div *ngIf="isMenuEnabled"
+            class="w-[313px] h-auto max-h-[281px] absolute ltr:-left-px ltr:lg:left-0 rtl:-right-px rtl:lg:right-0 top-[82px] bg-white z-[11] rounded-b-[5px] border-b border-x border-solid border-[#707070] overflow-auto pb-[15px]">
+            <ng-container *ngFor="let resultItem of searchResult">
+                <ng-container
+                    *ngTemplateOutlet="listContent; context: { title: resultItem.key, data: resultItem.data }"></ng-container>
+            </ng-container>
+            <ng-container *ngIf="searchResult[0].data.length === 0">
+                <p
+                    class="font-Cairo-Regular text-xs leading-6 text-[#707070] px-[37px] w-full ltr:text-left rtl:text-right">
+                    There is no data</p>
+            </ng-container>
+        </div>
+
+
+        <button type="button" class="absolute left-0 bottom-0 h-[50px] w-[50px] flex justify-center items-center"
+            (click)="isMenuEnabled = false">
+            <app-svg src="assets/svgs/gps.svg" customClass="" label="title_goas_here" [stretch]="false" width="18"
+                fill="#003399"></app-svg>
+        </button>
+        <button (click)="isMenuEnabled = false" type="button"
+            class="absolute right-0 bottom-0 h-[50px] w-[50px] flex justify-center items-center">
+            <app-svg src="assets/svgs/search-short.svg" customClass="" label="title_goas_here" [stretch]="false"
+                width="28" fill="#00904A"></app-svg>
+        </button>
+    </div>
+    <div class="w-[50px] flex items-end">
+        <app-filter-ddl [data]="filterDDL" (onOptionChange)="filterChange($event)"></app-filter-ddl>
+    </div>
+</div>
+<div *ngIf="addresses.selected.length > 0" class=" mt-4 mb-4 flex gap-1.5 items-center">
+    <span class="font-Poppins-Light text-sm leading-[26px] text-[#2B2B2B]">{{'INSPECTION_FILTER.EG' |
+        translate}}:</span>
+    <ul class="flex flex-row flex-wrap gap-1.5">
+        <li *ngFor="let locationItem of addresses.selected; let i = index"
+            class="px-2 py-1.5 flex flex-row gap-2 items-center bg-[#ECECEE] rounded-[30px]">
+            <span
+                class="text-[#2B2B2B] capitalize text-center font-Poppins-Light text-sm tracking-normal">{{locationItem}}</span>
+            <button type="button" class="h-3 inline-block" (click)="removeLocation(i)">
+                <app-svg src="assets/svgs/close.svg" customClass="align-text-top" label="title_goas_here"
+                    [stretch]="false" width="8" fill="var(--primary-color)"></app-svg>
+            </button>
+        </li>
+    </ul>
+</div>
+
+
+
+<ng-template #listContent let-data="data" let-title="title">
+    <ul *ngIf="data" class="flex flex-col gap-1">
+        <li *ngFor="let item of data">
+            <button (click)="searchFire(item.text)"
+                class="font-Cairo-Regular text-xs leading-6 text-[#707070] px-[37px] w-full ltr:text-left rtl:text-right"
+                [innerHTML]="item.html">
+            </button>
+        </li>
+    </ul>
+</ng-template>

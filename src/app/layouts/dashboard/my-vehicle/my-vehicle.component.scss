@@ -1,0 +1,41 @@
+table {
+    & tbody > tr {
+        &:last-child {
+            @apply mb-[43px];
+        }
+        &:nth-child(odd) {
+            @apply lg:bg-[#F5F5F5];
+        }
+        &:nth-child(even) {
+            @apply bg-white w-full;
+        }
+
+        & td {
+            @apply px-[35px] py-[17px] text-[#011C35] flex-1;
+            &.normal {
+                @apply font-Poppins-Light text-sm leading-[18px] w-[180px] lg:w-auto;
+            }
+            &.tender-id {
+            }
+        }
+    }
+    & thead {
+        & th {
+            @apply lg:px-6 lg:pt-[25px] lg:pb-[30px] whitespace-nowrap flex-1 w-[180px] lg:w-auto;
+        }
+    }
+}
+app-pagination-second-style ::ng-deep {
+    .pagination-item {
+        @apply hover:bg-[#003399] hover:text-white;
+        &.active {
+            @apply bg-[#003399] text-white;
+        }
+    }
+}
+.failed {
+    @apply bg-[#E73C3E];
+}
+.succeed {
+    @apply bg-[#03852c];
+}

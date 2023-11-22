@@ -1,0 +1,7 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data" [link]="'lubricants'"></app-breadcrumb-section-second-style>
+<app-our-story *ngIf="data?.areaOneTitle" [title]="data?.areaOneTitle[lang]" [text]="data?.areaOneDescription[lang]"
+    [textAlign]="'text-center'"></app-our-story>
+<app-products-carousel *ngIf="products.length > 0" [items]="products" [lang]="lang" [title]="data?.areaTwoTitle?.[lang]"
+    (onClick)="onClickEmiter($event)"></app-products-carousel>
+<app-oto-lubricants-galleries [lang]="lang" [data]="lubricantsData"></app-oto-lubricants-galleries>

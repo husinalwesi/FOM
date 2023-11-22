@@ -1,0 +1,16 @@
+<div class="flex flex-col h-full">
+  <div>
+
+    <img [lazyLoad]="data.img | imageSource" [defaultImage]="'loadingImage'| imageSource"
+      [errorImage]="'errorImage'| imageSource" alt="" width="60" height="60" class="mx-auto w-[60px] h-[60px]" />
+
+    <p class="text-[#011C35] text-[18px] leading-[30px] font-Cairo-Bold pt-[12px] line-clamp-2"
+      [innerHTML]="data.title[lang]"></p>
+    <p class="text-[#666666] text-[14px] leading-[23px] font-Cairo-Regular mb-[18px] line-clamp-3"
+      [innerHTML]="data.desc[lang]"></p>
+  </div>
+  <div class="mt-auto">
+    <app-btn-one textClass="font-Cairo-Regular font-base" [link]="data.link" text="SHARED.READ_MORE"
+      seoDesc="Text about the button" svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one>
+  </div>
+</div>

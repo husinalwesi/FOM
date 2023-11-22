@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "http://20.173.96.73:8080/api",
+        "secure": false
+    }
+}

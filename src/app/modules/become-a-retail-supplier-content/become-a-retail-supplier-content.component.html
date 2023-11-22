@@ -1,0 +1,205 @@
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit(form)">
+  <div class="max-w-desktop mx-auto px-4 lg:px-11 py-[50px] bg-white" style="box-shadow: 0px 3px 6px #00000029">
+    <p class="text-xl leading-[50px] font-Poppins-Medium mb-[44px]" [innerHTML]="title">
+    </p>
+    <div class="flex flex-col lg:flex-row gap-x-[152px] gap-y-[43px] pb-[85px] flex-wrap">
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <input
+            class="shadow appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="qid" name="qid" [(ngModel)]="formData.qid" required onlyNumbers
+            [class.error]="isSubmitted && !form?.controls?.qid?.valid" type="text"
+            placeholder="{{'PLACEHOLDER.QID' | translate }}" maxlength="20" />
+          <label
+            class="absolute -top-1 ltr:ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="qid">{{ "SIGN_IN.QID" | translate }} *</label>
+          <span *ngIf="isSubmitted && !form?.controls?.qid?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+            "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+        </div>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <input
+            class="shadow appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="email" email name="email" [(ngModel)]="formData.email" required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            [class.error]="isSubmitted && !form?.controls?.email?.valid" type="text"
+            placeholder="{{'PLACEHOLDER.EMAIL' | translate }}" maxlength="50" />
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="email">{{ "RETAIL.EMAIL" | translate }} *</label>
+          <span *ngIf="isSubmitted && !form?.controls?.email?.valid && formData.email !== '' "
+            class="text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular flex justify-between">{{
+
+            "ERRORS.Email" | translate }}</span>
+
+          <span *ngIf="isSubmitted  && formData.email=== ''"
+            class="text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular flex justify-between">{{
+
+            "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <input
+            class="shadow appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="supplierName" name="supplierName" [(ngModel)]="formData.supplierName" required [class.error]="
+              isSubmitted && !form?.controls?.supplierName?.valid
+            " type="text" placeholder="{{'PLACEHOLDER.SUPPLIER_NAME' | translate }}" maxlength="100" onlyText />
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="supplierName">{{ "SHOP.SUPPLIER_NAME" | translate }} *</label>
+          <span *ngIf="isSubmitted && !form?.controls?.supplierName?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+            "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+        </div>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <input
+            class="shadow appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="contactPerson" name="contactPerson" [(ngModel)]="formData.contactPerson" required [class.error]="
+              isSubmitted && !form?.controls?.contactPerson?.valid
+            " type="text" placeholder="{{'PLACEHOLDER.CONTACT_PERSON' | translate }}" maxlength="100" />
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="contactPerson">{{ "SHOP.CONTACT_PERSON" | translate }} *</label>
+          <span *ngIf="isSubmitted && !form?.controls?.contactPerson?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+            "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+        </div>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-ddl-stander-multi [lang]="lang" [isRequired]="true" [data]="productCategoryDDL"
+          (onOptionChange)="sectorChange($event)"
+          [isErrorEnabled]="isSubmitted && productCategoryDDL.selected.length === 0"></app-ddl-stander-multi>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <input
+            class="shadow appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="productDescription" name="productDescription" [(ngModel)]="formData.productDescription" required
+            [class.error]="
+              isSubmitted && !form?.controls?.productDescription?.valid
+            " type="text" placeholder="{{'PLACEHOLDER.PRODUCT_DESCRIPTION' | translate }}" maxlength="100" />
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="productDescription">{{ "PLACEHOLDER.PRODUCT_DESCRIPTION" | translate }} *</label>
+          <span *ngIf="isSubmitted && !form?.controls?.productDescription?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+            "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+        </div>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <div class="relative">
+            <input
+              class="appearance-none border border-[#E0E0E0] rounded w-full py-[19px] ltr:pl-[19px] ltr:pr-[90px] rtl:pl-[90px] rtl:pr-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+              id="crNumber" type="text" name="crNumber" [class.disabled]="!isFormEnabled"
+              [(ngModel)]="formData.crNumber" required onlyNumbers
+              [class.error]="isSubmitted && !form?.controls?.crNumber?.valid"
+              [placeholder]="'PLACEHOLDER.CR_NUMBER' | translate" />
+            <label
+              class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+              for="crNumber">{{'SHOP.CR_NUMBER' | translate}} *</label>
+            <!-- <button *ngIf="!isFormEnabled" type="button" (click)="getCheckValidate(form)"
+              class="absolute px-4 text-[#008545] h-full text-sm top-0 leading-[21px] font-Poppins-Light block ltr:right-0 rtl:left-0">
+              {{'SHOP.VALIDATE' | translate}}
+            </button> -->
+          </div>
+          <span *ngIf="isSubmitted && !form?.controls?.crNumber?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.CR'
+            | translate}}</span>
+        </div>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-date-picker-fifth-style [isFormEnabled]="!isFormEnabled"
+          [data]="{label: 'SHOP.START_DATE', value: formData.StartDate, isRequired: true}"
+          [isErrorEnabled]="isSubmitted && !formData.StartDate" [min]="dateOfToday" [max]="formData.EndDate"
+          (dateChange)="formData.StartDate = $event"></app-date-picker-fifth-style>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-date-picker-fifth-style [isFormEnabled]="!isFormEnabled"
+          [data]="{label: 'SHOP.END_DATE', value: formData.EndDate, isRequired: true}"
+          [isErrorEnabled]="isSubmitted && !formData.EndDate" [min]="formData.StartDate"
+          (dateChange)="formData.EndDate = $event"></app-date-picker-fifth-style>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-attachment *ngIf="showFiles" [data]="CompanyProfile" [isFormEnabled]="!isFormEnabled"
+          [isErrorEnabled]="isSubmitted && !CompanyProfile.file" [accept]="CompanyProfile.accept"
+          (selectFileEmiter)="CompanyProfile.file = $event">
+        </app-attachment>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-attachment *ngIf="showFiles" [data]="cr" [isFormEnabled]="!isFormEnabled"
+          [isErrorEnabled]="isSubmitted && !cr.file" [accept]="cr.accept" (selectFileEmiter)="cr.file = $event">
+        </app-attachment>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-attachment *ngIf="showFiles" [data]="TradeLicense" [isFormEnabled]="!isFormEnabled"
+          [isErrorEnabled]="isSubmitted && !TradeLicense.file" [accept]="TradeLicense.accept" [maximumFileUpload]="2"
+          (selectFileEmiter)="TradeLicense.file = $event">
+        </app-attachment>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <app-attachment *ngIf="showFiles" [data]="taxCard" [isFormEnabled]="!isFormEnabled"
+          [isErrorEnabled]="isSubmitted && !taxCard.file" [accept]="taxCard.accept"
+          (selectFileEmiter)="taxCard.file = $event">
+        </app-attachment>
+      </div>
+      <div class="w-full lg:w-[calc(50%-76px)]">
+        <div class="relative mb-4">
+          <textarea
+            class="shadow appearance-none border rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="declaration" name="declaration" [(ngModel)]="formData.declaration"
+            placeholder="{{'PLACEHOLDER.DECLARATION' | translate }}" maxlength="256"></textarea>
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[15px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="declaration">{{ "PLACEHOLDER.DECLARATION" | translate }} *</label>
+          <span *ngIf="isSubmitted && !form?.controls?.declaration?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{
+            "ERRORS.THIS_FIELD_IS_REQUIRED" | translate }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col lg:flex-row justify-end gap-5">
+      <!-- [class.disabled]="!isFormEnabled" -->
+      <a [routerLink]="(selectedPage === 'general' ? '/tenders-and-supplier' : '/product-and-service') | routeLocalization"
+        class="w-full lg:w-[calc(50%-76px)] lg:max-w-[104px] text-center font-Cairo-Regular text-[16px] leading-[38px] text-[#008545] rounded-[5px] border border-[#008545]">
+        <!-- {{ "RETAIL.SAVE_AND_CONTINUE_LATER" | translate }} -->
+        {{ "SERVICE_INSPESTION.CANCEL" | translate }}
+      </a>
+      <!-- <button (click)="isModalEnabled = true"></button> -->
+      <button type="submit" [class.disabled]="!isFormEnabled"
+        class="w-full lg:w-[calc(50%-76px)] lg:max-w-[104px] text-center font-Cairo-Regular text-[16px] leading-[38px] text-[white] bg-[#008545] rounded-[5px] border border-[#008545]">
+        {{ "RETAIL.SUBMIT" | translate }}
+      </button>
+    </div>
+  </div>
+</form>
+
+<app-modal [template]="modalTemplatePlaceholder" [isModalEnabled]="isModalEnabled"
+  (closeModalByKeyboard)="isModalEnabled = false" modalClasses="inset-0 w-[90%] max-w-[1024px] ">
+  <ng-template #modalTemplatePlaceholder>
+    <div class="bg-white rounded-[5px]">
+      <div class="modal-header px-[21px] flex justify-end pb-[3px] pt-[16px]">
+        <button type="button">
+          <app-svg (click)="isModalEnabled = false" src="assets/svgs/close.svg" customClass="" label="title_goes_here"
+            [stretch]="false" width="16" height="16" fill="#000"></app-svg>
+        </button>
+      </div>
+      <div class="modal-body px-[45px]">
+        <section class="">
+          <div class="max-w-desktop mx-auto px-4 lg:px-10 py-28 flex flex-col gap-5">
+            <h1 class="text-[#009933] text-center font-Cairo-Bold text-[60px] leading-[70px] capitalize"
+              [innerHTML]="modalMessage?.title[lang]"></h1>
+            <p class="text-center font-Cairo-Regular text-[32px] leading-[50px] capitalize text-[#011C35]"
+              [innerHTML]="modalMessage?.desc[lang]"></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </ng-template>
+</app-modal>

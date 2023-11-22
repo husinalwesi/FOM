@@ -1,0 +1,37 @@
+<div class="w-full rounded-[5px] mx-auto bg-white">
+    <owl-carousel-o #owlCarousel [options]="customOptions">
+        <ng-container *ngFor="let slide of slidesStore; let i = index">
+            <ng-template carouselSlide [id]="'e-services-' + (i + 1)">
+                <div class="flex flex-col">
+                    <div
+                        class="h-[179.5px] w-full flex justify-center items-center border-b border-solid border-[#CCCCCC]">
+                        <ng-container *ngTemplateOutlet="cardContent; context: { content: slide[0] }"></ng-container>
+                    </div>
+                    <div class="h-[179.5px] w-full flex justify-center items-center">
+                        <ng-container *ngTemplateOutlet="cardContent; context: { content: slide[1] }"></ng-container>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+
+    </owl-carousel-o>
+</div>
+
+<ng-template #cardContent let-content="content">
+    <a *ngIf="isExternalMethod(content?.link)" [href]="content.link | routeLocalization" target="_blank"
+        class="service-item flex flex-col gap-4 w-full h-full justify-center group hover:bg-[var(--primary-color)] transition-all">
+        <img [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+            [lazyLoad]="content.image | imageSource" alt="" title="" class="w-[80px] h-[80px]" />
+        <p
+            class="text-center h-[18px] overflow-hidden px-4 whitespace-nowrap text-ellipsis font-Cairo-Regular text-base leading-6 text-[#3C4A58] capitalize group-hover:text-white transition-all line-clamp-1">
+            {{content.title[lang]}}</p>
+    </a>
+    <a *ngIf="!isExternalMethod(content?.link)" [routerLink]="content.link | routeLocalization"
+        class="service-item flex flex-col gap-4 w-full h-full justify-center group hover:bg-[var(--primary-color)] transition-all">
+        <img [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+            [lazyLoad]="content.image | imageSource" alt="" title="" class="w-[80px] h-[80px]" />
+        <p
+            class="text-center h-[18px] overflow-hidden px-4 whitespace-nowrap text-ellipsis font-Cairo-Regular text-base leading-6 text-[#3C4A58] capitalize group-hover:text-white transition-all line-clamp-1">
+            {{content.title[lang]}}</p>
+    </a>
+</ng-template>

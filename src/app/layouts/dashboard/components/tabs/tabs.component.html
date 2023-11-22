@@ -1,0 +1,7 @@
+<ul class="bg-[#ECECEE] rounded-[20px] lg:rounded-[70px] flex flex-col lg:flex-row">
+  <li *ngFor="let item of list" [class.active]="item.key === selectedStep" class="py-[3px] px-[3px]">
+    <button type="button" [class.active]="item.key === selectedStep"
+      class="text-center w-full lg:w-auto font-Cairo-Bold text-sm text-black py-[7px] px-10 whitespace-nowrap"
+      (click)="tabClickHandler(item.key)">{{item.title | translate}}</button>
+  </li>
+</ul>

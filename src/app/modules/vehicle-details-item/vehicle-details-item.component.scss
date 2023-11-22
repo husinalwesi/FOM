@@ -1,0 +1,6 @@
+.active{
+    @apply bg-[#EDFFF6] border-[#00904A];
+    & .extra-txt{
+        @apply block;
+    }
+}

@@ -1,0 +1,100 @@
+<div class="relative overflow-x-auto mb-[26px]">
+    <table class="w-full text-sm text-center flex flex-col border border-solid border-[#ECECEE] rounded-lg">
+        <thead class="text-sm leading-[18px] font-Poppins-Medium bg-[white]">
+            <tr class="w-[100%] flex flex-row items-center">
+                <th scope="col">
+                    <button class="">
+                        Name
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button>
+                        Invoice
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button>
+                        Tracking
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button>
+                        Service Name
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button>
+                        Date & Time
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button>
+                        Status
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+                <th scope="col">
+                    <button>
+                        Amount
+                        <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="24" height="24" stroke="#000"></app-svg>
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="w-[calc(100%-20px)] mx-auto">
+            <tr class="flex flex-row items-center h-[50px]" *ngFor="let _ of [].constructor(7); let i = index">
+                <td scope="row" class="normal flex flex-row gap-[7px] items-center">
+                    <img src="assets/images/png/user-p.webp" alt="" width="32" class="h-[32px]" />
+                    <p class="text-xs leading-[45px] font-Poppins-Light">
+                        Mohammed Al Faraj
+                    </p>
+                </td>
+                <td scope="row">
+                    <button class="bg-[#D8E5FF] py-1 px-2 rounded text-[10px] leading-[18px] font-Poppins-Light">
+                        WO20493993002
+                    </button>
+                </td>
+                <td class="normal flex flex-col gap-[3px] ltr:text-left rtl:text-right">
+                    <p class="text-[12px] leading-[18px] font-Poppins-Light">
+                        LMH9ewiwcn
+                    </p>
+                    <p class="text-[10px] leading-[11px] font-Poppins-Light text-[#7C7C7C]">
+                        Main Road, Marin st
+                    </p>
+                </td>
+                <td class="normal">
+                    <p class="text-[14px] leading-[18px] font-Poppins-Light">E-Tag</p>
+                </td>
+                <td class="normal">
+                    <p class="text-[14px] leading-[18px] font-Poppins-Light">
+                        05/12/2023 13:00 PM
+                    </p>
+                </td>
+                <td class="normal">
+                    <button
+                        class="bg-[#009933] rounded-[9px] text-white text-center text-[10px] leading-[18px] px-[14px] py-[2px]">
+                        Success
+                    </button>
+                </td>
+                <td class="normal flex flex-col gap-[3px] ltr:text-left rtl:text-right">
+                    <p class="text-[12px] leading-[18px] font-Poppins-Light">QR 400</p>
+                    <p class="text-[10px] leading-[11px] font-Poppins-Light text-[#7C7C7C]">
+                        Wadd_Faraj
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

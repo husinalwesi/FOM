@@ -1,0 +1,23 @@
+<div class="bg-[#F5F5F5]">
+    <div class="py-10 max-w-desktop px-4 mx-auto lg:px-10" *ngIf="isCleanDesgin"><router-outlet></router-outlet></div>
+    <div *ngIf="!isCleanDesgin" class="py-10 max-w-desktop px-4 mx-auto lg:px-10">
+        <!-- class="py-7 ltr:pl-[45px] ltr:pr-[26px] rtl:pl-[26px] rtl:pr-[45px] ltr:max-mobile-dashboard:px-4 rtl:max-mobile-dashboard:px-4"> -->
+        <app-breadcrumb class="hidden max-mobile-dashboard:flex mb-2"></app-breadcrumb>
+        <div class="flex justify-between pb-3">
+            <p class=" font-Cairo-Bold text-lg text-black" [innerHTML]="pageTitle | translate"></p>
+            <button type="button" [routerLink]="'/dashboard/steps-apppointment' | routeLocalization"
+                *ngIf="isAppointment" class="flex flex-row gap-2">
+                <!-- Button content -->
+                <p class="underline font-Poppins-Medium  text-lg text-[#009933] flex items-start ">{{
+                    'DASHBOARD.ADD_NEW_APPOINTMENT' | translate }}
+                </p>
+                <app-svg src="assets/svgs/arrow.svg" customClass="rotate-[270deg] rtl:rotate-[90deg]"
+                    label="title_goas_here" [stretch]="false" width="24" height="24" stroke="#009933"></app-svg>
+            </button>
+        </div>
+        <div
+            class="bg-white shadow-[0px_1px_1px_#0000000D] rounded-[10px] border border-solid border-[#F5F5F5] py-[30px] px-[25px]">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

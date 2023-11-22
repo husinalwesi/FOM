@@ -1,0 +1,16 @@
+<section class="bg-[#FFFFFF]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 py-[100px]">
+        <div class="flex flex-col lg:flex-row justify-between">
+            <div class="w-full lg:w-1/4 flex flex-row gap-4 items-center" *ngFor="let item of statistics">
+                <img class="w-[49px] h-[49px] rounded-full" [src]="item?.icon | imageSource" alt="">
+                <div class="flex flex-col">
+                    <p class="text-[#000000] font-Poppins-Medium text-[50px] leading-[70px] counters"
+                        [attr.counttarget]="item?.number">0
+                    </p>
+                    <p class="text-[#000000] font-Poppins-Medium text-xl" [innerHTML]="item?.text[lang]"></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

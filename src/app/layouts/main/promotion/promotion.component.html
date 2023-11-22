@@ -1,0 +1,42 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data" [link]="'promotions/detailed/' + id"></app-breadcrumb-section-second-style>
+<section class="bg-[#F5F5F5] pb-[50px] pt-7">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10">
+        <p
+            class="ltr:text-left rtl:text-right font-Cairo-Bold text-[28px] leading-[30px] text-[#011C35] capitalize mb-4">
+            {{data?.title[lang]}}</p>
+        <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-base text-[#011C35] mb-4">
+            {{'SHARED.DATE' |
+            translate}}: <ng-container *ngIf="data?.startDate">
+                {{data?.startDate | date:'dd-MM-YYYY'}}
+            </ng-container> <br><br> {{'SHARED.VALID' | translate}}<ng-container *ngIf="data?.endDate">
+                {{data?.endDate | date:'dd-MM-YYYY'}}
+            </ng-container></p>
+        <a *ngIf="data?.locationText?.[lang]  && isExternalMethod(data?.location)" [href]="data?.location | routeLocalization" target="_blank"
+            class="ltr:text-left rtl:text-right font-Cairo-Bold text-base text-[#011C35] mb-4">
+            {{'PROMOTION_FILTER.LOCATION' |
+            translate}}: {{data?.locationText?.[lang]}}
+        </a>
+        <a *ngIf="data?.locationText?.[lang] && !isExternalMethod(data?.location)" [routerLink]="data?.location | routeLocalization" 
+            class="ltr:text-left rtl:text-right font-Cairo-Bold text-base text-[#011C35] mb-4">
+            {{'PROMOTION_FILTER.LOCATION' |
+            translate}}: {{data?.locationText?.[lang]}}
+        </a>
+        <!-- <a *ngIf="data?.location && data?.locationText?.[lang]" [href]="data.location" target="_blank" class="mt-[19px] flex gap-3">
+            <app-svg src="assets/svgs/location.svg" customClass="mt-[-3px]" label="title_goas_here" [stretch]="false" width="12"
+              height="12" fill="#000"></app-svg>
+            <p class="ltr:text-left rtl:text-right font-Cairo-Bold text-base text-[#011C35] mb-4">
+                {{'PROMOTION_FILTER.LOCATION' |
+                translate}}: {{data?.locationText?.[lang]}}
+          </a> -->
+        <app-detailed-body [data]="data?.body[lang]"></app-detailed-body>
+    </div>
+</section>
+<section class="bg-white pb-[61px]" *ngIf="promotionList.length > 0">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10">
+        <p
+            class="ltr:text-left rtl:text-right font-Cairo-Bold text-[22px] leading-[30px] text-[#011C35] capitalize pt-[50px] pb-8">
+            {{'PROMOTIONS.RELATED_PROMOTIONS' | translate}}</p>
+        <app-promotion-list [promotionList]="promotionList"></app-promotion-list>
+    </div>
+</section>

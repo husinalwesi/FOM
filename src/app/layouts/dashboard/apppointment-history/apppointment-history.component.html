@@ -1,0 +1,315 @@
+<div class="flex flex-row justify-between pb-[15px]">
+    <app-tabs [list]="list" [selectedStep]="selectedStep" (tabClickk)="changeTab($event)"></app-tabs>
+    <app-search-w-ddl [ddl]="ddl" inputTitle="E_TAG.SEARCH_BY_NUMBER_PLATE" (ddlChangeEmiter)="changeDDL($event)"
+        [keyword]="keyword" (KeywordChange)="changeKeyword($event)"></app-search-w-ddl>
+</div>
+<ng-container *ngIf="selectedStep === 'Upcoming'">
+    <div class="relative overflow-x-auto mb-[26px]">
+        <app-no-data *ngIf="data.data.length === 0"></app-no-data>
+        <table *ngIf="data.data.length > 0"
+            class="w-full text-sm text-center flex flex-col  lg:border lg:border-solid lg:border-[#ECECEE] rounded-lg">
+            <thead class="text-sm leading-[18px]  font-Poppins-Medium  bg-[white]">
+                <tr class="w-[100%] flex flex-row items-center">
+                    <th scope="col"><button class="">
+                            Date
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button> </th>
+                    <th scope="col"><button>
+                            Scheduled Time
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button> </th>
+                    <th scope="col"><button>
+                            Plate Number
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button>
+                    </th>
+                    <th scope="col"><button>
+                            Service
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button>
+                    </th>
+                    <th scope="col"><button>
+                            Location
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button></th>
+                    <th scope="col"><button>
+                            View Details
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button></th>
+                    <th scope="col"><button>
+                            Edit
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button></th>
+                </tr>
+            </thead>
+            <tbody class="w-full lg:w-[calc(100%-20px)] mx-auto">
+                <tr class="flex flex-row items-center h-[50px]" *ngFor="let item of data.data">
+                    <td class="normal">
+                        {{item.date | date:'dd'}}-{{ ('MONTHS.' + ((item.date | date:'MMM') || '').toUpperCase()) |
+                        translate }}-{{item.date | date:'YYYY'}}
+                    </td>
+                    <td class="normal">{{item.scheduledTime}}</td>
+                    <td class="normal">{{item.plateNumber}}</td>
+                    <td class="normal">{{item.service[lang]}}</td>
+                    <td class="normal">
+                        <app-svg src="assets/svgs/location.svg" customClass="" label="title_goas_here" [stretch]="false"
+                            width="16" height="18" fill="#009933"></app-svg>
+                        {{item.location[lang]}}
+                    </td>
+                    <td class="normal">
+                        <button type="button" (click)="viewReport(item.id)">
+                            <app-svg src="assets/svgs/view_details.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="16" height="18" fill="#009933"></app-svg>
+                        </button>
+                    </td>
+                    <td class="normal ">
+                        <button type="button" (click)="viewReport(item.id)">
+                            <app-svg src="assets/svgs/edit.svg" customClass="" label="title_goas_here" [stretch]="false"
+                                width="16" height="18" fill="#009933"></app-svg>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+<ng-container *ngIf="selectedStep === 'Completed'">
+    <div class="relative overflow-x-auto mb-[26px]">
+        <app-no-data *ngIf="data.data.length === 0"></app-no-data>
+        <table *ngIf="data.data.length > 0"
+            class="w-full text-sm text-center flex flex-col  lg:border lg:border-solid lg:border-[#ECECEE] rounded-lg">
+            <thead class="text-sm leading-[18px]  font-Poppins-Medium  bg-[white]">
+                <tr class="w-[100%] flex flex-row items-center">
+                    <th scope="col"><button class="">
+                            Date
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button> </th>
+                    <th scope="col"><button>
+                            Scheduled Time
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button> </th>
+                    <th scope="col"><button>
+                            Plate Number
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button>
+                    </th>
+                    <th scope="col"><button>
+                            Service
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button>
+                    </th>
+                    <th scope="col"><button>
+                            Status
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button></th>
+                    <th scope="col"><button>
+                            View Details
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button></th>
+                </tr>
+            </thead>
+            <tbody class="w-full lg:w-[calc(100%-20px)] mx-auto">
+                <tr class="flex flex-row items-center h-[50px]" *ngFor="let item of data.data">
+                    <td class="normal">
+                        {{item.date | date:'dd'}}-{{ ('MONTHS.' + ((item.date | date:'MMM') || '').toUpperCase()) |
+                        translate }}-{{item.date | date:'YYYY'}}
+                    </td>
+                    <td class="normal">{{item.scheduledTime}}</td>
+                    <td class="normal">{{item.plateNumber}}</td>
+                    <td class="normal">{{item.service[lang]}}</td>
+                    <td class="normal">
+                        <button
+                            class="rounded-[9px] text-white text-center text-[10px] leading-[18px] px-[14px] py-[2px]"
+                            [class.danger]="item.status.value === 2" [class.pending]="item.status.value === 0"
+                            [class.success]="item.status.value === 1">{{item.status.text[lang]}}</button>
+                    </td>
+                    <td class="normal">
+                        <button type="button" (click)="viewReport(item.id)">
+                            <app-svg src="assets/svgs/view_details.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="16" height="18" fill="#009933"></app-svg>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+<ng-container *ngIf="selectedStep === 'Cancelled'">
+    <div class="relative overflow-x-auto mb-[26px]">
+        <app-no-data *ngIf="data.data.length === 0"></app-no-data>
+        <table *ngIf="data.data.length > 0"
+            class="w-full text-sm text-center flex flex-col  lg:border lg:border-solid lg:border-[#ECECEE] rounded-lg">
+            <thead class="text-sm leading-[18px]  font-Poppins-Medium  bg-[white]">
+                <tr class="w-[100%] flex flex-row items-center">
+                    <th scope="col"><button class="">
+                            Date
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button> </th>
+                    <th scope="col"><button>
+                            Scheduled Time
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button> </th>
+                    <th scope="col"><button>
+                            Plate Number
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button>
+                    </th>
+                    <th scope="col"><button>
+                            Service
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button>
+                    </th>
+                    <th scope="col"><button>
+                            Status
+                            <app-svg src="assets/svgs/arrow.svg" customClass="" label="title_goas_here"
+                                [stretch]="false" width="24" height="24" stroke="#000"></app-svg>
+                        </button></th>
+                </tr>
+            </thead>
+            <tbody class="w-full lg:w-[calc(100%-20px)] mx-auto">
+                <tr class="flex flex-row items-center h-[50px]" *ngFor="let item of data.data">
+                    <td class="normal">
+                        {{item.date | date:'dd'}}-{{ ('MONTHS.' + ((item.date | date:'MMM') || '').toUpperCase()) |
+                        translate }}-{{item.date | date:'YYYY'}}
+                    </td>
+                    <td class="normal">{{item.scheduledTime}}</td>
+                    <td class="normal">{{item.plateNumber}}</td>
+                    <td class="normal">{{item.service[lang]}}</td>
+                    <td class="normal">
+                        <button
+                            class="rounded-[9px] text-white text-center text-[10px] leading-[18px] px-[14px] py-[2px]"
+                            [class.danger]="item.status.value === 2" [class.pending]="item.status.value === 0"
+                            [class.success]="item.status.value === 1">{{item.status.text[lang]}}</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+
+<app-modal [template]="modalTemplatePlaceholder1" [isModalEnabled]="isModalEnabled1"
+    (closeModalByKeyboard)="isModalEnabled1 = false" modalClasses="top-10 bottom-[unset] w-[90%] max-w-[1024px]">
+    <ng-template #modalTemplatePlaceholder1>
+        <div class="bg-white rounded-[5px]">
+            <div class="modal-header relative flex justify-end pb-[3px] h-[290px]">
+                <app-static-map *ngIf="detailedReport?.lat && detailedReport?.long"
+                    [data]="detailedReport?.lat + ',' + detailedReport?.long"
+                    [size]="{width: 660,height: 290}"></app-static-map>
+                <!-- <img src="assets/images/default-img.webp" class="w-full h-[290px]" alt=""> -->
+                <!-- style="background-image: url('assets/images/default-img.webp')" -->
+                <button type="button">
+                    <app-svg (click)="isModalEnabled1 = false" src="assets/svgs/close.svg"
+                        customClass="top-4 absolute ltr:right-4 rtl:left-4" label="title_goes_here" [stretch]="false"
+                        width="16" height="16" fill="#000"></app-svg>
+                </button>
+
+
+                <a [href]="'https://www.google.com/maps?q=' + detailedReport?.lat + ',' + detailedReport?.long"
+                    target="_blank"
+                    class="felx flex-row gap-2 text-[14px] leading-[24px] font-Cairo-Regular text-white bg-[#009933] py-1 px-2 top-4 absolute ltr:left-4 rtl:right-4">
+                    <app-svg src="assets/svgs/world.svg" customClass="" label="title_goes_here" [stretch]="false"
+                        width="24" height="24" fill="#fff"></app-svg>
+                    Get Direction
+                </a>
+            </div>
+            <div class="modal-body px-[12px]">
+                <div class="w-full flex justify-end">
+                    <div
+                        class="bg-[#FFF2BE] border border-solid borderr-[#F3D03E] text-xs leading-[24px] text-center rounded-[6px]  mt-[17px] font-Poppins-Bold text-[#C98B00] w-full lg:w-[235px] mb-[22px]">
+                        Istamara Expiry on {{detailedReport?.istamaraExpiryDate | date:'dd'}} {{ ('MONTHS.' +
+                        ((detailedReport?.istamaraExpiryDate | date:'MMM') || '').toUpperCase()) |
+                        translate }} {{detailedReport?.istamaraExpiryDate | date:'YYYY'}}</div>
+                </div>
+                <div class="flex flex-col lg:flex-row px-[35px] pb-[70px] gap-3">
+                    <div class="w-full lg:w-1/4">
+                        <p class="text-[#77767A] text-xs leading-[30px] font-Poppins-Light">Licence plate</p>
+                        <p class="text-[#111111] text-base leading-[30px] font-Cairo-Bold">
+                            {{detailedReport?.plateNumber}}</p>
+                    </div>
+                    <div class="w-full lg:w-1/4">
+                        <p class="text-[#77767A] text-xs leading-[30px] font-Poppins-Light">Vehicle Name</p>
+                        <p class="text-[#111111] text-base leading-[30px] font-Cairo-Bold">
+                            {{lang === 'en' ? detailedReport?.vehicleCompanyEN : detailedReport?.vehicleCompanyAR}}</p>
+                    </div>
+                    <div class="w-full lg:w-1/4">
+                        <p class="text-[#77767A] text-xs leading-[30px] font-Poppins-Light">Time</p>
+                        <p class="text-[#111111] text-base leading-[30px] font-Cairo-Bold">{{detailedReport?.date |
+                            date:'HH'}}:{{detailedReport?.date | date:'mm'}}</p>
+                    </div>
+                    <div class="w-full lg:w-1/4">
+                        <p class="text-[#77767A] text-xs leading-[30px] font-Poppins-Light">Date</p>
+                        <p class="text-[#111111] text-base leading-[30px] font-Cairo-Bold">{{detailedReport?.date |
+                            date:'dd'}} {{ ('MONTHS.' +
+                            ((detailedReport?.date | date:'MMM') || '').toUpperCase()) |
+                            translate }} {{detailedReport?.date | date:'YYYY'}}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row px-[35px] pb-[70px] gap-3">
+                    <div class="flex flex-col w-full lg:w-1/2">
+                        <div class="flex">
+                            <div class="w-full lg:w-1/2">
+                                <p class="text-sm leading-[24px] font-Poppins-Light text-[#77767A]">Owner
+                                </p>
+                            </div>
+                            <div class="w-full lg:w-1/2">
+                                <p class="text-sm leading-[24px] font-Poppins-Medium text-[#111111]">
+                                    {{detailedReport?.ownerName}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="w-full lg:w-1/2">
+                                <p class="text-sm leading-[24px] font-Poppins-Light text-[#77767A]">Plate type
+                                </p>
+                            </div>
+                            <div class="w-full lg:w-1/2">
+                                <p class="text-sm leading-[24px] font-Poppins-Medium text-[#111111]">{{lang === 'en' ?
+                                    detailedReport?.palteTypeEN : detailedReport?.palteTypeAR}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="w-full lg:w-1/2">
+                                <p class="text-sm leading-[24px] font-Poppins-Light text-[#77767A]">Category
+                                </p>
+                            </div>
+                            <div class="w-full lg:w-1/2">
+                                <p class="text-sm leading-[24px] font-Poppins-Medium text-[#111111]">{{lang === 'en' ?
+                                    detailedReport?.categoryEN : detailedReport?.categoryAR}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 bg-[#000]">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex flex-col justify-center pb-[45px]">
+                <a type="button" [href]="detailedReport?.appointmentID | file" target="_blank"
+                    class="rounded-[5px] py-[2.5px] px-7 flex flex-row justify-center gap-1 font-Cairo-Regular text-base leading-8 bg-[#00852C] text-white capitalize pb-2 mx-auto">
+                    <app-svg src="assets/svgs/world.svg" customClass="" label="title_goes_here" [stretch]="false"
+                        width="24" height="24" fill="#fff"></app-svg>
+                    Download Report </a>
+            </div>
+
+        </div>
+    </ng-template>
+</app-modal>

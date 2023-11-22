@@ -1,0 +1,21 @@
+.error{
+    @apply border-[#e83d3d];
+    & ~ label{
+        @apply text-[#e83d3d];
+    }
+}
+.activePerson{
+    @apply bg-[#EDFFF6] border-[#00904A];
+    & .extra-txt{
+        @apply block;
+    }
+}
+.beneficiary app-ddl-stander ::ng-deep div {
+    @apply h-auto;
+    & button {
+        @apply border border-solid border-t-0 border-l-0 border-r-0 border-b shadow-none py-[5px];
+       & span {
+            @apply hidden;
+        }
+    } 
+}

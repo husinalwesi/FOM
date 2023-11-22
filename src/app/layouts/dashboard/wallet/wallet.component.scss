@@ -1,0 +1,49 @@
+table {
+    & tbody > tr {
+        &:last-child {
+            @apply mb-[43px];
+        }
+        &:nth-child(odd) {
+            @apply bg-[#F5F5F5];
+        }
+        &:nth-child(even) {
+            @apply bg-white;
+        }
+
+        & td {
+            @apply px-6 py-[12px] text-[#011C35] h-[50px] flex-1 ltr:text-left rtl:text-right;
+            &.normal {
+                @apply font-Poppins-Light text-sm leading-[18px];
+            }
+            &.tender-id {
+            }
+        }
+    }
+    & thead {
+        & th {
+            @apply px-6 pt-[25px] pb-[30px] whitespace-nowrap flex-1;
+        }
+    }
+}
+.active {
+    @apply text-black;
+}
+// app-pagination-second-style{
+//     nav{
+//         .pagination-item .active{
+//             @apply bg-[#003399]
+//         }
+//     }
+// }
+.success-item {
+    @apply bg-[#009933];
+}
+.failed-item {
+    @apply bg-[#E73C3E];
+}
+
+
+
+app-search-w-ddl::ng-deep app-ddl-style-second{
+    @apply hidden;
+}

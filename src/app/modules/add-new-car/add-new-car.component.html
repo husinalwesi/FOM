@@ -1,0 +1,18 @@
+<div class="w-full bg-white px-5 flex flex-col lg:flex-row gap-2 justify-between pb-6">
+  <div>
+    <p *ngIf="selectedCarCount" class="font-Poppins-Medium leading-[50px] text-xl">
+      {{'E_TAG.SELECT_CAR' | translate}}({{selectedCarCount}})
+    </p>
+  </div>
+  <div class="flex gap-[18px] flex-col lg:flex-row items-center px-[29px]">
+    <button type="button" (click)="toggleNewCar()"
+      class="font-Poppins-Medium py-[3px] underline text-base leading-[50px] text-[#00904A] bg-white rounded-[5px] w-full lg:w-auto">
+      {{'E_TAG.ADD_A_NEW_CAR' | translate}}
+      <app-svg src="assets/svgs/arrow.svg" [customClass]="isNewCarEnabled ? 'rotate-180' : ''" label="title_goas_here"
+        [stretch]="false" width="24" height="24" stroke="#00904A"></app-svg>
+    </button>
+    <app-search-w-ddl inputTitle="E_TAG.SEARCH_BY_NUMBER_PLATE"></app-search-w-ddl>
+    <app-filter-ddl class="relative w-full lg:w-auto" buttonClasses="w-full lg:w-10 h-10" [data]="filterDDL"
+      (onOptionChange)="filterChange($event)"></app-filter-ddl>
+  </div>
+</div>

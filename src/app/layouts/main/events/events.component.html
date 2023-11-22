@@ -1,0 +1,16 @@
+<section class="bg-[#F5F5F5] pt-[18px] pb-[65px]">
+  <app-filter [lang]="lang" pickerType="both" (filterSubmit)="filterSubmit($event)"></app-filter>
+  <section class="max-w-desktop mx-auto px-4 lg:px-10 mb-[62px] mt-[49px]">
+    <app-component-loader *ngIf="isLoadingEnabled"></app-component-loader>
+    <ng-container *ngIf="!isLoadingEnabled">
+      <ul *ngIf="cards.data.length > 0" class="w-full flex flex-row flex-wrap gap-y-5">
+        <li *ngFor="let card of cards.data" class="w-full lg:w-1/3 lg:px-1.5">
+          <app-card-w-category [data]="card"></app-card-w-category>
+        </li>
+      </ul>
+      <app-no-data *ngIf="cards.data.length === 0"></app-no-data>
+    </ng-container>
+  </section>
+  <app-pagination *ngIf="!isLoadingEnabled && cards.data.length > 0" [data]="cards.pagination"
+    (changePage)="changePage($event)"></app-pagination>
+</section>

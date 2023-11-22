@@ -1,0 +1,52 @@
+.dialog {
+    z-index: 9;
+    padding: 0;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    margin: auto;
+    inset: 0;
+    overflow: auto;
+    @apply bg-[rgba(0,0,0,0.8)] pt-[122px] lg:pt-[144.5px] pb-8;
+    & > div{
+        margin: auto;
+        // height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        // display: flex;
+        &::ng-deep > *{
+            width: 100%;
+            // margin: 0;
+            // position: absolute;
+            // top: 50%;
+            // -ms-transform: translateY(-50%);
+            // transform: translateY(-50%);
+            // width: 100%;
+        }
+    }
+    @apply backdrop:bg-transparent outline-none;
+    &.open:not(.exist-animation) {
+        @apply animate-[fadeInUp_0.3s_0.2s_ease_both] backdrop:animate-[fadeInCustom_0.5s_ease_both] block;
+    }
+    &.exist-animation {
+        @apply animate-[fadeOutDown_0.3s_ease_both] backdrop:animate-[fadeOutCustom_0.5s_ease_both];
+    }
+}
+
+@keyframes fadeInCustom {
+    0% {
+        @apply bg-transparent;
+    }
+    to {
+        @apply bg-[rgba(0,0,0,0.8)];
+    }
+}
+@keyframes fadeOutCustom {
+    0% {
+        @apply bg-[rgba(0,0,0,0.8)];
+    }
+    to {
+        @apply bg-transparent;
+    }
+}

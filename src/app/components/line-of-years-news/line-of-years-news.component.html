@@ -1,0 +1,43 @@
+<div class="flex justify-center max-w-desktop px-4 mx-auto lg:px-10">
+  <div class="relative w-full">
+    <ul class="years-time-line flex flex-row justify-between pb-[10px] pt-[18px] lg:px-20">
+      <li class="text-center font-Poppins-Bold lg:text-[35px] leading-[29px] text-[#011C35] relative w-full lg:w-1/3 
+      " [class.active]="selectedYear === cYear">
+        <button type="button" (click)="setYear(cYear)">
+          <span class="">{{cYear}}</span>
+
+          <div class="border-l-0 border-r-0 border-t-0 border-b border-solid border-[#011C35] absolute right-0 -bottom-2.5 w-full
+      
+      before:w-5 before:h-5 before:absolute before:-right-px before:top-[-9px] before:content-normal before:z-10 before:bg-[#D1A755] before:rounded-full
+
+      after:w-2 after:h-2 after:absolute after:right-[5px] after:top-px after:bottom-0 after:m-auto after:content-normal after:z-20 after:bg-white after:rounded-full
+      "></div>
+        </button>
+      </li>
+      <li class="text-center font-Poppins-Bold lg:text-[35px] leading-[29px] text-[#011C35] relative w-full lg:w-1/3
+      " [class.active]="selectedYear === cYear - 1">
+        <button type="button" (click)="setYear(cYear-1)">
+          <span>{{cYear-1}}</span>
+          <div class="border-l-0 border-r-0 border-t-0 border-b border-solid border-[#011C35] absolute right-0 -bottom-2.5 w-full
+      
+      before:w-5 before:h-5 before:absolute before:right-0 before:top-[-9px] before:content-normal before:z-10 before:bg-[#D1A755] before:rounded-full
+      
+      after:w-2 after:h-2 after:absolute after:right-1.5 after:top-px after:bottom-0 after:m-auto after:content-normal after:z-20 after:bg-white after:rounded-full
+      "></div>
+        </button>
+      </li>
+      <li class="text-center font-Poppins-Bold lg:text-[35px] leading-[29px] text-[#011C35] relative w-full lg:w-1/3
+      " [class.active]="selectedYear === cYear - 2">
+        <button type="button" (click)="setYear(cYear-2)">
+          <span>{{cYear-2}}</span>
+          <div class="border-l-0 border-r-0 border-t-0 border-b border-solid border-[#011C35] absolute left-0 -bottom-2.5 w-full
+      
+      before:w-5 before:h-5 before:absolute before:right-0 before:top-[-9px] before:content-normal before:z-10 before:bg-[#D1A755] before:rounded-full
+      
+      after:w-2 after:h-2 after:absolute after:right-1.5 after:top-px after:bottom-0 after:m-auto after:content-normal after:z-20 after:bg-white after:rounded-full
+      "></div>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

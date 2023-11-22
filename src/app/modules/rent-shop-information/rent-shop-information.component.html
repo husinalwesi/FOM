@@ -1,0 +1,103 @@
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit(form)">
+  <div class="bg-white border border-solid border-[#F5F5F5] py-[50px] px-[42px]"
+    style="box-shadow: 0px 4px 6px #00000029">
+    <p class="text-xl leading-[50px] font-Poppins-Medium pb-[18px]">{{'SHOP.RENT_A_SHOP' | translate}}</p>
+    <div class="bg-[#E6FFF3] border border-solid border-[#EDFFF6] px-[28px] py-[20px] rounded-[5px] mb-[41px]">
+      <div class="flex flex-col lg:flex-row justify-between">
+        <p class="font-Poppins-Medium text-xl leading-[27px]">#{{stationData?.stationNumber}}
+          {{stationData?.title[lang]}}
+        </p>
+        <a [routerLink]="'/kenar-shop' | routeLocalization" class="flex gap-1.5 items-center">
+          <span
+            class="font-Poppins-Medium text-base leading-[27px] uppercase text-[#008042]">{{'SHOP.BACK_TO_AVAILABLE_SHOPS_PAGE'
+            | translate}}</span>
+          <app-svg src="assets/svgs/arrow-curve.svg" customClass="" label="title_goas_here" [stretch]="false" width="30"
+            height="30" fill="#008042"></app-svg>
+        </a>
+      </div>
+      <p class="text-base leading-[25px] font-Poppins-Medium pb-[10px]"><span
+          class="text-sm leading-[25px] font-Poppins-Medium text-[#656565]">{{'SHOP.DEADLINE' |
+          translate}}: </span>
+
+        {{ ('DAYS.' + ((stationData?.deadline | date:'ccc') || '').toUpperCase()) | translate }}
+        {{ ('MONTHS.' + ((stationData?.deadline | date:'MMM') || '').toUpperCase()) | translate }}
+        {{stationData?.deadline | date:'dd'}}
+        {{stationData?.deadline | date:'YYYY'}}
+      </p>
+      <p class="text-base leading-[25px] font-Poppins-Medium"><span
+          class="text-sm leading-[25px] font-Poppins-Medium text-[#656565]">{{'SHOP.LOCATION' | translate}}:</span>
+        {{ stationData?.location[lang] }}</p>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-x-[153px] gap-y-[30px] flex-wrap">
+      <div class="w-full lg:w-1/2 lg:max-w-[514px]">
+        <div class="relative mb-4">
+          <app-ddl-stander [data]="stationName" (onOptionChange)="stationName.selected = $event" [isDisabled]="true"
+            [isErrorEnabled]="isSubmitted && !stationName.selected"></app-ddl-stander>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 lg:max-w-[514px]">
+        <div class="relative mb-4">
+          <input
+            class="shadow appearance-none border border-[#E0E0E0] rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="NumberOfApplicants" name="NumberOfApplicants" [value]="stationData?.noOfApplicants" [disabled]="true"
+            type="text" placeholder="" />
+          <!-- onlyNumbers [class.error]="isSubmitted && !form?.controls?.NumberOfApplicants?.valid" required-->
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="NumberOfApplicants">{{'SHOP.NUMBER_APPLICANTS' | translate}} *</label>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 lg:max-w-[514px]">
+        <div class="relative mb-4" [class.isFormEnabled]="!isFormEnabled">
+          <input
+            class="shadow appearance-none border border-[#E0E0E0] rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="Shoppre" name="Shoppre" [disabled]="true" value="{{stationData?.shopRent}}" minlength="3"
+            maxlength="256" type="text" placeholder="" />
+          <!-- [class.error]="isSubmitted && !form?.controls?.Shoppre?.valid" required [(ngModel)]="formData.Shoppre"-->
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="Shoppre">{{'SHOP.SHOP_PRE' | translate}} *</label>
+          <!-- <span *ngIf="isSubmitted && !form?.controls?.Shoppre?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+            |translate}}</span> -->
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 lg:max-w-[514px]">
+        <div class="relative mb-4" [class.isFormEnabled]="!isFormEnabled">
+          <input
+            class="shadow appearance-none border border-[#E0E0E0] rounded w-full p-[19px] text-[#221E20] text-sm font-Poppins-Light leading-[21px] focus:outline-none focus:border-blue-500"
+            id="ShopSize" name="ShopSize" [disabled]="true" value="{{stationData?.shopSize}}" onlyText="en"
+            minlength="3" maxlength="256" type="text" placeholder="" />
+          <!-- [(ngModel)]="formData.ShopSize" required [class.error]="isSubmitted && !form?.controls?.ShopSize?.valid" -->
+          <label
+            class="absolute -top-1 ltr:left-3 rtl:right-3 -mt-2 text-[#717171] text-[14px] leading-[29px] font-Cairo-Regular duration-300 origin-0 bg-white px-1"
+            for="ShopSize">{{'SHOP.SHOP_SIZE' | translate}} *</label>
+          <!-- <span *ngIf="isSubmitted && !form?.controls?.ShopSize?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+            |translate}}</span> -->
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 lg:max-w-[514px] relative">
+        <app-ddl-stander [data]="numberOfShop" (onOptionChange)="tempChange($event)"
+          [isErrorEnabled]="isSubmitted && !numberOfShop.selected"></app-ddl-stander>
+      </div>
+      <div *ngIf="isSubmitted" class="w-full lg:w-1/2 lg:max-w-[514px] relative">
+        <p class="leading-[30px] font-Cairo-Regular text-[#E42528] absolute lg:bottom-6">
+          * {{'SHOP.REQUIRED_INFORMATION' | translate}}
+        </p>
+      </div>
+      <div class="w-full flex justify-between pt-[40px]">
+        <button (click)="back()"
+          class="w-full flex flex-row items-center lg:px-[10px] lg:max-w-[114px] text-center font-Cairo-Regular text-[19px] leading-[38px]">
+          <app-svg src="assets/svgs/arrow.svg" customClass="ltr:rotate-90 rtl:rotate-[270deg]" label="title_goas_here"
+            [stretch]="false" width="25" height="25" stroke="#000000"></app-svg>
+          {{'SHOP.BACK' | translate}}
+        </button>
+        <button type="submit"
+          class="w-full lg:max-w-[130px] text-center font-Cairo-Regular text-[16px] leading-[38px] text-[white] bg-[#008545] rounded-[5px] border border-[#008545]">
+          {{'SHOP.NEXT' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

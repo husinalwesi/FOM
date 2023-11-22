@@ -1,0 +1,11 @@
+.error {
+    @apply border-[#e83d3d];
+    & ~ label {
+        @apply text-[#e83d3d];
+    }
+}
+
+.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}

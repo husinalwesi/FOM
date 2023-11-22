@@ -1,0 +1,53 @@
+<div class="ltr:text-right rtl:text-left pb-4">
+    <button type="button" (click)="closeSearch()">
+        <app-svg src="assets/svgs/close.svg" customClass="" label="title_goas_here" [stretch]="false" width="20"
+            height="17" fill="#ffffff"></app-svg>
+    </button>
+</div>
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit(form)" appClickOutSide (appOutsideClick)="closeSearchDirective()">
+    <div class="bg-white h-auto lg:h-[49px] rounded-[5px] flex flex-col lg:flex-row items-center">
+        <div>
+            <app-ddl-search-header [data]="CategoryDDL" (onOptionChange)="CategoryDDL.selected = $event"
+                [isErrorEnabled]="isSubmitted && !CategoryDDL.selected" [isErrorTextEnabled]="false">
+            </app-ddl-search-header>
+        </div>
+        <div
+            class="flex-1 w-full lg:w-auto h-full border-x lg:border-x-0 lg:border-y border-solid border-[#707070] relative">
+            <input type="text" name="search" [(ngModel)]="search" autocomplete="off"
+                class="outline-0 w-full h-[50px] lg:h-full px-4 font-Cairo-Bold text-xs text-[#011C35]"
+                [placeholder]="'SEARCH.WRITE_HERE' | translate" required (keyup)="onTyping($event)"
+                [class.error]="isSubmitted && !form.controls.search.valid" />
+            <div *ngIf="searchResult[0].data.length > 0"
+                class="w-[313px] h-auto max-h-[281px] absolute ltr:-left-px ltr:lg:left-0 rtl:-right-px rtl:lg:right-0 top-[50px] lg:top-[48px] bg-white z-[11] rounded-b-[5px] border-b border-x border-solid border-[#707070] overflow-auto pb-[15px]">
+                <ng-container *ngFor="let resultItem of searchResult">
+                    <ng-container
+                        *ngTemplateOutlet="listContent; context: { title: resultItem.key, data: resultItem.data }"></ng-container>
+                </ng-container>
+            </div>
+        </div>
+        <button type="button" (click)="onSubmit(form)"
+            class="w-full lg:w-auto justify-center flex gap-2 items-center px-6 py-3 lg:py-0 h-full bg-[#947029] rounded-br-[5px] rtl:lg:rounded-br-none rounded-bl-[5px] lg:rounded-bl-none ltr:lg:rounded-r-[5px] rtl:lg:rounded-l-[5px] shadow-[0px_10px_20px_#00000033]">
+            <app-svg src="assets/svgs/search-short.svg" customClass="mt-[-3px]" label="title_goas_here"
+                [stretch]="false" width="24" fill="#ffffff"></app-svg>
+            <span class="font-Cairo-Regular text-base leading-[30px] text-white">{{'SEARCH.SEARCH' | translate}}</span>
+        </button>
+    </div>
+</form>
+
+<ng-template #listContent let-data="data" let-title="title">
+    <p class="font-Cairo-Bold text-base leading-6 ltr:tracking-[-0.44px] text-[#011C35] px-[25px] pt-[15px] mb-1">
+        {{title | translate}}</p>
+    <ul *ngIf="data" class="flex flex-col gap-1">
+        <li *ngFor="let item of data">
+            <a *ngIf="isMainSearch" [routerLink]="'/search-results' | routeLocalization"
+                [queryParams]="{ q: item.text, category: CategoryDDL.selected }" (click)="closeSearch()"
+                class="font-Cairo-Regular text-xs leading-6 text-[#707070] px-[37px] w-full ltr:text-left rtl:text-right"
+                [innerHTML]="item.html">
+            </a>
+            <button *ngIf="!isMainSearch" (click)="searchFire(item.text)"
+                class="font-Cairo-Regular text-xs leading-6 text-[#707070] px-[37px] w-full ltr:text-left rtl:text-right"
+                [innerHTML]="item.html">
+            </button>
+        </li>
+    </ul>
+</ng-template>

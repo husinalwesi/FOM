@@ -1,0 +1,147 @@
+<div class="bg-[#000000e6] min-h-screen p-10 pt-52">
+    <section>
+        <p class="text-[#00914a] font-Futura-Bk-BT-Medium text-5xl mb-4">Icons </p>
+        <ul class="flex items-center justify-start flex-wrap gap-8">
+            <li *ngFor="let icon of icons"
+                class="w-[200px] h-[200px] bg-[#00914a] flex justify-center items-center rounded-md flex-col gap-6 group">
+                <app-svg class="w-[60px] h-[60px] group-hover:scale-125 transition-all"
+                    [src]="'assets/svgs/' + icon.path + '.svg'" label="title_goas_here" [stretch]="false" width="60"
+                    [fill]="icon.fill" [stroke]="icon.stroke" [customClass]="icon.class"></app-svg>
+                <p class="text-white text-center">{{icon.path}} <span class="block text-xs">{{icon.class}}</span></p>
+            </li>
+        </ul>
+    </section>
+    <section class="mt-32">
+        <p class="text-[#00914a] font-Futura-Bk-BT-Medium text-5xl mb-4">Fonts </p>
+        <ul class="flex items-center justify-start flex-wrap gap-4">
+            <li *ngFor="let font of fonts"
+                class="w-full bg-[#00914a] flex justify-center items-start rounded-md flex-col px-6 py-4">
+                <p class="text-white text-center flex items-center justify-center gap-8" [class]="font">{{exampleText}}
+                    <span class="text-sm" [class]="font">({{font}})</span>
+                </p>
+            </li>
+        </ul>
+    </section>
+    <section class="mt-32">
+        <p class="text-[#00914a] font-Futura-Bk-BT-Medium text-5xl mb-4">Buttons </p>
+        <ul class="flex items-center justify-start flex-wrap gap-4">
+            <li class="w-full bg-[#000000e6] flex justify-center items-start rounded-md flex-col gap- px-6 py-4">
+                <app-btn-one link="/" text="SHARED.READ_MORE" seoDesc="Text about the button"
+                    svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one>
+            </li>
+            <li class="w-full bg-[#000000e6] flex justify-center items-start rounded-md flex-col gap- px-6 py-4">
+                <app-btn-one text="Modal lg" seoDesc="Text about the button" svg="assets/svgs/arrow.svg"
+                    svgClass="rotate-[270deg]" (onClick)="isModalEnabled1 = true"></app-btn-one>
+            </li>
+            <li class="w-full bg-[#000000e6] flex justify-center items-start rounded-md flex-col gap- px-6 py-4">
+                <app-btn-one text="Modal md" seoDesc="Text about the button" svg="assets/svgs/arrow.svg"
+                    svgClass="rotate-[270deg]" (onClick)="isModalEnabled2 = true"></app-btn-one>
+            </li>
+            <li class="w-full bg-[#000000e6] flex justify-center items-start rounded-md flex-col gap- px-6 py-4">
+                <app-btn-one text="Modal sm" seoDesc="Text about the button" svg="assets/svgs/arrow.svg"
+                    svgClass="rotate-[270deg]" (onClick)="isModalEnabled3 = true" styleColor="red-purple"></app-btn-one>
+            </li>
+        </ul>
+    </section>
+    <section class="mt-32">
+        <p class="text-[#00914a] font-Futura-Bk-BT-Medium text-5xl mb-4">Checkboxs </p>
+        <ul class="flex items-center justify-start flex-wrap gap-4">
+            <li class="w-full bg-[#ffffffe6] flex justify-center items-start rounded-md flex-col gap- px-6 py-4">
+                <app-checkbox></app-checkbox>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <p class="text-[#00914a] font-Futura-Bk-BT-Medium text-5xl mb-4 mt-6">Plural Translation </p>
+        <ul class="flex items-center justify-start flex-wrap">
+            <li *ngFor="let _ of [].constructor(20); let i = index" class="w-full flex text-[#ffffffe6] text-center">
+                ({{ ('JOB' | plural:i+1) | translate:{count:i+1} }})
+            </li>
+        </ul>
+    </section>
+    <section>
+        <p class="text-[#00914a] font-Futura-Bk-BT-Medium text-5xl mb-4 mt-6">Pages </p>
+        <ul class="flex items-center justify-start flex-wrap">
+            <li *ngFor="let page of pages" class="w-full flex">
+                <a [routerLink]="page.url | routeLocalization" class="text-[#ffffffe6] text-center">{{page.title}}</a>
+            </li>
+        </ul>
+    </section>
+</div>
+
+
+<app-modal [template]="modalTemplatePlaceholder1" [isModalEnabled]="isModalEnabled1"
+    (closeModalByKeyboard)="isModalEnabled1 = false" modalClasses="top-0 bottom-[unset] w-[90%] max-w-[1024px]">
+    <ng-template #modalTemplatePlaceholder1>
+        <div class="bg-white p-4">
+            <div class="modal-header">
+                <p>Title</p>
+                <button type="button" (click)="isModalEnabled1 = false;">close</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>Your country:</p>
+                    <select>
+                        <option value="default">Choose…</option>
+                        <option>United States</option>
+                        <option>France</option>
+                        <option>Australia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="isModalEnabled1 = false;">Submit</button>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>
+<app-modal [template]="modalTemplatePlaceholder2" [isModalEnabled]="isModalEnabled2"
+    modalClasses="inset-0 w-[90%] max-w-[600px]">
+    <ng-template #modalTemplatePlaceholder2>
+        <div class="bg-white p-4">
+            <div class="modal-header">
+                <p>Title</p>
+                <button type="button" (click)="isModalEnabled2 = false;">close</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>Your country:</p>
+                    <select>
+                        <option value="default">Choose…</option>
+                        <option>United States</option>
+                        <option>France</option>
+                        <option>Australia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="isModalEnabled2 = false;">Submit</button>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>
+<app-modal [template]="modalTemplatePlaceholder3" [isModalEnabled]="isModalEnabled3"
+    (closeModalByKeyboard)="isModalEnabled3 = false" modalClasses="inset-0 w-[90%] max-w-[320px]">
+    <ng-template #modalTemplatePlaceholder3>
+        <div class="bg-white p-4">
+            <div class="modal-header">
+                <p>Title</p>
+                <button type="button" (click)="isModalEnabled3 = false;">close</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p>Your country:</p>
+                    <select>
+                        <option value="default">Choose…</option>
+                        <option>United States</option>
+                        <option>France</option>
+                        <option>Australia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="isModalEnabled3 = false;">Submit</button>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

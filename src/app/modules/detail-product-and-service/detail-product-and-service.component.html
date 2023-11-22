@@ -1,0 +1,27 @@
+<section class="" style="background-image: url('assets/svgs/wave-bg.svg')">
+    <div class="max-w-desktop mx-auto px-4 lg:px-11 py-[100px] gap-8 lg:gap-[105px] pt-[96px] pb-[84px] flex flex-col lg:flex-row"
+        [ngClass]="{'reverse-order': reverseOrder}">
+        <div class="w-full lg:w-[50%-107px] self-center">
+            <p *ngIf="data?.title"
+                class="mb-[20px] font-Poppins-Medium text-xl leading-[30px] text-[#003399] capitalize max-w-[529px]"
+                [innerHTML]="data?.title[lang]"></p>
+            <p *ngIf="data?.subtitle"
+                class="mb-2.5 font-Poppins-Bold text-[26px] leading-[30px] text-black capitalize max-w-[529px]"
+                [innerHTML]="data?.subtitle[lang]"></p>
+            <p *ngIf="data?.description" class="mb-5 font-Cairo-Regular text-sm leading-6 text-black max-w-[529px]"
+                [innerHTML]="data?.description[lang]"></p>
+
+            <a *ngIf="isExternalMethod(data?.link) && data?.btnText" [href]="data?.link" target="_blank"
+                class="bg-[#009933] py-2 px-[42px] rounded-[5px] font-Cairo-Regular text-base text-white capitalize"
+                type="button">{{data?.btnText[lang]}}</a>
+
+            <a *ngIf="!isExternalMethod(data?.link) && data?.btnText" [routerLink]="data?.link | routeLocalization"
+                class="bg-[#009933] py-2 px-[42px] rounded-[5px] font-Cairo-Regular text-base text-white capitalize"
+                type="button">{{data?.btnText[lang]}}</a>
+        </div>
+        <div class="w-full lg:w-[50%-107px] h-[346px] self-center">
+            <img class="w-full h-[346px] rounded-[10px]" [defaultImage]="'loadingImage'| imageSource"
+                [errorImage]="'errorImage'| imageSource" [lazyLoad]="data?.image | imageSource" alt="Card Image" />
+        </div>
+    </div>
+</section>

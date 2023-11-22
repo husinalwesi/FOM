@@ -1,0 +1,53 @@
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit(form)">
+  <div class="bg-[#ECECEC] w-full px-[40px] pt-[19px] mb-[26px] lg:pb-[33px]"
+    [class]="!filterOpen ? 'pb-[0px]' : 'pb-[33px]'">
+    <div class="flex flex-row justify-between align-center">
+      <p class="font-Cairo-Regular text-[26px] leading-[25px] text-[#011C35] pb-[11px] h-[49px]">
+        {{'CAREER_FILTER.FILTER' | translate}}
+      </p>
+      <div class="lg:hidden" (click)="toggleFilter()">
+        <app-svg src="assets/svgs/arrow.svg"
+          [customClass]="filterOpen ? 'transition-all rotate-[180deg]' : 'transition-all'" label="title_goas_here"
+          [stretch]="false" width="25" height="25" stroke="#000"></app-svg>
+      </div>
+    </div>
+    <div class="lg:h-auto transition-all" [class]="filterOpen ? 'h-auto' : 'h-[0px] overflow-hidden' ">
+      <div class="flex flex-col gap-3">
+        <div class="relative">
+          <input type="text" name="keyword" [(ngModel)]="keyword"
+            class="font-Poppins-Light text-xs leading-[21px] text-[#757575] w-full border border-[#E0E0E0] rounded-[5px] ltr:pl-4 ltr:pr-10 rtl:pr-4 rtl:pl-10 py-[13px] focus:outline-none"
+            [placeholder]="'CAREER_FILTER.KEYWORD_SEARCH' | translate" />
+          <div
+            class="absolute inset-y-0 rtl:left-0 ltr:right-0 flex items-center rtl:pl-3 ltr:pr-3 pointer-events-none">
+            <app-svg src="assets/svgs/search.svg" customClass="" label="title_goas_here" [stretch]="false" width="24"
+              stroke="#BCBCBC"></app-svg>
+          </div>
+        </div>
+        <app-ddl-style-two [data]="locationDDL" (onOptionChange)="locationChange($event)"></app-ddl-style-two>
+        <app-ddl-style-two [data]="departmentDDL" (onOptionChange)="departmentChange($event)"></app-ddl-style-two>
+      </div>
+
+      <div *ngFor="let code of codes; let i = index" class="flex flex-row justify-between mt-[24px] h-[40px]">
+        <p class="text-[#011C35] leading-[20px] font-Poppins-Light">
+          {{code.title[lang]}} ({{ ('JOB' | plural:code.total) | translate:{count:code.total} }})
+        </p>
+        <app-switch-button [data]="{value: code.value, inputName: 'job-code-' + (i+1)}"
+          (onChange)="code.value = $event"></app-switch-button>
+      </div>
+      <app-career-tags *ngIf="tags[lang].length > 0" [tags]="tags" [lang]="lang"
+        (onTagsSelectionChange)="tagsSelectionChange($event)"></app-career-tags>
+      <!-- <div class="bg-white px-[24px] pt-[18px] pb-[29] border border-solid border-[#EBEEF7]">
+        <p class="font-Poppins-Light text-[14px] leading-[20px] text-[#192A59] pb-[14px]">
+          {{'CAREER_FILTER.FILTER_BY_SALARY_RANGE' | translate}}
+        </p>
+        <div class="w-full">
+          <app-range [data]="salaryRange" (onChange)="salaryRange.value = $event"></app-range>
+        </div>
+      </div> -->
+      <div class="mt-4">
+        <app-btn-one textClass="font-Poppins-Light text-lg" (onClick)="onSubmit(form)" text="SHARED.FILTER"
+          seoDesc="SHARED.FILTER" svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one>
+      </div>
+    </div>
+  </div>
+</form>

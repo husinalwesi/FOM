@@ -1,0 +1,52 @@
+<div class="flex flex-col gap-4">
+    <p class="sub-menu-item-title">
+        <span *ngIf="!link">{{title}}</span>
+
+
+
+
+        <ng-container *ngIf="link">
+
+            <ng-container *ngIf="isExternalMethod(link)">
+                <a *ngIf="linkTarget === '_blank'" target="_blank" (click)="closeMenu()"
+                    [href]="link | routeLocalization">{{title}}</a>
+                <a *ngIf="linkTarget !== '_blank'" (click)="closeMenu()" [href]="link | routeLocalization">{{title}}</a>
+            </ng-container>
+
+            <ng-container *ngIf="!isExternalMethod(link)">
+                <a *ngIf="linkTarget === '_blank'" target="_blank" (click)="closeMenu()"
+                    [href]="link | routeLocalization">{{title}}</a>
+                <a *ngIf="linkTarget !== '_blank'" (click)="closeMenu()"
+                    [routerLink]="link | routeLocalization">{{title}}</a>
+            </ng-container>
+
+        </ng-container>
+
+    </p>
+    <ul class="flex flex-col gap-0.5">
+        <li *ngFor="let menuItem of menu">
+
+            <ng-container *ngIf="isExternalMethod(menuItem.link)">
+                <a *ngIf="menuItem.linkTarget === '_blank'" target="_blank" class="sub-sub-menu-item group"
+                    [href]="menuItem.link | routeLocalization" (click)="closeMenu()"><span
+                        class="opacity-0 transition-all group-hover:opacity-100 rtl:rotate-180">&#8594;</span>{{menuItem.title}}<span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about this button</span></a>
+
+                <a *ngIf="menuItem.linkTarget !== '_blank'" class="sub-sub-menu-item group"
+                    [href]="menuItem.link | routeLocalization" (click)="closeMenu()"><span
+                        class="opacity-0 transition-all group-hover:opacity-100 rtl:rotate-180">&#8594;</span>{{menuItem.title}}<span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about this button</span></a>
+            </ng-container>
+
+            <ng-container *ngIf="!isExternalMethod(menuItem.link)">
+                <a *ngIf="menuItem.linkTarget === '_blank'" target="_blank" class="sub-sub-menu-item group"
+                    [href]="menuItem.link | routeLocalization" (click)="closeMenu()"><span
+                        class="opacity-0 transition-all group-hover:opacity-100 rtl:rotate-180">&#8594;</span>{{menuItem.title}}<span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about this button</span></a>
+
+                <a *ngIf="menuItem.linkTarget !== '_blank'" class="sub-sub-menu-item group"
+                    [routerLink]="menuItem.link | routeLocalization" (click)="closeMenu()"><span
+                        class="opacity-0 transition-all group-hover:opacity-100 rtl:rotate-180">&#8594;</span>{{menuItem.title}}<span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">Read more about this button</span></a>
+            </ng-container>
+
+
+        </li>
+    </ul>
+</div>

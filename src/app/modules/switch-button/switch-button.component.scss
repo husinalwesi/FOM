@@ -1,0 +1,15 @@
+.switch {
+    @apply relative inline-block w-[46px] h-[26px] rtl:rotate-180;
+    & .slider {
+        @apply absolute cursor-pointer inset-0 bg-[#7C7C7C] before:absolute before:content-normal before:w-5 before:h-5 before:left-[3px] before:bottom-[3px] before:bg-white transition duration-[400ms] before:transition before:duration-[400ms] rounded-[34px] before:rounded-[50%];
+    }    
+    & input { 
+        @apply opacity-0 w-0 h-0;
+        &:focus + .slider {
+            @apply shadow-[0_0_1px_#009933];
+        }        
+        &:checked + .slider {
+            @apply bg-[#009933] before:translate-x-5;
+        }
+    }
+}

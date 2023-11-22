@@ -1,0 +1,5 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isLoadingEnabled"></app-hero-half>
+<!-- <app-breadcrumb-section-first-style [breadCrumb]="breadCrumb" [metaData]="data"></app-breadcrumb-section-first-style> -->
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data"></app-breadcrumb-section-second-style>
+<app-our-story [text]="data?.body[lang]"></app-our-story>
+<app-team-members-section *ngIf="teamMembers.length > 0" [data]="teamMembers" [lang]="lang"></app-team-members-section>

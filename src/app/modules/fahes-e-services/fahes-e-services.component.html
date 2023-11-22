@@ -1,0 +1,46 @@
+<section class="max-w-desktop w-full px-4 lg:px-10 mx-auto pt-[76px] pb-[82px] overflow-x-hidden">
+    <p class="ltr:text-left rtl:text-right font-Cairo-Regular text-[27px] leading-[50px] text-[#011C35] mb-5">
+        {{'E_SERVICES_SECTION.FAHES_E_SERVICES' | translate}}</p>
+    <ul class="flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
+
+        <li class="relative w-full lg:w-1/3 flex items-center after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-[var(--primary-color)]
+            before:content-normal before:absolute ltr:before:left-0 rtl:before:right-0 before:bottom-[-22px] before:w-full before:h-[5px] before:bg-transparent
+            " [class.services-active]="selectedTab == 'services'">
+            <button type="button" class="flex flex-row gap-4" (click)="selectedTab = 'services'">
+                <div class="w-[68px] h-[68px] bg-[#00428b] rounded-[5px] flex justify-center items-center">
+                    <app-svg src="assets/svgs/customer-service.svg" customClass="" label="title_goas_here"
+                        [stretch]="false" width="36" height="42" fill="#ffffff"></app-svg>
+                </div>
+                <div class="flex flex-col gap-1 self-center">
+                    <p
+                        class="ltr:text-left rtl:text-right font-Cairo-Regular tracking-[0.1px] text-[#011C35] max-w-[228px] text-lg leading-[30px]">
+                        {{'E_SERVICES_SECTION.SERVICES' | translate}}</p>
+                    <p
+                        class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[19px] tracking-[0.07px] text-[#1d398d] max-w-[228px]">
+                        {{'E_SERVICES_SECTION.HEART_OF_WOQOOD' | translate}}</p>
+                </div>
+            </button>
+        </li>
+
+        <li class="pl-0 lg:pl-20 relative w-full lg:w-2/3 flex items-center justify-start after:hidden lg:after:block after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-[var(--primary-color)]
+            
+            before:content-normal before:absolute ltr:before:left-0 rtl:before:right-0 before:bottom-[-22px] before:w-full before:h-[5px] before:bg-transparent
+            " [class.report-active]="selectedTab == 'report'">
+            <a class="flex flex-row gap-4" [routerLink]="'/' | routeLocalization">
+                <div
+                    class="w-[68px] h-[68px] bg-[#b30938] border-2 border-solid border-[#b30938] rounded-[5px] flex justify-center items-center">
+                    <app-svg src="assets/svgs/report.svg" customClass="" label="title_goas_here" [stretch]="false"
+                        width="36" height="42" stroke="#ffffff"></app-svg>
+                </div>
+                <div class="flex flex-col gap-1 self-center">
+                    <p
+                        class="ltr:text-left rtl:text-right font-Cairo-Regular tracking-[0.1px] text-[#011C35] text-lg leading-[30px]">
+                        {{'E_SERVICES_SECTION.ONLINE_INSPECTION_REPORT' | translate}}</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <app-fahes-e-services-carousel *ngIf="selectedTab == 'services'" class="block mt-[38px]" [slidesStore]="slidesStore"
+        [lang]="lang"></app-fahes-e-services-carousel>
+</section>

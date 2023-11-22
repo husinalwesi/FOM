@@ -1,0 +1,13 @@
+<div class="bg-[#FFFFFF]">
+  <div class="max-w-desktop mx-auto px-4 lg:px-[75px] lg:pb-[60px] lg:pt-[40px]">
+    <p
+      class="text-left rtl:text-right text-[#011C35] font-Cairo-Bold text-[22px] leading-[30px] capitalize lg:h-[72px] py-10 lg:py-0">
+      {{title | translate}}
+    </p>
+    <ul class="w-full flex flex-row flex-wrap gap-y-5">
+      <li *ngFor="let card of cards.data" class="w-full lg:w-1/3 lg:px-1.5">
+        <app-card-w-category [data]="card"></app-card-w-category>
+      </li>
+    </ul>
+  </div>
+</div>

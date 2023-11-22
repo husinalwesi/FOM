@@ -1,0 +1,24 @@
+<a *ngIf="link && isExternalMethod(link)" [href]="link | routeLocalization" target="_blank" class="btn-style group"
+    [ngClass]="'style-' + styleColor" [class.disabled]="isDisabled">
+    <ng-container *ngTemplateOutlet="linkContent"></ng-container>
+</a>
+<a *ngIf="link && !isExternalMethod(link)" [routerLink]="link | routeLocalization" class="btn-style group"
+    [ngClass]="'style-' + styleColor" [class.disabled]="isDisabled">
+    <ng-container *ngTemplateOutlet="linkContent"></ng-container>
+</a>
+<button *ngIf="!link" type="button" class="btn-style group" (click)="onClickFire()" [ngClass]="'style-' + styleColor"
+    [class.disabled]="isDisabled">
+    <ng-container *ngTemplateOutlet="linkContent"></ng-container>
+</button>
+<ng-template #linkContent>
+    <span
+        class="svg-container absolute ltr:-translate-x-10 rtl:translate-x-10 ltr:group-hover:translate-x-0 rtl:group-hover:translate-x-0 flex items-center justify-center ltr:left-0 rtl:right-0 top-0 w-10 min-h-10 h-full rounded-[5px] opacity-0 group-hover:opacity-100 transition-all">
+        <app-svg [src]="svg" [customClass]="svgClass" label="title_goas_here" [stretch]="false" width="20"
+            stroke="#ffffff"></app-svg>
+    </span>
+    <span [class]="textClass" class="">
+        {{ text | translate }}
+        <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden"
+            [innerHTML]="seoDesc | translate"></span>
+    </span>
+</ng-template>

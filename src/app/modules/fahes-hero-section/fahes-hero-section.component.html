@@ -1,0 +1,6 @@
+<section class="h-screen relative overflow-hidden">
+    <app-fahes-hero-section-carousel [slidesStore]="slidesStore" [lang]="lang" [selectedTabIndex]="selectedTabIndex()"
+        [bottomSection]="bottomSection" (tabChange)="tabChange($event)"></app-fahes-hero-section-carousel>
+    <app-fahes-hero-section-bottom [bottomSection]="bottomSection" [lang]="lang"
+        (tabChange)="tabChange($event)"></app-fahes-hero-section-bottom>
+</section>

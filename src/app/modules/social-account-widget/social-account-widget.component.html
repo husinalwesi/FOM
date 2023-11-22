@@ -1,0 +1,34 @@
+<div id="social-account-widget" class="w-full h-full relative overflow-hidden group" [ngClass]="customBorder[0]">
+
+    <!-- <img [src]="image" alt="woqod tower" class="absolute ltr:left-0 rtl:right-0 top-0 w-full h-full" /> -->
+
+    <img class="absolute ltr:left-0 rtl:right-0 top-0 w-full h-full" [lazyLoad]="image"
+        [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource" alt="" />
+
+
+    <!-- <div id="social-account-widget-bg-image"
+        class="absolute ltr:left-0 rtl:right-0 top-0 w-full h-full bg-no-repeat bg-cover bg-center"
+        [ngClass]="customBorder[1]" [style.background-image]="'url(' + image + ')'"></div> -->
+    <div class="z-10 relative flex flex-col w-full px-8 pb-[51px] h-full justify-end gap-8">
+        <p class="flex flex-col">
+            <span
+                class="ltr:text-left rtl:text-right font-Poppins-Light text-[36px] leading-[44px] text-[#DDDDDD]">{{'SOCIAL_WIDGET.CHECK_ALL'
+                | translate}}</span>
+            <span href="#"
+                class="ltr:text-left rtl:text-right underline font-Poppins-Bold text-[44px] leading-[44px] text-white">{{'SOCIAL_WIDGET.SOCIAL_ACCOUNTS'
+                | translate}}</span>
+        </p>
+        <div
+            class="lg:h-0 transition-all duration-300 group-hover:h-[58px] group-hover:opacity-100 overflow-hidden lg:opacity-0">
+            <ul class="flex gap-2 flex-wrap">
+                <li *ngFor="let item of socilaMediaAccounts">
+                    <a [href]="item.link" target="_blank" class="block">
+                        <img [lazyLoad]="item.image | imageSource" [defaultImage]="'loadingImage'| imageSource"
+                            [errorImage]="'errorImage'| imageSource" [alt]="item.title" [title]="item.title" width="58"
+                            height="58" class="w-[58px] h-[58px]" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

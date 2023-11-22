@@ -1,0 +1,6 @@
+.full-view {
+    @apply lg:w-full;
+}
+app-products-carousel::ng-deep .products-carousel{
+    @apply bg-[#F5F5F5];
+}

@@ -1,0 +1,12 @@
+<div
+    class="border border-solid flex px-[10px] justify-between bg-white border-[#00904A] py-[9px] w-full rounded-[5px] text-center font-Cairo-Regular text-base leading-[22px] capitalize text-[#00904A]">
+    <button type="button" (click)="minus()">
+        <app-svg src="assets/svgs/minus-alt.svg" customClass="" label="title_goas_here" [stretch]="false" width="24"
+            height="24" fill="#00904A"></app-svg>
+    </button>
+    <span class="font-Cairo-Regular text-lg leading-[22px] text-[#00904A] mt-[2px]">{{count}}</span>
+    <button type="button" (click)="plus()">
+        <app-svg src="assets/svgs/plus-alt.svg" customClass="" label="title_goas_here" [stretch]="false" width="24"
+            height="24" fill="#00904A"></app-svg>
+    </button>
+</div>

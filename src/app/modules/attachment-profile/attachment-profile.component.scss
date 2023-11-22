@@ -1,0 +1,20 @@
+.uploader-container.error {
+    & img {
+        @apply border-[#e83d3da1];
+    }
+    & button {
+        @apply bg-[#e83d3da1];
+    }
+}
+// .uploader-container {
+//     &.error {
+//         @apply border-[#e83d3da1];
+//         & a,
+//         & label{
+//             @apply text-[#e83d3da1];
+//         }
+//         & button{
+//             @apply bg-[#e83d3da1];
+//         }
+//     }
+// }

@@ -1,0 +1,361 @@
+<div
+        class="bg-white shadow-[0px_4px_6px_#0000001A] rounded-[5px] py-7 px-[30px]"
+      >
+        <p class="font-Cairo-Bold text-[22px] leading-6 text-[#011C35]">
+          {{'SERVICE_INSPESTION.DUE' | translate}}
+        </p>
+        <app-inspection-filter
+          [isSelectionEnabled]="true"
+        ></app-inspection-filter>
+        <form action="" #form="ngForm" novalidate (ngSubmit)="onSubmit(form)">
+        <div
+      class="flex flex-col gap-x-[125px] gap-y-[42px] pt-12 px-[50px]  pb-[38px] w-[calc(100%-54px)] mx-auto mb-[30px]"
+      >
+      <p class="text-xl leading-[50px] font-Poppins-Medium">{{'E_TAG.VEHICLE_DETAILS' | translate}}</p>
+      <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+        <div class="w-full lg:w-[calc(50%-64px)] relative">
+          <app-ddl-stander [data]="plateTypeDDL" (onOptionChange)="plateTypeChange($event)"
+            [isErrorEnabled]="isSubmitted && !plateTypeDDL.selected"></app-ddl-stander>
+        </div>
+        <div class="w-full lg:w-[calc(50%-64px)] relative">
+          <label for="plateNumber"
+            class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+            {{'E_TAG.PLATE_NUMBER' | translate}} *
+          </label>
+          <input type="text" id="plateNumber" name="plateNumber" [(ngModel)]="formData.plateNumber" required
+            [class.error]="isSubmitted && !form?.controls?.plateNumber?.valid"
+            class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+            placeholder="12345" />
+          <span *ngIf="isSubmitted && !form?.controls?.plateNumber?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+            |translate}}</span>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+        <div class="w-full lg:w-[calc(50%-64px)] relative">
+          <label for="qidCr"
+            class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+            {{'E_TAG.QID_CR' | translate}} *
+          </label>
+          <input type="text" id="QID/CR" name="qidCr" [(ngModel)]="formData.qidCr" required
+            [class.error]="isSubmitted && !form?.controls?.qidCr?.valid"
+            class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+            placeholder="9812345674" />
+          <app-svg src="assets/svgs/correct-circle.svg" customClass="absolute top-4 ltr:right-6 rtl:left-6"
+            label="title_goas_here" [stretch]="false" width="30" height="30" [fill]="'#00904A'"></app-svg>
+          <span *ngIf="isSubmitted && !form?.controls?.qidCr?.valid"
+            class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+            |translate}}</span>
+        </div>
+        <div class="w-full lg:w-[calc(50%-64px)] relative">
+          <button type="button"
+            class="rounded-[5px] py-[2.5px] px-8 font-Cairo-Regular text-base leading-8 bg-[#00852C] text-white capitalize">
+            {{'RETAIL.VAIDATE' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+    
+      <div class="flex flex-col gap-x-[125px] gap-y-[42px] pt-12 px-[50px] ">
+        <p class="text-xl leading-[50px] font-Poppins-Medium">{{'E_TAG.VEHICLE_INFORMATION' | translate}}</p>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="vehicleStatus"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.VEHICLE_STATUS' | translate}}
+            </label>
+            <input type="text" id="vehicleStatus" name="vehicleStatus" [(ngModel)]="formData.vehicleStatus" required
+              [class.error]="isSubmitted && !form?.controls?.vehicleStatus?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Valid" />
+            <span *ngIf="isSubmitted && !form?.controls?.vehicleStatus?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="model"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.MODEL' | translate}}
+            </label>
+            <input type="text" id="model" name="model" [(ngModel)]="formData.model" required
+              [class.error]="isSubmitted && !form?.controls?.model?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Raptor F-150" />
+            <span *ngIf="isSubmitted && !form?.controls?.model?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="modelYear"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.MODEL_YEAR' | translate}}
+            </label>
+            <input type="text" id="modelYear" name="modelYear" [(ngModel)]="formData.modelYear" required
+              [class.error]="isSubmitted && !form?.controls?.modelYear?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="2010" />
+            <span *ngIf="isSubmitted && !form?.controls?.modelYear?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="modalYear"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.MAJOR' | translate}}
+            </label>
+            <input type="text" id="modalYear" name="modalYear" [(ngModel)]="formData.modalYear" required
+              [class.error]="isSubmitted && !form?.controls?.modalYear?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Red" />
+            <span *ngIf="isSubmitted && !form?.controls?.modalYear?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="manufactureToBeBrand"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.MANUFACTURE_TO_BE_BRAND' | translate}}
+            </label>
+            <input type="text" id="manufactureToBeBrand" name="manufactureToBeBrand"
+              [(ngModel)]="formData.manufactureToBeBrand" required
+              [class.error]="isSubmitted && !form?.controls?.manufactureToBeBrand?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Toyota" />
+            <span *ngIf="isSubmitted && !form?.controls?.manufactureToBeBrand?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="expiryDate"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.EXPIRY_DATE' | translate}}
+            </label>
+            <input type="text" id="expiryDate" name="expiryDate" [(ngModel)]="formData.expiryDate" required
+              [class.error]="isSubmitted && !form?.controls?.expiryDate?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="1440/06/11" />
+            <span *ngIf="isSubmitted && !form?.controls?.expiryDate?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-x-[125px] gap-y-[42px] pt-12 pb-[60px] px-[50px]">
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <p class="text-xl leading-[50px] font-Poppins-Medium">
+              {{'E_TAG.VEHICLE_DETAILS' | translate}}
+            </p>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <p class="text-xl leading-[50px] font-Poppins-Medium">
+              {{'E_TAG.VEHICLE_INSURANCE' | translate}}
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="sequenceNumber"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.SEQUENCE_NUMBER' | translate}}
+            </label>
+            <input type="text" id="sequenceNumber" name="sequenceNumber" [(ngModel)]="formData.sequenceNumber" required
+              [class.error]="isSubmitted && !form?.controls?.sequenceNumber?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="500930030" />
+            <span *ngIf="isSubmitted && !form?.controls?.sequenceNumber?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="insuranceCompanyName"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.INSURANCE_COMPANY_NAME' | translate}}
+            </label>
+            <input type="text" id="insuranceCompanyName" name="insuranceCompanyName"
+              [(ngModel)]="formData.insuranceCompanyName" required
+              [class.error]="isSubmitted && !form?.controls?.insuranceCompanyName?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="QIC" />
+            <span *ngIf="isSubmitted && !form?.controls?.insuranceCompanyName?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="insuranceCompanyName"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'RETAIL.TYPE' | translate}}
+            </label>
+            <input type="text" id="insuranceCompanyName" name="insuranceCompanyName"
+              [(ngModel)]="formData.insuranceCompanyName" required
+              [class.error]="isSubmitted && !form?.controls?.insuranceCompanyName?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Sedan" />
+            <span *ngIf="isSubmitted && !form?.controls?.insuranceCompanyName?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="startDate"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.START_DATE' | translate}}
+            </label>
+            <input type="text" id="startDate" name="startDate" [(ngModel)]="formData.startDate" required
+              [class.error]="isSubmitted && !form?.controls?.startDate?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="1440/06/11" />
+            <span *ngIf="isSubmitted && !form?.controls?.startDate?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="registration"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.REGISTRATION' | translate}}
+            </label>
+            <input type="text" id="registration" name="registration" [(ngModel)]="formData.registration" required
+              [class.error]="isSubmitted && !form?.controls?.registration?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Private" />
+            <span *ngIf="isSubmitted && !form?.controls?.registration?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="status"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.STATUS' | translate}}
+            </label>
+            <input type="text" id="status" name="status" [(ngModel)]="formData.status" required
+              [class.error]="isSubmitted && !form?.controls?.status?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="Valid" />
+            <span *ngIf="isSubmitted && !form?.controls?.status?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="vehicleIDNumber"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.VEHICLE_ID_NUMBER' | translate}}
+            </label>
+            <input type="text" id="vehicleIDNumber" name="vehicleIDNumber" [(ngModel)]="formData.vehicleIDNumber" required
+              [class.error]="isSubmitted && !form?.controls?.vehicleIDNumber?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="2992992" />
+            <span *ngIf="isSubmitted && !form?.controls?.vehicleIDNumber?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] relative">
+            <label for="insuranceExpirationDate"
+              class="font-Cairo-Regular text-[15px] text-[#717171] absolute ltr:left-4 rtl:right-4 -top-2 bg-white px-1">
+              {{'E_TAG.INSURANCE_EXPIRATION_DATE' | translate}}
+            </label>
+            <input type="text" id="insuranceExpirationDate" name="insuranceExpirationDate"
+              [(ngModel)]="formData.insuranceExpirationDate" required
+              [class.error]="isSubmitted && !form?.controls?.insuranceExpirationDate?.valid"
+              class="bg-white h-[61px] border border-solid border-[#E0E0E0] w-full rounded-[5px] font-Poppins-Light text-sm text-[#221E20] pl-4 pr-[46px]"
+              placeholder="144/06/11" />
+            <span *ngIf="isSubmitted && !form?.controls?.insuranceExpirationDate?.valid"
+              class="block text-[#e83d3d] mt-0.5 ltr:text-right rtl:text-left ltr:text-sm rtl:text-xs font-Noto-Sans-Regular">{{'ERRORS.THIS_FIELD_IS_REQUIRED'
+              |translate}}</span>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-x-32 gap-y-4">
+          <div class="w-full lg:w-[calc(50%-64px)] relative beneficiary">
+            <app-ddl-stander [data]="tempDDL" (onOptionChange)="tempChange($event)"
+              [isErrorEnabled]="isSubmitted && !tempDDL.selected"></app-ddl-stander>
+          </div>
+          <div class="w-full lg:w-[calc(50%-64px)] flex flex-col lg:flex-row gap-[46px] items-end">
+            <button  type="button"
+              class="rounded-[5px] max-h-[40px] py-[2.5px] px-8 font-Cairo-Regular text-base leading-8 bg-[#00852C] text-white capitalize">
+              {{'E_TAG.SAVE_VEHICLE' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+        <div class="flex gap-3 mt-7 mb-[38px]">
+          <app-svg
+            src="assets/svgs/arrow-curve.svg"
+            customClass=""
+            label="title_goas_here"
+            [stretch]="false"
+            width="20"
+            height="20"
+            fill="#B30838"
+          ></app-svg>
+          <span class="font-Poppins-Light text-sm text-[#011C35]"
+            >{{'SERVICE_INSPESTION.ONLY' | translate}}</span
+          >
+        </div>
+        <div
+          class="flex flex-col lg:flex-row flex-wrap gap-x-[18px] gap-y-7 lg:gap-y-[22px]"
+        >
+          <app-vehicle-details-item *ngFor="let vehicle of vehicles" [data]="vehicle" [lang]="lang"
+          (changeCount)="vehicle.count = $event" (changeActive)="vehicle.isActive = $event"
+          class="w-full lg:w-[calc(20%-18px)]"></app-vehicle-details-item>
+        </div>
+        <div class="pt-11">
+          <app-pagination-second-style></app-pagination-second-style>
+        </div>
+        <hr class="border-[cccccc] w-full mt-11 mb-[30px]" />
+        <div
+          class="flex flex-col lg:flex-row lg:items-center justify-between gap-1"
+        >
+          <p class="font-Cairo-Bold text-lg leading-6 text-[#011C35]">
+            {{'SERVICE_INSPESTION.APPROX' | translate}}
+          </p>
+          <div class="flex flex-col lg:flex-row gap-[38px] lg:items-center">
+            <p class="font-Poppins-Medium text-lg leading-6 text-[#011C35]">
+                {{'CURRENCIES.QR' | translate}}: 50.00
+            </p>
+            <button
+              type="button"
+              (click)="selectedStep = 'selectDateTime'"
+              class="font-Cairo-Regular py-[3px] px-8 text-base leading-[33px] text-white capitalize bg-[#B30838] rounded-[5px]"
+            >
+            {{'DASHBOARD.NEXT' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white shadow-[0px_4px_6px_#0000001A] rounded-[5px] py-7 px-[30px] mt-[52px]"
+      >
+        <p class="font-Cairo-Bold text-[22px] leading-6 text-[#011C35]">
+            {{'SERVICE_INSPESTION.LIST' | translate}}
+        </p>
+        <p class="font-Cairo-Regular text-lg leading-6 text-[#011C35] mt-2.5">
+            {{'SERVICE_INSPESTION.DESCRIPTION' | translate}}
+        </p>
+        <app-inspection-filter
+          class="block mb-10"
+          [isSelectionEnabled]="false"
+        ></app-inspection-filter>
+
+        <div
+          class="flex flex-col lg:flex-row flex-wrap gap-x-[18px] gap-y-7 lg:gap-y-[22px]"
+        >
+          <app-inspection-item
+            *ngFor="let _ of [].constructor(10); let i = index"
+            [isActive]="false"
+            class="w-full lg:w-[calc(20%-18px)]"
+            [isSelectable]="false"
+          ></app-inspection-item>
+        </div>
+        <div class="pt-11">
+          <app-pagination-second-style></app-pagination-second-style>
+        </div>
+      </div>

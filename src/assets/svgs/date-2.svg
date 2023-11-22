@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <path fill="none" d="M0 0h24v24H0Z" />
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+        d="M4 5v2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+    />
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M16 3v4"
+    />
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M8 3v4"
+    />
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M4 11h16"
+    />
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M8 15h2v2H8Z"
+    />
+</svg>

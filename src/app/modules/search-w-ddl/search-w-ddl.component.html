@@ -1,0 +1,11 @@
+<div class="bg-white border py-1.5 border-solid border-[#E0E0E0] rounded relative min-w-[180px] flex justify-between ltr:pl-1.5 ltr:pr-4 rtl:pr-1.5 rtl:pl-4 items-center gap-[14px]"
+    ngClass="mainClasses">
+    <app-ddl-style-second [data]="ddl" (onOptionChange)="ddlChange($event)"
+        [mainClasses]="ddlHeight"></app-ddl-style-second>
+    <input class="font-Poppins-Light text-sm leading-[26px] text-[#2B2B2B] outline-0" [(ngModel)]="keyword"
+        name="keyword" [placeholder]="inputTitle | translate" />
+    <button type="button" (click)="filterByKeyword()">
+        <app-svg src="assets/svgs/search-short.svg" customClass="" label="title_goas_here" [stretch]="false" width="24"
+            height="24" fill="#00904A"></app-svg>
+    </button>
+</div>

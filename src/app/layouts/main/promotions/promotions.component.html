@@ -1,0 +1,24 @@
+<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data" [link]="'promotions'"></app-breadcrumb-section-second-style>
+<app-promotions-sequare [data]="promotionCategoryDDL" [lang]="lang"
+    (onClickEmiter)="onClickEmiter($event)"></app-promotions-sequare>
+<section id="promotion-filter" class="bg-[#F5F5F5] pt-[52px]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 flex flex-col lg:flex-row gap-11">
+        <div class="w-full lg:w-[381px] relative">
+            <app-filter-promotions [promotionCategoryDDL]="promotionCategoryDDL"
+                (filterSubmit)="filterSubmit($event)"></app-filter-promotions>
+        </div>
+        <div class="flex-1">
+            <app-component-loader *ngIf="isLoadingEnabled"></app-component-loader>
+            <ng-container *ngIf="!isLoadingEnabled">
+                <app-promotion-list *ngIf="promotionList.data.length > 0"
+                    [promotionList]="promotionList.data"></app-promotion-list>
+                <app-no-data *ngIf="promotionList.data.length === 0"></app-no-data>
+            </ng-container>
+        </div>
+    </div>
+</section>
+<div class="bg-[#F5F5F5] pt-[108px] pb-[54px]">
+    <app-pagination *ngIf="!isLoadingEnabled && promotionList.data.length > 0" [data]="promotionList.pagination"
+        (changePage)="changePage($event)"></app-pagination>
+</div>

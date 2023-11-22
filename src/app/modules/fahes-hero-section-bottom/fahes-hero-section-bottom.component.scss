@@ -1,0 +1,6 @@
+.hero-bottom-prices-section-container{
+    @apply animate-[slideInUp_1s_1s_ease_both];
+}
+.bottom-item.active{
+    @apply bg-[#00000047] font-Cairo-Bold after:content-normal after:w-full after:h-[5px] after:bg-[var(--primary-color)] after:absolute after:left-0 after:-top-1.5;
+}

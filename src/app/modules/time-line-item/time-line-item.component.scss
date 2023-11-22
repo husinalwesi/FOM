@@ -1,0 +1,113 @@
+.timeline-item{
+    & > div{
+        @apply lg:p-12;
+    }
+    & .start-curve,
+    & .end-curve{
+        @apply absolute left-0 bottom-0 w-[25px] h-[25px] rounded-bl-[30px] border-l-[2px] border-b-[2px] border-dashed border-[#009933];
+    }
+}
+.right-side{
+    @apply mt-[-2px];
+    & > div:first-child{
+        @apply ltr:lg:order-2 rtl:lg:order-2;
+    }
+
+    &:not(.isLast){
+        & > div:last-child{
+            @apply relative;
+            &::after{
+                @apply absolute right-0 top-0 bottom-0 my-auto h-[calc(100%-50px)] w-[2px] border-l-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            &::before{
+                @apply absolute right-0 left-0 mx-auto bottom-0 h-[2px] w-[calc(100%-50px)] border-b-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            & .start-curve{
+                @apply lg:block rotate-180 top-0 right-0 left-[unset] bottom-[unset];
+            }
+            & .end-curve{
+                @apply lg:block -rotate-90 right-0 left-[unset];
+            }
+            & .indecator{
+                @apply lg:flex left-[unset] right-[-9px];
+            }
+        }
+    }
+    &.isLast{
+        @apply mt-[-2px];
+        & > div:last-child{
+            @apply relative;
+            &::after{
+                @apply absolute right-0 bottom-[50px] top-0 my-auto h-[calc(100%-100px)] w-[2px] border-l-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            & .start-curve{
+                @apply lg:block top-0 right-0 left-[unset] rotate-180;
+            }
+            & .indecator{
+                @apply lg:flex left-[unset] right-[-9px];
+            }
+        }       
+    }
+}
+.left-side{
+    &:not(.isFirst){
+        @apply mt-[-2px];
+        &  > div:first-child{
+            @apply relative;
+            &::after{
+                @apply absolute left-0 top-0 bottom-0 my-auto h-[calc(100%-50px)] w-[2px] border-l-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            &::before{
+                @apply absolute left-0 right-0 mx-auto bottom-0 h-[2px] w-[calc(100%-50px)] border-b-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            & .start-curve{
+                @apply lg:block top-0 rotate-90;
+            }
+            & .end-curve {
+                @apply lg:block;
+            }
+            & .indecator{
+                @apply lg:flex;
+            }
+        }
+    }
+    &.isFirst{
+        & > div:first-child{
+            @apply relative;
+            &::after{
+                @apply absolute left-0 top-[35px] bottom-0 my-auto h-[calc(100%-80px)] w-[2px] border-l-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            &::before{
+                @apply absolute right-0 left-0 mx-auto bottom-0 h-[2px] w-[calc(100%-50px)] border-b-2 border-dashed border-[#009933] lg:content-[''];
+            }
+            & .start-curve {
+                @apply lg:block;
+            }
+            & .indecator{
+                @apply lg:flex;
+            }
+        } 
+    }
+    &.isFirst.isLast{
+        & > div:first-child{
+            & .start-curve,
+            &::before{
+                @apply hidden;
+            }
+            &::after{
+                @apply h-[calc(100%-140px)] top-0;
+            }
+        }
+    }
+    &.isLast:not(.isMiddle){
+        & > div:first-child{
+            & .end-curve,
+            &::before{
+                @apply hidden;
+            }
+            &::after{
+                @apply h-[calc(100%-95px)] top-[-45px];            
+            }
+        }
+    }
+}

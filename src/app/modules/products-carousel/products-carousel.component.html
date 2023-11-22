@@ -1,0 +1,46 @@
+<section *ngIf="items.length > 0" class="bg-[#F5F5F5] products-carousel pb-[38px]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-20 py-[40px]">
+        <div class="w-full flex flex-row justify-between items-center mb-4">
+            <p *ngIf="title" class="text-[30px] font-Cairo-Semi-Bold capitalize " [innerText]="title | translate"></p>
+            <button type="button" *ngIf="!showAllItems" class="text-[#00904A] font-Cairo-Semi-Bold"
+                (click)="toggleShowAllItems()" [innerText]="'SHARED.VIEW_ALL' | translate"></button>
+            <button type="button" *ngIf="showAllItems" class="text-[#00904A] font-Cairo-Semi-Bold"
+                (click)="toggleShowAllItems()" [innerText]="'SHARED.LESS' | translate"></button>
+        </div>
+        <div class="w-full" *ngIf="showAllItems">
+            <!-- <div class="flex flex-wrap"> -->
+            <div class="flex flex-col lg:flex-row flex-wrap gap-[14px]">
+                <div *ngFor="let item of items; let i = index" class="w-full lg:w-[calc(25%-11px)]">
+                    <app-card-two [isEventBase]="true" [isTitleClickable]="true" class="h-full block"
+                        (onClickEmiter)="onClickEmiter(i)" [data]="item" [lang]="lang"></app-card-two>
+                </div>
+                <!-- <ng-container *ngFor="let item of items; let i = index">
+                    <div class="w-full md:w-1/4 p-1.5 h-full">
+                        <app-card-two [isEventBase]="true" [isTitleClickable]="true" (onClickEmiter)="onClickEmiter(i)"
+                            [data]="item" [lang]="lang"></app-card-two>
+                    </div>
+                    <ng-container *ngIf="(i + 1) % 4 === 0 || i === items.length - 1">
+                    </ng-container>
+                </ng-container> -->
+            </div>
+        </div>
+        <!-- carousel section  -->
+        <div class="w-full mx-auto" *ngIf="!showAllItems">
+            <owl-carousel-o #owlCarousel [options]="customOptions">
+                <ng-container *ngFor="let item of items; let i = index">
+                    <ng-template carouselSlide [id]="'item-' + i">
+
+
+                        <div class="w-full">
+                            <app-card-two [isEventBase]="true" [isTitleClickable]="true" class="h-full block"
+                                (onClickEmiter)="onClickEmiter(i)" [data]="item" [lang]="lang"></app-card-two>
+                        </div>
+
+                        <!-- <app-card-two [isEventBase]="true" class="h-full" [isTitleClickable]="true"
+                            (onClickEmiter)="onClickEmiter(i)" [data]="item" [lang]="lang"></app-card-two> -->
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</section>

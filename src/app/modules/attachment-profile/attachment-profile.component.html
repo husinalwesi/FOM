@@ -1,0 +1,24 @@
+<div class="flex flex-col gap-3 pt-[50px] pb-[30px] uploader-container" [class.error]="isErrorEnabled">
+    <div>
+        <div class="w-[100px] h-[100px] mx-auto relative">
+
+            <img *ngIf="imageUrl" [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+                [lazyLoad]="imageUrl" alt="" title="" width="100" height="100"
+                class="w-[100px] h-[100px] lg:mx-0 rounded-full bg-[#ECECEE] border-2 border-solid border-[#00852C]" />
+
+            <img *ngIf="!imageUrl" [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+                [lazyLoad]="data.url | imageSource" alt="" title="" width="100" height="100"
+                class="w-[100px] h-[100px] lg:mx-0 rounded-full bg-[#ECECEE] border-2 border-solid border-[#00852C]" />
+
+
+            <button type="button" (click)="onButtonClick()"
+                class="absolute right-0 bottom-0 w-[35px] h-[35px] bg-[#009933] rounded-[20px] flex items-center justify-center">
+                <app-svg src="assets/svgs/edit-white.svg" customClass="mt-[-3px]" label="title_goas_here"
+                    [stretch]="false" width="15" height="15" fill="#ffffff"></app-svg>
+            </button>
+        </div>
+    </div>
+    <p class="font-Poppins-Light text-center text-xs leading-5 text-[#7C7C7C]">{{'DASHBOARD.RECOMMENDED' |
+        translate}}</p>
+    <input #Uploader type="file" class="hidden" [accept]="acceptTemp.str" (change)="selectFile($event)" />
+</div>

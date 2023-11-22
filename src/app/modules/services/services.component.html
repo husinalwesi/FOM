@@ -1,0 +1,11 @@
+<section class="max-w-desktop mx-auto px-4 lg:px-10 mb-[100px] mt-[40px]">
+    <p *ngIf="mainData?.title" class="mb-2.5 text-center font-Poppins-Medium text-lg leading-[30px] text-[#221E20]"
+        [innerHTML]="mainData?.title[lang]"></p>
+    <p *ngIf="mainData?.desc" class="mb-9 text-center font-Cairo-Regular text-base leading-[29px] text-[#676767]"
+        [innerHTML]="mainData?.desc[lang]"></p>
+    <ul class="flex flex-wrap gap-[46px]">
+        <li *ngFor="let service of services; let i = index" class="w-full lg:w-[calc((100%/3)-31px)]">
+            <app-service-item [data]="service" [lang]="lang" [styleColor]="styleColor"></app-service-item>
+        </li>
+    </ul>
+</section>

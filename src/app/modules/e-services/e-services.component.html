@@ -1,0 +1,130 @@
+<section class="max-w-desktop w-full px-4 lg:px-10 mx-auto pt-[76px] pb-[82px] overflow-x-hidden">
+    <p class="ltr:text-left rtl:text-right font-Cairo-Regular text-[27px] leading-[50px] text-[#011C35] mb-5">
+        {{'E_SERVICES_SECTION.WOQOD_E_SERVICES' | translate}}</p>
+    <ul class="max-w-full hidden lg:flex lg:flex-row justify-between gap-8 lg:gap-0
+        relative
+    
+    after:hidden lg:after:block after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white
+    
+    ">
+
+        <li class="relative w-full lg:w-1/3 flex items-center after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white
+            before:content-normal before:absolute ltr:before:left-0 rtl:before:right-0 before:bottom-[-22px] before:w-full before:h-[5px] before:bg-transparent
+            " [class.products-services-active]="selectedTab == 'products-services'">
+            <button type="button" class="flex flex-row gap-4" (click)="scroll('products-services')">
+                <div class="w-[68px] h-[68px] bg-[#D1A755] rounded-[5px] flex justify-center items-center">
+                    <img [src]="servicesIcons?.tab1IconID | imageSource" class="w-[36px] h-[42px]" alt="">
+                </div>
+                <div class="flex flex-col gap-1 self-center">
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Regular tracking-[0.1px] text-[#011C35] max-w-[228px] text-lg leading-[30px]"
+                        [innerHTML]="servicesIcons?.tab1Title[lang]"></p>
+                    <p class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[19px] tracking-[0.07px] text-[#D1A755] max-w-[228px]"
+                        [innerHTML]="servicesIcons?.tab2Desription[lang]">
+                        <!-- {{'E_SERVICES_SECTION.HEART_OF_WOQOOD' | translate}}</p> -->
+                </div>
+            </button>
+        </li>
+
+        <li *ngIf="table.tbody.length > 0" class="relative w-full lg:w-1/3 flex items-center justify-start lg:justify-center after:hidden lg:after:block after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white    
+            before:content-normal before:absolute ltr:before:left-0 rtl:before:right-0 before:bottom-[-22px] before:w-full before:h-[5px] before:bg-transparent
+            " [class.tenders-active]="selectedTab == 'tenders'">
+            <button type="button" class="flex flex-row gap-4 lg:w-full" (click)="scroll('tenders')">
+                <div
+                    class="w-[68px] h-[68px] bg-[#021A33] border-2 border-solid border-[#193E5A] rounded-[5px] flex justify-center items-center">
+                    <img [src]="servicesIcons?.tab2IconID | imageSource" class="w-[36px] h-[42px]" alt="">
+                </div>
+                <div class="flex flex-col gap-1 self-center">
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Regular tracking-[0.1px] text-[#011C35] max-w-[228px] text-lg leading-[30px]"
+                        [innerHTML]="servicesIcons?.tab2Title[lang]">
+                        <!-- {{'E_SERVICES_SECTION.TENDERS' | translate}}</p> -->
+                </div>
+            </button>
+        </li>
+
+        <li
+            class="relative w-full lg:w-1/3 flex items-center justify-start lg:justify-end after:hidden lg:after:block after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white">
+            <a [href]="(whistleBlowingFileId | pdf) | routeLocalization" target="_blank"
+                class="flex flex-row gap-4 w-full lg:w-auto">
+                <div
+                    class="w-full lg:w-[196px] h-[78px] bg-[#193E5A] rounded-xl flex justify-center items-center flex-row gap-4">
+                    <div>
+                        <img [src]="servicesIcons?.whistleBlowIconID | imageSource" class="w-[36px] h-[42px]" alt="">
+                    </div>
+                    <p class="ltr:text-left rtl:text-right font-Cairo-Regular text-base tracking-[0.18px] text-white max-w-[93px]"
+                        [innerHTML]="servicesIcons?.whistleBlowTitle[lang]">
+                        <!-- {{'E_SERVICES_SECTION.WHISTLE' | translate}} -->
+                    </p>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <div class="w-full lg:hidden">
+        <owl-carousel-o #owlCarousel [options]="customOptions">
+            <ng-container>
+                <ng-template carouselSlide id="0">
+                    <div class="relative w-full flex items-center after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white
+            before:content-normal before:absolute ltr:before:left-0 rtl:before:right-0 before:bottom-[-22px] before:w-full before:h-[5px] before:bg-transparent
+            " [class.products-services-active]="selectedTab == 'products-services'">
+                        <button type="button" class="flex flex-row gap-4" (click)="scroll('products-services')">
+                            <div class="w-[68px] h-[68px] bg-[#D1A755] rounded-[5px] flex justify-center items-center">
+                                <img [src]="servicesIcons?.tab1IconID | imageSource" class="w-[36px] h-[42px]" alt="">
+                            </div>
+                            <div class="flex flex-col gap-1 self-center">
+                                <p class="ltr:text-left rtl:text-right font-Cairo-Regular tracking-[0.1px] text-[#011C35] max-w-[228px] text-lg leading-[30px]"
+                                    [innerHTML]="servicesIcons?.tab1Title[lang]"></p>
+                                <p class="ltr:text-left rtl:text-right font-Poppins-Light text-sm leading-[19px] tracking-[0.07px] text-[#D1A755] max-w-[228px]"
+                                    [innerHTML]="servicesIcons?.tab2Desription[lang]">
+                                    <!-- {{'E_SERVICES_SECTION.HEART_OF_WOQOOD' | translate}}</p> -->
+                            </div>
+                        </button>
+                    </div>
+                </ng-template>
+                <ng-template *ngIf="table.tbody.length > 0" carouselSlide id="1">
+                    <div class="relative w-full flex items-center justify-start lg:justify-center after:hidden lg:after:block after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white
+            
+            before:content-normal before:absolute ltr:before:left-0 rtl:before:right-0 before:bottom-[-22px] before:w-full before:h-[5px] before:bg-transparent
+            " [class.tenders-active]="selectedTab == 'tenders'">
+                        <button type="button" class="flex flex-row gap-4" (click)="scroll('tenders')">
+                            <div
+                                class="w-[68px] h-[68px] bg-[#021A33] border-2 border-solid border-[#193E5A] rounded-[5px] flex justify-center items-center">
+                                <img [src]="servicesIcons?.tab2IconID | imageSource" class="w-[36px] h-[42px]" alt="">
+                            </div>
+                            <div class="flex flex-col gap-1 self-center">
+                                <p class="ltr:text-left rtl:text-right font-Cairo-Regular tracking-[0.1px] text-[#011C35] max-w-[228px] text-lg leading-[30px]"
+                                    [innerHTML]="servicesIcons?.tab2Title[lang]">
+                                    <!-- {{'E_SERVICES_SECTION.TENDERS' | translate}}</p> -->
+                            </div>
+                        </button>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide id="2">
+                    <div
+                        class="relative w-full flex items-center justify-start lg:justify-end after:hidden lg:after:block after:content-normal after:absolute ltr:after:left-0 rtl:after:right-0 after:bottom-[-22px] after:w-full after:h-px after:bg-white">
+                        <a [href]="(whistleBlowingFileId | file) | routeLocalization" target="_blank"
+                            class="flex flex-row gap-4 w-full lg:w-auto">
+                            <div
+                                class="w-full lg:w-[196px] h-[78px] bg-[#193E5A] rounded-xl flex justify-center items-center flex-row gap-4">
+                                <div>
+                                    <img [src]="servicesIcons?.whistleBlowIconID | imageSource"
+                                        class="w-[36px] h-[42px]" alt="">
+                                </div>
+                                <p class="ltr:text-left rtl:text-right font-Cairo-Regular text-base tracking-[0.18px] text-white max-w-[93px]"
+                                    [innerHTML]="servicesIcons?.whistleBlowTitle[lang]">
+                                    <!-- {{'E_SERVICES_SECTION.WHISTLE' | translate}} -->
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+    </div>
+
+    <div id='eservices' class="scroll-mt-[80px] lg:scroll-mt-[110px]">
+        <app-e-services-carousel *ngIf="selectedTab == 'products-services'" class="block mt-[38px]"
+            [slidesStore]="slidesStore" [lang]="lang"></app-e-services-carousel>
+        <app-tender-home *ngIf="selectedTab == 'tenders'" [table]="table" [lang]="lang"></app-tender-home>
+    </div>
+</section>

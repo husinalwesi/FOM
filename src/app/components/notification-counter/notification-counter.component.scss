@@ -1,0 +1,3 @@
+.notification-counter{
+    @apply bg-white border-[3px] border-solid border-[#011D37] tracking-normal text-[#011D37] font-Poppins-Bold text-[10px] absolute ltr:right-[5px] rtl:left-[5px] -top-0.5 px-1 min-w-[20px] min-h-[20px] rounded-full animate-[bounce_1s_ease_infinite];
+}

@@ -1,0 +1,88 @@
+app-map {
+    & .gm-style {
+        & .gm-style-iw-tc {
+            &::after {
+                background: #011d37;
+            }
+        }
+
+        & .gm-style-iw-c {
+            padding: 0;
+            width: auto;
+
+            & > button {
+                right: 20px !important;
+                top: 0 !important;
+            }
+        }
+
+        & .gm-style-iw-d {
+            overflow: auto !important;
+        }
+
+        & .gm-ui-hover-effect > span {
+            background-color: white;
+        }
+    }
+
+    & .owl-nav {
+        & .owl-prev {
+            @apply absolute bottom-0 top-0 ltr:left-[-30px] rtl:right-[-30px] m-auto flex items-center after:content-normal after:w-12 after:h-12 after:bg-no-repeat ltr:after:rotate-90 rtl:after:-rotate-90 transition-all duration-300;
+
+            &:after {
+                @apply transition-all;
+                background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="none" stroke="%23ffffff" xmlns="http://www.w3.org/2000/svg" id="arrow" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path></svg>');
+                background-position: center center;
+                background-size: 60px;
+            }
+
+            &:hover {
+                // @apply ltr:bg-gradient-to-l rtl:bg-gradient-to-r from-transparent to-[#ECECEE];
+
+                &:after {
+                    // @apply scale-125;
+                    @apply opacity-90;
+                }
+            }
+        }
+
+        & .owl-next {
+            @apply absolute bottom-0 top-0 ltr:right-[-28px] rtl:left-[-28px] m-auto flex items-center after:content-normal after:w-12 after:h-12 after:bg-no-repeat ltr:after:-rotate-90 rtl:after:rotate-90 transition-all duration-300;
+
+            &:after {
+                @apply transition-all;
+                background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="none" stroke="%23ffffff" xmlns="http://www.w3.org/2000/svg" id="arrow" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path></svg>');
+                background-position: center center;
+                background-size: 60px;
+            }
+
+            &:hover {
+                // @apply ltr:bg-gradient-to-r rtl:bg-gradient-to-l from-transparent to-[#ECECEE];
+
+                &:after {
+                    // @apply scale-125;
+                    @apply opacity-90;
+                }
+            }
+        }
+    }
+
+    & .owl-dots {
+        @apply flex flex-row items-center gap-1.5 h-4 justify-center mt-4;
+        & .owl-dot {
+            @apply after:content-normal after:w-2 after:h-2 after:bg-white after:rounded-full after:block after:opacity-50 after:transition-all after:duration-300;
+
+            &.active {
+                @apply after:h-4 after:w-4 after:opacity-100;
+            }
+
+            &:not(.active):hover {
+                @apply after:h-2.5 after:w-2.5 after:opacity-75;
+            }
+        }
+    }
+
+    & .owl-carousel {
+        @apply mb-[12px];
+    }
+}

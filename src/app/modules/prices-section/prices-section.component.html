@@ -1,0 +1,58 @@
+<section class="bg-white pt-[107px] pb-[100px]">
+    <div class="max-w-desktop mx-auto w-full px-4 lg:px-10 gap-8 flex flex-col">
+
+        <div class="w-full flex justify-between gap-4 items-center px-4">
+            <p class="ltr:text-left rtl:text-right font-Cairo-Regular text-[30px] leading-[25px] text-[#011C35]">
+                {{'PRICES.PRICES' | translate}}</p>
+            <app-btn-one (onClick)="viewAll()" text="PRICES.VIEW_ALL_PRICES" seoDesc="Text about the button"
+                svg="assets/svgs/search.svg" textClass="font-Cairo-Regular text-base"></app-btn-one>
+        </div>
+        <div class="">
+            <ul class="flex flex-wrap gap-4 justify-center">
+                <li *ngFor="let item of data" class="w-[320px]">
+                    <app-price-item [data]="item" [lang]="lang" (onClick)="itemClick(item)"></app-price-item>
+                </li>
+            </ul>
+        </div>
+        <div class="w-full pt-[18px] text-center">
+            <app-btn-one link="/" text="PRICES.BOOK_AN_APPOINTMENT" seoDesc="Text about the button"
+                svg="assets/svgs/search.svg" textClass="font-Cairo-Regular text-base"></app-btn-one>
+        </div>
+    </div>
+</section>
+<app-modal [template]="modalTemplatePlaceholder1" [isModalEnabled]="isModalEnabled"
+    (closeModalByKeyboard)="isModalEnabled = false" modalClasses="w-[90%] max-w-[912px]">
+    <ng-template #modalTemplatePlaceholder1>
+        <div class="bg-white pt-[43px] px-1 lg:pb-[52px] rounded-[5px] relative">
+            <div class="modal-header pb-[21px] px-[22px] lg:px-[42px]">
+                <button type="button" class="absolute ltr:right-[22px] rtl:left-[22px] top-6 outline-0"
+                    (click)="isModalEnabled = false;">
+                    <app-svg src="assets/svgs/close.svg" customClass="align-text-top" label="title_goas_here"
+                        [stretch]="false" width="16" fill="#000000"></app-svg>
+                </button>
+                <p class="font-Poppins-Medium text-lg text-black">{{'PRICES.PRICE_LIST' | translate}}</p>
+            </div>
+            <div class="modal-body relative overflow-x-auto px-0 lg:px-[42px]">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th scope="col"
+                                class="border-t ltr:border-r rtl:border-l border-solid border-[#ECECEE] py-[13px] whitespace-nowrap">
+                                {{selectedItem?.table?.thead}}</th>
+                            <th scope="col" class="border-t border-solid border-[#ECECEE] py-[13px] whitespace-nowrap">
+                                {{'PRICES.PRICE_IN' | translate}} {{'CURRENCIES.QR' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let rowItem of selectedItem?.table?.tbody">
+                            <td scope="row"
+                                class="border-t ltr:border-r rtl:border-l border-solid border-[#ECECEE] py-[13px]">
+                                {{rowItem[0][lang]}}</td>
+                            <td scope="row" class="border-t border-solid border-[#ECECEE] py-[13px]">{{rowItem[1]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

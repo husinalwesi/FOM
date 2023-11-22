@@ -1,0 +1,6 @@
+.disabled button{
+    @apply bg-[#F5F5F5] border border-solid border-[#ECECEE] text-[#221E20] cursor-not-allowed;
+}
+.selected button{
+    @apply bg-[#B30838] border border-solid border-[#ECECEE] text-white cursor-default;
+}

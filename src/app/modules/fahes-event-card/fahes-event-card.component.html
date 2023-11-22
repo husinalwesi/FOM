@@ -1,0 +1,47 @@
+<div class="shadow-md bg-[#FFFFFF] w-full rounded-b-[5px]">
+  <div class="">
+    <img class="w-full h-[192px]" [defaultImage]="'loadingImage'| imageSource" [errorImage]="'errorImage'| imageSource"
+      [lazyLoad]="data.img | imageSource" alt="Card Image" />
+  </div>
+  <div class="pt-[17px] pb-[23px] px-[20px]">
+    <div class="flex justify-between items-center pb-[11px] gap-4">
+      <div class="flex flex-row gap-2 min-w-[100px]">
+        <app-svg src="assets/svgs/timer.svg" customClass="mt-[-3px]" label="title_goas_here" [stretch]="false"
+          width="12" fill="#000"></app-svg>
+        <p
+          class="ltr:text-left rtl:text-right font-Poppins-Medium text-xs leading-[23px] text-[#221E20] flex items-center">
+          {{ ('MONTHS.' + ((data.date | date:'MMM') || '').toUpperCase()) | translate }}
+          {{data.date | date:'dd'}},
+          {{data.date | date:'YYYY'}}
+        </p>
+      </div>
+      <div class="flex gap-[7px] items-center flex-1 justify-end" *ngIf="data.location">
+        <app-svg src="assets/svgs/map-marker.svg" customClass="mt-[-3px]" label="title_goas_here" width="14"
+          stroke="#00428B"></app-svg>
+        <p class="ltr:text-right rtl:text-left font-Poppins-Medium text-sm leading-[23px] text-[#00428B] line-clamp-1">
+          {{data.location}}
+        </p>
+      </div>
+    </div>
+    <p class="text-[13px] leading-[25px] font-Cairo-Regular text-[#011C35] line-clamp-2"
+      [innerHTML]="data?.description[lang]">
+    </p>
+
+    <div class="mt-[18px]">
+      <a *ngIf="isExternalMethod(data.link)" [href]="data.link | routeLocalization" target="_blank" class="flex flex-row gap-2 items-center">
+        <p class="ltr:text-left rtl:text-right font-Cairo-Regular font-bold text-[13px] leading-[26px] text-[#E7131A]">
+          {{ 'FAHES_MEDIA_CENTER.READ_MORE' | translate }}
+        </p>
+        <app-svg src="assets/svgs/long-arrow.svg" customClass="mt-[-3px] ltr:rotate-[0deg] rtl:rotate-[180deg]"
+          label="title_goas_here" [stretch]="false" width="16" height="13" fill="#E7131A"></app-svg>
+      </a>
+      <a *ngIf="!isExternalMethod(data.link)" [routerLink]="data.link | routeLocalization" class="flex flex-row gap-2 items-center">
+        <p class="ltr:text-left rtl:text-right font-Cairo-Regular font-bold text-[13px] leading-[26px] text-[#E7131A]">
+          {{ 'FAHES_MEDIA_CENTER.READ_MORE' | translate }}
+        </p>
+        <app-svg src="assets/svgs/long-arrow.svg" customClass="mt-[-3px] ltr:rotate-[0deg] rtl:rotate-[180deg]"
+          label="title_goas_here" [stretch]="false" width="16" height="13" fill="#E7131A"></app-svg>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.rabber-txt {
+    @apply font-Poppins-Medium text-base text-center tracking-[-0.5px] text-white absolute w-[96px] ltr:left-[-9px] rtl:right-[-0px] rtl:top-[26px] ltr:top-[27px] whitespace-nowrap text-ellipsis overflow-hidden px-2;
+    transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+
+    & span {
+        @apply block animate-[pulse_1s_ease_infinite];
+    }
+}

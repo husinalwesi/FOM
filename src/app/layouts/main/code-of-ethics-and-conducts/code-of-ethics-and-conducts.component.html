@@ -1,0 +1,12 @@
+<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb"
+    [link]="'fahes/code-of-ethics-and-conducts'"></app-breadcrumb-section-second-style>
+<app-content-page [lang]="lang" [data]="data"></app-content-page>
+<section class="bg-[#ECECEE]">
+    <div class="max-w-desktop mx-auto px-4 lg:px-10 pt-[25px]">
+        <div class="flex flex-col lg:flex-row  gap-4 flex-wrap">
+            <div *ngFor="let item of bullets " class="w-full lg:w-[calc(20%-16px)]">
+                <app-ethic-item [item]="item" [lang]="lang"></app-ethic-item>
+            </div>
+        </div>
+    </div>
+</section>

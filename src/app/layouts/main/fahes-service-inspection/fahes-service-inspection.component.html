@@ -1,0 +1,288 @@
+<app-hero-bg-half></app-hero-bg-half>
+<app-breadcrumb-section-second-style></app-breadcrumb-section-second-style>
+<div class="bg-[#F5F5F5]">
+  <section class="max-w-desktop mx-auto px-4 lg:px-10 pb-[72px]">
+    <div class="flex flex-col lg:flex-row gap-2 justify-between pt-11 pb-[66px]">
+      <p class="font-Cairo-Bold text-[30px] leading-[56px] capitalize text-[#221E20]">
+        {{'PRICES.BOOK_AN_APPOINTMENT' | translate}}
+      </p>
+      <button type="button" class="flex gap-1.5 items-center">
+        <span class="font-Poppins-Medium text-base leading-[50px] uppercase text-[#B30838]">{{'SERVICE_INSPESTION.BACK'
+          | translate}}</span>
+        <app-svg src="assets/svgs/arrow-curve.svg" customClass="" label="title_goas_here" [stretch]="false" width="30"
+          height="30" fill="#B30838"></app-svg>
+      </button>
+    </div>
+    <app-form-steps [steps]="steps"></app-form-steps>
+    <ng-container *ngIf="selectedStep === 'chooseYourVehicle'">
+      <app-vehicle-inspection-fahes></app-vehicle-inspection-fahes>
+    </ng-container>
+    <ng-container *ngIf="selectedStep === 'selectDateTime'">
+      <app-book-inspection-fahes></app-book-inspection-fahes>
+    </ng-container>
+    <ng-container *ngIf="selectedStep === 'payment'">
+      <div class="px-4 lg:px-14 pt-6 pb-8 bg-white shadow-[0px_4px_6px_#0000001A]">
+        <div class="flex flex-col lg:flex-row gap-4 lg:gap-[140px]">
+          <div class="w-full lg:w-[calc(50%-70px)]">
+            <div class="mb-8 flex flex-col lg:flex-row">
+              <div class="w-full flex flex-col">
+                <p class="font-Cairo-Bold text-lg leading-[27px] text-[#B30838]">{{'STEPS.PAYMENT' | translate}}</p>
+                <p class="font-Poppins-Light text-sm text-black">{{ 'SERVICE_INSPESTION.CONGRATS' | translate }}</p>
+              </div>
+            </div>
+            <div>
+              <ul class="flex flex-col gap-2 lg:max-w-[100%]">
+                <li (click)="toggleDDL()"
+                  class="flex justify-between cursor-pointer gap-1 relative items-center py-2.5 px-5 rounded-md bg-white border border-solid border-[#003399] shadow-[0px_4px_6px_#0000001A]">
+                  <div *ngIf="isDdlEnabled"
+                    class="absolute animate-[fadeInUp_0.3s_ease_both] left-0 top-[76px] rounded-[5px] z-10 overflow-auto w-full max-h-[200px] bg-white shadow-[0px_1px_13px_#0000001A]"
+                    [class.animate-close]="fireCloseAnimation">
+                    <ul class="flex flex-col">
+                      <li *ngFor="let _ of [].constructor(16); let i = index" [class.active]="i == 2"
+                        class="px-5 py-2.5">
+                        <div class="flex items-center gap-3 relative">
+                          <app-radio-btn></app-radio-btn>
+                          <app-svg src="assets/svgs/bank-credit.svg" customClass="mt-[-3px]" label="title_goes_here"
+                            [stretch]="false" width="36" height="27" fill="#000"></app-svg>
+                          <div class="flex flex-col gap-1">
+                            <p class="font-Cairo-Semi-Bold text-base leading-[22px] text-[#221E20]">
+                              Bank Name Credit Card
+                            </p>
+                            <p class="font-Cairo-Regular text-[15px] leading-7 capitalize text-[#221E20]">
+                              *****8412
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex items-center gap-3 relative">
+                    <app-radio-btn></app-radio-btn>
+                    <app-svg src="assets/svgs/bank-credit.svg" customClass="mt-[-3px]" label="title_goes_here"
+                      [stretch]="false" width="36" height="27" fill="#000"></app-svg>
+                    <div class="flex flex-col gap-1">
+                      <p class="font-Cairo-Semi-Bold text-base leading-[22px] text-[#221E20]">
+                        Bank Name Credit Card
+                      </p>
+                      <p class="font-Cairo-Regular text-[15px] leading-7 capitalize text-[#221E20]">
+                        *****8412
+                      </p>
+                    </div>
+                  </div>
+                  <app-svg src="assets/svgs/arrow.svg" customClass="mt-[-3px]" label="title_goes_here" [stretch]="false"
+                    width="20" height="20" stroke="#898989"></app-svg>
+                </li>
+
+                <li
+                  class="flex justify-between gap-1 items-center py-4 px-5 rounded-md bg-white border border-solid border-[#E0E0E0] shadow-[0px_4px_6px_#0000001A]">
+                  <div class="flex items-center gap-3">
+                    <app-radio-btn></app-radio-btn>
+                    <img src="assets\images\png\kfast.webp" alt="" width="36" height="27" />
+                    <div class="flex flex-col gap-1">
+                      <p class="font-Cairo-Semi-Bold text-base leading-[22px] text-[#221E20]">
+                        KFAST
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="flex justify-between gap-1 items-center py-4 px-5 rounded-md bg-white border border-solid border-[#E0E0E0] shadow-[0px_4px_6px_#0000001A]">
+                  <div class="flex items-center gap-3">
+                    <app-radio-btn></app-radio-btn>
+                    <img src="assets\images\png\amex.webp" alt="" width="36" height="27" />
+                    <div class="flex flex-col gap-1">
+                      <p class="font-Cairo-Semi-Bold text-base leading-[22px] text-[#221E20]">
+                        AMEX
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <p class="pt-[14px] pb-2 font-Cairo-Regular text-base leading-[40px] text-[#221E20]">
+                {{'E_TAG.OTHER_METHODS' | translate}}</p>
+              <ul class="flex flex-col gap-2">
+                <li
+                  class="flex flex-col justify-between gap-1 py-4 px-5 rounded-md bg-white border border-solid border-[#ED1C24] shadow-[0px_4px_6px_#0000001A]">
+                  <div class="flex items-center gap-3">
+                    <app-radio-btn></app-radio-btn>
+                    <app-svg src="assets/svgs/footer-logo.svg" customClass="mt-[-3px]" label="title_goes_here"
+                      [stretch]="false" width="36" height="27" fill="#000"></app-svg>
+                    <div class="flex flex-col gap-1">
+                      <p class="font-Cairo-Semi-Bold text-base leading-[22px] text-[#221E20]">New
+                        Card
+                      </p>
+                    </div>
+                  </div>
+                  <div class="mt-6">
+                    <div class="flex flex-col gap-1.5">
+                      <label class="text-[#221E20] text-base leading-[22px] font-Noto-Sans-Regular">Name
+                        on the Card</label>
+                      <input type="text" placeholder="John Doe"
+                        class="px-4 border border-solid border-[#0000001F] rounded text-base leading-6 text-[#00000099] h-14 font-Roboto-Regular" />
+                    </div>
+                    <div class="flex flex-col gap-1.5 mt-2.5">
+                      <label class="text-[#221E20] text-base leading-[22px] font-Noto-Sans-Regular">Card
+                        Number</label>
+                      <input type="text" placeholder="1929 9292 8174 1234"
+                        class="px-4 border border-solid border-[#0000001F] rounded text-base leading-6 text-[#00000099] h-14 font-Roboto-Regular" />
+                    </div>
+                    <div class="flex flex-col lg:flex-row gap-y-1.5 gap-x-9">
+                      <div class="w-full lg:w-[calc(50%-18px)] flex flex-col gap-1.5 mt-2.5">
+                        <label class="text-[#221E20] text-base leading-[22px] font-Noto-Sans-Regular">Valid
+                          Till</label>
+                        <input type="text" placeholder="02/22"
+                          class="px-4 border border-solid border-[#0000001F] rounded text-base leading-6 text-[#00000099] h-14 font-Roboto-Regular" />
+                      </div>
+                      <div class="w-full lg:w-[calc(50%-18px)] flex flex-col gap-1.5 mt-2.5">
+                        <label class="text-[#221E20] flex gap-2 text-base leading-[22px] font-Noto-Sans-Regular">
+                          <span>CVV</span>
+                          <app-svg src="assets/svgs/footer-logo.svg" customClass="mt-[-3px]" label="title_goes_here"
+                            [stretch]="false" width="16" height="16" fill="#000"></app-svg>
+                        </label>
+                        <input type="text" placeholder="***"
+                          class="px-4 border border-solid border-[#0000001F] rounded text-base leading-6 text-[#00000099] h-14 font-Roboto-Regular" />
+                      </div>
+                    </div>
+                    <div class="mt-5">
+                      <app-checkbox [data]="checkBox2" (onChange)="checkBox2.value = $event"></app-checkbox>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full lg:w-[calc(50%-70px)]">
+            <div class="w-full flex flex-col gap-[30px] pt-7">
+              <p class="font-Poppins-Light text-sm text-black">{{'E_TAG.E_Wallet' | translate }}</p>
+              <ul class="flex flex-col gap-2">
+                <li
+                  class="flex justify-between gap-1 items-center py-4 px-5 rounded-md bg-white border border-solid border-[#E0E0E0] shadow-[0px_4px_6px_#0000001A] border-[#F20C19]">
+                  <div class="flex items-center gap-3">
+                    <app-radio-btn></app-radio-btn>
+                    <app-svg src="assets/svgs/footer-logo.svg" customClass="mt-[-3px]" label="title_goes_here"
+                      [stretch]="false" width="36" height="27" fill="#000"></app-svg>
+                    <div class="flex flex-col gap-1">
+                      <p class="font-Cairo-Semi-Bold text-base leading-[22px] text-[#221E20]">
+                        Available E - Wallet Balance
+                      </p>
+                    </div>
+                  </div>
+                  <p class="font-Cairo-Bold text-lg leading-[33px] text-[#E91624]">QAR 40</p>
+                </li>
+              </ul>
+              <p class="mt-[-15px] ltr:pl-4 rtl:pr-4 font-Poppins-Light text-sm text-[#F20C19]">Available balance is
+                lesser than
+                the total amount. Kindly use alternate Payment method.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-4 lg:gap-[140px] items-end justify-between mt-6">
+          <div class="w-full lg:w-[calc(50%-70px)]">
+            <div class="flex justify-between items-center bg-[#F8F7F7] rounded-[5px] px-6 py-2 mb-[22px]">
+              <p class="font-Cairo-Regular text-base leading-[30px] text-[#222222]">{{ 'E_TAG.TOTAL' | translate }}</p>
+              <p class="font-Cairo-Bold text-lg leading-[33px] text-[#E01522]">{{ 'CURRENCIES.QR' | translate }} 50</p>
+            </div>
+            <app-checkbox [data]="checkBox3" (onChange)="checkBox3.value = $event"></app-checkbox>
+          </div>
+          <div class="w-full lg:w-[calc(50%-70px)]">
+            <div class="flex flex-col lg:flex-row gap-2 lg:gap-7 justify-end">
+              <button type="button"
+                class="border w-full lg:w-auto px-11 py-0.5 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">{{
+                'DASHBOARD.BACK' | translate }}</button>
+              <button type="button"
+                class="border w-full lg:w-auto px-11 py-0.5 border-solid border-[#b30838] bg-white rounded-[5px] font-Cairo-Regular text-base leading-[33px] text-[#B30838] capitalize">{{
+                'SERVICE_INSPESTION.CANCEL' | translate }}</button>
+              <button type="button"
+                class="font-Cairo-Regular w-full lg:w-auto py-0.5 px-[46px] text-base leading-[33px] text-white capitalize bg-[#B30838] rounded-[5px]">{{
+                'SERVICE_INSPESTION.CONFIRM' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+</div>
+
+<app-modal [template]="modalTemplatePlaceholder3" [isModalEnabled]="isViewSummaryModalEnabled"
+  (closeModalByKeyboard)="isViewSummaryModalEnabled = false" modalClasses="top-0 bottom-0 w-[90%] max-w-[1071px]">
+  <ng-template #modalTemplatePlaceholder3>
+    <div class="bg-white rounded-[5px] pt-6 px-[22px] pb-[42px]">
+      <div class="modal-header flex justify-end">
+        <button type="button">
+          <app-svg (click)="isViewSummaryModalEnabled = false" src="assets/svgs/close.svg" customClass=""
+            label="title_goes_here" [stretch]="false" width="16" height="16" fill="#000"></app-svg>
+        </button>
+      </div>
+      <div class="modal-body lg:px-6">
+        <div class="flex items-center justify-between gap-1 pb-[22px]">
+          <p class="font-Poppins-Medium text-xl leading-[50px] text-black">
+            {{ "SERVICE_INSPESTION.BOOKING_SUMMARY" | translate }}
+          </p>
+          <div class="flex gap-[26px] items-center">
+            <app-svg src="assets/svgs/Print.svg" customClass="" label="title_goes_here" [stretch]="false" width="30"
+              height="30" fill="#000"></app-svg>
+            <app-svg src="assets/svgs/Dowload.svg" customClass="" label="title_goes_here" [stretch]="false" width="30"
+              height="30" fill="#000"></app-svg>
+          </div>
+        </div>
+        <div class="flex gap-[18px] items-center bg-[#B308381F] rounded-[5px] pt-6 pb-7 px-8">
+          <div>
+            <app-svg src="assets/svgs/checklist.svg" customClass="" label="title_goes_here" [stretch]="false" width="38"
+              height="55" fill="#B30838"></app-svg>
+          </div>
+          <div class="flex flex-col gap-[5px]">
+            <p class="font-Poppins-Medium text-base text-black">
+              {{ "SERVICE_INSPESTION.BOOKING_CONFIREMD" | translate }}
+            </p>
+            <p class="font-Poppins-Light text-sm text-black">
+              We have booked your spot for the selected date at the selected
+              facility. Please arrive at the facility in due date and show the
+              below QR code or Booking Number at the counter.
+            </p>
+          </div>
+        </div>
+        <div>
+          <ul class="flex flex-col">
+            <li
+              class="flex flex-col lg:flex-row gap-6 relative border-b border-solid border-[#CCCCCC] last:border-transparent py-5"
+              *ngFor="let _ of [].constructor(3); let i = index">
+              <div>
+                <img width="121" height="121"
+                  class="w-full lg:w-[121px] h-[121px] rounded-[5px] border border-solid border-[#CCCCCC]"
+                  src="assets/images/png/QR_code.webp" alt="Card Image" />
+              </div>
+              <div class="flex flex-col lg:flex-row justify-between gap-1 flex-1">
+                <div>
+                  <p class="mb-[3px] font-Poppins-Light text-xs leading-[18px] text-[#7C7C7C]">
+                    {{ "SERVICE_INSPESTION.REFERENCE" | translate }}
+                  </p>
+                  <p class="mb-[7px] font-Poppins-Medium text-lg leading-7 text-black">
+                    #23456776765
+                  </p>
+                  <p class="mb-0.5 font-Poppins-Light text-sm leading-[22px] text-black">
+                    {{ "SERVICE_INSPESTION.VEHICLE_NAME" | translate }}: Camry
+                  </p>
+                  <p class="mb-0.5 font-Poppins-Light text-sm leading-[22px] text-black">
+                    {{ "SERVICE_INSPESTION.PLATE" | translate }}: 123456
+                  </p>
+                  <p class="font-Poppins-Light text-sm leading-[22px] text-black">
+                    {{ "SERVICE_INSPESTION.DATE" | translate }}: 10/06/2023, 10:00 AM
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="mb-[5px] font-Poppins-Light text-xs leading-[18px] text-#7C7C7C] ltr:lg:text-right rtl:lg:text-left">
+                    {{ "SERVICE_INSPESTION.AMOUNT" | translate }}
+                  </p>
+                  <p class="font-Poppins-Bold text-lg text-[#B30838]">
+                    {{ 'CURRENCIES.QR' | translate }}: 30.00
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</app-modal>

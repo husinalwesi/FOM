@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-4 py-[14px] px-[18px] rounded-[5px] h-full justify-between relative z-[1] after:absolute after:w-full after:h-full after:left-0 after:top-0 after:content-normal after:bg-[#000000] after:z-[-1] after:opacity-0 after:rounded-[5px]
+" [class.has-img]="data.bgImage" [ngStyle]="{
+    'background-color': data.bgColor,
+    'background-image': data.bgImage ? 'url(' + data.bgImage + ')' : 'none',
+  }">
+    <div class="flex flex-col gap-1">
+        <p *ngIf="data?.title" class="ltr:text-left rtl:text-right font-Cairo-Bold text-base leading-6 "
+            [ngStyle]="{ 'color': data.textColor}">
+            {{data.title}}</p>
+        <p *ngIf="data?.subTitle" class="ltr:text-left rtl:text-right font-Cairo-Regular text-[13px] leading-6 "
+            [ngStyle]="{ 'color': data.textColor}">
+            {{data.subTitle}}
+        </p>
+    </div>
+    <div class="flex flex-col gap-1">
+        <p *ngIf="data?.desc" class="ltr:text-left rtl:text-right font-Cairo-Regular text-[13px] leading-6 "
+            [ngStyle]="{ 'color': data.textColor}">
+            {{data.desc}}</p>
+        <div class="flex gap-2.5">
+            <ul *ngFor="let listItem of data.list" class="flex flex-col fap-2"
+                [ngClass]="'w-full lg:w-[calc((100%/' + listItem.length + ')-' + (10/listItem.length) + 'px)]'">
+                <li *ngFor="let innerlistItem of listItem">
+                    <a (click)="closeMenu()" [routerLink]="innerlistItem.link | routeLocalization"
+                        class="ltr:text-left rtl:text-right underline font-Cairo-Regular text-[13px] leading-6 "
+                        [ngStyle]="{ 'color': data.textColor}">{{innerlistItem.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

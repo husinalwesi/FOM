@@ -1,0 +1,24 @@
+<div class="bg-[#FFFFFF] w-full px-[25px] pt-[19px] pb-[21px] flex flex-col lg:flex-row justify-between rounded-[5px]">
+    <div class="gap-y-[2px]">
+        <p class="font-Poppins-Light text-[#011C35] text-[22px] leading-[25px]">
+            {{data.title[lang]}}
+        </p>
+        <p class="font-Poppins-Medium text-[#011C35] text-[14px]">
+            {{data.location[lang]}}
+        </p>
+        <p class="font-Poppins-Light text-[#011C35] lg:max-w-[630px]">
+            {{data.description[lang]}}
+        </p>
+    </div>
+    <div>
+        <p class="font-Poppins-Light text-[#00852C] text-[22px] text-right">
+            {{data.jobType[lang]}}
+        </p>
+        <p class="font-Poppins-Light text-[#011C35] text-right text-[14px] lg:mb-[43px]">
+            <!-- {{data.date | date:'MM'}}/{{data.date | date:'dd'}}/{{data.date | date:'yyyy'}} -->
+            {{data?.date | date:'dd-MM-YYYY'}}
+        </p>
+        <app-btn-one [link]="'/careers/career/' + data.id" text="TINDER.View_DETAIL" seoDesc="Text about the button" textClass="w-max"
+            svg="assets/svgs/arrow.svg" svgClass="rotate-[270deg]"></app-btn-one>
+    </div>
+</div>

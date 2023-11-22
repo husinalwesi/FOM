@@ -1,0 +1,31 @@
+.checkbox-container::ng-deep {
+    @apply block relative ltr:pl-8 rtl:pr-8 mb-1 cursor-pointer select-none;
+    @apply font-Poppins-Light text-sm text-white;
+    & .title {
+        @apply inline-block mt-[2.5px];
+    }
+    & .checkmark {
+        @apply absolute ltr:left-0 rtl:right-0 top-0 h-6 w-6 bg-white rounded-[5px] border border-solid border-[#CCCCCC]
+        after:content-normal after:absolute after:hidden after:left-1.5 after:top-0.5 after:w-2 after:h-[14px] after:border-solid after:border-white after:rotate-45 after:border-r-[3px] after:border-b-[3px];
+    }
+    &:hover input ~ .checkmark {
+        @apply bg-[#ECECEE];
+    }
+    & input {
+        @apply absolute opacity-0 cursor-pointer w-0 h-0;
+        &:checked ~ .checkmark {
+            @apply bg-[#3E64FF] border-transparent after:block;
+        }
+    }
+    &.error {
+        & .checkmark {
+            @apply border-[#e83d3d];
+        }
+        & span {
+            @apply text-[#e83d3d];
+        }
+    }
+}
+.disabled {
+    @apply pointer-events-none;
+}
