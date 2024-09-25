@@ -1,6 +1,0 @@
-<app-hero-half [data]="carousel" [isLoadingEnabled]="isSliderLoadingEnabled"></app-hero-half>
-<app-breadcrumb-section-second-style [breadCrumb]="breadCrumb" [metaData]="data" [link]="'kenar-shop'"></app-breadcrumb-section-second-style>
-<app-our-story *ngIf="carousel.length === 0" [title]="data?.title[lang]"
-    [text]="data?.description[lang]"></app-our-story>
-<app-features-offered [data]="firstSection" [lang]="lang"></app-features-offered>
-<app-leasing-property *ngIf="showKenarProperties" [mainData]="secondSection" [lang]="lang"></app-leasing-property>

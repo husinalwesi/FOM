@@ -2,16 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, mergeMap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { SilentRequest } from '@azure/msal-browser';
-import { MsalService } from '@azure/msal-angular';
-import { b2cPolicies } from 'src/app/auth-config';
 import { Store } from '@ngrx/store';
 import { storeToken } from 'src/app/store/user/user.action';
 
 @Injectable() export class HttpConfigInterceptor implements HttpInterceptor {
 
   constructor(
-    private authService: MsalService,
     private store: Store
   ) { }
 
@@ -71,7 +67,8 @@ import { storeToken } from 'src/app/store/user/user.action';
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
           // Handle token refresh here
-          return this.refreshTokenAndRetry(modifiedRequest, next);
+          return throwError(error);
+          // return this.refreshTokenAndRetry(modifiedRequest, next);
         } else {
           // TODO :: 404 ..
           return throwError(error);
@@ -119,37 +116,6 @@ import { storeToken } from 'src/app/store/user/user.action';
     //     return event;
     //   })
     // );
-  }
-
-  private refreshTokenAndRetry(
-    request: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
-    // TODO retry time 3..
-    const silentRequest: SilentRequest = {
-      scopes: [],
-      authority: b2cPolicies.authorities.signUpSignIn.authority,
-    };
-
-    return this.authService.acquireTokenSilent(silentRequest).pipe(
-      mergeMap((response) => {
-        const newToken = response.idToken?.toString() || "";
-        typeof window !== 'undefined' ? localStorage.setItem('token', newToken) : null;
-        this.store.dispatch(storeToken({ token: newToken }));
-        let modifiedRequest = request.clone({
-          setHeaders: {
-            BearerToken: newToken,
-          },
-        });
-
-        // Retry the request with the new access token
-        return next.handle(modifiedRequest);
-      }),
-      catchError((error) => {
-        // Handle token refresh error
-        return throwError(error);
-      })
-    );
   }
 
 

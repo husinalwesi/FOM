@@ -34,10 +34,10 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/apexcharts/dist/apexcharts.min.js"
+
             ],
             "allowedCommonJsDependencies": [
-              "apexcharts"
+
             ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"

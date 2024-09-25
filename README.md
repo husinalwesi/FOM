@@ -1,3 +1,5 @@
+node v20.3.0
+nvm 0.39.3
 # WoqodCms
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.

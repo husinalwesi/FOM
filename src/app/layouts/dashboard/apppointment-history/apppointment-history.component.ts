@@ -2,7 +2,7 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MetaTagsService } from 'src/app/services/meta-tags.service';
 import { MultimediaService } from 'src/app/services/apis/multimedia.service';
-import { MsalService } from '@azure/msal-angular';
+
 import { isPlatformBrowser } from '@angular/common';
 import { TranslationService } from "src/app/i18n/translation.service";
 
@@ -52,7 +52,6 @@ export class ApppointmentHistoryComponent {
     private TranslationService: TranslationService,
     private metaTagsService: MetaTagsService,
     private multimediaService: MultimediaService,
-    private authService: MsalService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.lang = this.TranslationService.getSelectedLanguage()

@@ -1,8 +1,0 @@
-// .requirement ::ng-deep{
-//     & p {
-//         word-break: break-all;
-//     }
-// }
-app-detailed-body::ng-deep #detailed-body {
-    @apply px-0;
-}
