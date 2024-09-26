@@ -1,9 +1,0 @@
-<section class="bg-white shadow-[inset_0px_-3px_6px_#00000029]">
-  <div class="max-w-desktop mx-auto flex flex-row gap-1 justify-center">
-    <button type="button" *ngFor="let tab of tabs" (click)="changeSelectedTab(tab.key)"
-      [class.active]="selectedTab === tab.key"
-      class="relative py-[23px] ltr:text-left rtl:text-right font-Poppins-Bold px-11 text-lg leading-[30px]">
-      {{tab.title | translate}}
-    </button>
-  </div>
-</section>

@@ -11,22 +11,23 @@ module.exports = {
         'max-mobile-dashboard': { 'max': '640px' },
       },
       fontFamily: {
-        'Futura-Bk-BT-Medium': ['Futura-Bk-BT-Medium', 'Cairo-SemiBold', 'sans-serif'], // Banner Cairo-Semi-Bold //Button on Banner  Cairo-Bold // bottom section Cairo-Regular 
-        'Futura-Bk-BT-Heavy': ['Futura-Bk-BT-Heavy', 'Cairo-Bold', 'sans-serif'], // Banner Cairo-Bold
-        // 
-        'Poppins-Light': ['Poppins-Light', 'Cairo-Regular', 'sans-serif'], // Banner Cairo-Semi-Bold
-        'Poppins-Medium': ['Poppins-Medium', 'Cairo-SemiBold', 'sans-serif'],
-        'Poppins-Bold': ['Poppins-Bold', 'Cairo-Bold', 'sans-serif'],
-        // 
-        'Cairo-Regular': ['Cairo-Regular', 'sans-serif'],
+        'gotham': ['Gotham']
+        // 'Futura-Bk-BT-Medium': ['Futura-Bk-BT-Medium', 'Cairo-SemiBold', 'sans-serif'], // Banner Cairo-Semi-Bold //Button on Banner  Cairo-Bold // bottom section Cairo-Regular 
+        // 'Futura-Bk-BT-Heavy': ['Futura-Bk-BT-Heavy', 'Cairo-Bold', 'sans-serif'], // Banner Cairo-Bold
+        // // 
+        // 'Poppins-Light': ['Poppins-Light', 'Cairo-Regular', 'sans-serif'], // Banner Cairo-Semi-Bold
+        // 'Poppins-Medium': ['Poppins-Medium', 'Cairo-SemiBold', 'sans-serif'],
+        // 'Poppins-Bold': ['Poppins-Bold', 'Cairo-Bold', 'sans-serif'],
+        // // 
+        // 'Cairo-Regular': ['Cairo-Regular', 'sans-serif'],
 
-        'Cairo-Semi-Bold': ['Cairo-SemiBold', 'sans-serif'],
-        'Cairo-Bold': ['Cairo-Bold', 'sans-serif'],
+        // 'Cairo-Semi-Bold': ['Cairo-SemiBold', 'sans-serif'],
+        // 'Cairo-Bold': ['Cairo-Bold', 'sans-serif'],
 
-        'Noto-Sans-Medium': ['Noto-Sans-Medium', 'Cairo-SemiBold', 'sans-serif'],
-        'Noto-Sans-Regular': ['Noto-Sans-Regular', 'Cairo-Regular', 'sans-serif'],
+        // 'Noto-Sans-Medium': ['Noto-Sans-Medium', 'Cairo-SemiBold', 'sans-serif'],
+        // 'Noto-Sans-Regular': ['Noto-Sans-Regular', 'Cairo-Regular', 'sans-serif'],
 
-        'Roboto-Regular': ['Roboto-Regular', 'Cairo-Regular', 'sans-serif'],
+        // 'Roboto-Regular': ['Roboto-Regular', 'Cairo-Regular', 'sans-serif'],
       },
       boxShadow: {
         'custom-1': '0px 40px 80px #0000001A',

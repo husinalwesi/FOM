@@ -1,36 +1,125 @@
-@-webkit-keyframes rotating /* Safari and Chrome */ {
-    from {
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+// @-webkit-keyframes rotating /* Safari and Chrome */ {
+//   from {
+//     -webkit-transform: rotate(0deg);
+//     -o-transform: rotate(0deg);
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     -webkit-transform: rotate(360deg);
+//     -o-transform: rotate(360deg);
+//     transform: rotate(360deg);
+//   }
+// }
+// @keyframes rotating {
+//   from {
+//     -ms-transform: rotate(0deg);
+//     -moz-transform: rotate(0deg);
+//     -webkit-transform: rotate(0deg);
+//     -o-transform: rotate(0deg);
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     -ms-transform: rotate(360deg);
+//     -moz-transform: rotate(360deg);
+//     -webkit-transform: rotate(360deg);
+//     -o-transform: rotate(360deg);
+//     transform: rotate(360deg);
+//   }
+// }
+// .rotating {
+//   -webkit-animation: rotating 160s linear infinite;
+//   -moz-animation: rotating 160s linear infinite;
+//   -ms-animation: rotating 160s linear infinite;
+//   -o-animation: rotating 160s linear infinite;
+//   animation: rotating 160s linear infinite;
+// }
+
+//
+
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// body {
+//   background: #fff;
+//   margin: 0;
+//   padding: 0;
+//   position: relative;
+// }
+
+.container {
+  position: relative;
+  // max-width: 700px;
+  margin: auto;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  // color: white;
+  // text-align: center;
+  // line-height: 50px;
+  // font-size: 24px;
+  // font-family: "Roboto", sans-serif;
+  // border-radius: 100%;
+  // background-color: red;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.item.active {
+  opacity: 1;
+  // background-color: blue;
+}
+
+svg {
+  // height: 300px;
+  // overflow: visible;
+  // width: 300px;
+  // z-index: -1;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// .st0 {
+//   fill: none;
+//   // stroke: #000000;
+//   // stroke-width: 2;
+//   // stroke-miterlimit: 1;
+// }
+
+// .start {
+//   position: absolute;
+//   top: 50%;
+//   right: -30px;
+// }
+.active-sub-category ::ng-deep {
+  & svg .path-test {
+    fill: #842d3d;
+    @apply transition-all;
   }
-  @keyframes rotating {
-    from {
-      -ms-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    to {
-      -ms-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+  & > p:nth-child(2) {
+    margin-top: 16px;
+    color: #842d3d;
+    @apply transition-all;
   }
-  .rotating {
-    -webkit-animation: rotating 160s linear infinite;
-    -moz-animation: rotating 160s linear infinite;
-    -ms-animation: rotating 160s linear infinite;
-    -o-animation: rotating 160s linear infinite;
-    animation: rotating 160s linear infinite;
+  & > p:nth-child(3) {
+    color: #842d3d;
+    @apply transition-all;
   }
-  
+}
+// #myVideo {
+//   // position: fixed;
+//   right: 0;
+//   bottom: 0;
+//   min-width: 100%;
+//   min-height: 100%;
+// }

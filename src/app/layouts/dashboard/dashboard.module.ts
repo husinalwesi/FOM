@@ -9,7 +9,7 @@ import { DashboardComponent } from './dashboard.component';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
 // import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 // import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
-import { SwitchButtonModule } from 'src/app/modules/switch-button/switch-button.module';
+// import { SwitchButtonModule } from 'src/app/modules/switch-button/switch-button.module';
 import { TranslationModule } from 'src/app/i18n/translation.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
@@ -26,7 +26,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     CommonModule,
     DashboardRoutingModule,
     SvgModule,
-    SwitchButtonModule,
+    // SwitchButtonModule,
     TranslationModule,
     LazyLoadImageModule
   ]

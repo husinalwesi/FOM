@@ -1,6 +1,0 @@
-.pagination-item{
-    @apply w-10 h-10 flex justify-center items-center text-[19px] leading-[26px] bg-white border border-solid border-[#EBEEF7] text-[#3F5AA6] rounded-[4px] hover:border-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white;
-    &.active{
-        @apply bg-[var(--primary-color)] border-[var(--primary-color)] text-white;
-    }
-}

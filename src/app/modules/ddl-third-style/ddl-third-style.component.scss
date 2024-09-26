@@ -1,9 +1,0 @@
-.active button{
-    @apply bg-[#00904A] text-white;
-}
-.animate-close{
-    @apply animate-[fadeOutDown_0.3s_ease_both];
-}
-.disabled{
-    @apply opacity-50 pointer-events-none;
-}

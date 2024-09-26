@@ -1,7 +1,0 @@
-<label class="radio-container">
-    <span *ngIf="title" class="title ltr:pl-8 rtl:pr-8">{{title | translate}}</span>
-    <span class="absolute ltr:left-[-9999px] rtl:right-[-9999px] w-px h-px overflow-hidden">radio option
-        {{title}}</span>
-    <input type="radio" [name]="name" [value]="value" [(ngModel)]="selected" (change)="change()" />
-    <span class="checkmark"></span>
-</label>

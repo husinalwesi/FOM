@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpConfigInterceptor } from './core/helpers/httpconfig.interceptor';
 import { FormsModule } from '@angular/forms';
 // import { LoadingSpinnerModule } from './modules/loading-spinner/loading-spinner.module';
-import { FullLoaderModule } from './modules/full-loader/full-loader.module';
+// import { FullLoaderModule } from './modules/full-loader/full-loader.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { StoreModule } from '@ngrx/store';
@@ -23,13 +23,14 @@ import { UserEffects } from 'src/app/store/user/user.effects';
 import { DashboardModule } from './layouts/dashboard/dashboard.module';
 import { newsReducer } from './store/news/news.reducer';
 import { promotionsReducer } from './store/promotions/promotions.reducer';
-import { ChatBotModule } from './modules/chat-bot/chat-bot.module';
+// import { ChatBotModule } from './modules/chat-bot/chat-bot.module';
 
 import { UrlSerializer, UrlTree, UrlSegment, DefaultUrlSerializer } from '@angular/router';
-import { FooterModule } from './modules/footer/footer.module';
+// import { FooterModule } from './modules/footer/footer.module';
 import { HeaderModule } from './modules/header/header.module';
-import { WidgetModule } from './modules/widget/widget.module';
+// import { WidgetModule } from './modules/widget/widget.module';
 import { TransferStateInterceptor } from './core/helpers/transfer-state.interceptor';
+import { FooterModule } from "./modules/footer/footer.module";
 
 export class CustomUrlSerializer implements UrlSerializer {
 
@@ -62,27 +63,26 @@ export class CustomUrlSerializer implements UrlSerializer {
     BrowserAnimationsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode() && environment.pwaEnabled,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+        enabled: !isDevMode() && environment.pwaEnabled,
+        // Register the ServiceWorker as soon as the application is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
     }),
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
     TranslateModule.forRoot({
-      defaultLanguage: environment.languages.default
+        defaultLanguage: environment.languages.default
     }),
     StoreModule.forRoot({ user: userReducer, news: newsReducer, promotions: promotionsReducer }),
     EffectsModule.forRoot([UserEffects]),
     FormsModule,
-    FullLoaderModule,
+    // FullLoaderModule,
     LazyLoadImageModule,
     DashboardModule,
-    ChatBotModule,
+    // ChatBotModule,
     HeaderModule,
-    FooterModule,
-    WidgetModule,
-  ],
+    FooterModule
+],
   providers: [
     { provide: UrlSerializer, useClass: CustomUrlSerializer },
 

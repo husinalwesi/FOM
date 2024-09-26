@@ -1,6 +1,0 @@
-details ::ng-deep app-svg svg{
-    @apply transition-all;
-}
-details[open] ::ng-deep app-svg svg{
-    @apply rotate-180;
-}

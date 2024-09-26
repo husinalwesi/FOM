@@ -1,6 +1,0 @@
-<label class="checkbox-container" [class.error]="isErrorEnabled">
-    <span class="title" *ngIf="data.title"
-        [innerHtml]="(data?.title?.[lang] ? data?.title?.[lang] : data?.title) | translate"></span>
-    <input type="checkbox" [name]="data.name" [(ngModel)]="data.value" (change)="change()" />
-    <span class="checkmark"></span>
-</label>
