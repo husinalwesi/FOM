@@ -9,6 +9,7 @@ module.exports = {
       screens: {
         'max-mobile': { 'max': '1024px' },
         'max-mobile-dashboard': { 'max': '640px' },
+        'min-1440': { 'min': '1440px' }
       },
       fontFamily: {
         'gotham': ['Gotham']

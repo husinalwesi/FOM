@@ -12,6 +12,7 @@ import { SharedService } from './services/shared.service';
 import { StickyHeaderService } from './services/sticky-header.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Location } from '@angular/common';
+import { MagicCursorService } from './services/magic-cursor.service';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
     private stickyHeaderService: StickyHeaderService,
     private location: Location,
     private translate: TranslateService,
+    private magicCursorService: MagicCursorService
   ) {
     this.handleMobilePages();
     this.registerTranslations();
@@ -116,7 +118,7 @@ export class AppComponent implements OnInit {
       // 
       setTimeout(() => {
         this.stickyEnability(this.location.path());
-        // this.magicCursorService.initializeMagicCursor();
+        this.magicCursorService.initializeMagicCursor();
       });
     }
 
@@ -201,7 +203,7 @@ export class AppComponent implements OnInit {
     if (this.platformService.isClient()) {
       const routerSubscription = this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
-          // this.magicCursorService.initializeMagicCursor();
+          this.magicCursorService.initializeMagicCursor();
           if (typeof window !== 'undefined') {
             // window.scrollTo({ top: 0, behavior: "smooth" });
           }
