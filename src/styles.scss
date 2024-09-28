@@ -6,9 +6,12 @@
 //     --primary-color: #00904A;
 // }
 
-@import 'assets/css/fonts.scss';
+@import "assets/css/fonts.scss";
 // @import 'animate.css/animate.min.css';
 
+.section{
+    @apply max-w-[1440px] mx-auto px-5 lg:px-10 min-1440:px-10 box-content;
+}
 
 // ::-webkit-scrollbar,
 // div::-webkit-scrollbar {

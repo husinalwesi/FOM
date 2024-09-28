@@ -1,0 +1,18 @@
+.sticky-header {
+    // &::after {
+    //     @apply bg-[#802d3d] transition-all;
+    //     mix-blend-mode: multiply;
+    // }
+    & .bg-layer {
+        @apply bg-[#802d3d] transition-all;
+        // mix-blend-mode: multiply;
+    }
+    & nav {
+        & .section {
+            @apply py-[21px];
+        }
+        & .left-menu a {
+            @apply transition-all text-white;
+        }
+    }
+}
