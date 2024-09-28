@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page.component';
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { TranslationModule } from 'src/app/i18n/translation.module';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SvgModule } from 'src/app/modules/svg/svg.module';
     CommonModule,
     HomePageRoutingModule,
     TranslationModule,
-    SvgModule
+    SvgModule,
+    CarouselModule
   ],
 })
 export class HomePageModule { }

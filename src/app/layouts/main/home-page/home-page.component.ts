@@ -1,4 +1,8 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { LoadAssetsService } from 'src/app/load-assets.service';
+import { TranslationService } from 'src/app/i18n/translation.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 declare let gsap: any;
 declare let MotionPathPlugin: any;
 
@@ -7,12 +11,49 @@ declare let MotionPathPlugin: any;
   selector: "app-home-page",
   templateUrl: "./home-page.component.html",
   styleUrls: ["./home-page.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomePageComponent {
+  carousel: any = [1, 2, 3, 4, 1, 2, 3, 4];
   @ViewChild('videoPlayer') videoPlayer!: any;
 
   activeSubCategory: string = 'GROOM4';
   items: any[] = [];
+
+  customOptions: OwlOptions = {
+    smartSpeed: 1200,
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    freeDrag: true,
+    rtl: this.TranslationService.isRTL(),
+    // dots: false,
+    margin: 9,
+    // dotsData: true,
+    nav: true,
+    items: 1,
+    responsive: {
+      0: {
+        items: 1,
+        dots: true,
+        nav: true,
+      },
+      768: {
+        items: 4,
+        dots: true,
+        nav: true,
+      },
+    },
+    navText: ['', '']
+    // navText: ['&#8249', '&#8250;'],
+  }
+
+  constructor(
+    private loadAssetsService: LoadAssetsService,
+    private TranslationService: TranslationService,
+  ) {
+    this.loadAssetsService.loadCss('assets/css/carousel.css', 'carousel-default');
+  }
 
   ngAfterViewInit(): void {
     // https://www.pexels.com/search/videos/sample/
