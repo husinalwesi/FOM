@@ -31,6 +31,7 @@ import { HeaderModule } from './modules/header/header.module';
 // import { WidgetModule } from './modules/widget/widget.module';
 import { TransferStateInterceptor } from './core/helpers/transfer-state.interceptor';
 import { FooterModule } from "./modules/footer/footer.module";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export class CustomUrlSerializer implements UrlSerializer {
 
@@ -63,15 +64,15 @@ export class CustomUrlSerializer implements UrlSerializer {
     BrowserAnimationsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
-        enabled: !isDevMode() && environment.pwaEnabled,
-        // Register the ServiceWorker as soon as the application is stable
-        // or after 30 seconds (whichever comes first).
-        registrationStrategy: 'registerWhenStable:30000'
+      enabled: !isDevMode() && environment.pwaEnabled,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     }),
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
     TranslateModule.forRoot({
-        defaultLanguage: environment.languages.default
+      defaultLanguage: environment.languages.default
     }),
     StoreModule.forRoot({ user: userReducer, news: newsReducer, promotions: promotionsReducer }),
     EffectsModule.forRoot([UserEffects]),
@@ -82,7 +83,7 @@ export class CustomUrlSerializer implements UrlSerializer {
     // ChatBotModule,
     HeaderModule,
     FooterModule
-],
+  ],
   providers: [
     { provide: UrlSerializer, useClass: CustomUrlSerializer },
 
@@ -97,6 +98,7 @@ export class CustomUrlSerializer implements UrlSerializer {
       useClass: HttpConfigInterceptor,
       multi: true,
     },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
     // provideClientHydration() just for devloper mode remove it in production mode
   ],
   bootstrap: [AppComponent]
