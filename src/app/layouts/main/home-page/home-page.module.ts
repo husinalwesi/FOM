@@ -3,8 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { TranslationModule } from 'src/app/i18n/translation.module';
-import { SvgModule } from 'src/app/modules/svg/svg.module';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { SvgModule } from 'src/app/modules/svg/svg.module';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HomeHeroModule } from 'src/app/modules/home-hero/home-hero.module';
+import { HomeMobileModule } from 'src/app/modules/home-mobile/home-mobile.module';
+import { HomeBlogsModule } from 'src/app/modules/home-blogs/home-blogs.module';
+import { HomePartnersModule } from 'src/app/modules/home-partners/home-partners.module';
 
 @NgModule({
   declarations: [
@@ -14,8 +18,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     CommonModule,
     HomePageRoutingModule,
     TranslationModule,
-    SvgModule,
-    CarouselModule
+    // SvgModule,
+    // CarouselModule,
+
+    HomeHeroModule,
+    HomeMobileModule,
+    HomeBlogsModule,
+    HomePartnersModule
   ],
 })
 export class HomePageModule { }

@@ -33,9 +33,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "lodash"
             ],
-            "allowedCommonJsDependencies": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
