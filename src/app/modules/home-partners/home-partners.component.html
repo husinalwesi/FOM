@@ -1,9 +1,8 @@
-<section class="">
-    <div class="bg-[#842d3d] relative py-8">
-        <div class="bg-auto bg-center opacity-[0.03] absolute top-0 left-0 w-full h-full"
-            style="background-image: url('assets/images/storke.png')"></div>
+<section>
+    <div class="relative py-8">
+        <div class="striped-background-red !absolute top-0 left-0 w-full h-full"></div>
         <div class="section relative z-10 flex flex-col lg:flex-row gap-4 h-full">
-            <div class="w-full lg:w-1/3 flex flex-col justify-center">
+            <div appIntersectionObserver class="fade-in w-full lg:w-1/3 flex flex-col justify-center">
                 <p class="font-gotham font-medium text-[#deaca9] text-[16px] max-[339px]">Our Exclusive Partners</p>
                 <p class="font-gotham font-light text-white text-[16px] mt-[13px] lg:max-w-[333px]">We present to you a
                     curated selection of our
@@ -12,7 +11,8 @@
                     Explore their unique services and products that add a special touch to every wedding. These
                     distinguished brands trust us to be part of your most beautiful moments.</p>
             </div>
-            <div class="w-full lg:w-2/3 flex items-center justify-center" #carouselParentEle>
+            <div class="w-full lg:w-2/3 flex items-center justify-center fade-in" appIntersectionObserver
+                #carouselParentEle>
 
                 <owl-carousel-o *ngIf="customOptions" #owlCarousel [options]="customOptions" class="w-full">
                     <ng-container *ngFor="let ethic of carousel;let i = index">
