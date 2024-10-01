@@ -10,16 +10,363 @@ declare let MotionPathPlugin: any;
   styleUrls: ['./home-hero.component.scss']
 })
 export class HomeHeroComponent {
-  circleItems: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  circleSelectedItem: number = 1;
+  showVideo: boolean = true;
+  circleItems: any = [
+    {
+      title: 'Title 1',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 2',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 3',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 4',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 5',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 6',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 7',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 8',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 9',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    },
+    {
+      title: 'Title 10',
+      subTitle: 'SUBTITLE',
+      svg: 'assets/svgs/open-buffet.svg',
+      subCategories: [
+        {
+          title: "SUB C.A.T 1",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: null,
+          img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+        },
+        {
+          title: "SUB C.A.T 2",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/1.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 3",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/2.mp4",
+          img: null
+        },
+        {
+          title: "SUB C.A.T 4",
+          subTitle: "SUBTITLE",
+          svg: 'assets/svgs/test.svg',
+          video: "assets/videos/circle/3.mp4",
+          img: null
+        }
+      ]
+    }
+  ];
+  circleSelectedItem: number = 0;
+  activeSubCategory: number = 0;
   // 
-  activeSubCategory: string = 'GROOM4';
-  subCategories: any = ['GROOM1', 'GROOM2', 'GROOM3', 'GROOM4'];
-  // 
-
-  @ViewChild('videoPlayer') videoPlayer!: any;
-
-
+  // @ViewChild('videoPlayer') videoPlayer!: any;
   items: any[] = [];
 
   constructor(private resizeService: ResizeService) { }
@@ -29,7 +376,7 @@ export class HomeHeroComponent {
   }
 
   init() {
-    this.playVideo();
+    // this.playVideo();
     gsap.registerPlugin(MotionPathPlugin);
 
     const circlePath = MotionPathPlugin.convertToPath("#holder", false)[0];
@@ -58,6 +405,7 @@ export class HomeHeroComponent {
       // scale: 1
     });
 
+    // const tl = gsap.timeline({ repeat: -1, paused: true, reversed: true });
     const tl = gsap.timeline({ paused: true, reversed: true });
     tl.to(".wrapper", {
       rotation: 360,
@@ -121,20 +469,23 @@ export class HomeHeroComponent {
     // });
   }
 
-  playVideo() {
-    // https://www.pexels.com/search/videos/sample/
-    const videoElem = this.videoPlayer?.nativeElement;
-    if (!videoElem) return;
-    videoElem.muted = true; // Ensure it's muted
-    const playPromise = videoElem.play();
+  // playVideo() {
+  //   return;
+  //   // https://www.pexels.com/search/videos/sample/
+  //   const videoElem = this.videoPlayer?.nativeElement;
+  //   console.log(this.videoPlayer);
 
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Handle autoplay block, prompt user interaction
-        console.log('Autoplay was prevented, require user interaction.');
-      });
-    }
-  }
+  //   if (!videoElem) return;
+  //   videoElem.muted = true; // Ensure it's muted
+  //   const playPromise = videoElem.play();
+
+  //   if (playPromise !== undefined) {
+  //     playPromise.catch(() => {
+  //       // Handle autoplay block, prompt user interaction
+  //       console.log('Autoplay was prevented, require user interaction.');
+  //     });
+  //   }
+  // }
 
   moveWheel(amount: number, tl: any, tracker: any, wrapProgress: any, snap: any): void {
     // console.log(amount, tl, tracker, wrapProgress, snap);
@@ -151,6 +502,45 @@ export class HomeHeroComponent {
       progress: snap(tl.progress() + amount),
       modifiers: { progress: wrapProgress },
     });
+  }
+
+  getSubCategories() {
+    return this.circleItems?.[this.circleSelectedItem]?.subCategories || [];
+  }
+
+  getMedia() {
+    return this.getSubCategories()?.[this.activeSubCategory];
+  }
+
+  setCircleSelectedItem(index: number) {
+    this.circleSelectedItem = index;
+    this.activeSubCategory = 0;
+    this.updateVideo();
+    this.playClickSound();
+  }
+
+  setSubCategorySelectedItem(index: number) {
+    this.activeSubCategory = index;
+    this.updateVideo();
+    this.playClickSound();
+  }
+
+  updateVideo() {
+    this.showVideo = false;
+    setTimeout(() => {
+      this.showVideo = true;
+    });
+  }
+
+
+  playClickSound() {
+    // Get the audio element
+    let sound: any = document.getElementById('clickSound');
+    if (!sound) return;
+    // Play the sound
+    sound.currentTime = 0; // Rewind to the start
+    sound.play();
+
   }
 
 }

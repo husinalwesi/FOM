@@ -1,4 +1,10 @@
 <!-- appIntersectionObserver fade-in -->
+
+<audio controls class="hidden" id="clickSound" preload="auto">
+    <source src="assets/sounds/click.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+
 <section class="lg:h-screen mx-auto relative">
     <div class=" flex flex-col mx-auto lg:h-screen">
         <div class="flex h-[61.61vh]">
@@ -24,19 +30,20 @@
         <div class=" mx-auto absolute left-0 right-0 top-0 bottom-0 m-auto w-full h-full overflow-hidden">
             <div class="absolute w-[46vw] h-[46vw] 2xl:w-[40vw] 2xl:h-[40vw]">
                 <div class="container w-[46vw] h-[46vw] 2xl:w-[40vw] 2xl:h-[40vw]">
-                    <div class="wrapper w-[46vw] h-[46vw] 2xl:w-[40vw] 2xl:h-[40vw]">
-                        <div class="item" *ngFor="let item of circleItems" [class.active]="item === circleSelectedItem"
-                            (click)="circleSelectedItem = item">
+                    <div class="wrapper w-[46vw] h-[46vw] 2xl:w-[40vw] 2xl:h-[40vw] z-[1]">
+                        <div class="item" *ngFor="let item of circleItems; let i = index"
+                            [class.active]="i === circleSelectedItem" (click)="setCircleSelectedItem(i)">
                             <div class="flex flex-col items-center justify-center">
-                                <app-svg src="assets/svgs/open-buffet.svg" customClass="" label="title_goas_here"
-                                    [stretch]="false" width="32" stroke="#ffffff"></app-svg>
-                                <p class="text-[11px] mt-2 font-gotham font-semibold text-[#ffffff]">OPEN</p>
-                                <p class="text-[11px] -mt-1 font-gotham font-light text-[#ffffff]">BUFFET</p>
+                                <app-svg [src]="item.svg" customClass="" label="title_goas_here" [stretch]="false"
+                                    width="32" stroke="#ffffff"></app-svg>
+                                <p class="text-[11px] mt-2 font-gotham font-semibold text-[#ffffff]">{{item.title}}</p>
+                                <p class="text-[11px] -mt-1 font-gotham font-light text-[#ffffff]">{{item.subTitle}}</p>
                             </div>
                         </div>
                         <svg id="circle-svg" viewBox="0 0 300 300"
                             class="h-[38.2vw] w-[38.2vw] 2xl:h-[34.2vw] 2xl:w-[34.2vw] z-[-1] absolute top-1/2 left-1/2">
                             <circle id="holder" class="fill-none" cx="151" cy="151" r="150" />
+                            <!-- style="stroke: #000000;" -->
                         </svg>
                     </div>
                 </div>
@@ -49,24 +56,29 @@
 
 
             <div class="h-1/2 flex items-end justify-center pb-2">
-                <ul class="flex justify-between w-[90%]">
-
-                    <li *ngFor="let item of subCategories"
-                        class="flex flex-col items-center justify-center w-1/4 relative after:absolute after:block after:content-[''] after:right-0 after:w-px after:bottom-2 after:h-[42px] after:bg-[#625e5c]"
-                        (click)="activeSubCategory = item" [class.active-sub-category]="activeSubCategory === item">
-                        <app-svg src="assets/svgs/test.svg" customClass="" label="title_goas_here" [stretch]="false"
-                            width="32" stroke="#625e5c"></app-svg>
-                        <p class="text-[11px] mt-2 font-gotham font-semibold text-[#625e5c]">GROOM'S</p>
-                        <p class="text-[11px] -mt-1 font-gotham font-light text-[#625e5c]">CLOTHES</p>
+                <ul class="flex justify-between w-[90%] z-10">
+                    <li *ngFor="let item of getSubCategories(); let i = index"
+                        class="flex flex-col items-center justify-center w-1/4 relative after:absolute after:block after:content-[''] after:right-0 after:w-px after:bottom-2 after:h-[42px] after:bg-[#625e5c] after:last:hidden cursor-pointer"
+                        (click)="setSubCategorySelectedItem(i)" [class.active-sub-category]="activeSubCategory === i">
+                        <div class="icon-container h-16 flex items-end">
+                            <app-svg [src]="item.svg" customClass="" class="transition-all" label="title_goas_here"
+                                [stretch]="false" width="32" stroke="#625e5c"></app-svg>
+                        </div>
+                        <p class="text-[11px] mt-2 font-gotham font-semibold text-[#625e5c]">{{item.title}}</p>
+                        <p class="text-[11px] -mt-1 font-gotham font-light text-[#625e5c]">{{item.subTitle}}</p>
                     </li>
 
                 </ul>
             </div>
             <div class="h-1/2 relative">
-                <video #videoPlayer muted loop class="w-full">
-                    <source src="assets/videos/sample-2.mp4" type="video/mp4">
+                <!-- {{showVideo}} -->
+                <!-- {{getMedia()?.video}} -->
+                <video *ngIf="showVideo && getMedia()?.video" loop muted autoplay oncanplay="this.play()"
+                    onloadedmetadata="this.muted = true" class="w-full">
+                    <source [src]="getMedia()?.video" type="video/mp4">
                     Your browser does not support HTML5 video.
                 </video>
+                <img [src]="getMedia()?.img" alt="" />
             </div>
         </div>
 

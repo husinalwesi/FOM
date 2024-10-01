@@ -23,7 +23,7 @@ export class HomePartnersComponent {
   }
 
   updateCarouselOptions(innerWidth: number) {
-
+    this.customOptions = undefined;
     setTimeout(() => {
       const eleWidth = 229;
       const eleMargin = 0;//11

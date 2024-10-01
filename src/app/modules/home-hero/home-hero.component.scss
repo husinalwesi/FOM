@@ -29,9 +29,13 @@
         @apply transition-all;
     }
     & > p:nth-child(2) {
-        margin-top: 16px;
+        // margin-top: 16px;
         color: #7a333e;
         @apply transition-all;
+    }
+    & > .icon-container app-svg{
+        @apply -translate-y-1 scale-125 transition-all;
+        // align-items: center;
     }
     & > p:nth-child(3) {
         color: #7a333e;
