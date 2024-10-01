@@ -22,6 +22,13 @@
     // @apply animate-[zoomIn_1s_ease];
 }
 
+#home-circle.fade-in {
+}
+
+#home-circle.fade-in-visible {
+    // @apply animate-[bounceIn_1s_ease];
+}
+
 .section {
     @apply max-w-[1440px] mx-auto px-5 lg:px-10 min-1440:px-10 box-content;
 }

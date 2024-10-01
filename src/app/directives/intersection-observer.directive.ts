@@ -7,7 +7,7 @@ export class IntersectionObserverDirective implements OnInit {
   @Input() animationClass = 'fade-in-visible';
   @HostBinding('class.fade-in') defaultClass = true;
   @Input() rootMargin: string = '0px';  // No extra margin
-  @Input() threshold: number = 0.01;    // Require 75% visibility
+  @Input() threshold: number = 0.5;    // Require 75% visibility
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
