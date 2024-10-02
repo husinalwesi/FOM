@@ -13,6 +13,9 @@ import { StickyHeaderService } from './services/sticky-header.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Location } from '@angular/common';
 import { MagicCursorService } from './services/magic-cursor.service';
+import Scrollbar from 'smooth-scrollbar';
+import { PageTransitionsService } from './services/page-transitions.service';
+
 
 @Component({
   selector: 'app-root',
@@ -42,8 +45,14 @@ export class AppComponent implements OnInit {
     private stickyHeaderService: StickyHeaderService,
     private location: Location,
     private translate: TranslateService,
-    private magicCursorService: MagicCursorService
+    private magicCursorService: MagicCursorService,
+    private pageTransitionsService: PageTransitionsService
   ) {
+    // const xxx: any = document.querySelector("#content-wrap");
+    // xxx.style.transform = "translate(0px, -80px)";
+    // tl_transitIn.to("#content-wrap", { y: -80, autoAlpha: 0, clearProps: "all" }, 0);
+    this.initSmothScroll();
+    // 
     this.handleMobilePages();
     this.registerTranslations();
 
@@ -93,7 +102,23 @@ export class AppComponent implements OnInit {
     // }
   }
 
+  initSmothScroll() {
+    const scrollContainer: any = document.querySelector("#scroll-container");
+    if (!scrollContainer) return;
+    Scrollbar.init(scrollContainer, {
+      damping: 0.06,
+      renderByPixels: true,
+      continuousScrolling: true,
+      alwaysShowTracks: true
+    });
+  }
+
   ngOnInit() {
+    this.pageTransitionsService.initializePageTransition();
+
+
+
+
     // setTimeout(() => {
     //   window.scrollTo({ top: 0, behavior: "smooth" });
     // }, 1000);

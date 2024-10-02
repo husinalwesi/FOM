@@ -1,10 +1,29 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-
-
-<div *ngIf="!isMobile && isMagicCursorEnabled" class="absolute w-[30px] h-[30px] pointer-events-none z-[1000000] top-0">
-    <div id="ball"
-        class="border border-solid border-white fixed block left-0 top-0 w-[25px] h-[25px] rounded-full pointer-events-none transform translate-x-1/2 translate-y-1/2 opacity-0 border-0">
+<div id="scroll-container">
+    <div id="page-content">
+        <div id="content-wrap">
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+        </div>
     </div>
 </div>
+
+<div *ngIf="!isMobile && isMagicCursorEnabled" class="absolute w-[30px] h-[30px] pointer-events-none z-[1000000] top-0">
+    <!-- border border-0 border-solid border-white -->
+    <div id="ball"
+        class="border-0 fixed block left-0 top-0 w-[25px] h-[25px] rounded-full pointer-events-none transform translate-x-1/2 translate-y-1/2 opacity-0">
+    </div>
+</div>
+
+<!-- Begin page transition (do not remove!!!) 
+			=========================== -->
+<div id="page-transition">
+    <div class="ptr-overlay"></div>
+    <div class="ptr-preloader">
+        <div class="ptr-prel-content">
+            <!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
+            <img src="assets/svgs/logo-sticky.svg" class="ptr-prel-image tt-logo-light h-[96px]" alt="Logo">
+        </div> <!-- /.ptr-prel-content -->
+    </div> <!-- /.ptr-preloader -->
+</div>
+<!-- End page transition -->

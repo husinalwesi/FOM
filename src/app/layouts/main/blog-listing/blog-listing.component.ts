@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import { PageTransitionsService } from 'src/app/services/page-transitions.service';
 
-
 @Component({
-  selector: "app-home-page",
-  templateUrl: "./home-page.component.html",
-  styleUrls: ["./home-page.component.scss"],
+  selector: 'app-blog-listing',
+  templateUrl: './blog-listing.component.html',
+  styleUrls: ['./blog-listing.component.scss']
 })
-export class HomePageComponent {
+export class BlogListingComponent {
 
   constructor(private pageTransitionsService: PageTransitionsService) {
     this.pageTransitionsService.HideLoad();
+  }
+
+  ngOnInit() {
+
   }
 
 }

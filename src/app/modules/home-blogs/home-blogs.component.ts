@@ -1,10 +1,14 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
 import { ResizeService } from 'src/app/services/resize.service';
+import { RouteLocalizationPipe } from "src/app/pipes/route-localization.pipe";
+import { PageTransitionsService } from 'src/app/services/page-transitions.service';
 
 @Component({
   selector: 'app-home-blogs',
   templateUrl: './home-blogs.component.html',
-  styleUrls: ['./home-blogs.component.scss']
+  styleUrls: ['./home-blogs.component.scss'],
+  providers: [RouteLocalizationPipe]
 })
 export class HomeBlogsComponent {
   news: any = [1, 2, 3];
@@ -13,7 +17,11 @@ export class HomeBlogsComponent {
 
   constructor(
     private resizeService: ResizeService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+    private RouteLocalizationPipe: RouteLocalizationPipe,
+    private pageTransitionsService: PageTransitionsService,
+    private ngZone: NgZone
   ) { }
 
   ngAfterViewInit(): void {
@@ -31,6 +39,14 @@ export class HomeBlogsComponent {
     const mobileSectionEle: any = document.querySelector(".news-item");
     const screenWidth = mobileSectionEle.offsetWidth;
     this.heightNews = screenWidth / detectRatio;
+  }
+
+  navigate() {
+    this.pageTransitionsService.showPageTransition(() => {
+      this.ngZone.run(() => {
+        this.router.navigateByUrl(this.RouteLocalizationPipe.transform(`/blogs`));
+      });
+    });
   }
 
 }

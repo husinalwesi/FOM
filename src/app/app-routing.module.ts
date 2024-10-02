@@ -6,6 +6,7 @@ const routes: Routes = [
     path: ':lang',
     children: [
       { path: '', loadChildren: () => import('./layouts/main/home-page/home-page.module').then((m) => m.HomePageModule) },
+      { path: 'blogs', loadChildren: () => import('./layouts/main/blog-listing/blog-listing.module').then((m) => m.BlogListingModule) },
     ]
   },
 ];
