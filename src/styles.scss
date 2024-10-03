@@ -276,3 +276,7 @@ body .ptr-prel-content {
 //     transform: translate(0px, 0);
 // }
 
+
+.disable-ele{
+    @apply opacity-60 pointer-events-none;
+}
