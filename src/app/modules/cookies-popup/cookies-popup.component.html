@@ -1,0 +1,28 @@
+<div class="relative" *ngIf="isCookieEnabled">
+    <div class="section fixed left-0 right-0 bottom-4 z-20 flex items-center bg-primary mx-auto rounded-full py-[20px] !pl-[54px] !pr-0 box-border w-[90%] !max-w-[1058px] gap-[37px] animate-[slideInUp_0.8s_0.6s_ease]"
+        style="    box-shadow: 0px 0px 8px 1px #0000006e;
+">
+
+        <!-- 457px -->
+        <div class="flex flex-col gap-4 flex-1">
+            <p class="text-white font-medium text-lg">Cookies</p>
+            <p class="text-white">We use cookies and similar technologies to help personalise content tailor and measure
+                ads cookies and similar technologies.
+            </p>
+        </div>
+        <div class="flex flex-col gap-3 items-center w-[168px]">
+
+            <!-- h-40 -->
+            <button type="button" (click)="isCookieEnabled = false;"
+                class="w-full text-white bg-[#40080f] hover:text-white hover:bg-primary transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-full px-4 py-2 text-center">Accept</button>
+
+            <button type="button" (click)="isCookieEnabled = false;"
+                class="w-full text-primary bg-white hover:text-white hover:bg-primary transition-all focus:ring-4 focus:outline-none focus:ring-blue-300 font-normal rounded-full px-4 py-2 text-center">Preferences</button>
+
+        </div>
+        <div class="w-[260px] relative">
+            <img class="w-[260px] absolute top-[-60px] bottom-0 my-auto right-[-27px]"
+                src="assets/images/cookies.png" />
+        </div>
+    </div>
+</div>

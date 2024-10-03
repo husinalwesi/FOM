@@ -44,4 +44,14 @@ export class HeaderComponent {
     });
   }
 
+  navigateToListing() {
+    this.pageTransitionsService.showPageTransition(() => {
+      this.ngZone.run(() => {
+        this.router.navigateByUrl(this.RouteLocalizationPipe.transform(`listing`));
+      });
+    });
+  }
+
+
+
 }

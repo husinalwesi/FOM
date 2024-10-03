@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-
+<app-cookies-popup></app-cookies-popup>
 <div *ngIf="!isMobile && isMagicCursorEnabled" class="absolute w-[30px] h-[30px] pointer-events-none z-[1000000] top-0">
     <!-- border border-0 border-solid border-white -->
     <div id="ball"
@@ -18,11 +18,14 @@
 <!-- Begin page transition (do not remove!!!) 
 			=========================== -->
 <div id="page-transition">
-    <div class="ptr-overlay"></div>
+    <div class="ptr-overlay">
+        <div class="striped-background bg-dark"></div>
+    </div>
     <div class="ptr-preloader">
         <div class="ptr-prel-content">
             <!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
-            <img src="assets/svgs/logo-sticky.svg" class="ptr-prel-image tt-logo-light h-[96px]" alt="Logo">
+            <img src="assets/images/mobile-section/logo.png" class="ptr-prel-image tt-logo-light h-[112px]" alt="Logo">
+
         </div> <!-- /.ptr-prel-content -->
     </div> <!-- /.ptr-preloader -->
 </div>

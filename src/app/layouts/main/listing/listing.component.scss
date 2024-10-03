@@ -1,0 +1,27 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Needed for proper alignment */
+}
+
+.pagination {
+    display: flex;
+    // gap: 0.5rem;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the pagination */
+    & button {
+        @apply border border-solid border-transparent transition-all rounded-full w-8 h-8;
+    }
+}
+
+.right-text {
+    margin-left: auto; /* Right align the text */
+    padding-left: 20px; /* Spacing between pagination and text */
+}
+.pagination button.active {
+    @apply font-medium text-primary border-primary transition-all mx-2;
+}

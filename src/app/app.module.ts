@@ -32,6 +32,7 @@ import { HeaderModule } from './modules/header/header.module';
 import { TransferStateInterceptor } from './core/helpers/transfer-state.interceptor';
 import { FooterModule } from "./modules/footer/footer.module";
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CookiesPopupModule } from './modules/cookies-popup/cookies-popup.module';
 
 export class CustomUrlSerializer implements UrlSerializer {
 
@@ -82,7 +83,8 @@ export class CustomUrlSerializer implements UrlSerializer {
     DashboardModule,
     // ChatBotModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    CookiesPopupModule
   ],
   providers: [
     { provide: UrlSerializer, useClass: CustomUrlSerializer },
