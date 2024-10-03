@@ -28,7 +28,7 @@ export class PageTransitionsService {
 
     // tt-Header appear
     // tl_transitOut.from(".tt-header", { duration: 1, y: 20, autoAlpha: 1, ease: Expo.easeInOut, clearProps: "all" }, 0.6);
-    tl_transitOut.to(".tt-header", { duration: 1, y: 0, autoAlpha: 1, ease: Expo.easeInOut, clearProps: "all" }, 0.6);
+    // tl_transitOut.to(".tt-header", { duration: 1, y: 0, autoAlpha: 1, ease: Expo.easeInOut, clearProps: "all" }, 0.6);
 
     tl_transitOut.from("#page-content", { duration: 1.5, autoAlpha: 0, y: 80, ease: Expo.easeOut, clearProps: "all" }, 0.8);
     tl_transitOut.set("#page-transition", { duration: 1, autoAlpha: 0, ease: Expo.easeInOut }, 1);
@@ -50,7 +50,7 @@ export class PageTransitionsService {
     tl_transitIn.to(".ptr-overlay", { scaleY: 1, transformOrigin: "center bottom" }, 0);
     // alert(123);
     tl_transitIn.to("#content-wrap", { y: -80, autoAlpha: 0, clearProps: "all" }, 0);
-    tl_transitIn.to(".tt-header", { y: -20, autoAlpha: 0 }, 0);
+    // tl_transitIn.to(".tt-header", { y: -20, autoAlpha: 0 }, 0);
     tl_transitIn.to(".ptr-preloader", { autoAlpha: 1 }, 0.4);
   }
 

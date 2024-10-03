@@ -4,7 +4,7 @@ app-home-page {
             @apply absolute bottom-0 top-[-40%] ltr:left-2.5 rtl:right-0 ltr:lg:ml-[-45px] rtl:lg:mr-[-45px] m-auto flex items-center after:content-normal after:w-[57px] after:h-[57px] after:bg-no-repeat ltr:after:rotate-90 rtl:after:-rotate-90 transition-all duration-300 z-[-2];
             &:after {
                 @apply bg-[#e0adab] rounded-full transition-all;
-                background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="none" stroke="%237a333e" xmlns="http://www.w3.org/2000/svg" id="arrow" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path></svg>');
+                background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="none" stroke="%23802d3d" xmlns="http://www.w3.org/2000/svg" id="arrow" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path></svg>');
                 background-position: center center;
                 background-size: 60px;
             }
@@ -23,7 +23,7 @@ app-home-page {
 
             &:after {
                 @apply bg-[#e0adab] rounded-full transition-all;
-                background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="none" stroke="%237a333e" xmlns="http://www.w3.org/2000/svg" id="arrow" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path></svg>');
+                background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="none" stroke="%23802d3d" xmlns="http://www.w3.org/2000/svg" id="arrow" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path></svg>');
                 background-position: center center;
                 background-size: 60px;
             }

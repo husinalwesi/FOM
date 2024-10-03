@@ -25,20 +25,21 @@
 
 ::ng-deep .active-sub-category {
     & svg .path-test {
-        fill: #7a333e;
+        fill: #802d3d;
+        stroke: #802d3d;
         @apply transition-all;
     }
     & > p:nth-child(2) {
         // margin-top: 16px;
-        color: #7a333e;
+        @apply text-primary;
         @apply transition-all;
     }
-    & > .icon-container app-svg{
+    & > .icon-container app-svg {
         @apply -translate-y-1 scale-125 transition-all;
         // align-items: center;
     }
     & > p:nth-child(3) {
-        color: #7a333e;
+        @apply text-primary;
         @apply transition-all;
     }
 }

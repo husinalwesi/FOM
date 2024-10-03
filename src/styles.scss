@@ -32,33 +32,11 @@
 .section {
     @apply max-w-[1440px] mx-auto px-5 lg:px-10 min-1440:px-10 box-content;
 }
-
-// .striped-background {
-//     height: 100vh;
-//     background-color: #2f2b28;
-//     /* Fallback for non-gradient browsers */
-//     background-image: linear-gradient(
-//         135deg,
-//         /* Angle of the stripes */ #312d2b 25%,
-//         /* Lighter stripe */ transparent 25%,
-//         /* Transparent space between stripes */ transparent 50%,
-//         #312d2b 50%,
-//         #312d2b 75%,
-//         transparent 75%,
-//         transparent
-//     );
-//     background-size: 32px 32px;
-//     /* Size of the stripes */
-// }
-
-.striped-background-black {
-    position: relative;
-    height: 100%;
-    background-color: #2f2b28;
-    overflow: hidden;
+.striped-background {
+    @apply absolute top-0 left-0 w-full h-full overflow-hidden;
 }
 
-.striped-background-black::before {
+.striped-background::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -67,104 +45,20 @@
     bottom: -50%;
     background-image: linear-gradient(
         135deg,
-        /* Keep the original stripe angle */ #312d2b 25%,
+        /* Keep the original stripe angle */ white 25%,
         transparent 25%,
         transparent 50%,
-        #312d2b 50%,
-        #312d2b 75%,
+        white 50%,
+        white 75%,
         transparent 75%,
         transparent
     );
     background-size: 32px 32px; /* Size of the stripes */
     transform: rotate(13deg); /* Rotate the entire background */
-    width: 200%;
-    height: 200%;
+    width: 300%;
+    height: 300%;
+    opacity: 0.03;
 }
-//
-.striped-background-pink {
-    position: relative;
-    height: 100%;
-    background-color: #f2d6d3;
-    overflow: hidden;
-}
-
-.striped-background-pink::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    background-image: linear-gradient(
-        135deg,
-        /* Keep the original stripe angle */ #f2d5d2 25%,
-        transparent 25%,
-        transparent 50%,
-        #f2d5d2 50%,
-        #f2d5d2 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 32px 32px; /* Size of the stripes */
-    transform: rotate(13deg); /* Rotate the entire background */
-    width: 200%;
-    height: 200%;
-}
-//
-.striped-background-red {
-    position: relative;
-    height: 100%;
-    background-color: #7a333e;
-    overflow: hidden;
-}
-
-.striped-background-red::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    background-image: linear-gradient(
-        135deg,
-        /* Keep the original stripe angle */ #7e3944 25%,
-        transparent 25%,
-        transparent 50%,
-        #7e3944 50%,
-        #7e3944 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 29px 29px; /* Size of the stripes */
-    transform: rotate(13deg); /* Rotate the entire background */
-    width: 200%;
-    height: 200%;
-}
-
-// ::-webkit-scrollbar,
-// div::-webkit-scrollbar {
-//     width: 8px;
-//     -webkit-box-sizing: border-box;
-//     -moz-box-sizing: border-box;
-//     box-sizing: border-box;
-// }
-
-// ::-webkit-scrollbar-track,
-// div::-webkit-scrollbar-track {
-//     background-color: none;
-// }
-
-// ::-webkit-scrollbar-thumb,
-// div::-webkit-scrollbar-thumb {
-//     background-color: #aaa;
-//     border-radius: 13px;
-//     border: none;
-// }
-
-// a[href="#"],
-// a[ng-reflect-router-link="#"] {
-//     pointer-events: none !important;
-// }
 
 //
 //
@@ -260,10 +154,10 @@ body .ptr-preloader {
 
 body .ptr-prel-content {
     margin-top: 10px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: bold;
+    // text-align: center;
+    // text-transform: uppercase;
+    // font-size: 15px;
+    // font-weight: bold;
     color: #af1212;
 }
 
@@ -276,7 +170,6 @@ body .ptr-prel-content {
 //     transform: translate(0px, 0);
 // }
 
-
-.disable-ele{
+.disable-ele {
     @apply opacity-60 pointer-events-none;
 }

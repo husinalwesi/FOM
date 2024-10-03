@@ -14,33 +14,33 @@ export class HomeHeroComponent {
   circleItems: any = [
     {
       title: 'Title 1',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -49,33 +49,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 2',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -84,33 +84,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 3',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -119,33 +119,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 4',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -154,33 +154,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 5',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -189,33 +189,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 6',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -224,33 +224,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 7',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -259,33 +259,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 8',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -294,33 +294,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 9',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
@@ -329,33 +329,33 @@ export class HomeHeroComponent {
     },
     {
       title: 'Title 10',
-      subTitle: 'SUBTITLE',
+      subTitle: 'Subtitle',
       svg: 'assets/svgs/open-buffet.svg',
       subCategories: [
         {
-          title: "SUB C.A.T 1",
-          subTitle: "SUBTITLE",
+          title: "sub cate 1",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
-          title: "SUB C.A.T 2",
-          subTitle: "SUBTITLE",
+          title: "sub cate 2",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 3",
-          subTitle: "SUBTITLE",
+          title: "sub cate 3",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
-          title: "SUB C.A.T 4",
-          subTitle: "SUBTITLE",
+          title: "sub cate 4",
+          subTitle: 'Subtitle',
           svg: 'assets/svgs/test.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
