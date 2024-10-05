@@ -37,6 +37,7 @@ export class HomeBlogsComponent {
     this.isMobile = this.resizeService.isMobile();
     const detectRatio = this.isMobile ? mobileRatio : desktopRatio;
     const mobileSectionEle: any = document.querySelector(".news-item");
+    if (!mobileSectionEle) return;
     const screenWidth = mobileSectionEle.offsetWidth;
     this.heightNews = screenWidth / detectRatio;
   }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderService } from 'src/app/services/header.service';
 import { PageTransitionsService } from 'src/app/services/page-transitions.service';
 
 
@@ -9,8 +10,12 @@ import { PageTransitionsService } from 'src/app/services/page-transitions.servic
 })
 export class HomePageComponent {
 
-  constructor(private pageTransitionsService: PageTransitionsService) {
+  constructor(
+    private pageTransitionsService: PageTransitionsService,
+    private headerService: HeaderService
+  ) {
     this.pageTransitionsService.HideLoad();
+    this.headerService.useStickyHeader(false);
   }
 
 }

@@ -1,5 +1,6 @@
 .pagination-container {
-    display: flex;
+    @apply flex flex-col lg:flex-row;
+    // display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -7,12 +8,13 @@
 }
 
 .pagination {
-    display: flex;
-    // gap: 0.5rem;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Center the pagination */
+    @apply flex items-center lg:absolute lg:left-[50%] lg:-translate-x-1/2;
+    // display: flex;
+    // // gap: 0.5rem;
+    // align-items: center;
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%); /* Center the pagination */
     & button {
         @apply border border-solid border-transparent transition-all rounded-full w-8 h-8;
     }

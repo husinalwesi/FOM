@@ -11,7 +11,8 @@
         & .section {
             @apply py-[21px];
         }
-        & .left-menu a {
+        & .left-menu a,
+        & .left-menu button {
             @apply transition-all text-white;
         }
     }
