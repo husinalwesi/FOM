@@ -52,11 +52,11 @@ export class LoadAssetsService {
 
 
   // only this is waiting
-  loadJSP(url: any, id: any, callback: any, async: boolean = false, charset: string, defer: boolean = false) {
+  loadJSP(url: any, id: any, type: string = 'text/javascript', callback: any, async: boolean = false, charset: string = '', defer: boolean = false) {
 
     if (this.isJsAlreadyAdded(url)) return;
     const script = this.renderer.createElement('script');
-    script.type = 'text/javascript';
+    script.type = type;
     script.src = url;
     script.id = id;
     if (async) script.async = true;

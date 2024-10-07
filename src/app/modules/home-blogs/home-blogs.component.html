@@ -1,7 +1,7 @@
 <section>
     <div class="section bg-white relative h-1/2 flex flex-col lg:flex-row gap-4 items-center py-12">
         <div appIntersectionObserver class="fade-in flex flex-col lg:flex-row gap-[30px] w-full lg:w-[58%]">
-            <div *ngFor="let item of news" class="w-full lg:w-1/3">
+            <div *ngFor="let item of news" class="w-full lg:w-1/3 relative z-10">
                 <img class="news-item w-full rounded-[5px]" [style.height.px]="heightNews" src="assets/images/bride.jpg"
                     alt="">
                 <p class=" font-medium mt-[10px] text-[#2e2b28]">Nude - Print Mockup Kit</p>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="flex-1 flex justify-center items-center">
-            <div appIntersectionObserver class="fade-in lg:max-w-[352px]">
+            <div appIntersectionObserver class="fade-in lg:max-w-[352px] relative z-10">
                 <p class=" font-medium text-primary text-xl">Farhet Omry Blog !</p>
                 <p class="text-[#2e2b28] mt-[18px]">We are here to assist you with
                     everything

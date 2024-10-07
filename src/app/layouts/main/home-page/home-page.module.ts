@@ -9,6 +9,7 @@ import { HomeHeroModule } from 'src/app/modules/home-hero/home-hero.module';
 import { HomeMobileModule } from 'src/app/modules/home-mobile/home-mobile.module';
 import { HomeBlogsModule } from 'src/app/modules/home-blogs/home-blogs.module';
 import { HomePartnersModule } from 'src/app/modules/home-partners/home-partners.module';
+import { SnowflakeModule } from 'src/app/modules/snowflake/snowflake.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomePartnersModule } from 'src/app/modules/home-partners/home-partners.
     HomeHeroModule,
     HomeMobileModule,
     HomeBlogsModule,
-    HomePartnersModule
+    HomePartnersModule,
+    SnowflakeModule
   ],
 })
 export class HomePageModule { }

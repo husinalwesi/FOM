@@ -1,0 +1,9 @@
+#snowBG::ng-deep {
+    @apply w-full h-full;
+    & canvas {
+        @apply fixed opacity-0 transition duration-1000 ease-in-out;
+        &.active {
+            @apply opacity-100;
+        }
+    }
+}

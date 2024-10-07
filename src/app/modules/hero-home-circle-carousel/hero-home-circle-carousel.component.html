@@ -1,0 +1,87 @@
+<div class="relative z-10" *ngIf="totalCircleSizeOuter">
+    <div class="relative mx-auto border-solid border-white rounded-full bg-primary"
+        [style.width.px]="totalCircleSizeOuter" [style.borderWidth.px]="borderSize">
+        <div class="wrapper relative rounded-full z-[10]" [style.height.px]="totalCircleSizeOuter">
+
+
+
+            <button type="button" *ngFor="let item of circleItems; let i = index" [style.height.px]="circleItemSize"
+                [style.width.px]="circleItemSize"
+                class="item relative z-[2] flex items-center justify-center rounded-full opacity-50"
+                [class.outer-circle-active]="i === circleSelectedItem" (click)="setCircleSelectedItem(i)">
+                <!-- border border-solid border-white -->
+                <!-- bg-white text-black text-lg -->
+                <!-- {{i + 1}} -->
+                <div class="flex flex-col items-center justify-center">
+                    <app-svg [src]="item.svg" customClass="" label="title_goas_here" [stretch]="false" width="32"
+                        stroke="#ffffff"></app-svg>
+                    <p class="mt-2 font-bold text-[#ffffff]">{{item.title}}</p>
+                    <p class="-mt-1 text-[#ffffff]">{{item.subTitle}}</p>
+                </div>
+                <!-- item -->
+            </button>
+
+            <svg id="svgHeroHome" [attr.viewBox]="'0 0 ' + circleSize() + ' ' + circleSize()"
+                class="overflow-visible z-[-1] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                [style.height.px]="circleSize()" [style.width.px]="circleSize()">
+                <circle id="holder" class="fill-none" [attr.cx]="circleSize() / 2" [attr.cy]="circleSize() / 2"
+                    [attr.r]="circleSize() / 2" />
+            </svg>
+
+            <div id="inner-circle"
+                class="m-auto inset-0 absolute rounded-full overflow-hidden bg-white flex flex-col items-center justify-center text-white text-2xl"
+                [style.height.px]="innerCircleSize()" [style.width.px]="innerCircleSize() - (borderSize * 2)">
+                <div *ngIf="getSubCategories().length > 0"
+                    class="h-1/2 w-full flex items-end justify-center relative pb-4">
+
+
+                    <ul class="flex justify-center gap-8 w-[90%]">
+                        <li *ngFor="let item of getSubCategories(); let i = index"
+                            class="flex flex-col items-center justify-center w-1/3 relative after:absolute after:block after:content-[''] after:-right-4 after:w-px after:bottom-2 after:h-[42px] after:bg-[#625e5c] after:last:hidden cursor-pointer"
+                            (click)="setSubCategorySelectedItem(i)"
+                            [class.active-sub-category]="activeSubCategory === i">
+
+                            <div class="icon-container h-16 flex items-end">
+                                <app-svg [src]="item.svg" customClass="" class="transition-all" label="title_goas_here"
+                                    [stretch]="false" width="32" stroke="#625e5c"></app-svg>
+                            </div>
+                            <p class="mt-2 font-bold text-[#625e5c] text-base">{{item.title}}</p>
+                            <p class="-mt-1 text-[#625e5c] text-base">{{item.subTitle}}</p>
+                        </li>
+
+                    </ul>
+
+
+
+                    <!-- <h1 class="text-5xl text-black">1</h1>
+                    <button type="button" class="text-black" (click)="click()">click here</button> -->
+                </div>
+                <div class="w-full flex items-center justify-center relative"
+                    [style.height]="getSubCategories().length > 0 ? '50%' : '100%'">
+                    <div class="w-full h-full bg-center bg-cover" *ngIf="getMedia()?.img"
+                        [ngStyle]="{ 'background-image': 'url(' + getMedia()?.img + ')'}">
+                    </div>
+                    <div *ngIf="showVideo && getMedia()?.video" class="w-full h-full relative">
+                        <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true"
+                            class="absolute left-0 top-0 min-w-full min-h-full object-fill">
+                            <source [src]="getMedia()?.video" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+
+                    <!-- <video *ngIf="showVideo && getMedia()?.video" loop muted autoplay oncanplay="this.play()"
+                        onloadedmetadata="this.muted = true" class="w-full">
+                        <source [src]="getMedia()?.video" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <img *ngIf="getMedia()?.img" [src]="getMedia()?.img" alt="" class="w-full h-full" /> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden">
+    <button type="button" id="nextHeroHome">next</button>
+    <button type="button" id="prevHeroHome">prev</button>
+</div>
