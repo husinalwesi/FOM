@@ -1,24 +1,18 @@
-<div class="relative z-10" *ngIf="totalCircleSizeOuter">
+<div class="relative z-10" *ngIf="totalCircleSizeOuter && showComponent">
     <div class="relative mx-auto border-solid border-white rounded-full bg-primary"
         [style.width.px]="totalCircleSizeOuter" [style.borderWidth.px]="borderSize">
         <div class="wrapper relative rounded-full z-[10]" [style.height.px]="totalCircleSizeOuter">
-
-
 
             <button type="button" *ngFor="let item of circleItems; let i = index" [style.height.px]="circleItemSize"
                 [style.width.px]="circleItemSize"
                 class="item relative z-[2] flex items-center justify-center rounded-full opacity-50"
                 [class.outer-circle-active]="i === circleSelectedItem" (click)="setCircleSelectedItem(i)">
-                <!-- border border-solid border-white -->
-                <!-- bg-white text-black text-lg -->
-                <!-- {{i + 1}} -->
                 <div class="flex flex-col items-center justify-center">
                     <app-svg [src]="item.svg" customClass="" label="title_goas_here" [stretch]="false" width="32"
                         stroke="#ffffff"></app-svg>
                     <p class="mt-2 font-bold text-[#ffffff]">{{item.title}}</p>
                     <p class="-mt-1 text-[#ffffff]">{{item.subTitle}}</p>
                 </div>
-                <!-- item -->
             </button>
 
             <svg id="svgHeroHome" [attr.viewBox]="'0 0 ' + circleSize() + ' ' + circleSize()"
@@ -28,13 +22,25 @@
                     [attr.r]="circleSize() / 2" />
             </svg>
 
+
+            <!-- <svg _ngcontent-ng-c3520145073="" id="svgHeroHome"
+                class="overflow-visible z-[-1] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                viewBox="0 0 356.2527777777778 356.2527777777778" style="height: 356.253px; width: 356.253px;">
+                <path class="fill-none" id="circlePath" _ngcontent-ng-c3520145073=""
+                    d="M335.47778,167.73889 C335.47778,260.37852 260.37852,335.47778 167.73889,335.47778 75.09926,335.47778 0,260.37852 0,167.73889 0,75.09926 75.09926,0 167.73889,0 260.37852,0 335.47778,75.09926 335.47778,167.73889 z">
+                </path>
+                <circle _ngcontent-ng-c3520145073="" id="holder" class="fill-none" cx="178.1263888888889"
+                    cy="178.1263888888889" r="178.1263888888889"></circle>
+            </svg> -->
+
+
+
+
             <div id="inner-circle"
                 class="m-auto inset-0 absolute rounded-full overflow-hidden bg-white flex flex-col items-center justify-center text-white text-2xl"
                 [style.height.px]="innerCircleSize()" [style.width.px]="innerCircleSize() - (borderSize * 2)">
                 <div *ngIf="getSubCategories().length > 0"
                     class="h-1/2 w-full flex items-end justify-center relative pb-4">
-
-
                     <ul class="flex justify-center gap-8 w-[90%]">
                         <li *ngFor="let item of getSubCategories(); let i = index"
                             class="flex flex-col items-center justify-center w-1/3 relative after:absolute after:block after:content-[''] after:-right-4 after:w-px after:bottom-2 after:h-[42px] after:bg-[#625e5c] after:last:hidden cursor-pointer"
@@ -50,11 +56,6 @@
                         </li>
 
                     </ul>
-
-
-
-                    <!-- <h1 class="text-5xl text-black">1</h1>
-                    <button type="button" class="text-black" (click)="click()">click here</button> -->
                 </div>
                 <div class="w-full flex items-center justify-center relative"
                     [style.height]="getSubCategories().length > 0 ? '50%' : '100%'">
@@ -68,20 +69,8 @@
                             Your browser does not support HTML5 video.
                         </video>
                     </div>
-
-                    <!-- <video *ngIf="showVideo && getMedia()?.video" loop muted autoplay oncanplay="this.play()"
-                        onloadedmetadata="this.muted = true" class="w-full">
-                        <source [src]="getMedia()?.video" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
-                    <img *ngIf="getMedia()?.img" [src]="getMedia()?.img" alt="" class="w-full h-full" /> -->
-
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="hidden">
-    <button type="button" id="nextHeroHome">next</button>
-    <button type="button" id="prevHeroHome">prev</button>
 </div>

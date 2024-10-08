@@ -9,6 +9,15 @@ declare let MotionPathPlugin: any;
   styleUrls: ['./hero-home-circle-carousel.component.scss']
 })
 export class HeroHomeCircleCarouselComponent {
+  showComponent: boolean = true;
+  intervalId: any;
+  // 
+  itemStep: number = 0;
+  wrapProgress: any;
+  snap: any;
+  tl: any;
+
+  isFirstLoad: boolean = true;
   circleSelectedItem: number = 0;
   activeSubCategory: number = 0;
 
@@ -355,7 +364,6 @@ export class HeroHomeCircleCarouselComponent {
   ) { }
 
   ngAfterViewInit(): void {
-
     this.resizeService.screenWidthChange$.subscribe(data => {
       this.calculateSizes();
       setTimeout(() => {
@@ -392,8 +400,19 @@ export class HeroHomeCircleCarouselComponent {
     this.cdk.detectChanges();
   }
 
-
   initialization() {
+    this.showComponent = false;
+    // 
+    setTimeout(() => {
+      this.showComponent = true;
+      setTimeout(() => {
+        this.initialization2();
+      });
+    });
+  }
+
+  initialization2() {
+
     // Calculate sizes based on screen dimensions
     gsap.registerPlugin(MotionPathPlugin);
 
@@ -404,13 +423,15 @@ export class HeroHomeCircleCarouselComponent {
     if (!svgHeroHome) return;
     svgHeroHome.prepend(circlePath);
 
-    let items = gsap.utils.toArray(".item"),
-      numItems = items.length,
-      itemStep = 1 / numItems,
-      wrapProgress = gsap.utils.wrap(0, 1),
-      snap = gsap.utils.snap(itemStep),
-      wrapTracker = gsap.utils.wrap(0, numItems),
-      tracker = { item: 0 };
+
+    let items = gsap.utils.toArray(".item");
+    let numItems = items.length;
+    this.wrapProgress = gsap.utils.wrap(0, 1);
+    this.itemStep = 1 / numItems;
+    this.snap = gsap.utils.snap(this.itemStep);
+    let wrapTracker = gsap.utils.wrap(0, numItems);
+    let tracker = { item: 0 };
+
 
     gsap.set(items, {
       motionPath: {
@@ -421,16 +442,43 @@ export class HeroHomeCircleCarouselComponent {
       }, scale: 1
     });
 
-    const tl = gsap.timeline({ paused: true, reversed: true });
 
-    tl.to('.wrapper', {
+    // if (!this.isFirstLoad) {
+
+
+    //   // const innerCircle: any = document.querySelector("#inner-circle");
+    //   // if (innerCircle) {
+    //   //   innerCircle.style.transformOrigin = null;
+    //   //   innerCircle.style.transform = null;
+    //   // }
+    //   // this.tl.to("#inner-circle", {
+    //   //   rotation: "-=360",
+    //   //   transformOrigin: 'center',
+    //   //   duration: 1,
+    //   //   ease: 'none',
+    //   // }, 0);
+    //   // this.tl.to(items, {
+    //   //   rotation: "-=360",
+    //   //   transformOrigin: 'center',
+    //   //   duration: 1,
+    //   //   ease: 'none',
+    //   // }, 0);
+    // }
+
+    // this.tl = null;
+    this.tl = gsap.timeline({ paused: true, reversed: true });
+
+
+
+
+    this.tl.to('.wrapper', {
       rotation: 360,
       transformOrigin: 'center',
       duration: 1,
       ease: 'none'
     });
 
-    tl.to("#inner-circle", {
+    this.tl.to("#inner-circle", {
       rotation: "-=360",
       transformOrigin: 'center',
       duration: 1,
@@ -438,14 +486,14 @@ export class HeroHomeCircleCarouselComponent {
     }, 0);
 
 
-    tl.to(items, {
+    this.tl.to(items, {
       rotation: "-=360",
       transformOrigin: 'center',
       duration: 1,
       ease: 'none',
     }, 0);
 
-    tl.to(tracker, {
+    this.tl.to(tracker, {
       item: numItems,
       duration: 1,
       ease: 'none',
@@ -456,6 +504,8 @@ export class HeroHomeCircleCarouselComponent {
       }
     }, 0);
 
+
+    // if (this.isFirstLoad) {
     items.forEach((el: { addEventListener: (arg0: string, arg1: () => void) => void; }, i: number) => {
 
       el.addEventListener("click", () => {
@@ -464,56 +514,50 @@ export class HeroHomeCircleCarouselComponent {
         var diff = current - i;
 
         if (Math.abs(diff) < numItems / 2) {
-          this.moveWheel(diff * itemStep, tl, wrapProgress, snap);
+          this.moveWheel(diff * this.itemStep);
         } else {
           var amt = numItems - Math.abs(diff);
 
           if (current > i) {
-            this.moveWheel(amt * -itemStep, tl, wrapProgress, snap);
+            this.moveWheel(amt * -this.itemStep);
           } else {
-            this.moveWheel(amt * itemStep, tl, wrapProgress, snap);
+            this.moveWheel(amt * this.itemStep);
           }
         }
       });
     });
 
-
-    const next: any = document.getElementById('nextHeroHome');
-    if (next) {
-      next.addEventListener("click", () => {
-        return this.moveWheel(-itemStep, tl, wrapProgress, snap);
-      });
-    }
-
-    const prev: any = document.getElementById('prevHeroHome');
-    if (prev) {
-      prev.addEventListener("click", () => {
-        return this.moveWheel(itemStep, tl, wrapProgress, snap);
-      });
-    }
-
-
     this.autoPlay();
+    // }
 
+    // this.isFirstLoad = false;
   }
 
 
   autoPlay() {
-    setInterval(() => {
+    clearInterval(this.intervalId);
+    this.intervalId = setInterval(() => {
       this.next();
     }, 5000);
   }
 
-  next() {
-    const next: any = document.getElementById('nextHeroHome');
-    if (next) {
-      next.click();
-      this.circleSelectedItem = (this.circleSelectedItem + 1) >= this.circleItems.length ? 0 : this.circleSelectedItem + 1;
-      this.activeSubCategory = 0;
-    }
+  prev() {
+    this.moveWheel(this.itemStep);
+    this.circleSelectedItem = (this.circleSelectedItem - 1) < 0 ? this.circleItems.length - 1 : this.circleSelectedItem - 1;
+    this.activeSubCategory = 0;
   }
 
-  moveWheel(amount: any, tl: any, wrapProgress: any, snap: any) {
+  next() {
+    this.moveWheel(-this.itemStep);
+    this.circleSelectedItem = (this.circleSelectedItem + 1) >= this.circleItems.length ? 0 : this.circleSelectedItem + 1;
+    this.activeSubCategory = 0;
+  }
+
+  moveWheel(amount: any) {
+    let tl: any = this.tl;
+    let wrapProgress: any = this.wrapProgress;
+    let snap: any = this.snap;
+    // 
     let progress = tl.progress();
     tl.progress(wrapProgress(snap(tl.progress() + amount)))
     tl.progress(progress);
