@@ -1,4 +1,8 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
+import { debounceTime } from 'rxjs';
+import { RouteLocalizationPipe } from 'src/app/pipes/route-localization.pipe';
+import { PageTransitionsService } from 'src/app/services/page-transitions.service';
 import { ResizeService } from 'src/app/services/resize.service';
 declare let gsap: any;
 declare let MotionPathPlugin: any;
@@ -6,7 +10,9 @@ declare let MotionPathPlugin: any;
 @Component({
   selector: 'app-hero-home-circle-carousel',
   templateUrl: './hero-home-circle-carousel.component.html',
-  styleUrls: ['./hero-home-circle-carousel.component.scss']
+  styleUrls: ['./hero-home-circle-carousel.component.scss'],
+  providers: [RouteLocalizationPipe]
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroHomeCircleCarouselComponent {
   showComponent: boolean = true;
@@ -360,14 +366,31 @@ export class HeroHomeCircleCarouselComponent {
 
   constructor(
     private resizeService: ResizeService,
-    private cdk: ChangeDetectorRef
+    private cdk: ChangeDetectorRef,
+    private renderer: Renderer2,
+    private el: ElementRef,
+
+
+    private pageTransitionsService: PageTransitionsService,
+    private router: Router,
+    private RouteLocalizationPipe: RouteLocalizationPipe,
+    private ngZone: NgZone,
   ) { }
 
   ngAfterViewInit(): void {
+
+    // this.resizeService.screenWidthChange$
+    //   .pipe(debounceTime(300)) // Adjust debounce time as needed
+    //   .subscribe(data => {
+    //     this.calculateSizes();
+    //     setTimeout(() => this.initialization());
+    //   });
+
+
     this.resizeService.screenWidthChange$.subscribe(data => {
       this.calculateSizes();
       setTimeout(() => {
-        this.initialization()
+        this.initialization();
       });
     });
   }
@@ -386,24 +409,40 @@ export class HeroHomeCircleCarouselComponent {
 
     // Dynamically adjust sizes based on the scale
     // 16px each side..
+
     this.totalCircleSizeOuter = isMobile ? (screenWidth - (16 * 2)) : (this.defaultTotalCircleSizeOuter * scale);  // Adjust the outer circle size
 
-    this.circleItemSize = this.defaultCircleItemSize * scale;  // Adjust the item size
+    // this.totalCircleSizeOuter = isMobile ? (screenWidth - (16 * 2)) : (this.defaultTotalCircleSizeOuter * scale);  // Adjust the outer circle size
+
+    this.circleItemSize = this.defaultCircleItemSize;
+    // this.circleItemSize = this.defaultCircleItemSize * scale;  // Adjust the item size
     // this.circleItemSize = isMobile ? this.defaultCircleItemSize : (this.defaultCircleItemSize * scale);  // Adjust the item size
 
-    this.borderSize = this.defaultBorderSize * scale;  // Adjust border size
+    this.borderSize = this.defaultBorderSize;
+    // this.borderSize = this.defaultBorderSize * scale;  // Adjust border size
     // this.borderSize = isMobile ? this.defaultBorderSize : (this.defaultBorderSize * scale);  // Adjust border size
 
-    this.padding = this.defaultPadding * scale;
+    this.padding = this.defaultPadding;
+    // this.padding = this.defaultPadding * scale;
     // this.padding = isMobile ? this.defaultPadding : (this.defaultPadding * scale);
 
     this.cdk.detectChanges();
   }
 
   initialization() {
+    this.wrapProgress = null;
+    this.itemStep = 0;
+    this.snap = null;
+    if (this.tl) this.tl.kill();
+
+    this.circleSelectedItem = 0;
+    this.activeSubCategory = 0;
     this.showComponent = false;
     // 
     setTimeout(() => {
+      // 
+      this.stopTimer();
+      // 
       this.showComponent = true;
       setTimeout(() => {
         this.initialization2();
@@ -412,14 +451,15 @@ export class HeroHomeCircleCarouselComponent {
   }
 
   initialization2() {
-
     // Calculate sizes based on screen dimensions
     gsap.registerPlugin(MotionPathPlugin);
 
     const circlePath = MotionPathPlugin.convertToPath("#holder", false)[0];
+    if (!circlePath) return;
+    // console.log(circlePath);
 
     circlePath.id = "circlePath";
-    const svgHeroHome: any = document.querySelector("#svgHeroHome");
+    const svgHeroHome: any = this.el.nativeElement.querySelector("#svgHeroHome");
     if (!svgHeroHome) return;
     svgHeroHome.prepend(circlePath);
 
@@ -442,34 +482,7 @@ export class HeroHomeCircleCarouselComponent {
       }, scale: 1
     });
 
-
-    // if (!this.isFirstLoad) {
-
-
-    //   // const innerCircle: any = document.querySelector("#inner-circle");
-    //   // if (innerCircle) {
-    //   //   innerCircle.style.transformOrigin = null;
-    //   //   innerCircle.style.transform = null;
-    //   // }
-    //   // this.tl.to("#inner-circle", {
-    //   //   rotation: "-=360",
-    //   //   transformOrigin: 'center',
-    //   //   duration: 1,
-    //   //   ease: 'none',
-    //   // }, 0);
-    //   // this.tl.to(items, {
-    //   //   rotation: "-=360",
-    //   //   transformOrigin: 'center',
-    //   //   duration: 1,
-    //   //   ease: 'none',
-    //   // }, 0);
-    // }
-
-    // this.tl = null;
     this.tl = gsap.timeline({ paused: true, reversed: true });
-
-
-
 
     this.tl.to('.wrapper', {
       rotation: 360,
@@ -505,9 +518,7 @@ export class HeroHomeCircleCarouselComponent {
     }, 0);
 
 
-    // if (this.isFirstLoad) {
-    items.forEach((el: { addEventListener: (arg0: string, arg1: () => void) => void; }, i: number) => {
-
+    items.forEach((el: any, i: number) => {
       el.addEventListener("click", () => {
         let current = tracker.item;
         if (i === current) return;
@@ -528,24 +539,32 @@ export class HeroHomeCircleCarouselComponent {
     });
 
     this.autoPlay();
-    // }
-
-    // this.isFirstLoad = false;
   }
 
 
   autoPlay() {
-    clearInterval(this.intervalId);
+    // return;
+    this.startTimer();
+    const carouselElement = this.el.nativeElement.querySelector('.wrapper');
+    this.renderer.listen(carouselElement, 'mouseenter', () => this.stopTimer());
+    this.renderer.listen(carouselElement, 'mouseleave', () => this.startTimer());
+  }
+
+  startTimer() {
     this.intervalId = setInterval(() => {
       this.next();
     }, 5000);
   }
 
-  prev() {
-    this.moveWheel(this.itemStep);
-    this.circleSelectedItem = (this.circleSelectedItem - 1) < 0 ? this.circleItems.length - 1 : this.circleSelectedItem - 1;
-    this.activeSubCategory = 0;
+  stopTimer() {
+    clearInterval(this.intervalId);
   }
+
+  // prev() {
+  //   this.moveWheel(this.itemStep);
+  //   this.circleSelectedItem = (this.circleSelectedItem - 1) < 0 ? this.circleItems.length - 1 : this.circleSelectedItem - 1;
+  //   this.activeSubCategory = 0;
+  // }
 
   next() {
     this.moveWheel(-this.itemStep);
@@ -609,6 +628,14 @@ export class HeroHomeCircleCarouselComponent {
     // Play the sound
     sound.currentTime = 0; // Rewind to the start
     sound.play();
+  }
+
+  click() {
+    this.pageTransitionsService.showPageTransition(() => {
+      this.ngZone.run(() => {
+        this.router.navigateByUrl(this.RouteLocalizationPipe.transform(`listing`));
+      });
+    });
   }
 
 }

@@ -59,16 +59,20 @@
                 </div>
                 <div class="w-full flex items-center justify-center relative"
                     [style.height]="getSubCategories().length > 0 ? '50%' : '100%'">
-                    <div class="w-full h-full bg-center bg-cover" *ngIf="getMedia()?.img"
+                    <div class="w-full h-full bg-center bg-cover" *ngIf="getMedia()?.img" loading="lazy"
                         [ngStyle]="{ 'background-image': 'url(' + getMedia()?.img + ')'}">
                     </div>
                     <div *ngIf="showVideo && getMedia()?.video" class="w-full h-full relative">
                         <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true"
-                            class="absolute left-0 top-0 min-w-full min-h-full object-fill">
+                            class="absolute left-0 top-0 min-w-full min-h-full object-fill" preload="metadata">
                             <source [src]="getMedia()?.video" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
                     </div>
+                    <button type="button" (click)="click()"
+                        class="w-full text-center text-base rounded-b-full absolute bottom-0 left-0 right-0 mx-auto bg-primary">
+                        button
+                    </button>
                 </div>
             </div>
         </div>
