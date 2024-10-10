@@ -10,7 +10,16 @@ import { ResizeService } from 'src/app/services/resize.service';
   styleUrls: ['./provider-detailed.component.scss']
 })
 export class ProviderDetailedComponent {
-  posts: any = [1, 2];
+  mapModalEnabled: boolean = false;
+  reviewModalEnabled: boolean = false;
+  writePostModalEnabled: boolean = false;
+  hoursModalEnabled: boolean = false;
+
+  isMobile: boolean = false;
+  isReview: boolean = true;
+  writePermission: boolean = true;
+  posts: any = [];
+  // posts: any = [1, 2];
   differenceSize: number = 0;
 
   constructor(
@@ -37,6 +46,9 @@ export class ProviderDetailedComponent {
   }
 
   calculateSize() {
+    const screenWidth = window.innerWidth;
+    this.isMobile = screenWidth < 768;
+
     const imgContainer: any = document.querySelector("#img-container");
 
     const circleImgContainer: any = document.querySelector("#circle-img-container");
