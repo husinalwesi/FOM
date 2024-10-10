@@ -10,6 +10,8 @@ const routes: Routes = [
 
       { path: 'listing', loadChildren: () => import('./layouts/main/listing/listing.module').then((m) => m.ListingModule) },
 
+      { path: 'provider-details', loadChildren: () => import('./layouts/main/provider-detailed/provider-detailed.module').then((m) => m.ProviderDetailedModule) },
+
       { path: 'template', loadChildren: () => import('./layouts/main/template/template.module').then((m) => m.TemplateModule) },
     ]
   },
