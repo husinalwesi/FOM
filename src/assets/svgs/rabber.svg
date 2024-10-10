@@ -1,7 +1,0 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 156">
-	<defs>
-		<image id="rabber"
-			href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACcBAMAAAB4lt9+AAAAAXNSR0IB2cksfwAAAC1QTFRFAAAA0adV0KhVzqVS0adV0ahV0ahW0KdVzKpV1KhX0qZV0aZW0ahV0ahV0adUm2i2JQAAAA90Uk5TAP+vH99vj58PLz9fz+9/ksJtpgAAAd1JREFUeJzt2s1NAzEQhmFPDsABIYyEQAgkKIEOQgl0AB2QDqADSqGElIaI0LK7/pn9Zj4Ch/E9rx4760hZOyXryDmfmT88H/d5N045NcmZ2BtqnF4ejbW79jjOZW/tYFJzT/d5mnPyZjgvbzPPuXiroubi3ZU5B6+C8/BqODvvsFoz8+bPnI9XPHM+Xgtn4zVxNl4bZ+F1cBZeD4fzujic18ehPAWH8jQcxlNxGE/HIbwFOIS3pAbwFrVWS2uitbCnhFvTcOAG49Y0HFbTcGBNwaG/TIELXOACF7jABS5wgdPGERf3FrjA7RnH3RDan2oQt6HiGi8Pfwl3ycW9U3FXXNwHFXfOxT1RcRdc3C0Vd83FrbFc/VX/MG6wWvUcYjTAza/gwM0fuMAFbjROuLj9vnb9W9y//r+k5FCcMlcU18/BB4cPVFx/6fBTTS6umzOcCHNxvZzluJqL6+RMR/1cXDtnu4fQ3GSmWjNnvMNxTMW1Fs98/4WLqy+e/XJOdfHMtepsPRebKrN11Co836WwgueqFTzvhTqh4mY8/+VGoeImPMbNyxHvlZBL1Lmyb63+8F44OWHONQ08Vk6YS5e+ebyccHM73paXE+I38TXIOeHmEjkn3Fwi58T5+U+UUxPu/7cz6gAAAABJRU5ErkJggg==" />
-	</defs>
-	<use id="Background" href="#rabber" x="0" y="0" />
-</svg>

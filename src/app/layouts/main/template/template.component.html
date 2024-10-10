@@ -222,10 +222,10 @@
             <h1 class="text-white mb-4 text-2xl">Icons:</h1>
             <div class="flex flex-wrap gap-4">
 
-                <div
+                <div *ngFor="let icon of icons"
                     class="bg-black border border-solid border-white w-1/6 h-32 rounded-md flex items-center justify-center">
-                    <app-svg src="assets/svgs/search-icon.svg" customClass="" label="title_goas_here" [stretch]="false"
-                        width="32" stroke="#ffffff"></app-svg>
+                    <app-svg [src]="'assets/svgs/' + icon.name + '.svg'" customClass="" label="title_goas_here"
+                        [stretch]="false" width="32" [stroke]="icon.stroke" [fill]="icon.fill"></app-svg>
                 </div>
 
             </div>

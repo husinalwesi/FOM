@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProviderDetailedRoutingModule } from './provider-detailed-routing.module';
 import { ProviderDetailedComponent } from './provider-detailed.component';
+import { SvgModule } from 'src/app/modules/svg/svg.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ProviderDetailedComponent } from './provider-detailed.component';
   ],
   imports: [
     CommonModule,
-    ProviderDetailedRoutingModule
+    ProviderDetailedRoutingModule,
+    SvgModule
   ]
 })
 export class ProviderDetailedModule { }
