@@ -71,7 +71,9 @@ export class HeroHomeCarouselComponent {
           const opacity = 1 - Math.abs(progress) * opacityStep;
           const zIndex = totalSlides - Math.abs(Math.round(progress));
 
-          slide.style.transform = `translateX(${translate}) scale(${1 - Math.abs(progress) * scaleStep})`;
+          const scaleVar = 1 - Math.abs(progress) * scaleStep;
+          
+          slide.style.transform = `translateX(${translate}) scale(${scaleVar < 0 ? 0 : scaleVar})`;
           slide.style.zIndex = zIndex;
           slide.style.opacity = opacity > sideSlides + 1 ? '0' : '1';
 
