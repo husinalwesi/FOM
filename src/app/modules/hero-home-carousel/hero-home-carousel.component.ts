@@ -20,22 +20,25 @@ interface CustomSwiperOptions extends SwiperOptions {
   styleUrls: ['./hero-home-carousel.component.scss']
 })
 export class HeroHomeCarouselComponent {
+  sliders: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   swiper: any = null;
 
   ngOnInit(): void {
-    const swiperOptions: CustomSwiperOptions = {
-      modules: [Navigation, Pagination, Autoplay, EffectFade, this.carouselEffectModule()],
-      effect: 'carousel' as any, // Custom effect type
-      carouselEffect: { opacityStep: 0.33, scaleStep: 0.2, sideSlides: 2 } as any,
-      grabCursor: true,
-      loop: true,
-      loopAdditionalSlides: 1,
-      slidesPerView: "auto",
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-      pagination: { el: ".swiper-pagination" },
-      autoplay: { delay: 3000 },
-    };
-    new Swiper('.hero-swiper-container', swiperOptions);
+    setTimeout(() => {
+      const swiperOptions: CustomSwiperOptions = {
+        modules: [Navigation, Pagination, Autoplay, EffectFade, this.carouselEffectModule()],
+        effect: 'carousel' as any, // Custom effect type
+        carouselEffect: { opacityStep: 0.33, scaleStep: 0.2, sideSlides: 2 } as any,
+        grabCursor: true,
+        loop: true,
+        loopAdditionalSlides: 1,
+        slidesPerView: "auto",
+        navigation: { nextEl: ".swiper-hero-button-next", prevEl: ".swiper-hero-button-prev" },
+        // pagination: { el: ".swiper-hero-pagination" },
+        // autoplay: { delay: 3000 },
+      };
+      new Swiper('.hero-swiper-container', swiperOptions);
+    });
   }
 
   carouselEffectModule() {
@@ -72,7 +75,7 @@ export class HeroHomeCarouselComponent {
           const zIndex = totalSlides - Math.abs(Math.round(progress));
 
           const scaleVar = 1 - Math.abs(progress) * scaleStep;
-          
+
           slide.style.transform = `translateX(${translate}) scale(${scaleVar < 0 ? 0 : scaleVar})`;
           slide.style.zIndex = zIndex;
           slide.style.opacity = opacity > sideSlides + 1 ? '0' : '1';

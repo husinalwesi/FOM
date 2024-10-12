@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroHomeCarouselComponent } from './hero-home-carousel.component';
+import { HeroInnerCarouselModule } from "../hero-inner-carousel/hero-inner-carousel.module";
 
 
 
@@ -9,8 +10,9 @@ import { HeroHomeCarouselComponent } from './hero-home-carousel.component';
     HeroHomeCarouselComponent
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    HeroInnerCarouselModule
+],
   exports: [HeroHomeCarouselComponent]
 })
 export class HeroHomeCarouselModule { }

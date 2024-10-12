@@ -1,0 +1,11 @@
+.swiper-button-next,
+.swiper-button-prev {
+    @apply w-8 h-8 border border-solid border-black lg:border-white rounded-full;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    @apply text-[20px] text-black lg:text-white;
+}
+.swiper-slide-active {
+    @apply relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[68%] after:bg-black lg:after:bg-white after:opacity-70;
+}

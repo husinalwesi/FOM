@@ -1,0 +1,26 @@
+<div class="hero-inner-swiper-container relative swiper-container lg:overflow-hidden">
+    <div class="swiper-wrapper">
+        <!-- max-w-[232.5px] -->
+        <div class="swiper-slide !flex flex-col items-center" *ngFor="let ethic of carousel;let i = index">
+            <!-- icon -->
+
+            <div>
+                <app-svg src="assets/svgs/open-buffet.svg" customClass="" class="transition-all" label="title_goas_here"
+                    [stretch]="false" width="32" stroke="#625e5c"></app-svg>
+            </div>
+            <p class="font-bold text-black lg:text-white">title</p>
+            <p class="text-black lg:text-white">subtitle</p>
+
+        </div>
+    </div>
+
+    <!-- Add Pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- Add Navigation -->
+    <div class="swiper-button-next swiper-inner-button-next"></div>
+    <div class="swiper-button-prev swiper-inner-button-prev"></div>
+
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+</div>

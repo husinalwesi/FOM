@@ -1,199 +1,29 @@
 <div id="app">
     <div class="swiper-container hero-swiper-container swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
+            <div class="swiper-slide" *ngFor="let item of sliders">
                 <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/guardians-of-the-galaxy.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Guardians Of The Galaxy</h2>
-                        <p class="text-white">A group of intergalactic criminals must pull together to stop a fanatical
-                            warrior with plans
-                            to purge
-                            the universe.</p>
+                    <img src="https://img.tile.expert/img_lb/sant-agostino/flexible-architecture/per_sito/minimali/b_sant_agostino_fle_ible_architecture_csaftbbl00_fle_itech.bblack.webp?64"
+                        alt="">
+                    <div class="slide-content flex px-4 py-2">
+                        <div
+                            class="w-full lg:w-1/2 relative after:hidden lg:after:block after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[68%] after:bg-white">
+                            <p class="text-white">Weeding planner</p>
+                            <p class="text-white">Lorem Ipsum is simply dummy text of the printing</p>
+                        </div>
+                        <div class="w-1/2 hidden lg:block">
+                            <app-hero-inner-carousel></app-hero-inner-carousel>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/justice-league.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Justice League</h2>
-                        <p class="text-white">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce
-                            Wayne aligns forces
-                            with
-                            Diana Prince with plans to recruit a team of metahumans to protect the world from an
-                            approaching
-                            threat
-                            of catastrophic proportions.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/spider-man.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Spider-Man: Far from Home</h2>
-                        <p class="text-white">Following the events of Avengers: Endgame (2019), Spider-Man must step up
-                            to take on new
-                            threats in a
-                            world that has changed forever.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/suicide-squad.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">The Suicide Squad</h2>
-                        <p class="text-white">Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of
-                            nutty cons at Belle
-                            Reve
-                            prison
-                            join the super-secret, super-shady Task Force X as they are dropped off at the remote,
-                            enemy-infused
-                            island of Corto Maltese.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/thor-ragnarok.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Thor: Ragnarok</h2>
-                        <p class="text-white">Imprisoned on the planet Sakaar, Thor must race against time to return to
-                            Asgard and stop
-                            Ragnarök,
-                            the
-                            destruction of his world, at the hands of the powerful and ruthless villain Hela.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/dr-strange.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Doctor Strange</h2>
-                        <p class="text-white">America Chavez and a version of Stephen Strange are chased by a demon in
-                            the space between
-                            universes
-                            while searching for the Book of Vishanti</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/eternals.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Eternals </h2>
-                        <p class="text-white">In 5000 BC, ten superpowered Eternals—Ajak, Sersi, Ikaris, Kingo, Sprite,
-                            Phastos, Makkari,
-                            Druig,
-                            Gilgamesh, and Thena—are sent by the Celestial Arishem to Earth on their starship, the Domo,
-                            to
-                            exterminate the invasive Deviants.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/guardians-of-the-galaxy.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Guardians Of The Galaxy</h2>
-                        <p class="text-white">A group of intergalactic criminals must pull together to stop a fanatical
-                            warrior with plans
-                            to purge
-                            the universe.</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/justice-league.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Justice League</h2>
-                        <p class="text-white">Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce
-                            Wayne aligns forces
-                            with
-                            Diana Prince with plans to recruit a team of metahumans to protect the world from an
-                            approaching
-                            threat
-                            of catastrophic proportions.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/spider-man.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Spider-Man: Far from Home</h2>
-                        <p class="text-white">Following the events of Avengers: Endgame (2019), Spider-Man must step up
-                            to take on new
-                            threats in a
-                            world that has changed forever.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/suicide-squad.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">The Suicide Squad</h2>
-                        <p class="text-white">Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of
-                            nutty cons at Belle
-                            Reve
-                            prison
-                            join the super-secret, super-shady Task Force X as they are dropped off at the remote,
-                            enemy-infused
-                            island of Corto Maltese.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/thor-ragnarok.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Thor: Ragnarok</h2>
-                        <p class="text-white">Imprisoned on the planet Sakaar, Thor must race against time to return to
-                            Asgard and stop
-                            Ragnarök,
-                            the
-                            destruction of his world, at the hands of the powerful and ruthless villain Hela.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/dr-strange.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Doctor Strange</h2>
-                        <p class="text-white">America Chavez and a version of Stephen Strange are chased by a demon in
-                            the space between
-                            universes
-                            while searching for the Book of Vishanti</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-carousel-animate-opacity">
-                    <img src="https://carousel-slider.uiinitiative.com/images/eternals.jpg" alt="">
-                    <div class="slide-content">
-                        <h2 class="text-white">Eternals </h2>
-                        <p class="text-white">In 5000 BC, ten superpowered Eternals—Ajak, Sersi, Ikaris, Kingo, Sprite,
-                            Phastos, Makkari,
-                            Druig,
-                            Gilgamesh, and Thena—are sent by the Celestial Arishem to Earth on their starship, the Domo,
-                            to
-                            exterminate the invasive Deviants.</p>
-                    </div>
+                <!-- <div class="slide-content-bottom bg-white w-full lg:hidden rounded-b-xl absolute bottom-0"></div>                 -->
+                <div class="slide-content-bottom bg-white w-full lg:hidden rounded-b-xl absolute bottom-[-76px]">
+                    <app-hero-inner-carousel></app-hero-inner-carousel>
                 </div>
             </div>
         </div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev swiper-hero-button-prev"></div>
+    <div class="swiper-button-next swiper-hero-button-next"></div>
+    <!-- <div class="swiper-pagination swiper-hero-pagination"></div> -->
 </div>

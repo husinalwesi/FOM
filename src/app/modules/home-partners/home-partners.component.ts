@@ -60,8 +60,8 @@ export class HomePartnersComponent {
       width: 204,
       spaceBetween: 12,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-partner-button-next',
+        prevEl: '.swiper-partner-button-prev',
       },
       // pagination: {
       //   el: '.swiper-pagination',
