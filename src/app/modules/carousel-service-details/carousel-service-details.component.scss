@@ -1,0 +1,13 @@
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    @apply text-[53px] text-white font-semibold;
+}
+.swiper-slide-next {
+    @apply scale-90 translate-x-[-65%] relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-30 after:z-10 after:rounded-xl;
+}
+.swiper-slide-active {
+    @apply z-10;
+}
+.swiper-service-button-next {
+    right: 125px;
+}

@@ -12,6 +12,10 @@ const routes: Routes = [
 
       { path: 'provider-details', loadChildren: () => import('./layouts/main/provider-detailed/provider-detailed.module').then((m) => m.ProviderDetailedModule) },
 
+      { path: 'service-details', loadChildren: () => import('./layouts/main/service-details/service-details.module').then((m) => m.ServiceDetailsModule) },
+
+      { path: 'contact', loadChildren: () => import('./layouts/main/contact/contact.module').then((m) => m.ContactModule) },
+
       { path: 'template', loadChildren: () => import('./layouts/main/template/template.module').then((m) => m.TemplateModule) },
     ]
   },

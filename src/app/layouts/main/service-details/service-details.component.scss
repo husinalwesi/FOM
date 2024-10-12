@@ -1,0 +1,9 @@
+::ng-deep .active {
+    & p {
+        @apply text-primary;
+    }
+    & svg {
+        @apply scale-125 mb-2;
+        stroke: #802d3d !important;
+    }
+}
