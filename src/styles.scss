@@ -173,3 +173,8 @@ body .ptr-prel-content {
 .disable-ele {
     @apply opacity-60 pointer-events-none;
 }
+button,
+a {
+    box-shadow: unset !important;
+    outline: 0 !important;
+}

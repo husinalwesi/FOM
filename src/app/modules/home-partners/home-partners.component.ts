@@ -51,7 +51,7 @@ export class HomePartnersComponent {
   ngOnInit(): void {
     // this.calculateRatio();
     // https://swiperjs.com/swiper-api
-    this.swiper = new Swiper('.swiper-container', {
+    this.swiper = new Swiper('.partner-swiper-container', {
       // modules: [Navigation, Pagination, Scrollbar],
       // modules: [Navigation, Pagination],
       updateOnWindowResize: true,

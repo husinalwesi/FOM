@@ -8,19 +8,19 @@ import { ResizeService } from 'src/app/services/resize.service';
   styleUrls: ['./home-hero.component.scss']
 })
 export class HomeHeroComponent {
-  @ViewChild('heroHomeCircleCarouselEle', { read: ElementRef }) heroHomeCircleCarouselEle!: ElementRef;
+  // @ViewChild('heroHomeCircleCarouselEle', { read: ElementRef }) heroHomeCircleCarouselEle!: ElementRef;
 
   constructor(private resizeService: ResizeService) { }
 
   ngAfterViewInit(): void {
-    this.resizeService.screenWidthChange$.subscribe(data => this.setPosition());
+    // this.resizeService.screenWidthChange$.subscribe(data => this.setPosition());
   }
 
-  setPosition() {
-    if (!this.heroHomeCircleCarouselEle) return;
-    const heroHomeCircleCarouselEle = this.heroHomeCircleCarouselEle?.nativeElement;
-    heroHomeCircleCarouselEle.style.marginTop = `-${heroHomeCircleCarouselEle.offsetHeight / 2}px`;
-  }
+  // setPosition() {
+  //   if (!this.heroHomeCircleCarouselEle) return;
+  //   const heroHomeCircleCarouselEle = this.heroHomeCircleCarouselEle?.nativeElement;
+  //   heroHomeCircleCarouselEle.style.marginTop = `-${heroHomeCircleCarouselEle.offsetHeight / 2}px`;
+  // }
 
 
   // showVideo: boolean = true;

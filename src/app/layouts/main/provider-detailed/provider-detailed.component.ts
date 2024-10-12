@@ -10,16 +10,17 @@ import { ResizeService } from 'src/app/services/resize.service';
   styleUrls: ['./provider-detailed.component.scss']
 })
 export class ProviderDetailedComponent {
+  isInnerPhotoClicked: boolean = false;
   mapModalEnabled: boolean = false;
   reviewModalEnabled: boolean = false;
   writePostModalEnabled: boolean = false;
   hoursModalEnabled: boolean = false;
 
   isMobile: boolean = false;
-  isReview: boolean = true;
+  isReview: boolean = false;
   writePermission: boolean = true;
-  posts: any = [];
-  // posts: any = [1, 2];
+  // posts: any = [];
+  posts: any = [1, 2];
   differenceSize: number = 0;
 
   constructor(
