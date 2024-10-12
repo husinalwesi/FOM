@@ -17,7 +17,7 @@ export class CarouselServiceDetailsComponent {
   width: number = 0;
   isMobile: boolean = false;
   swiper: any = null;
-  carousel: any = [1, 2, 3, 4, 1, 2, 3, 4];
+  carousel: any = [1, 2, 1, 2, 1, 2, 1, 2];
   // @ViewChild('carouselParentEle') carouselParentEle!: any;
   // customOptions: OwlOptions | undefined;
 
@@ -39,7 +39,7 @@ export class CarouselServiceDetailsComponent {
       // modules: [Navigation, Pagination],
       updateOnWindowResize: true,
       modules: [Navigation],
-      slidesPerView: 1.3,
+      slidesPerView: 1.32,
       // width: 204,
       // spaceBetween: 12,
       navigation: {

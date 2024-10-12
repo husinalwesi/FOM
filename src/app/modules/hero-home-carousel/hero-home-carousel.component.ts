@@ -20,7 +20,7 @@ interface CustomSwiperOptions extends SwiperOptions {
   styleUrls: ['./hero-home-carousel.component.scss']
 })
 export class HeroHomeCarouselComponent {
-  sliders: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  sliders: any = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3];
   swiper: any = null;
 
   ngOnInit(): void {

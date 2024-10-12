@@ -556,9 +556,11 @@ button.swiper-pagination-bullet {
     @apply lg:text-primary;
 }
 
-.swiper-slide .slide-content-bottom {
+.swiper-slide .slide-content-bottom,
+.swiper-slide .slide-content {
     opacity: 0;
 }
-.swiper-slide-active .slide-content-bottom {
+.swiper-slide-active .slide-content-bottom,
+.swiper-slide-active .slide-content {
     opacity: 1;
 }

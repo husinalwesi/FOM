@@ -3,13 +3,13 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let item of sliders">
                 <div class="swiper-carousel-animate-opacity">
-                    <img src="https://img.tile.expert/img_lb/sant-agostino/flexible-architecture/per_sito/minimali/b_sant_agostino_fle_ible_architecture_csaftbbl00_fle_itech.bblack.webp?64"
-                        alt="">
-                    <div class="slide-content flex px-4 py-2">
+                    <img [src]="'assets/images/hero/' + item + '.png'" alt="">
+                    <div class="slide-content flex py-3">
                         <div
-                            class="w-full lg:w-1/2 relative after:hidden lg:after:block after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[65px] after:bg-white">
+                            class="w-full lg:w-1/2 relative after:hidden lg:after:block after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[65px] after:bg-white px-[30px]">
                             <p class="text-white font-bold">Weeding planner</p>
-                            <p class="text-white text-xs -mt-2">Lorem Ipsum is simply dummy text of the printing</p>
+                            <p class="text-white text-xs leading-[14px] mt-0.5 max-w-[200px]">Lorem Ipsum is simply
+                                dummy text of the printing</p>
                         </div>
                         <div class="w-1/2 hidden lg:block">
                             <app-hero-inner-carousel></app-hero-inner-carousel>
