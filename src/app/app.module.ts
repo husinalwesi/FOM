@@ -101,7 +101,7 @@ export class CustomUrlSerializer implements UrlSerializer {
       useClass: HttpConfigInterceptor,
       multi: true,
     },
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    // { provide: LocationStrategy, useClass: HashLocationStrategy },
     RouteLocalizationPipe
     // provideClientHydration() just for devloper mode remove it in production mode
   ],
