@@ -3,6 +3,7 @@ import { HeaderService } from 'src/app/services/header.service';
 import { MetaTagsService } from 'src/app/services/meta-tags.service';
 import { PageTransitionsService } from 'src/app/services/page-transitions.service';
 import { ResizeService } from 'src/app/services/resize.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-provider-detailed',
@@ -28,7 +29,8 @@ export class ProviderDetailedComponent {
     private headerService: HeaderService,
     private metaTagsService: MetaTagsService,
     private resizeService: ResizeService,
-    private cdk: ChangeDetectorRef
+    private cdk: ChangeDetectorRef,
+    private SharedService: SharedService
   ) {
     this.pageTransitionsService.HideLoad();
     this.headerService.useStickyHeader();
@@ -64,6 +66,10 @@ export class ProviderDetailedComponent {
   }
 
   ngOnInit(): void {
+  }
+
+  navigateTo(route: string) {
+    this.SharedService.navigateTo(route);
   }
 
 }

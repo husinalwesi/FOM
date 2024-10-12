@@ -33,6 +33,7 @@ import { TransferStateInterceptor } from './core/helpers/transfer-state.intercep
 import { FooterModule } from "./modules/footer/footer.module";
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CookiesPopupModule } from './modules/cookies-popup/cookies-popup.module';
+import { RouteLocalizationPipe } from './pipes/route-localization.pipe';
 
 export class CustomUrlSerializer implements UrlSerializer {
 
@@ -100,7 +101,8 @@ export class CustomUrlSerializer implements UrlSerializer {
       useClass: HttpConfigInterceptor,
       multi: true,
     },
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    RouteLocalizationPipe
     // provideClientHydration() just for devloper mode remove it in production mode
   ],
   bootstrap: [AppComponent]

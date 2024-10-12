@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pageTransitionsService.initializePageTransition();
+    // this.pageTransitionsService.initializePageTransition();
 
     if (!this.isMobile) {
       this.translationService.setHtmlDirection(this.translationService.getSelectedLanguage());
