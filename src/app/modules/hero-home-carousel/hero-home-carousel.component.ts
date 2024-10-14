@@ -24,24 +24,26 @@ export class HeroHomeCarouselComponent {
   sliders: any = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3];
   swiper: any = null;
 
-  constructor(    private SharedService: SharedService){}
-  
+  constructor(private SharedService: SharedService) { }
+
   ngOnInit(): void {
-    setTimeout(() => {
-      const swiperOptions: CustomSwiperOptions = {
-        modules: [Navigation, Pagination, Autoplay, EffectFade, this.carouselEffectModule()],
-        effect: 'carousel' as any, // Custom effect type
-        carouselEffect: { opacityStep: 0.33, scaleStep: 0.2, sideSlides: 2 } as any,
-        grabCursor: true,
-        loop: true,
-        loopAdditionalSlides: 1,
-        slidesPerView: "auto",
-        navigation: { nextEl: ".swiper-hero-button-next", prevEl: ".swiper-hero-button-prev" },
-        // pagination: { el: ".swiper-hero-pagination" },
-        autoplay: { delay: 3000 },
-      };
-      new Swiper('.hero-swiper-container', swiperOptions);
-    });
+    if (typeof window !== 'undefined') {
+      setTimeout(() => {
+        const swiperOptions: CustomSwiperOptions = {
+          modules: [Navigation, Pagination, Autoplay, EffectFade, this.carouselEffectModule()],
+          effect: 'carousel' as any, // Custom effect type
+          carouselEffect: { opacityStep: 0.33, scaleStep: 0.2, sideSlides: 2 } as any,
+          grabCursor: true,
+          loop: true,
+          loopAdditionalSlides: 1,
+          slidesPerView: "auto",
+          navigation: { nextEl: ".swiper-hero-button-next", prevEl: ".swiper-hero-button-prev" },
+          // pagination: { el: ".swiper-hero-pagination" },
+          autoplay: { delay: 3000 },
+        };
+        new Swiper('.hero-swiper-container', swiperOptions);
+      });
+    }
   }
 
   carouselEffectModule() {

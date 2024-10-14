@@ -49,37 +49,39 @@ export class HomePartnersComponent {
 
 
   ngOnInit(): void {
-    // this.calculateRatio();
-    // https://swiperjs.com/swiper-api
-    this.swiper = new Swiper('.partner-swiper-container', {
-      // modules: [Navigation, Pagination, Scrollbar],
-      // modules: [Navigation, Pagination],
-      updateOnWindowResize: true,
-      modules: [Navigation],
-      // slidesPerView: 4,
-      width: 204,
-      spaceBetween: 12,
-      navigation: {
-        nextEl: '.swiper-partner-button-next',
-        prevEl: '.swiper-partner-button-prev',
-      },
-      // pagination: {
-      //   el: '.swiper-pagination',
-      //   clickable: true,
-      // },
-      loop: false,
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-      // resize: () => {
+    if (typeof window !== 'undefined') {
+      // this.calculateRatio();
+      // https://swiperjs.com/swiper-api
+      this.swiper = new Swiper('.partner-swiper-container', {
+        // modules: [Navigation, Pagination, Scrollbar],
+        // modules: [Navigation, Pagination],
+        updateOnWindowResize: true,
+        modules: [Navigation],
+        // slidesPerView: 4,
+        width: 204,
+        spaceBetween: 12,
+        navigation: {
+          nextEl: '.swiper-partner-button-next',
+          prevEl: '.swiper-partner-button-prev',
+        },
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
+        loop: false,
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+        // resize: () => {
 
-      // }
-    });
+        // }
+      });
 
-    // this.swiper.on('resize', (data: any) => {
-    //   // console.log(data);
-    //   this.calculateRatio();
-    // });
+      // this.swiper.on('resize', (data: any) => {
+      //   // console.log(data);
+      //   this.calculateRatio();
+      // });
+    }
   }
 
 

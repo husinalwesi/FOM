@@ -49,20 +49,22 @@ export class ProviderDetailedComponent {
   }
 
   calculateSize() {
-    const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-    this.isMobile = screenWidth < 768;
+    if (typeof window !== 'undefined') {
+      const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+      this.isMobile = screenWidth < 768;
 
-    const imgContainer: any = typeof window !== 'undefined' ? document.querySelector("#img-container") : null;
+      const imgContainer: any = typeof window !== 'undefined' ? document.querySelector("#img-container") : null;
 
-    const circleImgContainer: any = typeof window !== 'undefined' ? document.querySelector("#circle-img-container") : null;
-    const circleImgContainerImage: any = typeof window !== 'undefined' ? document.querySelector("#circle-img-container img") : null;
+      const circleImgContainer: any = typeof window !== 'undefined' ? document.querySelector("#circle-img-container") : null;
+      const circleImgContainerImage: any = typeof window !== 'undefined' ? document.querySelector("#circle-img-container img") : null;
 
-    if (!imgContainer || !circleImgContainer || !circleImgContainerImage) return;
-    // 
-    const halfImgCircle = circleImgContainerImage.offsetWidth / 4;
-    this.differenceSize = (imgContainer.offsetLeft - (circleImgContainer.offsetLeft + circleImgContainerImage.offsetWidth)) + halfImgCircle;
+      if (!imgContainer || !circleImgContainer || !circleImgContainerImage) return;
+      // 
+      const halfImgCircle = circleImgContainerImage.offsetWidth / 4;
+      this.differenceSize = (imgContainer.offsetLeft - (circleImgContainer.offsetLeft + circleImgContainerImage.offsetWidth)) + halfImgCircle;
 
-    this.cdk.detectChanges();
+      this.cdk.detectChanges();
+    }
   }
 
   ngOnInit(): void {

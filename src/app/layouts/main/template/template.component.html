@@ -223,7 +223,8 @@
             <div class="flex flex-wrap gap-4">
 
                 <div *ngFor="let icon of icons"
-                    class="bg-black border border-solid border-white w-1/6 h-32 rounded-md flex items-center justify-center">
+                    class="border border-solid border-white w-1/6 h-32 rounded-md flex items-center justify-center"
+                    [class.bg-white]="icon.isColorInverse" [class.bg-black]="!icon.isColorInverse">
                     <app-svg [src]="'assets/svgs/' + icon.name + '.svg'" customClass="" label="title_goas_here"
                         [stretch]="false" width="32" [stroke]="icon.stroke" [fill]="icon.fill"></app-svg>
                 </div>

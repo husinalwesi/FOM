@@ -12,47 +12,49 @@ export class HeroInnerCarouselComponent {
   carousel: any = [1, 2, 3, 4];
 
   ngOnInit(): void {
-    this.swiper = new Swiper('.hero-inner-swiper-container', {
-      // modules: [Navigation, Pagination, Scrollbar],
-      // modules: [Navigation, Pagination],
-      updateOnWindowResize: true,
-      modules: [Navigation],
-      // slidesPerView: 2,
-      breakpoints: {
-        // when window width is >= 320px
-        0: {
-          slidesPerView: 3,
-          // spaceBetween: 20
+    if (typeof window !== 'undefined') {
+      this.swiper = new Swiper('.hero-inner-swiper-container', {
+        // modules: [Navigation, Pagination, Scrollbar],
+        // modules: [Navigation, Pagination],
+        updateOnWindowResize: true,
+        modules: [Navigation],
+        // slidesPerView: 2,
+        breakpoints: {
+          // when window width is >= 320px
+          0: {
+            slidesPerView: 3,
+            // spaceBetween: 20
+          },
+          // when window width is >= 480px
+          768: {
+            slidesPerView: 2,
+            // spaceBetween: 30
+          },
+          // when window width is >= 640px
+          // 640: {
+          //   slidesPerView: 4,
+          //   spaceBetween: 40
+          // }
         },
-        // when window width is >= 480px
-        768: {
-          slidesPerView: 2,
-          // spaceBetween: 30
+        // width: 204,
+        // spaceBetween: 12,
+        navigation: {
+          nextEl: '.swiper-inner-button-next',
+          prevEl: '.swiper-inner-button-prev',
         },
-        // when window width is >= 640px
-        // 640: {
-        //   slidesPerView: 4,
-        //   spaceBetween: 40
-        // }
-      },    
-      // width: 204,
-      // spaceBetween: 12,
-      navigation: {
-        nextEl: '.swiper-inner-button-next',
-        prevEl: '.swiper-inner-button-prev',
-      },
-      // pagination: {
-      //   el: '.swiper-pagination',
-      //   clickable: true,
-      // },
-      loop: false,
-      // scrollbar: {
-      //   el: '.swiper-scrollbar',
-      // },
-      // resize: () => {
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true,
+        // },
+        loop: false,
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+        // resize: () => {
 
-      // }
-    });
+        // }
+      });
+    }
   }
 
 }
