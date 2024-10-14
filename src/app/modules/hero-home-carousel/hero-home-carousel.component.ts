@@ -38,7 +38,7 @@ export class HeroHomeCarouselComponent {
         slidesPerView: "auto",
         navigation: { nextEl: ".swiper-hero-button-next", prevEl: ".swiper-hero-button-prev" },
         // pagination: { el: ".swiper-hero-pagination" },
-        // autoplay: { delay: 3000 },
+        autoplay: { delay: 3000 },
       };
       new Swiper('.hero-swiper-container', swiperOptions);
     });

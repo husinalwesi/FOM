@@ -37,28 +37,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -82,28 +82,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -127,28 +127,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -162,28 +162,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -197,28 +197,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -232,28 +232,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -267,28 +267,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -302,28 +302,28 @@ export class HeroHomeCircleCarouselComponent {
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: null,
           img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/1.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/2.mp4",
           img: null
         },
         {
           title: "Subcate",
           subTitle: 'sub',
-          svg: 'assets/svgs/test.svg',
+          svg: 'assets/svgs/clothes.svg',
           video: "assets/videos/circle/3.mp4",
           img: null
         }
@@ -396,8 +396,8 @@ export class HeroHomeCircleCarouselComponent {
   }
 
   calculateSizes() {
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
+    const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+    const screenHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
     const isMobile = screenWidth < 768;
 
     // Scale factor based on the reference dimensions
@@ -622,12 +622,14 @@ export class HeroHomeCircleCarouselComponent {
   }
 
   playClickSound() {
-    // Get the audio element
-    let sound: any = document.getElementById('clickSound');
-    if (!sound) return;
-    // Play the sound
-    sound.currentTime = 0; // Rewind to the start
-    sound.play();
+    if (typeof window !== 'undefined') {
+      // Get the audio element
+      let sound: any = document.getElementById('clickSound');
+      if (!sound) return;
+      // Play the sound
+      sound.currentTime = 0; // Rewind to the start
+      sound.play();
+    }
   }
 
   click() {

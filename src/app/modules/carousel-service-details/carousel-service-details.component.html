@@ -1,4 +1,4 @@
-<div class="service-swiper-container relative swiper-container overflow-hidden">
+<div class="service-swiper-container relative swiper-container overflow-hidden rounded-xl">
     <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let item of carousel;let i = index">
             <div class="bg-cover bg-center rounded-xl"
@@ -6,11 +6,12 @@
 
                 <div class="z-[1] w-full h-[519px] rounded-b-xl flex flex-col px-4 py-5 justify-end"
                     style="    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));">
-                    <p class="text-white font-bold">Wedding Planner</p>
-                    <p class="text-white text-xs mt-1 leading-[14px]">test test test test test<br />test test test test.</p>
+                    <p class="text-white font-bold inner-items">Wedding Planner</p>
+                    <p class="text-white text-xs mt-1 leading-[14px] inner-items">test test test test test<br />test test test test.
+                    </p>
 
-                    <div class="mt-[22px]">
-                        <button type="button" class="flex gap-3 items-center">
+                    <div class="mt-[22px] inner-items">
+                        <button type="button" class="flex gap-3 items-center" (click)="navigateTo('listing')">
                             <span class="text-white font-normal">Explore</span>
                             <span>
                                 <app-svg src="assets/svgs/next-circle.svg" class="" customClass="mt-[-3px]"

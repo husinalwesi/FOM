@@ -1,11 +1,12 @@
-import { Component, ViewChild, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, HostListener, Output, EventEmitter } from '@angular/core';
 import { LoadAssetsService } from 'src/app/load-assets.service';
 import { TranslationService } from 'src/app/i18n/translation.service';
 // import { OwlOptions } from 'ngx-owl-carousel-o';
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
 import { ResizeService } from 'src/app/services/resize.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-carousel-service-details',
@@ -13,6 +14,7 @@ import { ResizeService } from 'src/app/services/resize.service';
   styleUrls: ['./carousel-service-details.component.scss']
 })
 export class CarouselServiceDetailsComponent {
+  @Output() changeSlide: EventEmitter<number> = new EventEmitter();
   height: number = 0;
   width: number = 0;
   isMobile: boolean = false;
@@ -25,6 +27,7 @@ export class CarouselServiceDetailsComponent {
     private loadAssetsService: LoadAssetsService,
     private TranslationService: TranslationService,
     private resizeService: ResizeService,
+    private SharedService: SharedService
   ) {
     // this.updateCarouselOptions(window.innerWidth);
     // this.loadAssetsService.loadCss('assets/css/carousel.css', 'carousel-default');
@@ -35,10 +38,19 @@ export class CarouselServiceDetailsComponent {
     // this.calculateRatio();
     // https://swiperjs.com/swiper-api
     this.swiper = new Swiper('.service-swiper-container', {
+
+      // effect: 'fade',
+      // fadeEffect: {
+      //   crossFade: true
+      // },
+      //   slideShadows: false,
+      // },
+
+
       // modules: [Navigation, Pagination, Scrollbar],
       // modules: [Navigation, Pagination],
       updateOnWindowResize: true,
-      modules: [Navigation],
+      modules: [Navigation, Autoplay],
       slidesPerView: 1.32,
       // width: 204,
       // spaceBetween: 12,
@@ -46,11 +58,14 @@ export class CarouselServiceDetailsComponent {
         nextEl: '.swiper-service-button-next',
         prevEl: '.swiper-service-button-prev',
       },
+      // autoplay: {
+      //   delay: 3000
+      // },
       // pagination: {
       //   el: '.swiper-pagination',
       //   clickable: true,
       // },
-      // loop: false,
+      // loop: true,
       // scrollbar: {
       //   el: '.swiper-scrollbar',
       // },
@@ -58,6 +73,13 @@ export class CarouselServiceDetailsComponent {
 
       // }
     });
+
+    this.swiper.on('slideChange', (data: any) => {
+      // console.log(data);
+      this.changeSlide.emit(data.activeIndex);
+      // console.log('slide changed', data.activeIndex);
+    });
+
 
     // this.swiper.on('resize', (data: any) => {
     //   // console.log(data);
@@ -100,5 +122,14 @@ export class CarouselServiceDetailsComponent {
   // @HostListener('window:resize', ['$event']) onResize(event: any) {
   //   this.updateCarouselOptions(event.target.innerWidth);
   // }
+
+  setSlide(slideNo: number) {
+    // alert(slideNo);
+    this.swiper.slideTo(slideNo);
+  }
+
+  navigateTo(route: string) {
+    this.SharedService.navigateTo(route);
+  }
 
 }

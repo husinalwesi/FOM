@@ -33,28 +33,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -68,28 +68,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -103,28 +103,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -138,28 +138,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -173,28 +173,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -208,28 +208,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -243,28 +243,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -278,28 +278,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -313,28 +313,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }
@@ -348,28 +348,28 @@ export class HomeHeroComponent {
   //       {
   //         title: "sub cate 1",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
   //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
   //       },
   //       {
   //         title: "sub cate 2",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/1.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 3",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/2.mp4",
   //         img: null
   //       },
   //       {
   //         title: "sub cate 4",
   //         subTitle: 'Subtitle',
-  //         svg: 'assets/svgs/test.svg',
+  //         svg: 'assets/svgs/clothes.svg',
   //         video: "assets/videos/circle/3.mp4",
   //         img: null
   //       }

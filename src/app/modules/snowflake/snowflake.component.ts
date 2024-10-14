@@ -27,7 +27,7 @@ export class SnowflakeComponent {
       easing: 0.005
     };
 
-    const snowBGEle = document.getElementById("snowBG");
+    const snowBGEle = typeof window !== 'undefined' ? document.getElementById("snowBG") : null;
     if (!snowBGEle) return;
 
     const snow = new ShaderProgram(snowBGEle, {
