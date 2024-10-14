@@ -2,7 +2,7 @@
     <div class="swiper-container hero-swiper-container swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let item of sliders">
-                <div class="swiper-carousel-animate-opacity">
+                <div class="swiper-carousel-animate-opacity" (click)="navigateTo('service-details')">
                     <img [src]="'assets/images/hero/' + item + '.png'" alt="">
                     <div class="slide-content flex py-3">
                         <div
@@ -12,13 +12,13 @@
                                 dummy text of the printing</p>
                         </div>
                         <div class="w-1/2 hidden lg:block">
-                            <app-hero-inner-carousel></app-hero-inner-carousel>
+                            <!-- <app-hero-inner-carousel></app-hero-inner-carousel> -->
                         </div>
                     </div>
                 </div>
                 <!-- <div class="slide-content-bottom bg-white w-full lg:hidden rounded-b-xl absolute bottom-0"></div>                 -->
                 <div class="slide-content-bottom bg-white w-full lg:hidden rounded-b-xl absolute bottom-[-76px]">
-                    <app-hero-inner-carousel></app-hero-inner-carousel>
+                    <!-- <app-hero-inner-carousel></app-hero-inner-carousel> -->
                 </div>
             </div>
         </div>

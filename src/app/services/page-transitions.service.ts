@@ -8,6 +8,7 @@ export class PageTransitionsService {
   constructor() { }
 
   HideLoad() {
+    // return;
     var tl_transitOut = gsap.timeline();
 
     // var tl_transitOut = gsap.timeline({
@@ -33,7 +34,9 @@ export class PageTransitionsService {
     tl_transitOut.from("#page-content", { duration: 1.5, autoAlpha: 0, y: 80, ease: Expo.easeOut, clearProps: "all" }, 0.8);
     tl_transitOut.set("#page-transition", { duration: 1, autoAlpha: 0, ease: Expo.easeInOut }, 1);
     // console.log(tl_transitOut);
-
+    setTimeout(() => {
+      window.scrollTo({ top: 0 });
+    }, 600);
   }
 
   showPageTransition(callback: () => void) {

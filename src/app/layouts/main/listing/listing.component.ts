@@ -26,7 +26,7 @@ export class ListingComponent {
     // private headerComponent: HeaderComponent
   ) {
     this.pageTransitionsService.HideLoad();
-    this.headerService.useStickyHeader();
+    this.headerService.useStickyHeader(true);
 
     this.metaTagsService.updateMetaTags({
       title: "Page | FOM",

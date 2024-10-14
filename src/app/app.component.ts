@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
     // const xxx: any = document.querySelector("#content-wrap");
     // xxx.style.transform = "translate(0px, -80px)";
     // tl_transitIn.to("#content-wrap", { y: -80, autoAlpha: 0, clearProps: "all" }, 0);
-    this.initSmothScroll();
+    // this.initSmothScroll();
     // 
     // this.handleMobilePages();
     this.registerTranslations();
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
     if (!this.isMobile) {
       this.resizeService.initializeResizeEvent();
       this.scrollService.initializeScrollEvent();
-      this.scrollToTopOnRoute();
+      // this.scrollToTopOnRoute();
     }
 
     if (!this.isMobile) {
@@ -75,29 +75,29 @@ export class AppComponent implements OnInit {
   //   }
   // }
 
-  scrollToTopOnRoute() {
-    const routerSubscription = this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        if (typeof window !== 'undefined') {
-          window.scrollTo({ top: 0 });
-        }
-      }
-    });
-  }
+  // scrollToTopOnRoute() {
+  //   // const routerSubscription = this.router.events.subscribe((event) => {
+  //   //   if (event instanceof NavigationEnd) {
+  //   //     if (typeof window !== 'undefined') {
+  //   //       window.scrollTo({ top: 0 });
+  //   //     }
+  //   //   }
+  //   // });
+  // }
 
-  initSmothScroll() {
-    const scrollContainer: any = document.querySelector("#scroll-container");
-    if (!scrollContainer) return;
-    Scrollbar.init(scrollContainer, {
-      damping: 0.06,
-      renderByPixels: true,
-      continuousScrolling: true,
-      alwaysShowTracks: true
-    });
-  }
+  // initSmothScroll() {
+  //   const scrollContainer: any = document.querySelector("#scroll-container");
+  //   if (!scrollContainer) return;
+  //   Scrollbar.init(scrollContainer, {
+  //     damping: 0.06,
+  //     renderByPixels: true,
+  //     continuousScrolling: true,
+  //     alwaysShowTracks: true
+  //   });
+  // }
 
   ngOnInit() {
-    // this.pageTransitionsService.initializePageTransition();
+    this.pageTransitionsService.initializePageTransition();
 
     if (!this.isMobile) {
       this.translationService.setHtmlDirection(this.translationService.getSelectedLanguage());

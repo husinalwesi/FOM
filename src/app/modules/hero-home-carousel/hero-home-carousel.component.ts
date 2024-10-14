@@ -4,6 +4,7 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
 import { ResizeService } from 'src/app/services/resize.service';
 import { SwiperOptions } from 'swiper/types';
+import { SharedService } from 'src/app/services/shared.service';
 
 interface CustomSwiperOptions extends SwiperOptions {
   carouselEffect?: {
@@ -23,6 +24,8 @@ export class HeroHomeCarouselComponent {
   sliders: any = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3];
   swiper: any = null;
 
+  constructor(    private SharedService: SharedService){}
+  
   ngOnInit(): void {
     setTimeout(() => {
       const swiperOptions: CustomSwiperOptions = {
@@ -112,5 +115,8 @@ export class HeroHomeCarouselComponent {
     };
   }
 
+  navigateTo(route: string) {
+    this.SharedService.navigateTo(route);
+  }
 
 }

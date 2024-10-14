@@ -16,7 +16,7 @@ export class ContactComponent {
     private metaTagsService: MetaTagsService
   ) {
     this.pageTransitionsService.HideLoad();
-    this.headerService.useStickyHeader(false);
+    this.headerService.useStickyHeader(true);
 
     this.metaTagsService.updateMetaTags({
       title: "Home Page | FOM",

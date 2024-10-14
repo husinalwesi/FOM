@@ -17,7 +17,7 @@ export class ServiceDetailsComponent {
     private metaTagsService: MetaTagsService
   ) {
     this.pageTransitionsService.HideLoad();
-    // this.headerService.useStickyHeader();
+    this.headerService.useStickyHeader(false);
 
     this.metaTagsService.updateMetaTags({
       title: "Page | FOM",
