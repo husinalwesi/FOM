@@ -7,3 +7,7 @@
         stroke: #802d3d !important;
     }
 }
+
+::ng-deep .service-swiper-container .swiper-wrapper{
+    // overflow: hidden;
+}
