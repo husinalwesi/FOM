@@ -1,0 +1,12 @@
+# BEGIN Angular Routes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Don't rewrite requests for existing files or directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rewrite everything else to index.html to handle Angular routes
+    RewriteRule ^ /index.html [L]
+</IfModule>
+# END Angular Routes
