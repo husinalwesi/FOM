@@ -23,7 +23,7 @@ export class ImageSourcePipe implements PipeTransform {
     } else if (imageFile === 'loadingImage') {
       return 'assets/images/default-img.gif'
     } else if (imageFile === 'errorImage') {
-      return 'assets/images/error-default.jpeg'
+      return 'assets/images/error-default.webp'
     } else {
       return imageFile ? environment.baseURL + CMS_END_POINTS.GET_IMAGE_BY_FILE + "?id=" + imageFile : 'assets/images/default-img.webp';
     }

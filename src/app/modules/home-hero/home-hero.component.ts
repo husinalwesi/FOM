@@ -35,7 +35,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -70,7 +70,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -105,7 +105,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -140,7 +140,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -175,7 +175,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -210,7 +210,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -245,7 +245,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -280,7 +280,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -315,7 +315,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
@@ -350,7 +350,7 @@ export class HomeHeroComponent {
   //         subTitle: 'Subtitle',
   //         svg: 'assets/svgs/clothes.svg',
   //         video: null,
-  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.jpeg"
+  //         img: "https://lirp.cdn-website.com/28cd0bb4/dms3rep/multi/opt/traditional+american+wedding-1920w.webp"
   //       },
   //       {
   //         title: "sub cate 2",
