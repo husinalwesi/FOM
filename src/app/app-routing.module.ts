@@ -16,6 +16,9 @@ const routes: Routes = [
 
       { path: 'contact', loadChildren: () => import('./layouts/main/contact/contact.module').then((m) => m.ContactModule) },
 
+      { path: 'signin', loadChildren: () => import('./layouts/main/signin/signin.module').then((m) => m.SigninModule) },
+      { path: 'signup', loadChildren: () => import('./layouts/main/signup/signup.module').then((m) => m.SignupModule) },
+
       { path: 'template', loadChildren: () => import('./layouts/main/template/template.module').then((m) => m.TemplateModule) },
     ]
   },

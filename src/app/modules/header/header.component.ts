@@ -4,6 +4,7 @@ import { throttle } from 'lodash';
 import { RouteLocalizationPipe } from 'src/app/pipes/route-localization.pipe';
 import { HeaderService } from 'src/app/services/header.service';
 import { PageTransitionsService } from 'src/app/services/page-transitions.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -23,7 +24,8 @@ export class HeaderComponent {
     private RouteLocalizationPipe: RouteLocalizationPipe,
     private ngZone: NgZone,
     // private cdk: ChangeDetectorRef,
-    private headerService: HeaderService
+    private headerService: HeaderService,
+    private sharedService: SharedService
   ) {
     this.updateScroll = throttle(this.updateScroll.bind(this), 200); // Throttle to run every 100ms
   }
@@ -57,6 +59,10 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', ['$event']) updateScroll(event: Event) {
     this.updateHeader();
+  }
+
+  navigateTo(route: string) {
+    this.sharedService.navigateTo(route);
   }
 
   navigate() {
