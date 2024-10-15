@@ -177,7 +177,7 @@ export const locale = {
       SAVE_S: 'Save',
       NEXT: 'Next',
       EDIT: 'Edit',
-      RECOMMENDED: 'Recommended size is 256×256px, must be in .webp or .png',
+      RECOMMENDED: 'Recommended size is 256×256px, must be in .webp or .webp',
       ACCOUNT: 'Account Type',
       AGREE: 'I agree with Fahes’s Terms and Conditions',
       AGREE_WOQOD: 'I agree with WOQOD Terms and Conditions',

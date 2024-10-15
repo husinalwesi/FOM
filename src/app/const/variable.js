@@ -84,17 +84,17 @@
 //   "equipments": [
 //     {
 //       "title": "Skis and poles",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/ski-and-poles.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/ski-and-poles.webp",
 //       "id": "eq01"
 //     },
 //     {
 //       "title": "Regular snowboard",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/regular-snowboard.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/regular-snowboard.webp",
 //       "id": "eq02"
 //     },
 //     {
 //       "title": "Goofy snowboard",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/goofy-snowboard.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/goofy-snowboard.webp",
 //       "id": "eq03"
 //     }
 //   ],
@@ -102,7 +102,7 @@
 //     {
 //       "id": "gr01",
 //       "title": "Long jacket",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/long-jacket.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/long-jacket.webp",
 //       "size": {
 //         "adult": [
 //           {
@@ -211,7 +211,7 @@
 //     {
 //       "id": "gr02",
 //       "title": "Jumpsuit",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/jumpsuit.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/jumpsuit.webp",
 //       "size": {
 //         "child": [
 //           {
@@ -328,7 +328,7 @@
 //     {
 //       "id": "gr03",
 //       "title": "Trousers",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/trousers.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/trousers.webp",
 //       "size": {
 //         "junior": [
 //           {
@@ -534,7 +534,7 @@
 //     {
 //       "id": "gr04",
 //       "title": "Jacket",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/jacket.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/jacket.webp",
 //       "size": {
 //         "adult": [
 //           {
@@ -751,7 +751,7 @@
 //     {
 //       "id": "gr05",
 //       "title": "Boots",
-//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/boot.png",
+//       "image": "https://maf-skidubai-stg.sitefinity.cloud/images/default-source/gear-equipment/boot.webp",
 //       "size": [],
 //       "age_group": [
 //         "4",
