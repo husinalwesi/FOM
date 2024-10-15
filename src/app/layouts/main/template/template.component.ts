@@ -35,9 +35,15 @@ export class TemplateComponent {
     { name: "img", stroke: "", fill: "" },
     { name: "img-black", stroke: "", fill: "", isColorInverse: true },
     { name: "img-pink", stroke: "", fill: "" },
+    { name: "img-white", stroke: "", fill: "" },
     { name: "password", stroke: "", fill: "#802d3d" },
     { name: "google-color", stroke: "", fill: "" },
     { name: "user", stroke: "#802d3d", fill: "" },
+
+
+    { name: "zoom-in", stroke: "", fill: "#802d3d" },
+    { name: "zoom-out", stroke: "", fill: "#802d3d" },
+
 
   ];
 

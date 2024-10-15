@@ -81,6 +81,7 @@ export class ProviderDetailedComponent {
 
 
 
+  viewImageModalEnabled: boolean = false;
 
   cropModalEnabled: boolean = false;
 

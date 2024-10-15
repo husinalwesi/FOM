@@ -1,4 +1,4 @@
-dialog{
+dialog {
     z-index: 9;
     padding: 0;
     background-color: transparent;
@@ -6,8 +6,17 @@ dialog{
     &[open]:not(.exist-animation) {
         @apply animate-[fadeInUp_0.3s_0.2s_ease_both] backdrop:animate-[fadeInCustom_0.5s_ease_both];
     }
-    &.exist-animation{
+    &.exist-animation {
         @apply animate-[fadeOutDown_0.3s_ease_both] backdrop:animate-[fadeOutCustom_0.5s_ease_both];
+    }
+
+    &.white-bg {
+        &[open]:not(.exist-animation) {
+            @apply animate-[fadeInUp_0.3s_0.2s_ease_both] backdrop:animate-[fadeInCustomWhite_0.5s_ease_both];
+        }
+        &.exist-animation {
+            @apply animate-[fadeOutDown_0.3s_ease_both] backdrop:animate-[fadeOutCustomWhite_0.5s_ease_both];
+        }
     }
 }
 
@@ -22,6 +31,23 @@ dialog{
 @keyframes fadeOutCustom {
     0% {
         @apply bg-[rgba(0,0,0,0.8)];
+    }
+    to {
+        @apply bg-transparent;
+    }
+}
+//
+@keyframes fadeInCustomWhite {
+    0% {
+        @apply bg-transparent;
+    }
+    to {
+        @apply bg-[rgba(255,255,255,0.8)];
+    }
+}
+@keyframes fadeOutCustomWhite {
+    0% {
+        @apply bg-[rgba(255,255,255,0.8)];
     }
     to {
         @apply bg-transparent;

@@ -1,12 +1,12 @@
-<div class="hero-inner-swiper-container relative swiper-container lg:overflow-hidden">
+<div class="hero-inner-swiper-container relative swiper-container overflow-hidden">
     <div class="swiper-wrapper">
         <!-- max-w-[232.5px] -->
         <div class="swiper-slide !flex flex-col items-center" *ngFor="let ethic of carousel;let i = index">
             <!-- icon -->
 
             <div>
-                <app-svg src="assets/svgs/open-buffet.svg" customClass="" class="transition-all" label="title_goas_here"
-                    [stretch]="false" width="32" fill="#ffffff"></app-svg>
+                <app-svg src="assets/svgs/open-buffet.svg" customClass="fill-black lg:fill-white" class="transition-all"
+                    label="title_goas_here" [stretch]="false" width="32"></app-svg>
             </div>
             <p class="font-bold text-black lg:text-white text-xs mt-2.5">title</p>
             <p class="text-black lg:text-white text-xs">subtitle</p>
@@ -18,8 +18,8 @@
     <!-- <div class="swiper-pagination"></div> -->
 
     <!-- Add Navigation -->
-    <div class="swiper-button-next swiper-inner-button-next"></div>
-    <div class="swiper-button-prev swiper-inner-button-prev"></div>
+    <div class="swiper-button-next swiper-inner-button-next" (click)="$event.stopPropagation()"></div>
+    <div class="swiper-button-prev swiper-inner-button-prev" (click)="$event.stopPropagation()"></div>
 
     <!-- If we need scrollbar -->
     <!-- <div class="swiper-scrollbar"></div> -->

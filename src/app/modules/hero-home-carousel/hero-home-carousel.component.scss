@@ -497,11 +497,10 @@ button.swiper-pagination-bullet {
 }
 .swiper-container .swiper-slide {
     @apply rounded-2xl;
-    width: 520px !important;
-    height: 380px;
+    // width: 520px !important;
+    // height: 380px;
     // border-radius: 8px;
     background: #18212b;
-    max-width: calc(100% - 48px);
 }
 .swiper-container .swiper-carousel-animate-opacity {
     height: 100%;
@@ -526,9 +525,9 @@ button.swiper-pagination-bullet {
     // bottom: 0;
     // padding: 88px 16px 24px;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+    // background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
     // border-radius: 0 0 8px 8px;
-    @apply rounded-b-2xl;
+    // @apply rounded-b-2xl;
 }
 // .swiper-container .slide-content h2 {
 //     margin: 0;

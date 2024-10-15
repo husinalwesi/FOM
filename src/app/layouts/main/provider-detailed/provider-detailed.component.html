@@ -5,12 +5,13 @@
                 <div class="bg-white shadow-2xl lg:pt-[100px] pb-5 px-[22px]">
 
                     <div id="circle-img-container" class="relative z-[1] w-[198px] h-[198px] mx-auto">
-                        <img src="assets/images/profile.webp"
+                        <img src="assets/images/profile.webp" (click)="viewImageModalEnabled = true;"
                             class="p-[5px] rounded-full border border-solid border-primary w-full h-full cursor-pointer"
                             alt="FOM" />
                         <button type="button" (click)="enableCropModal()"
-                            class="w-12 h-12 rounded-full bg-black text-white absolute bottom-2.5 right-2.5">
-                            I
+                            class="w-12 h-12 rounded-full bg-primary absolute bottom-2.5 right-2.5">
+                            <app-svg src="assets/svgs/img-white.svg" class="" customClass="mt-[-3px]"
+                                label="title_goas_here" [stretch]="false" width="26"></app-svg>
                         </button>
                     </div>
 
@@ -197,6 +198,11 @@
                                 class="h-[157px] top-0 bottom-0 my-auto max-w-[unset] relative lg:absolute w-full"
                                 [style.left.px]="isMobile ? 0 : -(differenceSize)"
                                 [style.width]="'calc(100% + ' + (isMobile ? 0 : differenceSize) + 'px)'" alt="FOM" />
+
+                            <button
+                                class="bg-primary text-white px-4 py-2 absolute bottom-[25px] mb-4 rounded-lg right-4"
+                                type="button">Edit
+                                Photo</button>
                         </div>
 
                         <div class="w-full mt-2 flex flex-col gap-4">
@@ -686,7 +692,7 @@
     </ng-template>
 </app-modal>
 
-
+<!--  -->
 <app-modal [template]="cropModalTemplate" [isModalEnabled]="cropModalEnabled"
     (closeModalByKeyboard)="cropModalEnabled = false;" modalClasses="inset-0 w-[90%] max-w-[616px]">
     <ng-template #cropModalTemplate>
@@ -735,6 +741,43 @@
                 <!-- <img [src]="croppedImage" /> -->
                 <!--  -->
 
+            </div>
+        </div>
+    </ng-template>
+</app-modal>
+
+<!--  -->
+<app-modal [template]="viewImageModalTemplate" [isModalEnabled]="viewImageModalEnabled"
+    (closeModalByKeyboard)="viewImageModalEnabled = false;"
+    modalClasses="white-bg inset-0 w-full max-w-full h-screen m-0 max-h-screen">
+    <ng-template #viewImageModalTemplate>
+        <div class="h-full">
+
+
+            <button type="button" (click)="viewImageModalEnabled = false;"
+                class="absolute right-4 top-4 my-auto outline-0 z-20">
+                <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                    [stretch]="false" width="42" stroke="#802d3d"></app-svg>
+            </button>
+
+            <div class="modal-body relative h-full bg-cover bg-center flex items-center justify-center">
+                <div class="w-full h-full bg-cover bg-center absolute left-0 top-0 bg-white blur-lg"
+                    style="background-image: url('assets/images/hero/3.webp');">
+                    <div class="w-full h-full bg-white opacity-50 absolute left-0 top-0"></div>
+                </div>
+                <div class="relative z-10 flex flex-col gap-4">
+                    <img src="assets/images/hero/3.webp" draggable="false" alt="" class="max-h-[60vh] h-auto w-auto" />
+                    <div class="flex items-center gap-4 justify-center">
+                        <button type="button">
+                            <app-svg src="assets/svgs/zoom-in.svg" class="" customClass="" label="title_goas_here"
+                                [stretch]="false" width="32" fill="#802d3d"></app-svg>
+                        </button>
+                        <button type="button">
+                            <app-svg src="assets/svgs/zoom-out.svg" class="" customClass="" label="title_goas_here"
+                                [stretch]="false" width="32" fill="#802d3d"></app-svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </ng-template>

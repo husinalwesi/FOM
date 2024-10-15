@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 
 import Swiper from 'swiper';
 import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
@@ -21,10 +21,57 @@ interface CustomSwiperOptions extends SwiperOptions {
   styleUrls: ['./hero-home-carousel.component.scss']
 })
 export class HeroHomeCarouselComponent {
+  // isMobile: boolean = true;
+  isInnerCarouselShown: boolean = false;
+  // isMobileCarouselShown: boolean = false;
+  // isDesktopCarouselShown: boolean = false;
+
+  baseWidth = 520; // original width in design
+  baseHeight = 380; // original height in design
+  designWidth = 1440; // design screen width
+  designHeight = 896; // design screen height
+
+  calculatedWidth: number = 0;
+  calculatedHeight: number = 0;
+
+
+
   sliders: any = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3];
   swiper: any = null;
 
-  constructor(private SharedService: SharedService) { }
+  constructor(
+    private SharedService: SharedService,
+    private resizeService: ResizeService,
+    private cdk: ChangeDetectorRef
+  ) { }
+
+  ngAfterViewInit(): void {
+    this.resizeService.screenWidthChange$.subscribe(data => {
+      this.calculateSize();
+
+      // if (data.isChanged) {
+      //   this.enableInnerCarousel();
+      // }
+
+
+    });
+  }
+
+  calculateSize() {
+    // this.isMobile = this.resizeService.isMobile();
+    // const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    // const widthRatio = screenWidth / this.designWidth;
+    const heightRatio = screenHeight / this.designHeight;
+
+    // this.calculatedWidth = this.baseWidth * widthRatio;
+    this.calculatedHeight = this.baseHeight * heightRatio;
+    // console.log(this.calculatedHeight);
+
+    this.cdk.detectChanges();
+  }
+
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
@@ -39,7 +86,7 @@ export class HeroHomeCarouselComponent {
           slidesPerView: "auto",
           navigation: { nextEl: ".swiper-hero-button-next", prevEl: ".swiper-hero-button-prev" },
           // pagination: { el: ".swiper-hero-pagination" },
-          // autoplay: { delay: 3000 },
+          autoplay: { delay: 3000, pauseOnMouseEnter: true },
         };
         new Swiper('.hero-swiper-container', swiperOptions);
       });
@@ -47,7 +94,8 @@ export class HeroHomeCarouselComponent {
   }
 
   carouselEffectModule() {
-    return function ({ swiper, on, extendParams }: any) {
+    // return function ({ swiper, on, extendParams }: any) {
+    return ({ swiper, on, extendParams }: any) => {
       extendParams({ carouselEffect: { opacityStep: 0.33, scaleStep: 0.2, sideSlides: 2 } });
 
       on('beforeInit', () => {
@@ -114,8 +162,24 @@ export class HeroHomeCarouselComponent {
           });
         }
       });
+
+      on('init', () => {
+        // console.log('done');
+        this.isInnerCarouselShown = true;
+        // this.enableInnerCarousel();
+      });
+
+
     };
   }
+
+  // enableInnerCarousel() {
+  //   if (this.isMobile) {
+  //     if (!this.isMobileCarouselShown) this.isMobileCarouselShown = true;
+  //   } else {
+  //     if (!this.isDesktopCarouselShown) this.isDesktopCarouselShown = true;
+  //   }
+  // }
 
   navigateTo(route: string) {
     this.SharedService.navigateTo(route);

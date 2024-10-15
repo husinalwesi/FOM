@@ -16,17 +16,21 @@ export class HeroInnerCarouselComponent {
       this.swiper = new Swiper('.hero-inner-swiper-container', {
         // modules: [Navigation, Pagination, Scrollbar],
         // modules: [Navigation, Pagination],
-        updateOnWindowResize: true,
+        // updateOnWindowResize: true,
         modules: [Navigation],
         // slidesPerView: 2,
         breakpoints: {
           // when window width is >= 320px
           0: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             // spaceBetween: 20
           },
+          400: {
+            slidesPerView: 3,
+            // spaceBetween: 30
+          },
           // when window width is >= 480px
-          768: {
+          1024: {
             slidesPerView: 2,
             // spaceBetween: 30
           },
