@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SigninRoutingModule } from './signin-routing.module';
 import { SigninComponent } from './signin.component';
+import { SvgModule } from 'src/app/modules/svg/svg.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SigninComponent } from './signin.component';
   ],
   imports: [
     CommonModule,
-    SigninRoutingModule
+    SigninRoutingModule,
+    SvgModule
   ]
 })
 export class SigninModule { }

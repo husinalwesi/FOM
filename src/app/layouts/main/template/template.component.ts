@@ -32,10 +32,13 @@ export class TemplateComponent {
     { name: "close-circle", stroke: "#802d3d", fill: "" },
     { name: "email", stroke: "", fill: "#802d3d" },
     { name: "next-circle", stroke: "", fill: "#802d3d" },
-
     { name: "img", stroke: "", fill: "" },
     { name: "img-black", stroke: "", fill: "", isColorInverse: true },
     { name: "img-pink", stroke: "", fill: "" },
+    { name: "password", stroke: "", fill: "#802d3d" },
+    { name: "google-color", stroke: "", fill: "" },
+    { name: "user", stroke: "#802d3d", fill: "" },
+
   ];
 
   constructor(
