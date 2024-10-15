@@ -5,6 +5,8 @@ import { ProviderDetailedRoutingModule } from './provider-detailed-routing.modul
 import { ProviderDetailedComponent } from './provider-detailed.component';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
 import { ModalModule } from 'src/app/modules/modal/modal.module';
+import { ImageCropperComponent } from 'ngx-image-cropper';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +17,10 @@ import { ModalModule } from 'src/app/modules/modal/modal.module';
     CommonModule,
     ProviderDetailedRoutingModule,
     SvgModule,
-    ModalModule
+    ModalModule,
+    ImageCropperComponent,
+
+    FormsModule
   ]
 })
 export class ProviderDetailedModule { }

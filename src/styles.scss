@@ -6,6 +6,14 @@
 //     --primary-color: #00904A;
 // }
 
+:root {
+    // --cropper-outline-color: rgba(255, 255, 255, 0.3);
+    // --cropper-overlay-color: rgba(255, 255, 255);
+
+    --cropper-outline-color: rgba(255, 255, 255, 0.6);
+    // --cropper-overlay-color: green;
+}
+
 @import "assets/css/fonts.scss";
 @import "animate.css/animate.min.css";
 // .fade-in-visible #line-middle {

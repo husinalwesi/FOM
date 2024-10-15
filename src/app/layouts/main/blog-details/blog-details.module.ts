@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BlogListingRoutingModule } from './blog-listing-routing.module';
-import { BlogListingComponent } from './blog-listing.component';
+import { BlogDetailsRoutingModule } from './blog-details-routing.module';
+import { BlogDetailsComponent } from './blog-details.component';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
 
 
 @NgModule({
   declarations: [
-    BlogListingComponent
+    BlogDetailsComponent
   ],
   imports: [
     CommonModule,
-    BlogListingRoutingModule,
+    BlogDetailsRoutingModule,
     SvgModule
   ]
 })
-export class BlogListingModule { }
+export class BlogDetailsModule { }

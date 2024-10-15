@@ -8,6 +8,8 @@ const routes: Routes = [
       { path: '', loadChildren: () => import('./layouts/main/home-page/home-page.module').then((m) => m.HomePageModule) },
       { path: 'blogs', loadChildren: () => import('./layouts/main/blog-listing/blog-listing.module').then((m) => m.BlogListingModule) },
 
+      { path: 'blog-details', loadChildren: () => import('./layouts/main/blog-details/blog-details.module').then((m) => m.BlogDetailsModule) },
+
       { path: 'listing', loadChildren: () => import('./layouts/main/listing/listing.module').then((m) => m.ListingModule) },
 
       { path: 'provider-details', loadChildren: () => import('./layouts/main/provider-detailed/provider-detailed.module').then((m) => m.ProviderDetailedModule) },
