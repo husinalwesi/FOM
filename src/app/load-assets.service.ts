@@ -25,7 +25,7 @@ export class LoadAssetsService {
   private isCssAlreadyAdded(url: string): boolean {
     const existingLinks: any = this.document.querySelectorAll('link[rel="stylesheet"]');
     for (const link of existingLinks) {
-      if (link.href === url) return true;
+      if (link.href.indexOf(url) !== -1) return true;
     }
     return false;
   }
