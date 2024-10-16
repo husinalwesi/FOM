@@ -5,6 +5,7 @@ import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/
 import { ResizeService } from 'src/app/services/resize.service';
 import { SwiperOptions } from 'swiper/types';
 import { SharedService } from 'src/app/services/shared.service';
+import { LoadAssetsService } from 'src/app/load-assets.service';
 
 interface CustomSwiperOptions extends SwiperOptions {
   carouselEffect?: {
@@ -42,8 +43,11 @@ export class HeroHomeCarouselComponent {
   constructor(
     private SharedService: SharedService,
     private resizeService: ResizeService,
-    private cdk: ChangeDetectorRef
-  ) { }
+    private cdk: ChangeDetectorRef,
+    private loadAssetsService: LoadAssetsService
+  ) {
+    this.loadAssetsService.loadCss('assets/css/swiper-bundle.min.css', 'carousel-default');
+  }
 
   ngAfterViewInit(): void {
     this.resizeService.screenWidthChange$.subscribe(data => {

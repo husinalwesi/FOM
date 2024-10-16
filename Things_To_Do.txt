@@ -1,3 +1,8 @@
+            "styles": [
+              "src/styles.scss",
+              "node_modules/swiper/swiper-bundle.min.css"
+            ],
+
 - Handle catch error on main page api to redirect to 404
 order the pages in breadcrumb
 

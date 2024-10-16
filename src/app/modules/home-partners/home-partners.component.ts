@@ -43,6 +43,7 @@ export class HomePartnersComponent {
     private TranslationService: TranslationService,
     private resizeService: ResizeService,
   ) {
+    this.loadAssetsService.loadCss('assets/css/swiper-bundle.min.css', 'carousel-default');
     // this.updateCarouselOptions(window.innerWidth);
     // this.loadAssetsService.loadCss('assets/css/carousel.css', 'carousel-default');
   }

@@ -29,6 +29,7 @@ export class CarouselServiceDetailsComponent {
     private resizeService: ResizeService,
     private SharedService: SharedService
   ) {
+    this.loadAssetsService.loadCss('assets/css/swiper-bundle.min.css', 'carousel-default');
     // this.updateCarouselOptions(window.innerWidth);
     // this.loadAssetsService.loadCss('assets/css/carousel.css', 'carousel-default');
   }
