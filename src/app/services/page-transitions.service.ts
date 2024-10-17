@@ -9,6 +9,7 @@ export class PageTransitionsService {
   constructor() { }
 
   HideLoad() {
+    return;
     if (typeof window !== 'undefined') {
       // return;
       var tl_transitOut = gsap.timeline();
@@ -43,6 +44,9 @@ export class PageTransitionsService {
   }
 
   showPageTransition(callback: () => void) {
+    callback();
+    return;
+    // 
     if (typeof window !== 'undefined') {
       var tl_transitIn = gsap.timeline({
         defaults: { duration: 1, ease: 'expo.inOut' },
@@ -65,6 +69,7 @@ export class PageTransitionsService {
   }
 
   initializePageTransition() {
+    return;
     if (typeof window !== 'undefined') {
       var tl_transitIn = gsap.timeline();
       tl_transitIn.to("#content-wrap", { y: -80, clearProps: "all" });
