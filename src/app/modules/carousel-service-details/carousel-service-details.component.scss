@@ -4,9 +4,13 @@
 }
 .swiper-slide-next {
     @apply scale-90 translate-x-[-63%] relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-30 after:z-10 after:rounded-xl;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+        skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
-.swiper-slide-prev{
-    @apply scale-90 translate-x-[68%] relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-30 after:z-10 after:rounded-xl;    
+.swiper-slide-prev {
+    @apply scale-90 translate-x-[68%] relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:opacity-30 after:z-10 after:rounded-xl;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+        skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 .swiper-slide-active {
     @apply z-10;
@@ -17,9 +21,9 @@
 .swiper-service-button-next {
     right: 45px;
 }
-.inner-items{
+.inner-items {
     @apply transition-all opacity-0;
 }
-.swiper-slide-active .inner-items{
+.swiper-slide-active .inner-items {
     @apply transition-all opacity-100;
 }

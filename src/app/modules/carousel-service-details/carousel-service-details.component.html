@@ -6,13 +6,19 @@
 
                 <div class="z-[1] w-full h-[519px] rounded-b-xl flex flex-col px-4 py-5 justify-end"
                     style="    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));">
-                    <p class="text-white font-bold inner-items">Wedding Planner</p>
-                    <p class="text-white text-xs mt-1 leading-[14px] inner-items">test test test test test<br />test test test test.
-                    </p>
+
+                    <div class="group">
+                        <p class="text-white font-bold inner-items transition-all group-hover:underline cursor-pointer"
+                            (click)="navigateTo('listing')">Wedding Planner</p>
+                        <p
+                            class="text-white text-xs mt-1 leading-[14px] inner-items transition-all group-hover:underline">
+                            test test test test test<br />test test test test.
+                        </p>
+                    </div>
 
                     <div class="mt-[22px] inner-items">
-                        <button type="button" class="flex gap-3 items-center" (click)="navigateTo('listing')">
-                            <span class="text-white font-normal">Explore</span>
+                        <button type="button" class="flex gap-3 items-center group" (click)="navigateTo('listing')">
+                            <span class="text-white font-normal transition-all group-hover:underline">Explore</span>
                             <span>
                                 <app-svg src="assets/svgs/next-circle.svg" class="" customClass="mt-[-3px]"
                                     label="title_goas_here" [stretch]="false" width="16" fill="#ffffff"></app-svg>

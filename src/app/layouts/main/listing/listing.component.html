@@ -13,8 +13,8 @@
         </div>
     </div>
 </div>
-<div class="section flex flex-col pt-[21px] mb-3">
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+<div class="section relative flex flex-col pt-[21px] mb-3">
+    <!-- <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
 
 
         <div class="flex flex-col lg:flex-row gap-[38px]">
@@ -40,9 +40,6 @@
 
         <div class="flex flex-col lg:flex-row items-center gap-[22px]">
 
-            <!-- w 92
-            h 26 -->
-
             <button type="button"
                 class="text-white bg-primary hover:text-primary hover:bg-white transition-all focus:ring-4 focus:outline-none focus:ring-blue-300  font-normal rounded-lg text-sm px-4 py-2 text-center">Submit</button>
 
@@ -53,26 +50,7 @@
                 <span class="font-light">More Filter</span>
             </button>
         </div>
-
-        <!-- <p>Search By Price</p>
-        Low to High
-
-        <p>Search By name</p>
-        e.g. Farhet omry
-
-        
-
-        
-
-
-
-
-        <app-svg src="assets/svgs/arrow.svg" class="mt-[-3px]" customClass="" label="title_goas_here" [stretch]="false"
-            width="12" fill="#802d3d"></app-svg>
- -->
-
-
-    </div>
+    </div> -->
     <div class="flex flex-col gap-4 mt-[17px] mb-4">
         <div class="w-full h-[140px] pb-2 px-4 rounded-xl bg-center bg-cover relative group overflow-hidden"
             style="background-image: url('assets/images/listing-1.webp');">
@@ -136,6 +114,105 @@
                     class="w-auto translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
                     <!-- w 51
                 h 66 -->
+                    <img src="assets/images/listing-item-logo.webp" class="w-auto h-[66px] ml-auto" alt="listing" />
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-[140px] pb-2 px-4 rounded-xl bg-center bg-cover relative group overflow-hidden"
+            style="background-image: url('assets/images/listing-2.webp');">
+            <div
+                class="absolute left-0 top-0 w-full h-full bg-black opacity-50 rounded-xl group-hover:opacity-70 transition-all">
+            </div>
+            <div class="relative z-10 flex gap-4 items-end h-full">
+                <div class="flex-1 translate-y-[44px] group-hover:translate-y-0 transition-all">
+                    <p class="text-white font-normal text-xl">Husin Alwesi DJ</p>
+                    <p class="text-white">is simply dummy text of the</p>
+                    <div class="flex gap-1.5 items-center mb-1.5 opacity-0 group-hover:opacity-100 transition-all">
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#ffffff"></app-svg>
+                    </div>
+                    <button type="button" (click)="goToDetails()"
+                        class="text-white text-sm opacity-0 group-hover:opacity-100 transition-all">Read More</button>
+                </div>
+
+                <div
+                    class="w-auto translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                    <!-- w 51
+            h 66 -->
+                    <img src="assets/images/listing-item-logo.webp" class="w-auto h-[66px] ml-auto" alt="listing" />
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-[140px] pb-2 px-4 rounded-xl bg-center bg-cover relative group overflow-hidden"
+            style="background-image: url('assets/images/listing-2.webp');">
+            <div
+                class="absolute left-0 top-0 w-full h-full bg-black opacity-50 rounded-xl group-hover:opacity-70 transition-all">
+            </div>
+            <div class="relative z-10 flex gap-4 items-end h-full">
+                <div class="flex-1 translate-y-[44px] group-hover:translate-y-0 transition-all">
+                    <p class="text-white font-normal text-xl">Husin Alwesi DJ</p>
+                    <p class="text-white">is simply dummy text of the</p>
+                    <div class="flex gap-1.5 items-center mb-1.5 opacity-0 group-hover:opacity-100 transition-all">
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#ffffff"></app-svg>
+                    </div>
+                    <button type="button" (click)="goToDetails()"
+                        class="text-white text-sm opacity-0 group-hover:opacity-100 transition-all">Read More</button>
+                </div>
+
+                <div
+                    class="w-auto translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                    <!-- w 51
+        h 66 -->
+                    <img src="assets/images/listing-item-logo.webp" class="w-auto h-[66px] ml-auto" alt="listing" />
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-[140px] pb-2 px-4 rounded-xl bg-center bg-cover relative group overflow-hidden"
+            style="background-image: url('assets/images/listing-2.webp');">
+            <div
+                class="absolute left-0 top-0 w-full h-full bg-black opacity-50 rounded-xl group-hover:opacity-70 transition-all">
+            </div>
+            <div class="relative z-10 flex gap-4 items-end h-full">
+                <div class="flex-1 translate-y-[44px] group-hover:translate-y-0 transition-all">
+                    <p class="text-white font-normal text-xl">Husin Alwesi DJ</p>
+                    <p class="text-white">is simply dummy text of the</p>
+                    <div class="flex gap-1.5 items-center mb-1.5 opacity-0 group-hover:opacity-100 transition-all">
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
+                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
+                            [stretch]="false" height="13" width="14" fill="#ffffff"></app-svg>
+                    </div>
+                    <button type="button" (click)="goToDetails()"
+                        class="text-white text-sm opacity-0 group-hover:opacity-100 transition-all">Read More</button>
+                </div>
+
+                <div
+                    class="w-auto translate-x-20 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
+                    <!-- w 51
+    h 66 -->
                     <img src="assets/images/listing-item-logo.webp" class="w-auto h-[66px] ml-auto" alt="listing" />
                 </div>
             </div>
@@ -261,4 +338,41 @@
         </div>
 
     </div>
+</div>
+<!-- border-t border-l border-r border-solid border-primary -->
+<div class="section !box-border mx-auto w-full fixed left-0 right-0 z-20 bottom-0 bg-primary flex rounded-t-2xl !px-0"
+    style="box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);">
+    <div
+        class="w-full lg:w-1/4 relative after:content-['......'] after:text-white after:absolute after:bottom-0 after:my-auto after:w-[0.5px] after:rotate-90 after:text-[40px] after:-top-10 after:right-7">
+        <button type="button" class="flex gap-4 items-center w-full rounded-tl-2xl justify-center py-5 h-full">
+            <span class="text-white font-normal">Search by price</span>
+            <app-svg src="assets/svgs/next-circle-bold.svg" class="" customClass="mt-[-3px] rotate-90"
+                label="title_goas_here" [stretch]="false" width="19" fill="#ffffff"></app-svg>
+        </button>
+    </div>
+
+    <div
+        class="w-full lg:w-1/4 relative after:content-['......'] after:text-white after:absolute after:bottom-0 after:my-auto after:w-[0.5px] after:rotate-90 after:text-[40px] after:-top-10 after:right-7">
+        <button type="button" class="flex gap-4 items-center w-full justify-center py-5 h-full">
+            <span class="text-white font-normal">Search by name</span>
+            <app-svg src="assets/svgs/next-circle-bold.svg" class="" customClass="mt-[-3px] rotate-90"
+                label="title_goas_here" [stretch]="false" width="19" fill="#ffffff"></app-svg>
+        </button>
+    </div>
+
+    <div class="w-full lg:w-1/4 relative">
+        <button type="button" class="flex gap-2 items-center w-full justify-center py-5 h-full">
+            <span class="text-white font-normal">Search by rate</span>
+            <app-svg src="assets/svgs/next-circle-bold.svg" class="" customClass="mt-[-3px] rotate-90"
+                label="title_goas_here" [stretch]="false" width="16" fill="#ffffff"></app-svg>
+        </button>
+    </div>
+
+    <div class="w-full lg:w-1/4 relative">
+        <button type="button"
+            class="flex items-center w-full rounded-tr-2xl justify-center py-5 text-primary bg-white font-medium text-lg h-full">
+            Submit
+        </button>
+    </div>
+
 </div>

@@ -31,7 +31,6 @@ export class TemplateComponent {
     { name: "x", stroke: "", fill: "#802d3d" },
     { name: "close-circle", stroke: "#802d3d", fill: "" },
     { name: "email", stroke: "", fill: "#802d3d" },
-    { name: "next-circle", stroke: "", fill: "#802d3d" },
     { name: "img", stroke: "", fill: "" },
     { name: "img-black", stroke: "", fill: "", isColorInverse: true },
     { name: "img-pink", stroke: "", fill: "" },
@@ -39,11 +38,11 @@ export class TemplateComponent {
     { name: "password", stroke: "", fill: "#802d3d" },
     { name: "google-color", stroke: "", fill: "" },
     { name: "user", stroke: "#802d3d", fill: "" },
-
-
     { name: "zoom-in", stroke: "", fill: "#802d3d" },
     { name: "zoom-out", stroke: "", fill: "#802d3d" },
 
+    { name: "next-circle", stroke: "", fill: "#802d3d" },
+    { name: "next-circle-bold", stroke: "", fill: "#802d3d" },
 
   ];
 

@@ -59,3 +59,17 @@
 //     min-height: 300px;
 //     position: relative;
 // }
+
+// image-cropper {
+//     max-height: 500px;
+// }
+
+// .cropper-wrapper {
+//     min-height: 500px;
+//     position: relative;
+// }
+::ng-deep .ngx-ic-source-image {
+    @apply mx-auto;
+    max-height: 400px !important;
+    // important:max-h-[500px]
+}

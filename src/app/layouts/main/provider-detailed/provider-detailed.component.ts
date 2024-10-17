@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { HeaderService } from 'src/app/services/header.service';
 import { MetaTagsService } from 'src/app/services/meta-tags.service';
 import { PageTransitionsService } from 'src/app/services/page-transitions.service';
@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/services/shared.service';
 import { ImageCropperComponent, ImageCroppedEvent, LoadedImage, ImageTransform } from 'ngx-image-cropper';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
+import { MIME } from 'src/app/const/mime';
 
 @Component({
   selector: 'app-provider-detailed',
@@ -17,6 +18,12 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   // imports: [ImageCropperComponent]
 })
 export class ProviderDetailedComponent {
+  accept: any = ["jpg", "png"];
+  acceptTemp: any = {
+    data: [],
+    str: ''
+  };
+  maximumFileUpload: number = 20;
   // https://stackblitz.com/edit/image-cropper?file=src%2Fapp.component.html
   scale = 1;
   transform: ImageTransform = {
@@ -33,8 +40,22 @@ export class ProviderDetailedComponent {
     this.fileUploader.nativeElement.click();
   }
 
-  fileChangeEvent(event: Event): void {
-    this.imageChangedEvent = event;
+  fileChangeEvent(event: any): void {
+    if (!event.target.files || !event.target.files[0] || event.target.files[0].length == 0) return;
+    let temp_file_size_mb = ~~(event.target.files[0].size / 1024 / 1024);
+    if (temp_file_size_mb > this.maximumFileUpload) {
+      alert(`Maximum upload file size: ${this.maximumFileUpload} MB.`);
+      return;
+    }
+    // 
+    let file = event.target.files[0];
+    let fileType = file.type;
+    // this.fileName = file.name;
+    if (this.acceptTemp.data.includes(fileType)) {
+      this.imageChangedEvent = event;
+    } else {
+      alert(`sorry, this file type is not allowed to be uploaded.`);
+    }
   }
   imageCropped(event: any) {
     // ImageCroppedEvent
@@ -42,7 +63,7 @@ export class ProviderDetailedComponent {
     // event.blob can be used to upload the cropped image
   }
   imageLoaded(image: LoadedImage) {
-    console.log('imageLoaded');
+    // console.log('imageLoaded');
     this.cropModalEnabled = true;
     // show cropper
   }
@@ -96,7 +117,10 @@ export class ProviderDetailedComponent {
   writePermission: boolean = true;
   // posts: any = [];
   posts: any = [1, 2];
-  differenceSize: number = 0;
+  cover: any = {
+    w: 0,
+    l: 0
+  };
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -120,7 +144,7 @@ export class ProviderDetailedComponent {
 
   ngAfterViewInit(): void {
     this.resizeService.screenWidthChange$.subscribe(data => {
-      this.calculateSize();
+      // this.calculateSize();
     });
   }
 
@@ -129,21 +153,45 @@ export class ProviderDetailedComponent {
       const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
       this.isMobile = screenWidth < 768;
 
+      if (this.isMobile) return;
+
       const imgContainer: any = typeof window !== 'undefined' ? document.querySelector("#img-container") : null;
 
       const circleImgContainer: any = typeof window !== 'undefined' ? document.querySelector("#circle-img-container") : null;
       const circleImgContainerImage: any = typeof window !== 'undefined' ? document.querySelector("#circle-img-container img") : null;
 
+      const profileContent: any = typeof window !== 'undefined' ? document.querySelector("#profile-content") : null;
+
       if (!imgContainer || !circleImgContainer || !circleImgContainerImage) return;
       // 
       const halfImgCircle = circleImgContainerImage.offsetWidth / 4;
-      this.differenceSize = (imgContainer.offsetLeft - (circleImgContainer.offsetLeft + circleImgContainerImage.offsetWidth)) + halfImgCircle;
 
+      let left = profileContent.offsetLeft - (circleImgContainer.offsetLeft + circleImgContainer.offsetWidth) + halfImgCircle;
+      let width = left + profileContent.offsetWidth;
+
+      this.cover = {
+        w: width,
+        l: -left
+      };
+      console.log(this.cover);
       this.cdk.detectChanges();
     }
   }
 
   ngOnInit(): void {
+    this.getAcceptedFormats();
+  }
+
+  getAcceptedFormats() {
+    let temp = [];
+    for (let index = 0; index < this.accept.length; index++) {
+      if (this.accept[index] === 'pdf') temp.push(MIME.file.pdf);
+      else if (this.accept[index] === 'word') temp.push(MIME.file.word);//
+      else if (this.accept[index] === 'jpg') temp.push(MIME.image.jpg);//
+      else if (this.accept[index] === 'png') temp.push(MIME.image.png);
+    }
+    this.acceptTemp.data = temp.flat();
+    this.acceptTemp.str = this.acceptTemp.data.join(', ');
   }
 
   navigateTo(route: string) {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { LoadAssetsService } from 'src/app/load-assets.service';
+// import { LoadAssetsService } from 'src/app/load-assets.service';
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 @Component({
   selector: 'app-hero-inner-carousel',
@@ -13,9 +13,9 @@ export class HeroInnerCarouselComponent {
   carousel: any = [1, 2, 3, 4];
 
   constructor(
-    private loadAssetsService: LoadAssetsService
+    // private loadAssetsService: LoadAssetsService
   ) {
-    this.loadAssetsService.loadCss('assets/css/swiper-bundle.min.css', 'carousel-default');
+    // this.loadAssetsService.loadCss('assets/css/swiper-bundle.min.css', 'carousel-default');
   }
 
   ngOnInit(): void {

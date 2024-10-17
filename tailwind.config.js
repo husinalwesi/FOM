@@ -6,6 +6,9 @@ module.exports = {
   mode: 'jit',//development mode
   theme: {
     extend: {
+      textOrientation: {
+        upright: 'text-orientation-upright',
+      },
       colors: {
         'primary': '#802d3d',
         'secondary': '#e0bdba',
@@ -60,4 +63,26 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-orientation-upright': {
+          'text-orientation': 'upright',
+        },
+        '.text-orientation-sideways': {
+          'text-orientation': 'sideways',
+        },
+      });
+    },
+    function ({ addVariant }) {
+      addVariant('important', ({ container }) => {
+        container.walkRules(rule => {
+          rule.selector = `.\\!${rule.selector.slice(1)}`;
+          rule.walkDecls(decl => {
+            decl.important = true;
+          });
+        });
+      });
+    },
+  ],
 }
