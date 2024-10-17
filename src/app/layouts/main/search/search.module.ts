@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
+import { SvgModule } from 'src/app/modules/svg/svg.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SearchComponent } from './search.component';
   ],
   imports: [
     CommonModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    SvgModule
   ]
 })
 export class SearchModule { }

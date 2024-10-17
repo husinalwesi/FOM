@@ -13,7 +13,7 @@ import { PageTransitionsService } from 'src/app/services/page-transitions.servic
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-
+  list: any = [1, 2, 3, 4, 5, 6];
   constructor(
     private pageTransitionsService: PageTransitionsService,
     private headerService: HeaderService,
@@ -26,7 +26,7 @@ export class SearchComponent {
     // private headerComponent: HeaderComponent
   ) {
     this.pageTransitionsService.HideLoad();
-    this.headerService.useStickyHeader(true);
+    this.headerService.useStickyHeader(false);
 
     this.metaTagsService.updateMetaTags({
       title: "Page | FOM",
