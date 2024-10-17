@@ -18,6 +18,18 @@ import { MIME } from 'src/app/const/mime';
   // imports: [ImageCropperComponent]
 })
 export class ProviderDetailedComponent {
+  itemSelected: number = 1;
+  list: any = [
+    { title: 'Home', key: 'home', svg: 'verify' },
+    { title: 'Manage your profile info', key: 'profile_info', svg: 'verify' },
+    { title: 'Password and security', key: 'password_security', svg: 'verify' },
+    { title: 'Personal details', key: 'personal_details', svg: 'verify' },
+    { title: 'Notifications', key: 'notifications', svg: 'verify' },
+    { title: 'Statistics', key: 'statistics', svg: 'verify' },
+    { title: 'Upgrade your account', key: 'upgrade_account', svg: 'verify' },
+    { title: 'Sign out', key: 'sign_out', svg: 'verify' },
+  ];
+  settingPage: boolean = true;
   accept: any = ["jpg", "png"];
   acceptTemp: any = {
     data: [],
@@ -116,7 +128,7 @@ export class ProviderDetailedComponent {
   isReview: boolean = false;
   writePermission: boolean = true;
   // posts: any = [];
-  posts: any = [1, 2];
+  posts: any = [1, 2, 1, 2, 1];
   cover: any = {
     w: 0,
     l: 0

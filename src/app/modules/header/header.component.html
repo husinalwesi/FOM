@@ -41,12 +41,12 @@
                     <ul
                         class="hidden lg:flex flex-col p-4 lg:p-0 mt-4 lg:flex-row lg:mt-0 items-center gap-4 whitespace-nowrap">
                         <li class="button-wraper" data-element-scale="1.1">
-                            <a href="#" class="block py-2 px-3 lg:p-0 text-white button-wraper-inner"
-                                aria-current="page">
+                            <button type="button" (click)="navigateTo('search')"
+                                class="block py-2 px-3 lg:p-0 text-white button-wraper-inner" aria-current="page">
                                 <app-svg src="assets/svgs/search.svg" customClass="" label="title_goas_here"
                                     [stretch]="false" width="14" stroke="#ffffff"></app-svg>
 
-                            </a>
+                            </button>
                         </li>
                         <li class="button-wraper" data-element-scale="1.1">
                             <a href="#" class="block py-2 px-3 lg:p-0 text-white button-wraper-inner">Language

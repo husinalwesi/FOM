@@ -44,6 +44,8 @@ export class TemplateComponent {
     { name: "next-circle", stroke: "", fill: "#802d3d" },
     { name: "next-circle-bold", stroke: "", fill: "#802d3d" },
 
+    { name: "eye", stroke: "", fill: "#802d3d" },
+    { name: "crust", stroke: "", fill: "#802d3d" },
   ];
 
   constructor(

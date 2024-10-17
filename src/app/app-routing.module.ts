@@ -12,6 +12,8 @@ const routes: Routes = [
 
       { path: 'listing', loadChildren: () => import('./layouts/main/listing/listing.module').then((m) => m.ListingModule) },
 
+      { path: 'search', loadChildren: () => import('./layouts/main/search/search.module').then((m) => m.SearchModule) },
+
       { path: 'provider-details', loadChildren: () => import('./layouts/main/provider-detailed/provider-detailed.module').then((m) => m.ProviderDetailedModule) },
 
       { path: 'service-details', loadChildren: () => import('./layouts/main/service-details/service-details.module').then((m) => m.ServiceDetailsModule) },

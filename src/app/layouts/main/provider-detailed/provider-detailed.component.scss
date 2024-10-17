@@ -73,3 +73,15 @@
     max-height: 400px !important;
     // important:max-h-[500px]
 }
+.active {
+    @apply border-primary border-opacity-100;
+    & span {
+        @apply font-medium text-primary;
+    }
+}
+.list-pages li:last-child {
+    @apply mt-auto;
+    & span {
+        @apply font-medium;
+    }
+}
