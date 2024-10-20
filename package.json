@@ -47,7 +47,8 @@
     "copy-files": "node copy-files.js",
     "post:build:robots:ssr:prod": "cp robots.txt dist/package/dist/fom-website/browser/robots.txt",
     "post:build:webConfig:ssr:prod": "cp src/webConfig/ssr/web.config dist/package/web.config",
-    "build:prod:ssr:iis:new": "npm run build:ssr && npm run copy-files && npm run post:build:webConfig:ssr:prod && npm run post:build:robots:ssr:prod && npm run post:build:gzip"
+    "build:prod:ssr:iis:new": "npm run build:ssr && npm run copy-files && npm run post:build:webConfig:ssr:prod && npm run post:build:robots:ssr:prod && npm run post:build:gzip",
+    "build:ssr:netlify": "npm run build:ssr:prod && npm run post:build:robots:ssr:prod && npm run post:build:gzip"
   },
   "private": true,
   "dependencies": {
