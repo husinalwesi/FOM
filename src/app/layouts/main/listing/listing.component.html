@@ -340,10 +340,10 @@
     </div>
 </div>
 <!-- border-t border-l border-r border-solid border-primary -->
-<div class="section !box-border mx-auto w-full fixed left-0 right-0 z-20 bottom-0 bg-primary flex rounded-t-2xl !px-0"
+<div class="section !box-border fixed left-0 right-0 z-20 bottom-0 bg-primary flex rounded-t-2xl !px-0 w-[calc(100%-32px)] mx-auto lg:w-full"
     style="box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);">
     <div
-        class="w-full lg:w-1/4 relative after:content-['......'] after:text-white after:absolute after:bottom-0 after:my-auto after:w-[0.5px] after:rotate-90 after:text-[40px] after:-top-10 after:right-7">
+        class="hidden lg:block w-full lg:w-1/4 relative after:content-['......'] after:text-white after:absolute after:bottom-0 after:my-auto after:w-[0.5px] after:rotate-90 after:text-[40px] after:-top-10 after:right-7">
         <button type="button" class="flex gap-4 items-center w-full rounded-tl-2xl justify-center py-5 h-full">
             <span class="text-white font-normal">Search by price</span>
             <app-svg src="assets/svgs/next-circle-bold.svg" class="" customClass="mt-[-3px] rotate-90"
@@ -352,7 +352,7 @@
     </div>
 
     <div
-        class="w-full lg:w-1/4 relative after:content-['......'] after:text-white after:absolute after:bottom-0 after:my-auto after:w-[0.5px] after:rotate-90 after:text-[40px] after:-top-10 after:right-7">
+        class="hidden lg:block w-full lg:w-1/4 relative after:content-['......'] after:text-white after:absolute after:bottom-0 after:my-auto after:w-[0.5px] after:rotate-90 after:text-[40px] after:-top-10 after:right-7">
         <button type="button" class="flex gap-4 items-center w-full justify-center py-5 h-full">
             <span class="text-white font-normal">Search by name</span>
             <app-svg src="assets/svgs/next-circle-bold.svg" class="" customClass="mt-[-3px] rotate-90"
@@ -360,7 +360,7 @@
         </button>
     </div>
 
-    <div class="w-full lg:w-1/4 relative">
+    <div class="hidden lg:block w-full lg:w-1/4 relative">
         <button type="button" class="flex gap-2 items-center w-full justify-center py-5 h-full">
             <span class="text-white font-normal">Search by rate</span>
             <app-svg src="assets/svgs/next-circle-bold.svg" class="" customClass="mt-[-3px] rotate-90"
@@ -368,10 +368,17 @@
         </button>
     </div>
 
-    <div class="w-full lg:w-1/4 relative">
+    <div class="hidden lg:block w-full lg:w-1/4 relative">
         <button type="button"
             class="flex items-center w-full rounded-tr-2xl justify-center py-5 text-primary bg-white font-medium text-lg h-full">
             Submit
+        </button>
+    </div>
+
+    <div class="lg:hidden w-full lg:w-1/4 relative">
+        <button type="button"
+            class="flex items-center w-full rounded-t-2xl justify-center py-5 text-primary bg-white font-medium text-lg h-full">
+            Filter
         </button>
     </div>
 
