@@ -14,8 +14,9 @@
             <div class="striped-background bg-dark"></div>
             <div class="relative z-10 section flex flex-col lg:flex-row gap-10 py-[127px] w-full box-border">
 
-                <div class="w-[484px]">
-                    <app-carousel-service-details #carouselServiceDetailsComponent (changeSlide)="activeService = $event"></app-carousel-service-details>
+                <div class="max-w-[484px] w-full">
+                    <app-carousel-service-details #carouselServiceDetailsComponent
+                        (changeSlide)="activeService = $event"></app-carousel-service-details>
                 </div>
                 <div class="flex-1 flex flex-col">
                     <h1 class="text-secondary font-bold text-[28px]">Wedding planner</h1>
@@ -34,7 +35,7 @@
                         only five centuries, but also the leap into electronic typesetting.</p>
                     <div class="my-auto">
                         <div class="bg-white rounded-full">
-                            <ul class="flex flex-wrap gap-2 py-[19px] px-7">
+                            <ul class="hidden lg:flex flex-wrap gap-2 py-[19px] px-7">
                                 <li *ngFor="let item of services; let i = index"
                                     class="flex flex-col items-center px-7 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:m-auto after:w-[0.5px] after:h-[42px] after:bg-black after:last:hidden"
                                     [class.active]="i === activeService" (click)="setSlide(i)">
@@ -49,13 +50,46 @@
                                     </button>
                                 </li>
                             </ul>
+
+                            <div
+                                class="lg:hidden service-details-items-swiper-container relative swiper-container overflow-hidden rounded-xl">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" *ngFor="let item of services;let i = index">
+
+                                        <div class="flex flex-col items-center px-7 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:m-auto after:w-[0.5px] after:h-[42px] after:bg-black after:last:hidden"
+                                            [class.active]="i === activeService" (click)="setSlide(i)">
+                                            <button type="button" class="flex flex-col items-center">
+                                                <div class="h-[43px] flex items-end">
+                                                    <app-svg src="assets/svgs/clothes.svg" customClass=""
+                                                        class="block transition-all" label="title_goas_here"
+                                                        [stretch]="false" width="32" stroke="#625e5c"
+                                                        fill="#625e5c"></app-svg>
+                                                </div>
+                                                <p class="font-bold text-black text-xs mt-2">title</p>
+                                                <p class="text-black text-xs">subtitle</p>
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <!-- Add Navigation -->
+                                <div class="swiper-button-next swiper-service-details-items-button-next"></div>
+                                <div class="swiper-button-prev swiper-service-details-items-button-prev"></div>
+                                <div class="swiper-pagination swiper-service-details-items-pagination"></div>
+
+                            </div>
+
                         </div>
                     </div>
                     <div class="mt-auto">
                         <button type="button" class="flex gap-3 items-center group" (click)="navigateTo('listing')">
-                            <span class="text-white transition-all group-hover:text-red-600 font-normal">Explore Explore Explore</span>
+                            <span class="text-white transition-all group-hover:text-red-600 font-normal">Explore Explore
+                                Explore</span>
                             <span>
-                                <app-svg src="assets/svgs/next-circle.svg" class="" customClass="mt-[-3px] transition-all group-hover:!fill-red-600"
+                                <app-svg src="assets/svgs/next-circle.svg" class=""
+                                    customClass="mt-[-3px] transition-all group-hover:!fill-red-600"
                                     label="title_goas_here" [stretch]="false" width="16" fill="#ffffff"></app-svg>
 
                             </span>
