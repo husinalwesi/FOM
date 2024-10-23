@@ -57,9 +57,10 @@ export class ServiceDetailsComponent {
     this.initializeCarousel();
   }
 
-  setSlide(slideNo: number) {
+  serviceChangeSlide(slideNo: number) {
     this.activeService = slideNo;
     this.carouselServiceDetailsComponent.setSlide(slideNo);
+    this.swiper.slideTo(slideNo);
   }
 
 
@@ -68,9 +69,9 @@ export class ServiceDetailsComponent {
       // this.calculateRatio();
       // https://swiperjs.com/swiper-api
       this.swiper = new Swiper('.service-details-items-swiper-container', {
-        freeMode: {
-          enabled: true
-        },
+        // freeMode: {
+        //   enabled: true
+        // },
         // effect: 'fade',
         // fadeEffect: {
         //   crossFade: true
@@ -83,7 +84,7 @@ export class ServiceDetailsComponent {
         // modules: [Navigation, Pagination],
         updateOnWindowResize: true,
         modules: [Navigation, Autoplay, Pagination],
-        slidesPerView: 4,
+        // slidesPerView: 4,
         // width: 204,
         spaceBetween: 16,
         navigation: {
@@ -105,6 +106,20 @@ export class ServiceDetailsComponent {
 
         // }
       });
+
+      this.swiper.on('slideChange', (data: any) => {
+        // console.log(data);
+        // console.log(data.activeIndex);
+        // this.carousel.length
+        // console.log(data.activeIndex, this.carousel.length, data.activeIndex > this.carousel.length ? 0 : data.activeIndex);
+        // console.log(data.activeIndex);
+        // console.log(data.activeIndex);
+
+        this.serviceChangeSlide(data.activeIndex);
+        // this.changeSlide.emit(data.activeIndex >= this.carousel.length - 1 ? 0 : data.activeIndex);
+        // console.log('slide changed', data.activeIndex);
+      });
+
     }
   }
 

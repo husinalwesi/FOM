@@ -4,7 +4,7 @@ import { TranslationService } from 'src/app/i18n/translation.service';
 // import { OwlOptions } from 'ngx-owl-carousel-o';
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Autoplay, EffectCards } from 'swiper/modules';
 import { ResizeService } from 'src/app/services/resize.service';
 import { SharedService } from 'src/app/services/shared.service';
 
@@ -19,7 +19,7 @@ export class CarouselServiceDetailsComponent {
   width: number = 0;
   isMobile: boolean = false;
   swiper: any = null;
-  carousel: any = [1, 2, 1, 2, 1, 2, 1, 2];
+  carousel: any = [1, 2, 1, 2, 1, 2, 1, 2, 1];
   // @ViewChild('carouselParentEle') carouselParentEle!: any;
   // customOptions: OwlOptions | undefined;
 
@@ -34,12 +34,32 @@ export class CarouselServiceDetailsComponent {
     // this.loadAssetsService.loadCss('assets/css/carousel.css', 'carousel-default');
   }
 
-
-  ngOnInit(): void {
+  init() {
     if (typeof window !== 'undefined') {
       // this.calculateRatio();
       // https://swiperjs.com/swiper-api
       this.swiper = new Swiper('.service-swiper-container', {
+        effect: "cards",
+        grabCursor: true,
+        initialSlide: 0,
+        speed: 500,
+        loop: false,
+        // rotate: true,
+        mousewheel: {
+          invert: false,
+        },
+        // effect: "cards",
+        cardsEffect: {
+          rotate: true,
+        },
+        // grabCursor: true,
+        // initialSlide: 2,
+        // speed: 500,
+        // loop: true,
+        // // rotate: true,
+        // mousewheel: {
+        //   invert: false,
+        // },
 
         // effect: 'fade',
         // fadeEffect: {
@@ -48,18 +68,18 @@ export class CarouselServiceDetailsComponent {
         //   slideShadows: false,
         // },
 
-
+        modules: [EffectCards],
         // modules: [Navigation, Pagination, Scrollbar],
         // modules: [Navigation, Pagination],
-        updateOnWindowResize: true,
-        modules: [Navigation, Autoplay],
-        slidesPerView: 1.32,
+        // updateOnWindowResize: true,
+        // modules: [Navigation, Autoplay],
+        // slidesPerView: 1.32,
         // width: 204,
         // spaceBetween: 12,
-        navigation: {
-          nextEl: '.swiper-service-button-next',
-          prevEl: '.swiper-service-button-prev',
-        },
+        // navigation: {
+        //   nextEl: '.swiper-service-button-next',
+        //   prevEl: '.swiper-service-button-prev',
+        // },
         // autoplay: {
         //   delay: 3000
         // },
@@ -78,7 +98,11 @@ export class CarouselServiceDetailsComponent {
 
       this.swiper.on('slideChange', (data: any) => {
         // console.log(data);
-        this.changeSlide.emit(data.activeIndex);
+        // console.log(data.activeIndex);
+        // this.carousel.length
+        // console.log(data.activeIndex, this.carousel.length, data.activeIndex > this.carousel.length ? 0 : data.activeIndex);
+
+        this.changeSlide.emit(data.activeIndex >= this.carousel.length - 1 ? 0 : data.activeIndex);
         // console.log('slide changed', data.activeIndex);
       });
 
@@ -88,6 +112,12 @@ export class CarouselServiceDetailsComponent {
       //   this.calculateRatio();
       // });
     }
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.init();
+    });
   }
 
 

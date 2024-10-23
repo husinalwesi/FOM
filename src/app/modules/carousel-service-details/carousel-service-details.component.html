@@ -1,39 +1,36 @@
-<div class="service-swiper-container relative swiper-container overflow-hidden rounded-xl">
+<div class="service-swiper-container relative swiper-container w-full max-w-[430px] h-[519px]">
+    <!-- overflow-hidden rounded-xl -->
     <div class="swiper-wrapper">
-        <div class="swiper-slide" *ngFor="let item of carousel;let i = index">
-            <div class="bg-cover bg-center rounded-xl"
-                [ngStyle]="{ 'background-image': 'url(assets/images/services/' + item + '.webp)'}">
+        <div class="swiper-slide rounded-xl" *ngFor="let item of carousel;let i = index">
+            <img [src]="'assets/images/services/' + item + '.webp'" alt="" />
+            <div class="absolute z-[1] w-full h-full rounded-b-xl flex flex-col px-4 py-5 justify-end"
+                style="    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));">
 
-                <div class="z-[1] w-full h-[519px] rounded-b-xl flex flex-col px-4 py-5 justify-end"
-                    style="    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));">
-
-                    <div class="group">
-                        <p class="text-white font-bold inner-items transition-all group-hover:underline cursor-pointer"
-                            (click)="navigateTo('listing')">Wedding Planner</p>
-                        <p
-                            class="text-white text-xs mt-1 leading-[14px] inner-items transition-all group-hover:underline">
-                            test test test test test<br />test test test test.
-                        </p>
-                    </div>
-
-                    <div class="mt-[22px] inner-items">
-                        <button type="button" class="flex gap-3 items-center group" (click)="navigateTo('listing')">
-                            <span class="text-white font-normal transition-all group-hover:underline">Explore</span>
-                            <span>
-                                <app-svg src="assets/svgs/next-circle.svg" class="" customClass="mt-[-3px]"
-                                    label="title_goas_here" [stretch]="false" width="16" fill="#ffffff"></app-svg>
-
-                            </span>
-                        </button>
-                    </div>
-
+                <div class="group">
+                    <p class="text-white font-bold inner-items transition-all group-hover:underline cursor-pointer"
+                        (click)="navigateTo('listing')">Wedding Planner</p>
+                    <p class="text-white text-xs mt-1 leading-[14px] inner-items transition-all group-hover:underline">
+                        test test test test test<br />test test test test.
+                    </p>
                 </div>
+
+                <div class="mt-[22px] inner-items">
+                    <button type="button" class="flex gap-3 items-center group" (click)="navigateTo('listing')">
+                        <span class="text-white font-normal transition-all group-hover:underline">Explore</span>
+                        <span>
+                            <app-svg src="assets/svgs/next-circle.svg" class="" customClass="mt-[-3px]"
+                                label="title_goas_here" [stretch]="false" width="16" fill="#ffffff"></app-svg>
+
+                        </span>
+                    </button>
+                </div>
+
             </div>
         </div>
+
     </div>
 
     <!-- Add Navigation -->
-    <div class="swiper-button-next swiper-service-button-next"></div>
-    <div class="swiper-button-prev swiper-service-button-prev"></div>
-
+    <!-- <div class="swiper-button-next swiper-service-button-next"></div>
+    <div class="swiper-button-prev swiper-service-button-prev"></div> -->
 </div>
