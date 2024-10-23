@@ -94,6 +94,7 @@ export class HomePartnersComponent {
         pagination: {
           el: '.swiper-partner-pagination',
           clickable: true,
+          dynamicBullets: true
         },
         loop: false,
         // scrollbar: {

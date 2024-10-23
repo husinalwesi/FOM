@@ -41,14 +41,14 @@
                             <ul class="hidden lg:flex flex-wrap gap-2 py-[19px] px-7">
                                 <li *ngFor="let item of services; let i = index"
                                     class="flex flex-col items-center px-7 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:m-auto after:w-[0.5px] after:h-[42px] after:bg-black after:last:hidden"
-                                    [class.active]="i === activeService" (click)="serviceChangeSlide(i)">
+                                    [class.active]="i === activeService" (click)="serviceChangeSlideBTN(i)">
                                     <button type="button" class="flex flex-col items-center">
                                         <div class="h-[43px] flex items-end">
                                             <app-svg src="assets/svgs/clothes.svg" customClass=""
                                                 class="block transition-all" label="title_goas_here" [stretch]="false"
                                                 width="32" stroke="#625e5c" fill="#625e5c"></app-svg>
                                         </div>
-                                        <p class="font-bold text-black text-xs mt-2">title</p>
+                                        <p class="font-bold text-black text-xs mt-2">title {{i}}</p>
                                         <p class="text-black text-xs">subtitle</p>
                                     </button>
                                 </li>
@@ -60,7 +60,7 @@
                                     <div class="swiper-slide" *ngFor="let item of services;let i = index">
 
                                         <div class="flex flex-col items-center px-7 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:m-auto after:w-[0.5px] after:h-[42px] after:bg-black after:last:hidden"
-                                            [class.active]="i === activeService" (click)="serviceChangeSlide(i)">
+                                            [class.active]="i === activeService" (click)="serviceChangeSlideBTN(i)">
                                             <button type="button" class="flex flex-col items-center">
                                                 <div class="h-[43px] flex items-end">
                                                     <app-svg src="assets/svgs/clothes.svg" customClass=""
@@ -68,7 +68,7 @@
                                                         [stretch]="false" width="32" stroke="#625e5c"
                                                         fill="#625e5c"></app-svg>
                                                 </div>
-                                                <p class="font-bold text-black text-xs mt-2">title</p>
+                                                <p class="font-bold text-black text-xs mt-2">title {{i}}</p>
                                                 <p class="text-black text-xs">subtitle</p>
                                             </button>
                                         </div>
@@ -78,9 +78,9 @@
                                 </div>
 
                                 <!-- Add Navigation -->
-                                <div class="swiper-button-next swiper-service-details-items-button-next"></div>
-                                <div class="swiper-button-prev swiper-service-details-items-button-prev"></div>
-                                <div class="swiper-pagination swiper-service-details-items-pagination"></div>
+                                <!-- <div class="swiper-button-next swiper-service-details-items-button-next"></div>
+                                <div class="swiper-button-prev swiper-service-details-items-button-prev"></div> -->
+                                <!-- <div class="swiper-pagination swiper-service-details-items-pagination"></div> -->
 
                             </div>
 

@@ -4,7 +4,7 @@ import { ResizeService } from 'src/app/services/resize.service';
 import { RouteLocalizationPipe } from "src/app/pipes/route-localization.pipe";
 import { PageTransitionsService } from 'src/app/services/page-transitions.service';
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { SharedService } from 'src/app/services/shared.service';
 import { ViewChild, ViewEncapsulation, HostListener, Output, EventEmitter } from '@angular/core';
 import { LoadAssetsService } from 'src/app/load-assets.service';
@@ -18,7 +18,7 @@ import { TranslationService } from 'src/app/i18n/translation.service';
 })
 export class HomeBlogsComponent {
   swiper: any = null;
-  news: any = [1, 2, 3];
+  news: any = [1, 2, 3, 1, 2, 3, 1, 2, 3];
   heightNews: number = 0;
   isMobile: boolean = false;
 
@@ -90,6 +90,17 @@ export class HomeBlogsComponent {
       // https://swiperjs.com/swiper-api
       this.swiper = new Swiper('.blogs-swiper-container', {
         centeredSlides: true,
+
+        effect: 'coverflow',
+        coverflowEffect: {
+          // rotate: 0,
+          // scale: 1,
+          // stretch: 0,
+          // depth: 100,
+          // modifier: 1,
+          slideShadows: false
+        },
+        // centeredSlides: true,
         // effect: 'fade',
         // fadeEffect: {
         //   crossFade: true
@@ -101,8 +112,8 @@ export class HomeBlogsComponent {
         // modules: [Navigation, Pagination, Scrollbar],
         // modules: [Navigation, Pagination],
         updateOnWindowResize: true,
-        modules: [Navigation, Autoplay, Pagination],
-        slidesPerView: 1.35,
+        modules: [Navigation, Autoplay, Pagination, EffectCoverflow],
+        slidesPerView: 1.4,
         // width: 204,
         spaceBetween: 0,
         // spaceBetween: 12,
@@ -116,6 +127,7 @@ export class HomeBlogsComponent {
         pagination: {
           el: '.swiper-blogs-pagination',
           clickable: true,
+          dynamicBullets: true
         },
         // loop: true,
         // scrollbar: {
