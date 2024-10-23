@@ -35,28 +35,8 @@
             <div class="mt-11">
                 <ul class="flex flex-col">
                     <li *ngFor="let item of list; let i = index"
-                        class="px-5 lg:px-[73px] flex flex-col lg:flex-row gap-8 border-b border-solid border-opacity-30 border-primary py-8 first:border-t last:border-0 relative">
-                        <span
-                            class="absolute right-0 lg:right-8 top-0 bottom-0 my-auto text-primary opacity-20 text-[130px] flex justify-center items-center min-w-[216px] text-center">
-                            0{{i + 1}}
-                        </span>
-                        <div class="w-32">
-                            <img src="assets/images/hero/1.webp" class="w-32 h-32" alt="">
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex flex-col gap-1 w-full lg:w-[75%]">
-                                <p class="font-medium text-[22px]">Hussein Alwesi</p>
-                                <p class="text-primary text-sm">Wedding Planner</p>
-                                <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem
-                                    Ipsum
-                                    has been the simply dummy text of the printing.</p>
-                                <div class="mt-auto">
-                                    <!-- mt 33px -->
-                                    <button type="button" class="text-primary text-sm">read more</button>
-                                </div>
-                            </div>
-                        </div>
+                        class="border-b border-solid border-opacity-30 border-primary first:border-t last:border-0">
+                        <app-search-item [index]="i" class=""></app-search-item>
                     </li>
                 </ul>
             </div>

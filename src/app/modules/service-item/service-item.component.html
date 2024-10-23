@@ -1,0 +1,10 @@
+<div class="flex flex-col items-center" [class.active]="index === activeIndex">
+    <button type="button" class="flex flex-col items-center" (click)="onClickEvt()">
+        <div class="h-[43px] flex items-end">
+            <app-svg src="assets/svgs/clothes.svg" customClass="" class="block transition-all" label="title_goas_here"
+                [stretch]="false" width="32" stroke="#625e5c" fill="#625e5c"></app-svg>
+        </div>
+        <p class="font-bold text-black text-xs mt-2">title {{index}}</p>
+        <p class="text-black text-xs">subtitle</p>
+    </button>
+</div>

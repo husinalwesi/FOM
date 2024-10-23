@@ -1,0 +1,22 @@
+.pagination-container {
+    @apply flex flex-col lg:flex-row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.pagination {
+    @apply flex items-center lg:absolute lg:left-[50%] lg:-translate-x-1/2;
+    & button {
+        @apply border border-solid border-transparent transition-all rounded-full w-8 h-8;
+    }
+}
+
+.right-text {
+    margin-left: auto;
+    padding-left: 20px;
+}
+.pagination button.active {
+    @apply font-medium text-primary border-primary transition-all mx-2;
+}

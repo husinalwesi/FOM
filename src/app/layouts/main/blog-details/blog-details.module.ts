@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BlogDetailsRoutingModule } from './blog-details-routing.module';
 import { BlogDetailsComponent } from './blog-details.component';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
+import { TagsModule } from "../../../modules/tags/tags.module";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SvgModule } from 'src/app/modules/svg/svg.module';
   imports: [
     CommonModule,
     BlogDetailsRoutingModule,
-    SvgModule
-  ]
+    SvgModule,
+    TagsModule
+]
 })
 export class BlogDetailsModule { }
