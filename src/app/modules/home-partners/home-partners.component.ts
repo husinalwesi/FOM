@@ -54,21 +54,47 @@ export class HomePartnersComponent {
       // this.calculateRatio();
       // https://swiperjs.com/swiper-api
       this.swiper = new Swiper('.partner-swiper-container', {
+        centeredSlides: false,
         // modules: [Navigation, Pagination, Scrollbar],
         // modules: [Navigation, Pagination],
         updateOnWindowResize: true,
-        modules: [Navigation],
-        // slidesPerView: 4,
+        modules: [Navigation, Pagination],
+        slidesPerView: 'auto',
         width: 204,
         spaceBetween: 12,
         navigation: {
           nextEl: '.swiper-partner-button-next',
           prevEl: '.swiper-partner-button-prev',
         },
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true,
+        // breakpoints: {
+        //   // when window width is >= 320px
+        //   0: {
+        //     slidesPerView: 1,
+        //     // spaceBetween: 20
+        //   },
+        //   768: {
+        //     slidesPerView: 2,
+        //     // spaceBetween: 30
+        //   },
+        //   992: {
+        //     slidesPerView: 3,
+        //     // spaceBetween: 30
+        //   },          
+        //   // when window width is >= 480px
+        //   1024: {
+        //     slidesPerView: 4,
+        //     // spaceBetween: 30
+        //   },
+        //   // when window width is >= 640px
+        //   // 640: {
+        //   //   slidesPerView: 4,
+        //   //   spaceBetween: 40
+        //   // }
         // },
+        pagination: {
+          el: '.swiper-partner-pagination',
+          clickable: true,
+        },
         loop: false,
         // scrollbar: {
         //   el: '.swiper-scrollbar',

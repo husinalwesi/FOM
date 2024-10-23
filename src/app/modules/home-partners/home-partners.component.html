@@ -1,8 +1,9 @@
 <section>
     <div class="relative py-8">
         <div class="striped-background bg-primary"></div>
-        <div class="section relative z-10 flex flex-col lg:flex-row gap-4 h-full">
-            <div appIntersectionObserver class="fade-in w-full lg:w-[37%] flex flex-col justify-center relative z-10">
+        <div class="section relative z-10 flex flex-col lg:flex-row gap-4 h-full !px-0 lg:!px-10 min-1440:!px-10">
+            <div appIntersectionObserver
+                class="fade-in w-full lg:w-[37%] flex flex-col justify-center relative z-10 !px-5 lg:!px-0 min-1440:!px-0">
                 <p class=" font-medium text-white max-[339px] text-xl">Our Exclusive Partners</p>
                 <p class="text-white mt-[13px] lg:max-w-[333px]">We present to you a
                     curated selection of our
@@ -16,12 +17,13 @@
                 #carouselParentEle>
 
                 <div class="w-full">
-                    <div class="partner-swiper-container swiper-container lg:overflow-hidden">
+                    <div class="partner-swiper-container swiper-container overflow-hidden max-w-[852px] px-5 lg:px-0">
                         <div class="swiper-wrapper">
                             <!-- max-w-[232.5px] -->
-                            <div class="swiper-slide" *ngFor="let ethic of carousel;let i = index">
+                            <div class="swiper-slide !w-full !max-w-[204px]"
+                                *ngFor="let ethic of carousel;let i = index">
                                 <div
-                                    class="p-[5px] border border-solid border-white rounded-[96px] relative after:absolute after:block after:content-[''] after:right-[11%] after:w-3 after:bottom-[5%] after:h-3 after:bg-white after:rounded-full">
+                                    class="p-[5px] border border-solid border-white rounded-[96px] relative after:absolute after:block after:content-[''] after:right-[11%] after:w-3 after:bottom-[5%] after:h-3 after:bg-white after:rounded-full max-w-[204px]">
                                     <div class="bg-white relative rounded-[96px]">
                                         <img src="assets/images/192-355.webp" class="w-[192px] h-[355px] rounded-[96px]"
                                             alt="FOM" />
@@ -53,6 +55,7 @@
                         <div class="swiper-button-next swiper-partner-button-next"></div>
                         <div class="swiper-button-prev swiper-partner-button-prev"></div>
 
+                        <div class="swiper-pagination swiper-partner-pagination"></div>
                         <!-- If we need scrollbar -->
                         <!-- <div class="swiper-scrollbar"></div> -->
                     </div>

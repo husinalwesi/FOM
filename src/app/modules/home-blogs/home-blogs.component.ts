@@ -38,8 +38,9 @@ export class HomeBlogsComponent {
 
   ngAfterViewInit(): void {
     this.resizeService.screenWidthChange$.subscribe(data => {
-      this.newsRatio();
-      this.cdr.detectChanges();  // This will trigger change detection manually
+      setTimeout(() => {
+        this.newsRatio();
+      });
     });
   }
 
@@ -48,8 +49,12 @@ export class HomeBlogsComponent {
   }
 
   newsRatio() {
+
+    // 276 w
+    // 379 h
+
     const desktopRatio: number = 242 / 286;
-    const mobileRatio: number = 242 / 286;
+    const mobileRatio: number = 276 / 379;
     this.isMobile = this.resizeService.isMobile();
     const detectRatio = this.isMobile ? mobileRatio : desktopRatio;
 
@@ -64,8 +69,11 @@ export class HomeBlogsComponent {
     }
 
     if (!mobileSectionEle) return;
+
     const screenWidth = mobileSectionEle.offsetWidth;
+
     this.heightNews = screenWidth / detectRatio;
+    this.cdr.detectChanges();  // This will trigger change detection manually
   }
 
   navigate() {
@@ -81,7 +89,7 @@ export class HomeBlogsComponent {
       // this.calculateRatio();
       // https://swiperjs.com/swiper-api
       this.swiper = new Swiper('.blogs-swiper-container', {
-
+        centeredSlides: true,
         // effect: 'fade',
         // fadeEffect: {
         //   crossFade: true
@@ -94,9 +102,10 @@ export class HomeBlogsComponent {
         // modules: [Navigation, Pagination],
         updateOnWindowResize: true,
         modules: [Navigation, Autoplay, Pagination],
-        slidesPerView: 1.2,
+        slidesPerView: 1.35,
         // width: 204,
-        spaceBetween: 16,
+        spaceBetween: 0,
+        // spaceBetween: 12,
         navigation: {
           nextEl: '.swiper-blogs-button-next',
           prevEl: '.swiper-blogs-button-prev',

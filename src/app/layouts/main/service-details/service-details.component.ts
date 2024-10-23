@@ -68,7 +68,9 @@ export class ServiceDetailsComponent {
       // this.calculateRatio();
       // https://swiperjs.com/swiper-api
       this.swiper = new Swiper('.service-details-items-swiper-container', {
-
+        freeMode: {
+          enabled: true
+        },
         // effect: 'fade',
         // fadeEffect: {
         //   crossFade: true
