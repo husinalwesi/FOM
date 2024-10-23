@@ -18,6 +18,7 @@ import { MIME } from 'src/app/const/mime';
   // imports: [ImageCropperComponent]
 })
 export class ProviderDetailedComponent {
+  starFill: number = 4;
   itemSelected: number = 1;
   list: any = [
     { title: 'Home', key: 'home', svg: 'verify' },
@@ -29,7 +30,7 @@ export class ProviderDetailedComponent {
     { title: 'Upgrade your account', key: 'upgrade_account', svg: 'verify' },
     { title: 'Sign out', key: 'sign_out', svg: 'verify' },
   ];
-  settingPage: boolean = true;
+  settingPage: boolean = false;
   accept: any = ["jpg", "png"];
   acceptTemp: any = {
     data: [],

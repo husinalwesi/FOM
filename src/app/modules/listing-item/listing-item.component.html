@@ -7,18 +7,11 @@
         <div class="flex-1 translate-y-[44px] group-hover:translate-y-0 transition-all">
             <p class="text-white font-normal text-xl">Husin Alwesi DJ</p>
             <p class="text-white">is simply dummy text of the</p>
-            <div class="flex gap-1.5 items-center mb-1.5 opacity-0 group-hover:opacity-100 transition-all">
-                <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
-                    [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
-                <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
-                    [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
-                <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
-                    [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
-                <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
-                    [stretch]="false" height="13" width="14" fill="#802d3d"></app-svg>
-                <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center" label="title_goas_here"
-                    [stretch]="false" height="13" width="14" fill="#ffffff"></app-svg>
-            </div>
+
+            <app-stars class="block mb-1.5" containerClasses="gap-1.5" [fill]="starFill" size="14" colorFill="#802d3d"
+                colorEmpty="#ffffff" [isClickable]="false" (onUpdate)="starFill = $event"></app-stars>
+
+
             <button type="button" (click)="goToDetails()"
                 class="text-white text-sm opacity-0 group-hover:opacity-100 transition-all">Read More</button>
         </div>

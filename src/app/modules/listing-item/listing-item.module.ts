@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListingItemComponent } from './listing-item.component';
 import { SvgModule } from '../svg/svg.module';
+import { StarsModule } from "../stars/stars.module";
 
 
 
@@ -11,8 +12,9 @@ import { SvgModule } from '../svg/svg.module';
   ],
   imports: [
     CommonModule,
-    SvgModule
-  ],
+    SvgModule,
+    StarsModule
+],
   exports: [ListingItemComponent]
 })
 export class ListingItemModule { }

@@ -7,6 +7,7 @@ import { SvgModule } from 'src/app/modules/svg/svg.module';
 import { ModalModule } from 'src/app/modules/modal/modal.module';
 import { ImageCropperComponent } from 'ngx-image-cropper';
 import { FormsModule } from '@angular/forms';
+import { StarsModule } from 'src/app/modules/stars/stars.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     ModalModule,
     ImageCropperComponent,
 
-    FormsModule
+    FormsModule,
+    StarsModule
   ]
 })
 export class ProviderDetailedModule { }

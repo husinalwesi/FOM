@@ -1,0 +1,6 @@
+<div class="flex items-center stars-container" [ngClass]="containerClasses">
+    <button type="button" *ngFor="let star of stars" [class.pointer-events-none]="!isClickable" (click)="onClick(star)">
+        <app-svg src="assets/svgs/star.svg" class="flex items-center" label="title_goas_here" [stretch]="false"
+            [height]="size" [width]="size" [fill]="fill < star ? colorEmpty : colorFill"></app-svg>
+    </button>
+</div>

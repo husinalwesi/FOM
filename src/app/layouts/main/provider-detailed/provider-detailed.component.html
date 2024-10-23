@@ -203,23 +203,9 @@
                             </div>
                             <div class="flex flex-col gap-1.5">
                                 <div>
-                                    <div class="flex gap-2 items-center">
-                                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center"
-                                            label="title_goas_here" [stretch]="false" height="17" width="18"
-                                            fill="#802d3d"></app-svg>
-                                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center"
-                                            label="title_goas_here" [stretch]="false" height="17" width="18"
-                                            fill="#802d3d"></app-svg>
-                                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center"
-                                            label="title_goas_here" [stretch]="false" height="17" width="18"
-                                            fill="#802d3d"></app-svg>
-                                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center"
-                                            label="title_goas_here" [stretch]="false" height="17" width="18"
-                                            fill="#802d3d"></app-svg>
-                                        <app-svg src="assets/svgs/star.svg" class="h-[13px] flex items-center"
-                                            label="title_goas_here" [stretch]="false" height="17" width="18"
-                                            fill="#d3a19e"></app-svg>
-                                    </div>
+                                    <app-stars containerClasses="gap-2" [fill]="starFill" size="18" colorFill="#802d3d"
+                                        colorEmpty="#d3a19e" [isClickable]="false"
+                                        (onUpdate)="starFill = $event"></app-stars>
                                 </div>
                                 <div>
                                     <p class="font-light text-[19px]">105 reviews</p>
@@ -1134,23 +1120,10 @@
             <div class="modal-body pt-[22px] px-3 pb-3">
                 <section class="">
                     <div>
-                        <div class="flex gap-2.5 items-center justify-center">
-                            <app-svg src="assets/svgs/star.svg" class="h-[22px] flex items-center"
-                                label="title_goas_here" [stretch]="false" height="22" width="22"
-                                fill="#802d3d"></app-svg>
-                            <app-svg src="assets/svgs/star.svg" class="h-[22px] flex items-center"
-                                label="title_goas_here" [stretch]="false" height="22" width="22"
-                                fill="#802d3d"></app-svg>
-                            <app-svg src="assets/svgs/star.svg" class="h-[22px] flex items-center"
-                                label="title_goas_here" [stretch]="false" height="22" width="22"
-                                fill="#802d3d"></app-svg>
-                            <app-svg src="assets/svgs/star.svg" class="h-[22px] flex items-center"
-                                label="title_goas_here" [stretch]="false" height="22" width="22"
-                                fill="#802d3d"></app-svg>
-                            <app-svg src="assets/svgs/star.svg" class="h-[22px] flex items-center"
-                                label="title_goas_here" [stretch]="false" height="22" width="22"
-                                fill="#D3A19E"></app-svg>
-                        </div>
+
+                        <app-stars class="flex justify-center" containerClasses="gap-2.5" [fill]="starFill" size="22"
+                            colorFill="#802d3d" colorEmpty="#d3a19e" [isClickable]="true"
+                            (onUpdate)="starFill = $event"></app-stars>
                     </div>
                     <p class="pt-5 pb-4 text-primary text-center text-xs font-light">Lorem Ipsum is simply dummy?</p>
                     <hr class="border-primary border-[0.5px] w-[406px] opacity-30 mx-auto" />

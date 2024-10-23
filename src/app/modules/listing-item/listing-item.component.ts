@@ -10,7 +10,7 @@ import { PageTransitionsService } from 'src/app/services/page-transitions.servic
   styleUrls: ['./listing-item.component.scss']
 })
 export class ListingItemComponent {
-
+  starFill: number = 4;
   constructor(
     private pageTransitionsService: PageTransitionsService,
     private router: Router,
