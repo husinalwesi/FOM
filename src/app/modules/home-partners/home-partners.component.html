@@ -17,49 +17,7 @@
                 #carouselParentEle>
 
                 <div class="w-full">
-                    <div class="partner-swiper-container swiper-container overflow-hidden max-w-[852px] px-5 lg:px-0">
-                        <div class="swiper-wrapper">
-                            <!-- max-w-[232.5px] -->
-                            <div class="swiper-slide !w-full !max-w-[204px]"
-                                *ngFor="let ethic of carousel;let i = index">
-                                <div
-                                    class="p-[5px] border border-solid border-white rounded-[96px] relative after:absolute after:block after:content-[''] after:right-[11%] after:w-3 after:bottom-[5%] after:h-3 after:bg-white after:rounded-full max-w-[204px]">
-                                    <div class="bg-white relative rounded-[96px]">
-                                        <img src="assets/images/192-355.webp" class="w-[192px] h-[355px] rounded-[96px]"
-                                            alt="FOM" />
-                                        <div
-                                            class="absolute left-0 top-0 w-full h-full flex items-center justify-center after:absolute after:block after:content-[''] after:left-0 after:w-full after:top-0 after:h-full after:bg-white after:z-0 after:opacity-65 after:rounded-[96px]">
-                                            <div class="z-10">
-                                                <img src="assets/svgs/logo.svg" class="w-[140px] h-[40px]"
-                                                    alt="Flowbite Logo" alt="FOM" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div> -->
-                        </div>
-
-                        <!-- Add Pagination -->
-                        <!-- <div class="swiper-pagination"></div> -->
-
-                        <!-- Add Navigation -->
-                        <div class="swiper-button-next swiper-partner-button-next"></div>
-                        <div class="swiper-button-prev swiper-partner-button-prev"></div>
-
-                        <div class="swiper-pagination swiper-partner-pagination"></div>
-                        <!-- If we need scrollbar -->
-                        <!-- <div class="swiper-scrollbar"></div> -->
-                    </div>
-
+                    <app-partner-carousel></app-partner-carousel>
                 </div>
             </div>
         </div>

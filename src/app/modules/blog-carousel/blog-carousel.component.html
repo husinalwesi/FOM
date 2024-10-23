@@ -1,0 +1,13 @@
+<div class="blogs-swiper-container relative swiper-container overflow-hidden pb-8 lg:pb-0">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of news;let i = index">
+            <app-blog-item></app-blog-item>
+        </div>
+    </div>
+
+    <!-- Add Navigation -->
+    <div class="swiper-button-next swiper-blogs-button-next"></div>
+    <div class="swiper-button-prev swiper-blogs-button-prev"></div>
+    <div class="swiper-pagination swiper-blogs-pagination"></div>
+
+</div>

@@ -21,12 +21,12 @@
 // }
 .fade-in {
     // @apply animate-[backInDown_1s_ease];
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    // opacity: 0;
+    // transition: opacity 0.3s ease-in-out;
 }
 
 .fade-in-visible {
-    opacity: 1;
+    // opacity: 1;
     // @apply animate-[zoomIn_1s_ease];
 }
 

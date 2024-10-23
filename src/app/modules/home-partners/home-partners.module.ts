@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePartnersComponent } from './home-partners.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TranslationModule } from 'src/app/i18n/translation.module';
+import { PartnerCarouselModule } from "../partner-carousel/partner-carousel.module";
 
 @NgModule({
   declarations: [
@@ -11,8 +12,9 @@ import { TranslationModule } from 'src/app/i18n/translation.module';
   imports: [
     CommonModule,
     CarouselModule,
-    TranslationModule
-  ],
+    TranslationModule,
+    PartnerCarouselModule,
+],
   exports: [HomePartnersComponent]
 })
 export class HomePartnersModule { }

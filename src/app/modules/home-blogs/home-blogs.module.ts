@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomeBlogsComponent } from './home-blogs.component';
 import { TranslationModule } from 'src/app/i18n/translation.module';
 import { RouterModule } from '@angular/router';
+import { BlogItemModule } from '../blog-item/blog-item.module';
+import { BlogCarouselModule } from "../blog-carousel/blog-carousel.module";
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     TranslationModule,
-    RouterModule
-  ],
+    RouterModule,
+    BlogItemModule,
+    BlogCarouselModule
+],
   exports: [HomeBlogsComponent]
 })
 export class HomeBlogsModule { }

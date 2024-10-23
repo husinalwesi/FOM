@@ -1,0 +1,19 @@
+.swiper-partner-button-prev,
+.swiper-partner-button-next {
+    @apply bg-secondary w-[57px] h-[57px] rounded-full top-[100px] z-0 hidden lg:flex;
+    &::after {
+        @apply text-primary text-[28px];
+    }
+}
+.swiper-partner-pagination {
+    @apply lg:hidden bottom-[-22px];
+    &::ng-deep span {
+        background-color: white !important;
+    }
+}
+.swiper-partner-button-next {
+    @apply -right-5 lg:right-4 justify-end pr-2;
+}
+.swiper-partner-button-prev {
+    @apply -left-5 lg:left-[-29px] justify-start pl-2;
+}

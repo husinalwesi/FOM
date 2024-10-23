@@ -15,16 +15,8 @@
 </div>
 <div class="section flex flex-col lg:flex-row gap-11 pt-8 pb-8">
     <div class="w-full lg:flex-1 flex flex-col lg:flex-row flex-wrap gap-8 items-center order-2 lg:order-1">
-
-        <div *ngFor="let item of blogs" class="w-full lg:w-[calc(33.333333%-22px)] relative z-10">
-            <img class="news-item w-full rounded-[5px]" [style.height.px]="heightNews" src="assets/images/bride.webp"
-                alt="FOM">
-            <p class=" font-medium mt-[10px] text-[#2e2b28]">Nude - Print Mockup Kit</p>
-            <p class=" mt-[-3px] text-[#2e2b28]">related to organizing</p>
-            <button type="button" (click)="navigateTo('blog-details')"
-                class="text-sm font-normal text-primary mt-[9px] block">Read More</button>
-        </div>
-
+        <app-blog-item *ngFor="let item of blogs"
+            class="w-full lg:w-[calc(33.333333%-22px)] relative z-10"></app-blog-item>
     </div>
     <div class="w-full lg:w-[431px] flex flex-col gap-8 order-1 lg:order-2">
         <div>
