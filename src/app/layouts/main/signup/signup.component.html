@@ -10,7 +10,7 @@
                 <div class="striped-background bg-primary"></div>
             </div>
         </div>
-        <div class="bg-cover bg-center h-[calc(100vh-122px)]"
+        <div class="bg-cover bg-center min-h-[calc(100vh-122px)]"
             style="background-image: url('assets/images/bg-login.webp');">
             <div
                 class="w-full max-w-[485px] mx-auto mt-8 px-[25px] py-[38px] rounded-xl relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-white after:opacity-70 after:rounded-2xl">
@@ -18,7 +18,7 @@
                     <p class="text-primary text-[40px] font-black">Sign Up</p>
                     <p class="font-light mt-2">log in to access our premium services</p>
                     <div class="flex flex-col gap-[18px] mt-[28px]">
-                        <div class="flex gap-2">
+                        <div class="flex flex-col lg:flex-row gap-[18px] lg:gap-2">
                             <div class="w-full lg:w-1/2">
                                 <label for="" class="block font-normal mb-1.5 -mt-1.5">First name</label>
                                 <input type="text" class="w-full bg-white rounded-xl px-4 h-[47px] font-light"
@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="flex gap-2">
+                        <div class="flex flex-col lg:flex-row gap-[18px] lg:gap-2">
                             <div class="w-full lg:w-1/2">
                                 <label for="" class="block font-normal mb-1.5 -mt-1.5">Password</label>
                                 <div class="relative">
@@ -75,7 +75,7 @@
                         <div class="flex gap-4">
                             <div class="w-full">
                                 <p class="text-center font-light">Already have an account? <strong><a
-                                            class="font-medium" href="#">Sign In</a></strong>
+                                            class="font-medium" routerLink="/en/signin">Sign In</a></strong>
                                 </p>
                             </div>
                         </div>

@@ -10,7 +10,7 @@
                 <div class="striped-background bg-primary"></div>
             </div>
         </div>
-        <div class="section !max-w-[1000px] w-full">
+        <div class="section !max-w-[1000px] w-full !box-border">
             <div class="flex flex-col gap-1 pt-[72px]">
                 <p class="text-primary font-bold text-[58px]">Search</p>
                 <p class="text-xl mt-4">Use the search page to quickly find everything you need planning</p>
@@ -22,12 +22,12 @@
                         label="title_goas_here" [stretch]="false" width="21" fill="#000000"></app-svg>
                 </div>
             </div>
-            <div class="mt-10 flex gap-4 justify-between">
+            <div class="mt-10 flex flex-col lg:flex-row gap-4 justify-between">
                 <div class="flex flex-col gap-1 flex-1">
                     <p class="text-[26px] font-bold">Search Result for: Wedding</p>
                     <p class="font-light text-sm mt-0.5">Displaying search from: dance, blog, home</p>
                 </div>
-                <div class="w-[160px] text-right">
+                <div class="w-[160px] lg:text-right">
                     <p class="font-light">9 result are found</p>
                 </div>
             </div>
@@ -35,16 +35,16 @@
             <div class="mt-11">
                 <ul class="flex flex-col">
                     <li *ngFor="let item of list; let i = index"
-                        class="px-[73px] flex gap-8 border-b border-solid border-opacity-30 border-primary py-8 first:border-t last:border-0 relative">
+                        class="px-5 lg:px-[73px] flex flex-col lg:flex-row gap-8 border-b border-solid border-opacity-30 border-primary py-8 first:border-t last:border-0 relative">
                         <span
-                            class="absolute right-8 top-0 bottom-0 my-auto text-primary opacity-20 text-[130px] flex justify-center items-center min-w-[216px] text-center">
+                            class="absolute right-0 lg:right-8 top-0 bottom-0 my-auto text-primary opacity-20 text-[130px] flex justify-center items-center min-w-[216px] text-center">
                             0{{i + 1}}
                         </span>
                         <div class="w-32">
                             <img src="assets/images/hero/1.webp" class="w-32 h-32" alt="">
                         </div>
                         <div class="flex-1">
-                            <div class="flex flex-col gap-1 w-[75%]">
+                            <div class="flex flex-col gap-1 w-full lg:w-[75%]">
                                 <p class="font-medium text-[22px]">Hussein Alwesi</p>
                                 <p class="text-primary text-sm">Wedding Planner</p>
                                 <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
