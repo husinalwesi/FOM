@@ -1,9 +1,10 @@
 <footer class="border-t border-solid border-[#0000001f]">
     <div class="section flex flex-row flex-wrap lg:flex-nowrap py-11">
-        <div class="w-fulll lg:w-1/4 mb-4 lg:mb-0">
+        <div class="w-fulll lg:w-1/4 mb-7 lg:mb-0">
             <div class="w-full relative z-10">
                 <a appIntersectionObserver class="fade-in" href="https://www.google.com/">
-                    <img src="assets/svgs/logo.svg" class="button-wraper-inner w-[118px] mx-auto lg:mx-0" alt="FOM" />
+                    <img src="assets/svgs/logo.svg" class="button-wraper-inner w-[188px] lg:w-[118px] mx-auto lg:mx-0"
+                        alt="FOM" />
                 </a>
                 <p appIntersectionObserver class="fade-in text-[#2e2b28] mt-[29px]">
                     We believe that every small
@@ -17,7 +18,7 @@
         </div>
         <div class="w-1/2 lg:w-1/4 flex lg:justify-center">
             <div appIntersectionObserver class="fade-in">
-                <p class=" font-normal  text-[#2e2b28] relative z-10">Farhet Omry</p>
+                <p class=" font-normal text-[#2e2b28] relative z-10">Farhet Omry</p>
                 <ul class="flex flex-col gap-0.5 mt-[12px] relative z-10">
                     <li>
                         <a href="https://www.google.com/" class="text-[#2e2b28]">
@@ -39,7 +40,7 @@
         </div>
         <div class="w-1/2 lg:w-1/4 flex lg:justify-center">
             <div appIntersectionObserver class="fade-in">
-                <p class=" font-normal  text-[#2e2b28] relative z-10">Help and Support</p>
+                <p class=" font-normal text-[#2e2b28] relative z-10">Help and Support</p>
                 <ul class="flex flex-col gap-0.5 mt-[12px] relative z-10">
                     <li>
                         <a href="https://www.google.com/" class="text-[#2e2b28]">
@@ -59,23 +60,29 @@
                 </ul>
             </div>
         </div>
-        <div class="w-fulll lg:w-1/4 flex justify-center">
-            <div class="flex flex-col items-center fade-in relative z-10" appIntersectionObserver>
+        <div class="w-full lg:w-1/4 flex justify-center">
+            <div class="flex flex-col items-center fade-in relative z-10 w-full" appIntersectionObserver>
                 <p class="text-[#2e2b28] hidden lg:flex">Download App</p>
                 <img src="https://seeklogo.com/images/Q/qr-code-logo-27ADB92152-seeklogo.com.png"
                     class="button-wraper-inner h-[92px] mt-[12px] hidden lg:flex" alt="FOM" />
 
-                <p class="text-[#2e2b28] lg:hidden">Farhet Omry app available now on store</p>
-                <button class="bg-primary rounded-xl text-white mx-auto px-4 py-1 lg:hidden" type="button">Donwload
-                    Now!</button>
+                <p class="text-[#2e2b28] text-sm lg:hidden mt-11 w-full text-center mb-1">Farhet Omry app available now
+                    on store</p>
+                <button
+                    class="bg-primary rounded-2xl font-normal text-white mx-auto px-11 py-2.5 flex gap-4 items-center lg:hidden"
+                    type="button">
+                    <span>Donwload Now !</span>
+                    <app-svg src="assets/svgs/download.svg" class="mt-[-3px]" customClass="" label="title_goas_here"
+                        [stretch]="false" width="22" fill="white"></app-svg>
+                </button>
             </div>
         </div>
     </div>
-    <div class="py-[19px] relative">
+    <div class="py-4 lg:py-[19px] relative">
         <div class="striped-background bg-primary"></div>
         <div class="section flex flex-col lg:flex-row justify-between z-10 relative">
             <div appIntersectionObserver
-                class="fade-in flex flex-col lg:flex-row gap-[14px] items-center lg:items-start">
+                class="fade-in flex flex-col lg:flex-row gap-2 lg:gap-[14px] items-center lg:items-start">
                 <div>
                     <p class="text-white">Follow us on social media</p>
                 </div>
@@ -127,7 +134,7 @@
         </div>
     </div>
     <div class="lg:hidden">
-        <p appIntersectionObserver class="fade-in text-primary text-center">©
+        <p appIntersectionObserver class="fade-in text-primary text-center text-[15px] py-4">©
             2024 Farhet Omry. All Rights
             Reserved.</p>
     </div>
