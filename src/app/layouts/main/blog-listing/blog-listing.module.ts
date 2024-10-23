@@ -6,6 +6,7 @@ import { BlogListingComponent } from './blog-listing.component';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
 import { BlogItemModule } from 'src/app/modules/blog-item/blog-item.module';
 import { BlogsSideModule } from 'src/app/modules/blogs-side/blogs-side.module';
+import { PageHeadModule } from "../../../modules/page-head/page-head.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BlogsSideModule } from 'src/app/modules/blogs-side/blogs-side.module';
     BlogListingRoutingModule,
     SvgModule,
     BlogItemModule,
-    BlogsSideModule
-  ]
+    BlogsSideModule,
+    PageHeadModule
+]
 })
 export class BlogListingModule { }

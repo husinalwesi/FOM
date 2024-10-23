@@ -51,7 +51,7 @@ export class ServiceDetailsComponent {
 
   serviceChangeSlideBTN(slideNo: number) {
     this.activeService = slideNo;
-    this.carouselServiceDetailsComponent.setSlide(slideNo);
+    this.carouselServiceDetailsComponent.setSlide(slideNo, true);
   }
 
 

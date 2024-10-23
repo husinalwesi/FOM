@@ -7,6 +7,7 @@ import { SvgModule } from 'src/app/modules/svg/svg.module';
 import { ListingItemModule } from "../../../modules/listing-item/listing-item.module";
 import { PaginationModule } from "../../../modules/pagination/pagination.module";
 import { ListingFilterModule } from "../../../modules/listing-filter/listing-filter.module";
+import { PageHeadModule } from "../../../modules/page-head/page-head.module";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ListingFilterModule } from "../../../modules/listing-filter/listing-fil
     SvgModule,
     ListingItemModule,
     PaginationModule,
-    ListingFilterModule
+    ListingFilterModule,
+    PageHeadModule
 ]
 })
 export class ListingModule { }

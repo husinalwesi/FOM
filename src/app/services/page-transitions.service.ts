@@ -9,6 +9,7 @@ export class PageTransitionsService {
   constructor() { }
 
   HideLoad() {
+    window.scrollTo({ top: 0 });
     return;
     if (typeof window !== 'undefined') {
       // return;
