@@ -1,0 +1,58 @@
+<div class="flex flex-col w-full px-14 py-16 gap-[69px]">
+    <div class="flex gap-6">
+        <p class="flex-1 text-lg font-thin">Lorem Ipsum is simply dummy text of
+            the printing and
+            typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, <strong class="text-primary font-medium">when
+                an unknown
+                printer took a galley
+                of type
+                and scrambled it to make a type specimen book.</strong>
+        </p>
+        <span class="w-[64px]">
+            <app-svg src="assets/svgs/crust.svg" class="" customClass="mt-[-3px]" label="title_goas_here"
+                [stretch]="false" width="64" fill="#802d3d"></app-svg>
+        </span>
+    </div>
+    <div class="flex flex-col gap-[69px]">
+        <button type="button" class="flex justify-between items-center gap-4 w-full">
+            <p class="text-primary font-normal">Personal Info</p>
+            <app-svg src="assets/svgs/arrow.svg" class="mt-[-3px]" customClass="" label="title_goas_here"
+                [stretch]="false" width="16" fill="#802d3d"></app-svg>
+        </button>
+        <div class="flex flex-col lg:flex-row items-center gap-4">
+            <div class="flex flex-col gap-2 w-full lg:w-1/2">
+                <label for="" class="font-normal">First name</label>
+                <input type="text" class="w-full h-[47px] rounded-xl bg-gray-100" />
+            </div>
+            <div class="flex flex-col gap-2 w-full lg:w-1/2">
+                <label for="" class="font-normal">Last name</label>
+                <input type="text" class="w-full h-[47px] rounded-xl bg-gray-100" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-[69px]">
+        <button type="button" class="flex justify-between items-center gap-4 w-full">
+            <p class="text-primary font-normal">Connection Details</p>
+            <app-svg src="assets/svgs/arrow.svg" class="mt-[-3px]" customClass="" label="title_goas_here"
+                [stretch]="false" width="16" fill="#802d3d"></app-svg>
+        </button>
+        <div class="flex flex-col lg:flex-row items-center gap-4">
+            <div class="flex flex-col gap-2 w-full lg:w-1/2">
+                <label for="" class="font-normal">Email address</label>
+                <input type="text" class="w-full h-[47px] rounded-xl bg-gray-100" />
+            </div>
+            <div class="flex flex-col gap-2 w-full lg:w-1/2">
+                <label for="" class="font-normal">Phone Number</label>
+                <input type="text" class="w-full h-[47px] rounded-xl bg-gray-100" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center items-center gap-8">
+        <button type="button" class="text-primary px-2 py-1.5 font-medium">Cancel</button>
+        <button type="button" class="bg-primary text-white px-14 py-1.5 rounded-xl font-normal">Save</button>
+    </div>
+</div>

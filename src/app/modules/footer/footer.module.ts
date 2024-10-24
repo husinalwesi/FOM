@@ -4,6 +4,7 @@ import { FooterComponent } from './footer.component';
 import { SvgModule } from '../svg/svg.module';
 import { RouterModule } from '@angular/router';
 import { TranslationModule } from 'src/app/i18n/translation.module';
+import { SocialIconsModule } from "../social-icons/social-icons.module";
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import { TranslationModule } from 'src/app/i18n/translation.module';
     CommonModule,
     SvgModule,
     RouterModule,
-    TranslationModule
-  ],
+    TranslationModule,
+    SocialIconsModule
+],
   exports: [FooterComponent]
 })
 export class FooterModule { }

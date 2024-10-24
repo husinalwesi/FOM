@@ -1,0 +1,106 @@
+<div id="circle-img-container" class="relative z-[1] w-[198px] h-[198px] mx-auto">
+    <img src="assets/images/profile.webp" (click)="viewImageModalEnabled = true;"
+        class="p-[5px] rounded-full border border-solid border-primary w-full h-full cursor-pointer" alt="FOM" />
+    <button type="button" (click)="enableCropModal()"
+        class="w-12 h-12 rounded-full bg-primary absolute bottom-2.5 right-2.5">
+        <app-svg src="assets/svgs/img-white.svg" class="" customClass="mt-[-3px]" label="title_goas_here"
+            [stretch]="false" width="26"></app-svg>
+    </button>
+</div>
+
+
+
+
+<!--  -->
+<app-modal [template]="cropModalTemplate" [isModalEnabled]="cropModalEnabled"
+    (closeModalByKeyboard)="cropModalEnabled = false;" modalClasses="inset-0 w-[90%] max-w-[616px]">
+    <ng-template #cropModalTemplate>
+        <div class="bg-white rounded-xl">
+            <div class="modal-header px-[21px] flex justify-end py-4 bg-[#ebebeb] rounded-t-xl relative">
+                <p class="w-full text-center font-normal">Crop Image</p>
+                <button type="button" (click)="cropModalEnabled = false;"
+                    class="absolute right-5 top-0 bottom-0 my-auto outline-0">
+                    <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                        [stretch]="false" width="30" stroke="#802d3d"></app-svg>
+                </button>
+            </div>
+            <div class="modal-body py-7">
+                <!--  -->
+                <input #fileUploader type="file" class="hidden" [accept]="acceptTemp.str"
+                    (change)="fileChangeEvent($event)" />
+
+                <!-- [cropperMinHeight]="198" [cropperMinWidth]="198" [resizeToWidth]="198" [resizeToHeight]="198" -->
+
+                <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                    [aspectRatio]="1 / 1" format="webp" [imageQuality]="100" [roundCropper]="true"
+                    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded($event)"
+                    (cropperReady)="cropperReady()" [(transform)]="transform" [alignImage]="'center'"
+                    [hideResizeSquares]="true" (loadImageFailed)="loadImageFailed()"></image-cropper>
+
+
+
+                <div>
+                    <div class="flex items-center justify-between gap-1">
+                        <button type="button" class="w-5 text-3xl" (click)="zoomOut()">-</button>
+
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="3" step="0.1" [(ngModel)]="scale" class="slider"
+                                (input)="rangeInput($event)" />
+                        </div>
+
+
+                        <button type="button" class="w-5 text-3xl" (click)="zoomIn()">+</button>
+                    </div>
+
+                    <hr class="border-primary my-4" />
+
+                    <div class="flex justify-end gap-2 px-4">
+                        <button class="text-primary px-6 py-2" type="button">Cancel</button>
+                        <button class="text-white bg-primary px-6 py-2 rounded-md" type="button">Save</button>
+                    </div>
+                </div>
+
+                <!-- <img [src]="croppedImage" /> -->
+                <!--  -->
+
+            </div>
+        </div>
+    </ng-template>
+</app-modal>
+
+<!--  -->
+<app-modal [template]="viewImageModalTemplate" [isModalEnabled]="viewImageModalEnabled"
+    (closeModalByKeyboard)="viewImageModalEnabled = false;"
+    modalClasses="white-bg inset-0 w-full max-w-full h-screen m-0 max-h-screen">
+    <ng-template #viewImageModalTemplate>
+        <div class="h-full">
+
+
+            <button type="button" (click)="viewImageModalEnabled = false;"
+                class="absolute right-4 top-4 my-auto outline-0 z-20">
+                <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                    [stretch]="false" width="42" stroke="#802d3d"></app-svg>
+            </button>
+
+            <div class="modal-body relative h-full bg-cover bg-center flex items-center justify-center">
+                <div class="w-full h-full bg-cover bg-center absolute left-0 top-0 bg-white blur-lg"
+                    style="background-image: url('assets/images/hero/3.webp');">
+                    <div class="w-full h-full bg-white opacity-50 absolute left-0 top-0"></div>
+                </div>
+                <div class="relative z-10 flex flex-col gap-4">
+                    <img src="assets/images/hero/3.webp" draggable="false" alt="" class="max-h-[60vh] h-auto w-auto" />
+                    <div class="flex items-center gap-4 justify-center">
+                        <button type="button">
+                            <app-svg src="assets/svgs/zoom-in.svg" class="" customClass="" label="title_goas_here"
+                                [stretch]="false" width="32" fill="#802d3d"></app-svg>
+                        </button>
+                        <button type="button">
+                            <app-svg src="assets/svgs/zoom-out.svg" class="" customClass="" label="title_goas_here"
+                                [stretch]="false" width="32" fill="#802d3d"></app-svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

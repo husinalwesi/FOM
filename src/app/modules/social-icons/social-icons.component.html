@@ -1,0 +1,8 @@
+<ul class="flex flex-row" [ngClass]="innerClassess">
+    <li *ngFor="let item of data">
+        <a href="https://www.google.com/" class="rounded-full flex items-center justify-center" [ngClass]="btnClassess">
+            <app-svg [src]="item.svg" class="mt-[-3px]" customClass="" label="title_goas_here" [stretch]="false"
+                [width]="item.size" [height]="item.size" [fill]="item.fill" [stroke]="item.stroke"></app-svg>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,92 @@
+<div class="w-full shadow-2xl bg-white rounded-xl">
+    <div class="w-full flex flex-col gap-4">
+        <div class="py-8 px-4">
+            <p class="bg-[#ebebeb] rounded-xl px-4 py-4 cursor-text text-[#a6a5a5]"
+                (click)="writePostModalEnabled = true;">Start showing your unique
+                services
+                now!
+            </p>
+        </div>
+        <div class="flex items-center bg-[#ebebeb] rounded-b-xl">
+            <button type="button" (click)="writePostModalEnabled = true;isInnerPhotoClicked = true;"
+                class="w-1/2 flex items-center justify-center gap-2 py-4 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[68%] after:bg-black after:opacity-30 outline-0">
+                <span>
+                    <app-svg src="assets/svgs/img.svg" class="" customClass="" label="title_goas_here" [stretch]="false"
+                        width="24"></app-svg>
+                </span>
+                <span>Photo/video</span>
+            </button>
+            <button type="button" (click)="writePostModalEnabled = true;"
+                class="w-1/2 flex items-center justify-center gap-2 py-4 outline-0">
+                <span>
+                    <app-svg src="assets/svgs/map-marker.svg" class="" customClass="" label="title_goas_here"
+                        [stretch]="false" width="24" fill="#802d3d"></app-svg>
+                </span>
+                <span>Check in</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<app-modal [template]="writePostModalTemplate" [isModalEnabled]="writePostModalEnabled"
+    (closeModalByKeyboard)="writePostModalEnabled = false;" modalClasses="inset-0 w-[90%] max-w-[616px]">
+    <ng-template #writePostModalTemplate>
+        <div class="bg-white rounded-xl">
+            <div class="modal-header px-[21px] flex justify-end py-4 bg-[#ebebeb] rounded-t-xl relative">
+                <p class="w-full text-center font-normal">create your caseshow</p>
+                <button type="button" (click)="writePostModalEnabled = false;"
+                    class="absolute right-5 top-0 bottom-0 my-auto outline-0">
+                    <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                        [stretch]="false" width="30" stroke="#802d3d"></app-svg>
+                </button>
+            </div>
+            <div class="modal-body px-3 pb-3">
+                <section class="">
+                    <textarea class="w-full outline-0 min-h-[239px] py-[30px] px-7"
+                        placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry"></textarea>
+
+                    <div class="flex items-center bg-[#ebebeb] rounded-xl -mt-1.5" *ngIf="!isInnerPhotoClicked">
+                        <button type="button" (click)="isInnerPhotoClicked = true;"
+                            class="w-1/2 flex items-center justify-center gap-2 py-4 relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[68%] after:bg-black after:opacity-30 outline-0">
+                            <span>
+                                <app-svg src="assets/svgs/img-pink.svg" class="" customClass="" label="title_goas_here"
+                                    [stretch]="false" width="24"></app-svg>
+                            </span>
+                            <span>Photo/video</span>
+                        </button>
+                        <button type="button" class="w-1/2 flex items-center justify-center gap-2 py-4 outline-0">
+                            <span>
+                                <app-svg src="assets/svgs/map-marker.svg" class="" customClass=""
+                                    label="title_goas_here" [stretch]="false" width="24" fill="#D3A19E"></app-svg>
+                            </span>
+                            <span>Check in</span>
+                        </button>
+                    </div>
+
+
+
+                    <div *ngIf="isInnerPhotoClicked"
+                        class="bg-[#ebebeb] rounded-xl h-[202px] flex flex-col items-center justify-center relative cursor-pointer">
+                        <button type="button" (click)="isInnerPhotoClicked = false;"
+                            class="absolute top-2.5 right-2.5 outline-0">
+                            <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                                [stretch]="false" width="28" stroke="#000000"></app-svg>
+                        </button>
+                        <div>
+                            <app-svg src="assets/svgs/img-black.svg" class="" customClass="" label="title_goas_here"
+                                [stretch]="false" width="38"></app-svg>
+                        </div>
+                        <p class="font-normal mt-1">Add photo/video</p>
+                        <p class="text-sm">or drag and drop</p>
+                    </div>
+                    <button
+                        class="text-white bg-primary hover:text-primary hover:bg-white transition-all focus:ring-4 focus:outline-none focus:ring-blue-300  font-normal rounded-xl px-4 py-2 text-center w-full mt-2.5 outline-0"
+                        type="button">Publish Now</button>
+                </section>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

@@ -5,6 +5,7 @@ import { BlogDetailsRoutingModule } from './blog-details-routing.module';
 import { BlogDetailsComponent } from './blog-details.component';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
 import { TagsModule } from "../../../modules/tags/tags.module";
+import { SocialIconsModule } from 'src/app/modules/social-icons/social-icons.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TagsModule } from "../../../modules/tags/tags.module";
     CommonModule,
     BlogDetailsRoutingModule,
     SvgModule,
-    TagsModule
-]
+    TagsModule,
+    SocialIconsModule
+  ]
 })
 export class BlogDetailsModule { }

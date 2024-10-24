@@ -85,29 +85,9 @@
                     <p class="font-medium text-2xl text-primary">Share</p>
                     <hr class="border-black w-[42px] -ml-1.5" />
                 </div>
-                <ul class="flex flex-row gap-6">
-                    <li>
-                        <a href="https://www.google.com/"
-                            class="bg-black rounded-full w-8 h-8 flex items-center justify-center">
-                            <app-svg src="assets/svgs/x.svg" class="mt-[-3px]" customClass="" label="title_goas_here"
-                                [stretch]="false" width="16" fill="white"></app-svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.google.com/"
-                            class="bg-black rounded-full w-8 h-8 flex items-center justify-center">
-                            <app-svg src="assets/svgs/x.svg" class="mt-[-3px]" customClass="" label="title_goas_here"
-                                [stretch]="false" width="16" fill="white"></app-svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.google.com/"
-                            class="bg-black rounded-full w-8 h-8 flex items-center justify-center">
-                            <app-svg src="assets/svgs/x.svg" class="mt-[-3px]" customClass="" label="title_goas_here"
-                                [stretch]="false" width="16" fill="white"></app-svg>
-                        </a>
-                    </li>
-                </ul>
+                <app-social-icons innerClassess="gap-6" btnClassess="bg-black w-8 h-8"
+                    [data]="socialIcons"></app-social-icons>
+
             </div>
             <div class="w-full">
                 <div class="relative">

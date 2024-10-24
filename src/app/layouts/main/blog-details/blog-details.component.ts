@@ -11,7 +11,38 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./blog-details.component.scss']
 })
 export class BlogDetailsComponent {
-
+  socialIcons: any = [
+    {
+      svg: 'assets/svgs/x.svg',
+      size: 16,
+      fill: '#ffffff',
+      stroke: ''
+    },
+    {
+      svg: 'assets/svgs/x.svg',
+      size: 16,
+      fill: '#ffffff',
+      stroke: ''
+    },
+    {
+      svg: 'assets/svgs/x.svg',
+      size: 16,
+      fill: '#ffffff',
+      stroke: ''
+    },
+    {
+      svg: 'assets/svgs/x.svg',
+      size: 16,
+      fill: '#ffffff',
+      stroke: ''
+    },
+    {
+      svg: 'assets/svgs/x.svg',
+      size: 16,
+      fill: '#ffffff',
+      stroke: ''
+    }
+  ];
   constructor(
     private pageTransitionsService: PageTransitionsService,
     private metaTagsService: MetaTagsService,

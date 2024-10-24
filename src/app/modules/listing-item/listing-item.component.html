@@ -8,8 +8,9 @@
             <p class="text-white font-normal text-xl">Husin Alwesi DJ</p>
             <p class="text-white">is simply dummy text of the</p>
 
-            <app-stars class="block mb-1.5" containerClasses="gap-1.5" [fill]="starFill" size="14" colorFill="#802d3d"
-                colorEmpty="#ffffff" [isClickable]="false" (onUpdate)="starFill = $event"></app-stars>
+            <app-stars class="block mb-1.5 opacity-0 group-hover:opacity-100 transition-all" containerClasses="gap-1.5"
+                [fill]="starFill" size="14" colorFill="#802d3d" colorEmpty="#ffffff" [isClickable]="false"
+                (onUpdate)="starFill = $event"></app-stars>
 
 
             <button type="button" (click)="goToDetails()"

@@ -1,0 +1,24 @@
+<div class="flex flex-col">
+    <div class="flex flex-row gap-1 justify-center">
+        <div>
+            <p class="text-2xl font-light text-[59px]">4.0</p>
+        </div>
+        <div class="flex flex-col gap-1.5">
+            <div>
+                <app-stars containerClasses="gap-2" [fill]="starFill" size="18" colorFill="#802d3d"
+                    colorEmpty="#d3a19e" [isClickable]="false"
+                    (onUpdate)="starFill = $event"></app-stars>
+            </div>
+            <div>
+                <p class="font-light text-[19px]">105 reviews</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-row gap-3 justify-center mt-px">
+        <button type="button" class="text-primary text-center font-light text-xs outline-0" (click)="viewReview()">view
+            reviews</button>
+        <button type="button" class="text-primary text-center font-light text-xs outline-0"
+            (click)="writeReview()">write
+            review</button>
+    </div>
+</div>
