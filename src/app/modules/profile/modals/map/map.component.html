@@ -1,0 +1,35 @@
+<app-modal [template]="mapModalTemplate" [isModalEnabled]="isModalEnabled"
+    (closeModalByKeyboard)="isModalEnabled = false;" modalClasses="inset-0 w-[90%] max-w-[616px]">
+    <ng-template #mapModalTemplate>
+        <div class="bg-white rounded-xl">
+            <div class="modal-header px-[21px] flex justify-end py-4 bg-[#ebebeb] rounded-t-xl relative">
+                <p class="w-full text-center font-normal">create your caseshow</p>
+                <button type="button" (click)="isModalEnabled = false;"
+                    class="absolute right-5 top-0 bottom-0 my-auto outline-0">
+                    <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                        [stretch]="false" width="30" stroke="#802d3d"></app-svg>
+                </button>
+            </div>
+            <div class="modal-body pt-7 px-3 pb-3">
+                <section class="">
+                    <p class="text-black opacity-50 mb-6">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting
+                        industry</p>
+
+                    <div>
+                        <div style="overflow:hidden;max-width:100%;width:500px;height:500px;"
+                            class="!w-full !h-[300px]">
+                            <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
+                                <iframe style="height:100%;width:100%;border:0;" frameborder="0" class="rounded-xl"
+                                    src="https://www.google.com/maps/embed/v1/place?q=amman&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="text-white bg-primary hover:text-primary hover:bg-white transition-all focus:ring-4 focus:outline-none focus:ring-blue-300  font-normal rounded-xl px-4 py-2 text-center w-full mt-2.5 outline-0"
+                        type="button">Publish Now</button>
+                </section>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>

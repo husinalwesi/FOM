@@ -22,6 +22,7 @@ import { UpgradeModule } from "../../../modules/profile/upgrade/upgrade.module";
 import { ReviewShortModule } from "../../../modules/profile/review-short/review-short.module";
 import { InfoListModule } from "../../../modules/profile/info-list/info-list.module";
 import { SocialIconsModule } from 'src/app/modules/social-icons/social-icons.module';
+import { AddReviewModule } from "../../../modules/profile/modals/add-review/add-review.module";
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { SocialIconsModule } from 'src/app/modules/social-icons/social-icons.mod
     UpgradeModule,
     ReviewShortModule,
     InfoListModule,
-    SocialIconsModule
-  ]
+    SocialIconsModule,
+    AddReviewModule
+]
 })
 export class ProviderDetailedModule { }

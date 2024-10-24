@@ -4,6 +4,8 @@ import { InfoListComponent } from './info-list.component';
 import { SvgModule } from '../../svg/svg.module';
 import { ModalModule } from '../../modal/modal.module';
 import { RouterModule } from '@angular/router';
+import { MapModule } from "../modals/map/map.module";
+import { HoursModule } from "../modals/hours/hours.module";
 
 @NgModule({
   declarations: [
@@ -13,8 +15,10 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SvgModule,
     ModalModule,
-    RouterModule
-  ],
+    RouterModule,
+    MapModule,
+    HoursModule
+],
   exports: [InfoListComponent]
 })
 export class InfoListModule { }

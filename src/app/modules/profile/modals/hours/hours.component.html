@@ -1,0 +1,113 @@
+<app-modal [template]="hoursModalTemplate" [isModalEnabled]="isModalEnabled"
+    (closeModalByKeyboard)="isModalEnabled = false;" modalClasses="inset-0 w-[90%] max-w-[616px]">
+    <ng-template #hoursModalTemplate>
+        <div class="bg-white rounded-xl">
+            <div class="modal-header px-[21px] flex justify-end py-4 bg-[#ebebeb] rounded-t-xl relative">
+                <p class="w-full text-center font-normal">Hours</p>
+                <button type="button" (click)="isModalEnabled = false;"
+                    class="absolute right-5 top-0 bottom-0 my-auto outline-0">
+                    <app-svg src="assets/svgs/close-circle.svg" class="" customClass="" label="title_goas_here"
+                        [stretch]="false" width="30" stroke="#802d3d"></app-svg>
+                </button>
+            </div>
+            <div class="modal-body py-7">
+                <section class="w-[348px] mx-auto">
+                    <ul class="flex flex-col gap-5">
+                        <li class="flex justify-between">
+                            <div class="flex gap-3">
+                                <span class="w-[18px] relative">
+                                    <app-svg src="assets/svgs/time.svg" class="absolute left-[-3px] top-0"
+                                        customClass="" label="title_goas_here" [stretch]="false" width="24"
+                                        fill="#802d3d"></app-svg>
+                                </span>
+                                <span class="flex flex-col gap-2">
+                                    <span>
+                                        <strong class="font-medium text-lg">Hours</strong>
+                                    </span>
+                                    <span class="text-[#31A73B] font-light text-[13px] -mt-3.5">Open Now</span>
+                                </span>
+                            </div>
+                            <div>
+
+                            </div>
+                        </li>
+                        <li class="flex justify-between mt-1">
+                            <div class="flex gap-2">
+                                <span class="flex flex-col gap-2 ltr:pl-[31px] rtl:pr-[31px]">
+                                    <span class="text-[13px]">
+                                        Monday
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <p class="text-[13px]">9:00 - 00:00</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="flex flex-col gap-2 ltr:pl-[31px] rtl:pr-[31px]">
+                                    <span class="text-[13px]">
+                                        Monday
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <p class="text-[13px]">9:00 - 00:00</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="flex flex-col gap-2 ltr:pl-[31px] rtl:pr-[31px]">
+                                    <span class="text-[13px]">
+                                        Monday
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <p class="text-[13px]">9:00 - 00:00</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="flex flex-col gap-2 ltr:pl-[31px] rtl:pr-[31px]">
+                                    <span class="text-[13px]">
+                                        Monday
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <p class="text-[13px]">9:00 - 00:00</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="flex flex-col gap-2 ltr:pl-[31px] rtl:pr-[31px]">
+                                    <span>
+                                        <strong class="text-[13px] font-medium">Monday</strong>
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <p>
+                                    <strong class="text-[13px] font-medium">9:00 - 00:00</strong>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="flex flex-col gap-2 ltr:pl-[31px] rtl:pr-[31px]">
+                                    <span class="text-[13px]">
+                                        Monday
+                                    </span>
+                                </span>
+                            </div>
+                            <div>
+                                <p class="text-[13px]">9:00 - 00:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </ng-template>
+</app-modal>
