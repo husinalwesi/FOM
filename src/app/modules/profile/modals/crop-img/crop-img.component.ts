@@ -81,7 +81,8 @@ export class CropImgComponent {
     // show message
   }
 
-  rangeInput(event: any) {
+  rangeInput(val: number) {
+    this.scale = val;
     this.transform = {
       ...this.transform,
       scale: this.scale

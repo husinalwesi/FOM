@@ -5,6 +5,7 @@ import { ImageCropperComponent } from 'ngx-image-cropper';
 import { ModalModule } from 'src/app/modules/modal/modal.module';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
 import { FormsModule } from '@angular/forms';
+import { InputRangeModule } from "../../../input-range/input-range.module";
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { FormsModule } from '@angular/forms';
     ImageCropperComponent,
     ModalModule,
     SvgModule,
-    FormsModule
-  ],
+    FormsModule,
+    InputRangeModule
+],
   exports: [CropImgComponent]
 })
 export class CropImgModule { }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddPostModalComponent } from './add-post-modal.component';
 import { ModalModule } from 'src/app/modules/modal/modal.module';
 import { SvgModule } from 'src/app/modules/svg/svg.module';
+import { DragNdropModule } from "../../drag-ndrop/drag-ndrop.module";
 
 @NgModule({
   declarations: [
@@ -11,8 +12,9 @@ import { SvgModule } from 'src/app/modules/svg/svg.module';
   imports: [
     CommonModule,
     ModalModule,
-    SvgModule
-  ],
+    SvgModule,
+    DragNdropModule
+],
   exports: [AddPostModalComponent]
 })
 export class AddPostModalModule { }

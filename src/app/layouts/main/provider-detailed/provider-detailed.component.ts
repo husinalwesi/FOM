@@ -61,7 +61,7 @@ export class ProviderDetailedComponent {
 
   reviewModalEnabled: boolean = false;
 
-  isReview: boolean = true;
+  isReview: boolean = false;
   writePermission: boolean = true;
   // posts: any = [];
   posts: any = [1, 2, 1, 2, 1];
