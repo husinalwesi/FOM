@@ -5,7 +5,7 @@ import { locale as arLang } from './i18n/vocabs/ar';
 import { PlatformService } from './services/platform.service';
 import { ResizeService } from './services/resize.service';
 import { ScrollService } from './services/scroll.service';
-import 'default-passive-events';
+// import 'default-passive-events';
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 // import { SharedService } from './services/shared.service';

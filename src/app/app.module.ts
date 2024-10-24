@@ -1,5 +1,5 @@
 import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule, provideClientHydration, ɵSharedStylesHost } from '@angular/platform-browser';
+import { BrowserModule, HammerModule, provideClientHydration, ɵSharedStylesHost } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -85,7 +85,8 @@ export class CustomUrlSerializer implements UrlSerializer {
     // ChatBotModule,
     HeaderModule,
     FooterModule,
-    CookiesPopupModule
+    CookiesPopupModule,
+    HammerModule
   ],
   providers: [
     { provide: UrlSerializer, useClass: CustomUrlSerializer },
