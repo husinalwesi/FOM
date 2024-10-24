@@ -9,7 +9,7 @@
     <div
         class="lg:hidden service-details-items-swiper-container relative swiper-container overflow-hidden rounded-xl py-4">
         <div class="swiper-wrapper">
-            <div class="swiper-slide relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:m-auto after:w-[0.5px] after:h-[42px] after:bg-black after:last:hidden"
+            <div class="swiper-slide relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:m-auto after:w-[0.5px] after:h-[42px] after:bg-dark after:last:hidden"
                 *ngFor="let item of services;let i = index">
                 <app-service-item [index]="i" [activeIndex]="activeIndex" (onClick)="onClickEvt(i)"></app-service-item>
             </div>

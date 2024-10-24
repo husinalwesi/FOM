@@ -11,28 +11,29 @@
             </div>
         </div>
         <div class="section !max-w-[1000px] w-full !box-border">
-            <div class="flex flex-col gap-1 pt-[72px]">
-                <p class="text-primary font-bold text-[58px]">Search</p>
-                <p class="text-xl mt-4">Use the search page to quickly find everything you need planning</p>
+            <div class="flex flex-col gap-1 pt-[51px] lg:pt-[72px]">
+                <p class="text-primary font-bold text-[20px] lg:text-[58px]">Search</p>
+                <p class="text-sm lg:text-xl mt-2 lg:mt-4">Use the search page to quickly find everything you need
+                    planning</p>
                 <div class="relative mt-5">
-                    <input type="text" class=" w-full bg-gray-100 rounded-xl h-[60px] px-11"
+                    <input type="text" class="w-full bg-gray-100 rounded-xl h-[37px] lg:h-[60px] px-[22px] lg:px-11"
                         placeholder="quickly find everything you need" />
                     <app-svg src="assets/svgs/search.svg"
-                        class="absolute right-11 top-0 bottom-0 my-auto flex items-center" customClass=""
-                        label="title_goas_here" [stretch]="false" width="21" fill="#000000"></app-svg>
+                        class="absolute right-[22px] lg:right-11 top-0 bottom-0 my-auto flex items-center"
+                        customClass="" label="title_goas_here" [stretch]="false" width="21" fill="#000000"></app-svg>
                 </div>
             </div>
-            <div class="mt-10 flex flex-col lg:flex-row gap-4 justify-between">
-                <div class="flex flex-col gap-1 flex-1 order-2 lg:order-1">
-                    <p class="text-[26px] font-bold">Search Result for: Wedding</p>
-                    <p class="font-light text-sm mt-0.5">Displaying search from: dance, blog, home</p>
+            <div class="mt-2 lg:mt-10 flex flex-col lg:flex-row gap-1 lg:gap-4 justify-between">
+                <div class="flex flex-col gap-0 lg:gap-1 flex-1">
+                    <p class="text-[14px] lg:text-[26px] font-bold">Search Result for: Wedding</p>
+                    <p class="font-light text-[11px] lg:text-sm -mt-2 lg:mt-0.5">Displaying search from: dance, blog, home</p>
                 </div>
-                <div class="w-full lg:w-[160px] lg:text-right order-1 lg:order-2">
-                    <p class="font-light text-right">9 result are found</p>
+                <div class="w-full lg:w-[160px] lg:text-right ">
+                    <p class="font-light text-left lg:text-right text-[9px] lg:text-base">9 result are found</p>
                 </div>
             </div>
 
-            <div class="mt-11">
+            <div class="lg:mt-11">
                 <ul class="flex flex-col">
                     <li *ngFor="let item of list; let i = index"
                         class="border-b border-solid border-opacity-30 border-primary first:border-t last:border-0">

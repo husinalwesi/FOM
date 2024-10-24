@@ -1,7 +1,7 @@
 <main class="bg-[#f7f4f0]">
     <section class="section">
         <div class="flex flex-col lg:flex-row pt-[84px] lg:pt-0">
-            <!-- <app-cover></app-cover> -->
+            <app-cover></app-cover>
             <div class="h-full w-full lg:w-[439px]">
                 <div class="bg-white shadow-2xl pb-5 px-6 lg:pt-[84px] lg:min-h-screen flex flex-col">
 
@@ -97,22 +97,22 @@
                                         home
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'profile_info'">
-                                        <!-- <app-profile-info></app-profile-info> -->
+                                        <app-profile-info></app-profile-info>
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'password_security'">
-                                        <!-- <app-password></app-password> -->
+                                        <app-password></app-password>
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'personal_details'">
-                                        <!-- <app-personal></app-personal> -->
+                                        <app-personal></app-personal>
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'notifications'">
-                                        <!-- <app-notification></app-notification> -->
+                                        <app-notification></app-notification>
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'statistics'">
                                         statistics
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'upgrade_account'">
-                                        <!-- <app-upgrade></app-upgrade> -->
+                                        <app-upgrade></app-upgrade>
                                     </ng-container>
                                     <ng-container *ngIf="list[itemSelected].key === 'sign_out'">
                                         sign_out
@@ -130,11 +130,11 @@
                                     </ng-container>
                                     <app-add-post *ngIf="writePermission"></app-add-post>
                                     <ng-container *ngIf="!isReview">
-                                        <!-- <app-no-post *ngIf="posts.length === 0"></app-no-post> -->
+                                        <app-no-post *ngIf="posts.length === 0"></app-no-post>
                                         <ng-container>
                                             <div class="w-full flex flex-wrap flex-col lg:flex-row gap-x-4 gap-y-8">
-                                                <!-- <app-post *ngFor="let item of posts"
-                                                    class="w-full lg:w-[calc(50%-8px)]"></app-post> -->
+                                                <app-post *ngFor="let item of posts"
+                                                    class="w-full lg:w-[calc(50%-8px)]"></app-post>
                                             </div>
                                         </ng-container>
                                     </ng-container>
@@ -142,7 +142,7 @@
                                 <ng-container *ngIf="isReview">
                                     <ul>
                                         <li>
-                                            <!-- <app-review-card></app-review-card> -->
+                                            <app-review-card></app-review-card>
                                         </li>
                                     </ul>
                                 </ng-container>
