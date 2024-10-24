@@ -22,7 +22,7 @@ interface CustomSwiperOptions extends SwiperOptions {
   styleUrls: ['./hero-home-carousel.component.scss']
 })
 export class HeroHomeCarouselComponent {
-  // isMobile: boolean = true;
+  isMobile: boolean = true;
   isInnerCarouselShown: boolean = false;
   // isMobileCarouselShown: boolean = false;
   // isDesktopCarouselShown: boolean = false;
@@ -31,6 +31,12 @@ export class HeroHomeCarouselComponent {
   baseHeight = 380; // original height in design
   designWidth = 1440; // design screen width
   designHeight = 896; // design screen height
+
+
+  baseWidthMobile = 311; // original width in design
+  baseHeightMobile = 440; // original height in design
+  designWidthMobile = 375; // design screen width
+  designHeightMobile = 812; // design screen height
 
   calculatedWidth: number = 0;
   calculatedHeight: number = 0;
@@ -62,15 +68,15 @@ export class HeroHomeCarouselComponent {
   }
 
   calculateSize() {
-    // this.isMobile = this.resizeService.isMobile();
+    this.isMobile = this.resizeService.isMobile();
     // const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
     // const widthRatio = screenWidth / this.designWidth;
-    const heightRatio = screenHeight / this.designHeight;
+    const heightRatio = screenHeight / (this.isMobile ? this.designHeightMobile : this.designHeight);
 
     // this.calculatedWidth = this.baseWidth * widthRatio;
-    this.calculatedHeight = this.baseHeight * heightRatio;
+    this.calculatedHeight = (this.isMobile ? this.baseHeightMobile : this.baseHeight) * heightRatio;
     // console.log(this.calculatedHeight);
 
     this.cdk.detectChanges();
@@ -90,7 +96,7 @@ export class HeroHomeCarouselComponent {
           slidesPerView: "auto",
           navigation: { nextEl: ".swiper-hero-button-next", prevEl: ".swiper-hero-button-prev" },
           // pagination: { el: ".swiper-hero-pagination" },
-          autoplay: { delay: 3000, pauseOnMouseEnter: true },
+          // autoplay: { delay: 3000, pauseOnMouseEnter: true },
         };
         new Swiper('.hero-swiper-container', swiperOptions);
       });

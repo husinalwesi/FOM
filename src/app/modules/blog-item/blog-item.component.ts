@@ -26,9 +26,13 @@ export class BlogItemComponent {
   }
 
   newsRatio() {
-
+    // desktop
     // 276 w
     // 379 h
+
+    // mobile
+    // w 275
+    // h 379
 
     const desktopRatio: number = 242 / 286;
     const mobileRatio: number = 276 / 379;

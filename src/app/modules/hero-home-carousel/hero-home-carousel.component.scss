@@ -563,3 +563,19 @@ button.swiper-pagination-bullet {
 .swiper-slide-active .slide-content {
     opacity: 1;
 }
+
+
+@media (max-width: 640px) {
+    .swiper-hero-button-next,
+    .swiper-hero-button-prev{
+        &::after{
+            font-size: 28px;
+        }
+    }
+    .swiper-hero-button-next{
+        right: 32px;
+    }
+    .swiper-hero-button-prev{
+        left: 32px;
+    }
+}

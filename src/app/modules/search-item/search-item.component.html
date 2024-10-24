@@ -1,16 +1,18 @@
-<div class="px-5 lg:px-[73px] flex flex-col lg:flex-row gap-8 py-8 relative">
+<div class="px-0 lg:px-[73px] flex flex-row gap-8 py-8 relative">
     <span
-        class="absolute right-0 lg:right-8 top-0 bottom-0 my-auto text-primary opacity-20 text-[130px] flex justify-center items-center min-w-[216px] text-center">
+        class="absolute right-0 lg:right-8 top-0 bottom-0 my-auto text-primary opacity-20 text-[130px] flex justify-center items-center min-w-[216px] text-center z-[-1]">
         0{{index + 1}}
     </span>
-    <div class="w-32">
-        <img src="assets/images/hero/1.webp" class="w-32 h-32" alt="">
+    <div #imgContainer class="w-24 lg:w-32">
+        <img src="assets/images/hero/1.webp" class="w-24 lg:w-32 h-24 lg:h-32" alt="">
+        <!-- [style.height.px]="height" -->
     </div>
     <div class="flex-1">
         <div class="flex flex-col gap-1 w-full lg:w-[75%]">
             <p class="font-medium text-[22px]">Hussein Alwesi</p>
             <p class="text-primary text-sm">Wedding Planner</p>
-            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <p class="line-clamp-2">Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
                 Lorem
                 Ipsum
                 has been the simply dummy text of the printing.</p>

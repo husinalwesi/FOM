@@ -7,7 +7,7 @@
     @apply text-[6px] text-black lg:text-white;
 }
 .swiper-slide-active {
-    @apply relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[42px] after:bg-black lg:after:bg-white;
+    @apply relative after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:right-0 after:w-[0.5px] after:h-[42px] after:bg-dark lg:after:bg-white;
 }
 
 .swiper-button-next{
